@@ -1,5 +1,7 @@
 backend:
-  name: test-repo
+  name: github
+  branch: master
+  repo: AndreBClark/gatsby-personal-starter-blog
 
 media_folder: static/assets
 public_folder: assets
