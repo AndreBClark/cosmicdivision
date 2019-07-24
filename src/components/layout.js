@@ -1,8 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 
 import { rhythm, scale } from "../utils/typography"
+import theme from "../../config/theme"
+
+const GlobalStyle = createGlobalStyle`
+body {
+  background-color: ${props => props.theme.colors.bg};
+  color: ${props => props.theme.colors.primary};
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+a {
+  color: ${props => props.theme.colors.primary}
+}`
 
 class Layout extends React.Component {
   render() {
@@ -54,24 +66,29 @@ class Layout extends React.Component {
       )
     }
     return (
-      <Wrapper>
-        <div
-          style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <header>{header}</header>
-          <main>{children}</main>
-        </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
-      </Wrapper>
+      <ThemeProvider theme={theme}>
+          <Wrapper style={{
+            
+          }}>
+          <GlobalStyle/>
+            <div
+              style={{
+                marginLeft: `auto`,
+                marginRight: `auto`,
+                maxWidth: rhythm(24),
+                padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+              }}
+            >
+              <header>{header}</header>
+              <main>{children}</main>
+            </div>
+            <Footer>
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </Footer>
+          </Wrapper>
+      </ThemeProvider>
     )
   }
 }
