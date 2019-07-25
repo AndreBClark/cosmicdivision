@@ -1,9 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
+
+const Logosvg = styled.img`
+transition: all .4s ease-in-out;
+&:hover {
+  transform: scale(1.1) 
+}
+`
 
 class IndexPage extends React.Component {
   render() {
@@ -15,7 +23,7 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <img style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
+        <Logosvg style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
         <h1>
           Hey people{" "}
           <span role="img" aria-label="wave emoji">
