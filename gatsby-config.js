@@ -52,8 +52,8 @@ module.exports = {
             resolve: `gatsby-remark-vscode`,
             options: {
               colorTheme: 'Firefox Quantum Dark',
-              
-          }
+          },
+        },
 
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
