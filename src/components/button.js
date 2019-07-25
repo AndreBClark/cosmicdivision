@@ -1,8 +1,11 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { ThemeProvider }from "styled-components"
+import theme from '../../config/theme'
 
 const Button = props => (
+<ThemeProvider theme={theme}>
   <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
+</ThemeProvider>
 )
 
 const ButtonWrapper = styled.button`
@@ -16,16 +19,22 @@ const ButtonWrapper = styled.button`
   text-transform: uppercase;
   letter-spacing: 2px;
 
-  background: ${props => props.props.background || "black"};
-  color: ${props => props.props.color || "rgb(255, 255, 255)"};
-  font-size: ${props => props.props.fontSize || "15px"};
-  font-weight: ${props => props.props.fontWeight || "600"};
-  border-radius: ${props => props.props.radius || "6px"};
-  margin-top: ${props => props.props.marginTop};
+  background: none;
+  text-decoration: none;
+  border-color: ${props => props.theme.primary};
+  border: 3px solid;
+  color: ${props => props.theme.colors.primary || "rgb(255, 255, 255)"};
+  font-size: ${props => props.theme.fontSize || "15px"};
+  font-weight: ${props => props.theme.fontWeight || "600"};
+  border-radius: ${props => props.theme.radius || "6px"};
+  margin-top: ${props => props.theme.marginTop};
   margin-bottom: ${props => props.props.marginBottom};
 
   &:hover {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.25);
+    color: ${props => props.theme.colors.grey.dark};
+    background-color: ${props => props.theme.colors.primaryLight};
+    border-color: ${props => props.theme.colors.primaryLight}; 
+    box-shadow: inset 0 0 100px 100px; 
   }
 `
 
