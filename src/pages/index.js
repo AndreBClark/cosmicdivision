@@ -1,16 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Button from "../components/button"
 
 const Logosvg = styled.img`
-transition: all .4s ease-in-out;
-&:hover {
-  transform: scale(1.1) 
-}
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 `
 
 class IndexPage extends React.Component {
@@ -23,7 +23,11 @@ class IndexPage extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Logosvg style={{ margin: 0 }} src="./GatsbyScene.svg" alt="Gatsby Scene" />
+        <Logosvg
+          style={{ margin: 0 }}
+          src="./GatsbyScene.svg"
+          alt="Gatsby Scene"
+        />
         <h1>
           Hey people{" "}
           <span role="img" aria-label="wave emoji">
@@ -36,7 +40,7 @@ class IndexPage extends React.Component {
           default starter blog running on Netlify CMS.
         </p>
         <p>Now go build something great!</p>
-        <Link to="/blog/" style={{textDecoration: 'none'}}>
+        <Link to="/blog/" style={{ textDecoration: "none" }}>
           <Button marginTop="35px">Go to Blog</Button>
         </Link>
       </Layout>

@@ -38,7 +38,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
             }}
-            to='/'
+            to="/"
           >
             {title}
           </Link>
@@ -81,8 +81,8 @@ class Layout extends React.Component {
             <main
               style={{
                 backgroundColor: `${theme.colors.overlay.low}`,
-                padding: '2rem',
-                borderRadius: `${theme.layoutConstants.radius}`
+                padding: "2rem",
+                borderRadius: `${theme.layoutConstants.radius}`,
               }}
             >
               {children}

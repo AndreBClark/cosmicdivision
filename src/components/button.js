@@ -1,11 +1,11 @@
 import React from "react"
-import styled, { ThemeProvider }from "styled-components"
-import theme from '../../config/theme'
+import styled, { ThemeProvider } from "styled-components"
+import theme from "../../config/theme"
 
 const Button = props => (
-<ThemeProvider theme={theme}>
-  <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
-</ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
+  </ThemeProvider>
 )
 
 const ButtonWrapper = styled.button`
@@ -28,12 +28,11 @@ const ButtonWrapper = styled.button`
   font-weight: ${props => props.theme.fontWeight};
   border-radius: ${props => props.theme.layoutConstants.radius};
 
-
   &:hover {
-    text-decoration: none !important; 
+    text-decoration: none !important;
     color: ${props => props.theme.colors.bg};
     background-color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary}; 
+    border-color: ${props => props.theme.colors.primary};
   }
 `
 

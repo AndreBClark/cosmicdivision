@@ -1,26 +1,24 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from "styled-components"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import Button from "../components/button"
 
-
-import theme from '../../config/theme'
-
+import theme from "../../config/theme"
 
 const PostCard = styled.article`
-padding: .001rem 2rem 1rem 2rem;
-margin-top: 0 !important;
+  padding: 0.001rem 2rem 1rem 2rem;
+  margin-top: 0 !important;
   &:hover {
     transition: 300ms all;
     transform-y: 20px;
     background: ${props => props.theme.colors.overlay.low};
     border-radius: ${props => props.theme.layoutConstants.radius};
   }
-` 
+`
 class Blog extends React.Component {
   render() {
     const { data } = this.props
@@ -29,35 +27,34 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-
         <SEO title="All posts" />
         <Bio />
         <div style={{ margin: "20px 0 40px" }}>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-            <ThemeProvider theme={theme}>
-              <PostCard key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
+              <ThemeProvider theme={theme}>
+                <PostCard key={node.fields.slug}>
+                  <h3
+                    style={{
+                      marginBottom: rhythm(1 / 4),
+                    }}
                   >
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`blog${node.fields.slug}`}
+                    <Link
+                      style={{ boxShadow: `none` }}
+                      to={`blog${node.fields.slug}`}
                     >
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
+                      {title}
+                    </Link>
+                  </h3>
+                  <small>{node.frontmatter.date}</small>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
                   />
-              </PostCard>
-          </ThemeProvider>
+                </PostCard>
+              </ThemeProvider>
             )
           })}
         </div>
