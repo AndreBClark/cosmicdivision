@@ -23,18 +23,17 @@ const ButtonWrapper = styled.button`
   text-decoration: none;
   border-color: ${props => props.theme.primary};
   border: 3px solid;
-  color: ${props => props.theme.colors.primary || "rgb(255, 255, 255)"};
-  font-size: ${props => props.theme.fontSize || "15px"};
-  font-weight: ${props => props.theme.fontWeight || "600"};
-  border-radius: ${props => props.theme.radius || "6px"};
-  margin-top: ${props => props.theme.marginTop};
-  margin-bottom: ${props => props.props.marginBottom};
+  color: ${props => props.theme.colors.primary};
+  font-size: ${props => props.theme.fontSize};
+  font-weight: ${props => props.theme.fontWeight};
+  border-radius: ${props => props.theme.layoutConstants.radius};
+
 
   &:hover {
-    color: ${props => props.theme.colors.grey.dark};
-    background-color: ${props => props.theme.colors.primaryLight};
-    border-color: ${props => props.theme.colors.primaryLight}; 
-    box-shadow: inset 0 0 100px 100px; 
+    text-decoration: none !important; 
+    color: ${props => props.theme.colors.bg};
+    background-color: ${props => props.theme.colors.primary};
+    border-color: ${props => props.theme.colors.primary}; 
   }
 `
 
