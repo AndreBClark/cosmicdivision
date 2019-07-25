@@ -27,8 +27,9 @@ const fontSize = {
 }
 
 const fontFamily = {
+  mono: `'Fira Mono'`,
   serif: `'Bitter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', serif`,
-  sansSerif: `'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+  sansSerif: `'Fira Sans', Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
 }
 
 const breakpoints = {
