@@ -48,7 +48,6 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
@@ -67,27 +66,34 @@ class Layout extends React.Component {
     }
     return (
       <ThemeProvider theme={theme}>
-          <Wrapper style={{
-            
-          }}>
-          <GlobalStyle/>
-            <div
+        <Wrapper style={{}}>
+          <GlobalStyle />
+          <div
+            style={{
+              marginLeft: `auto`,
+
+              marginRight: `auto`,
+              maxWidth: rhythm(24),
+              padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            }}
+          >
+            <header>{header}</header>
+            <main
               style={{
-                marginLeft: `auto`,
-                marginRight: `auto`,
-                maxWidth: rhythm(24),
-                padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+                backgroundColor: `${theme.colors.overlay.low}`,
+                padding: '2rem',
+                borderRadius: `${theme.layoutConstants.radius}`
               }}
             >
-              <header>{header}</header>
-              <main>{children}</main>
-            </div>
-            <Footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </Footer>
-          </Wrapper>
+              {children}
+            </main>
+          </div>
+          <Footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </Footer>
+        </Wrapper>
       </ThemeProvider>
     )
   }
