@@ -48,7 +48,13 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-vscode`,
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: 'Firefox Quantum Dark',
+              
+          }
+
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
