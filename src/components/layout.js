@@ -13,7 +13,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 a {
-  color: ${props => props.theme.colors.primary}
+  color: ${props => props.theme.colors.white}
 }`
 
 class Layout extends React.Component {
@@ -38,7 +38,7 @@ class Layout extends React.Component {
               textDecoration: `none`,
               color: `inherit`,
             }}
-            to={location.pathname === blogPath ? `/blog/` : `/`}
+            to='/'
           >
             {title}
           </Link>
