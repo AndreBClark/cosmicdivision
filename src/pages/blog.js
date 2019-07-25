@@ -12,13 +12,13 @@ import theme from '../../config/theme'
 
 
 const PostCard = styled.article`
-padding: 1rem 2rem;
-margin-top: 0;
+padding: .001rem 2rem 1rem 2rem;
+margin-top: 0 !important;
   &:hover {
     transition: 300ms all;
     transform-y: 20px;
     background: ${props => props.theme.colors.overlay.low};
-    border-radius: 5px;
+    border-radius: ${props => props.theme.layoutConstants.radius};
   }
 ` 
 class Blog extends React.Component {
