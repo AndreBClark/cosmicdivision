@@ -18,6 +18,11 @@ const colors = {
   white: 'white',
 }
 
+const layoutConstants = {
+  radius: '6px',
+  spacer: '1rem',
+}
+
 const transitions = {
   normal: '0.5s',
 }
@@ -42,6 +47,7 @@ const theme = {
   fontSize,
   breakpoints,
   fontFamily,
+  layoutConstants,
   maxWidth: '1000px',
   baseFontSize: '18px',
 }
