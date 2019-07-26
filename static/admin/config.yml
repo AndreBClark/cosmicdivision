@@ -52,16 +52,6 @@ collections:
               Half-Orc, 
               Tiefling
               ]}
-      - name: abilityscores 
-        label: Ability Scores
-        widget: object
-        fields:
-          - { name: str, label: Strength, widget: number, valueType: int, default: 10  }
-          - { name: dex, label: Dexterity, widget: number, valueType: int, default: 10  }
-          - { name: con, label: Constitution, widget: number, valueType: int, default: 10  }
-          - { name: int, label: Intelligence, widget: number, valueType: int, default: 10  }
-          - { name: wis, label: Wisdom, widget: number, valueType: int, default: 10  }
-          - { name: cha, label: Charisma, widget: number, valueType: int, default: 10  }
       - { name: alignment, label: Alignment, widget: select, 
             options: [
               "Lawful Good", 
@@ -73,7 +63,18 @@ collections:
               "Lawful Evil", 
               "Neutral Evil", 
               "Chaotic Evil"
-              ]}
+            ]
+      - name: abilityscores 
+        label: Ability Scores
+        widget: object
+        fields:
+          - { name: str, label: Strength, widget: number, valueType: int, default: 10  }
+          - { name: dex, label: Dexterity, widget: number, valueType: int, default: 10  }
+          - { name: con, label: Constitution, widget: number, valueType: int, default: 10  }
+          - { name: int, label: Intelligence, widget: number, valueType: int, default: 10  }
+          - { name: wis, label: Wisdom, widget: number, valueType: int, default: 10  }
+          - { name: cha, label: Charisma, widget: number, valueType: int, default: 10  }
+        }
   - name: spells
     label: Spells
     folder: content/spells
