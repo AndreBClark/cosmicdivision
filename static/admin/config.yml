@@ -56,12 +56,12 @@ collections:
         label: Ability Scores
         widget: object
         fields:
-          - { name: str, label: Strength, widget: number, valuetype: int, default: 10  }
-          - { name: dex, label: Dexterity, widget: number, valuetype: int, default: 10  }
-          - { name: con, label: Constitution, widget: number, valuetype: int, default: 10  }
-          - {name: int, label: Intelligence, widget: number, valuetype: int, default: 10  }
-          - {name: wis, label: Wisdom, widget: number, valuetype: int, default: 10  }
-          - {name: cha, label: Charisma, widget: number, valuetype: int, default: 10  }
+          - { name: str, label: Strength, widget: number, valueType: int, default: 10  }
+          - { name: dex, label: Dexterity, widget: number, valueType: int, default: 10  }
+          - { name: con, label: Constitution, widget: number, valueType: int, default: 10  }
+          - { name: int, label: Intelligence, widget: number, valueType: int, default: 10  }
+          - { name: wis, label: Wisdom, widget: number, valueType: int, default: 10  }
+          - { name: cha, label: Charisma, widget: number, valueType: int, default: 10  }
       - { name: alignment, label: Alignment, widget: select, 
             options: [
               "Lawful Good", 
