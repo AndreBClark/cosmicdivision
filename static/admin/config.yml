@@ -74,4 +74,9 @@ collections:
       - { name: spellname, label: Spell, widget: string }
       - { name: spelllevel, label: Spell Level, widget: number }
       - { name: spelldescription, label: Description, widget: text }
-      - { name: spellcomponents, label: Components, widget: }
+      - { name: spellcomponents, label: Components, widget: object,
+            field:
+              - {label: Verbal, name: verbal, widget: boolean }
+              - {label: Somatic, name: somatic, widget: boolean }
+              - {label: Material, name: meterial, widget: boolean }
+        }
