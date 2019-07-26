@@ -28,5 +28,4 @@ collections:
       - { name: race, label: Race, widget: select, options: [Dwarf, Elf, Halfling, Human, Dragonborn, Gnome, Half-Elf, Half-Orc, Tiefling]}
       - [ name: alignment, label: Alignment, widget: select, 
           options: ["Lawful Good", "Neutral Good", "Chaotic Good", 
-                    "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"]
-          - {label: }]
+                    "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"]}
