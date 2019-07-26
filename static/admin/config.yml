@@ -63,4 +63,15 @@ collections:
               "Lawful Evil", 
               "Neutral Evil", 
               "Chaotic Evil"
-              ]}    identifier_field: spellname
+              ]}
+  - name: spells
+    label: Spells
+    folder: content/spells
+    create: true
+    preview: true
+    identifier_field: spellname
+    fields:
+      - { name: spellname, label: Spell, widget: string }
+      - { name: spelllevel, label: Spell Level, widget: number }
+      - { name: spelldescription, label: Description, widget: text }
+      - { name: spellcomponents, label: Components, widget: }
