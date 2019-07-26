@@ -21,6 +21,7 @@ collections:
     label: Character
     folder: content/character
     create: true
+    identifier_field: charname
     fields:
       - { name: charname, label: "Character Name", widget: string }
       - { name: class, label: Class, widget: select, 
@@ -62,4 +63,4 @@ collections:
               "Lawful Evil", 
               "Neutral Evil", 
               "Chaotic Evil"
-              ]}
+              ]}    identifier_field: spellname
