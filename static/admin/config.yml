@@ -1,29 +1,93 @@
-backend:
-  name: github
+--- 
+backend: 
   branch: master
+  name: github
   repo: AndreBClark/gatsby-personal-starter-blog
-
+collections: 
+  - 
+    create: true
+    fields: 
+      - 
+        label: Path
+        name: path
+      - 
+        label: Date
+        name: date
+        widget: date
+      - 
+        label: Title
+        name: title
+      - 
+        label: Description
+        name: description
+      - 
+        label: Body
+        name: body
+        widget: markdown
+    folder: content/blog
+    label: Blog
+    name: blog
+  - 
+    create: true
+    fields: 
+      - 
+        label: "Character Name"
+        name: charname
+        widget: string
+      - 
+        label: Class
+        name: class
+        options: 
+          - Barbarian
+          - Cleric
+          - Bard
+          - Fighter
+          - Wizard
+          - Warlock
+          - Sorcerer
+          - Druid
+          - Rogue
+          - Monk
+          - Paladin
+          - Ranger
+        widget: select
+      - 
+        label: Level
+        max: 20
+        min: 1
+        name: level
+        valueType: int
+        widget: number
+      - 
+        label: Race
+        name: race
+        options: 
+          - Dwarf
+          - Elf
+          - Halfling
+          - Human
+          - Dragonborn
+          - Gnome
+          - Half-Elf
+          - Half-Orc
+          - Tiefling
+        widget: select
+      - 
+        label: Alignment
+        name: alignment
+        options: 
+          - "Lawful Good"
+          - "Neutral Good"
+          - "Chaotic Good"
+          - "Lawful Neutral"
+          - "True Neutral"
+          - "Chaotic Neutral"
+          - "Lawful Evil"
+          - "Neutral Evil"
+          - "Chaotic Evil"
+        widget: select
+    folder: content/character
+    label: Character
+    name: character
 media_folder: static/assets
 public_folder: assets
-
-collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: body, label: Body, widget: markdown }
-  - name: character
-    label: Character
-    folder: content/character
-    create: true
-    fields:
-      - { name: charname, label: "Character Name", widget: string }
-      - { name: class, label: Class, widget: select, options: [Barbarian, Cleric, Bard, Fighter, Wizard, Warlock, Sorcerer, Druid, Rogue, Monk, Paladin, Ranger]}
-      - { name: level, label: Level, widget: number, valueType: int, min: 1, max: 20}
-      - { name: race, label: Race, widget: select, options: [Dwarf, Elf, Halfling, Human, Dragonborn, Gnome, Half-Elf, Half-Orc, Tiefling]}
-      - [ name: alignment, label: Alignment, widget: select, options: ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "True Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"]}
