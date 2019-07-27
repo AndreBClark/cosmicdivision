@@ -6,6 +6,7 @@ description: >-
   equal to 1d4 + your spellcasting ability modifier. This spell has no effect on
   undead or constructs.
 castingtime: 1 bonus action
+duration: Instantaneous
 range: 60 feet
 classes:
   - Cleric
