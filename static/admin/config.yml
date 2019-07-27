@@ -85,6 +85,10 @@ collections:
       - { name: spellname, label: Spell, widget: string }
       - { name: spelllevel, label: Spell Level, widget: number }
       - { name: spelldescription, label: Description, widget: text }
+      - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
+      - { name: range, label: Range, widget: string, default: "30 feet" }
+      - { name: classes, label: Classes, widget: list,  
+            field: {name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class }
       - name: spellcomponents 
         label: Components 
         widget: object
