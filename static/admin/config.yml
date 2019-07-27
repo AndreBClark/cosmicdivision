@@ -104,6 +104,7 @@ collections:
       - { name: level, label: Spell Level, widget: number }
       - { name: description, label: Description, widget: markdown }
       - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
+      - { name: duration, label: Duration, widget: string }
       - { name: range, label: Range, widget: string, default: "30 feet" }
       - { name: classes, label: Classes, widget: list,  
             field: {name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class }
