@@ -52,6 +52,22 @@ collections:
               Half-Orc, 
               Tiefling
               ]}
+      - { name: background, label: Background, widget: select, 
+            options: [  Acolyte,
+                        Charlatan, 
+                        Criminal, 
+                        Entertainer, 
+                        Folk Hero, 
+                        Gladiator, 
+                        Guild Artisan,
+                        Hermit, 
+                        Knight, 
+                        Noble, 
+                        Outlander, 
+                        Pirate, 
+                        SageSailer, 
+                        Soldier, 
+                        Urchin  ]
       - { name: alignment, label: Alignment, widget: select, 
             options: [
               "Lawful Good", 
