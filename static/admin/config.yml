@@ -106,10 +106,11 @@ collections:
       - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
       - { name: range, label: Range, widget: string, default: "30 feet" }
       - { name: classes, label: Classes, widget: list,  
-            field: {name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class },
-      - name: spellcomponents,
-        label: Components, 
-        widget: object,
+            field: {name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class }
+      }
+      - name: spellcomponents
+        label: Components
+        widget: object
         fields:
           - {label: Verbal, name: verbal, widget: boolean }
           - {label: Somatic, name: somatic, widget: boolean }
