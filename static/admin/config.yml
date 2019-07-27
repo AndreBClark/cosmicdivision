@@ -67,7 +67,7 @@ collections:
                         Pirate, 
                         SageSailer, 
                         Soldier, 
-                        Urchin  ]
+                        Urchin  ],
       - { name: alignment, label: Alignment, widget: select, 
             options: [
               "Lawful Good", 
