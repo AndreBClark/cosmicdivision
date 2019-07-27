@@ -68,6 +68,7 @@ collections:
                         SageSailer, 
                         Soldier, 
                         Urchin  ],
+        }
       - { name: alignment, label: Alignment, widget: select, 
             options: [
               "Lawful Good", 
@@ -99,9 +100,9 @@ collections:
     preview: true
     identifier_field: spellname
     fields:
-      - { name: spellname, label: Spell, widget: string }
-      - { name: spelllevel, label: Spell Level, widget: number }
-      - { name: spelldescription, label: Description, widget: markdown }
+      - { name: name, label: Spell, widget: string }
+      - { name: level, label: Spell Level, widget: number }
+      - { name: description, label: Description, widget: markdown }
       - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
       - { name: range, label: Range, widget: string, default: "30 feet" }
       - { name: classes, label: Classes, widget: list,  
