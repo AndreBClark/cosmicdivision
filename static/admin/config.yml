@@ -96,3 +96,4 @@ collections:
           - {label: Verbal, name: verbal, widget: boolean }
           - {label: Somatic, name: somatic, widget: boolean }
           - {label: Material, name: meterial, widget: boolean }
+      
