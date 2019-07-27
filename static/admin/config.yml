@@ -98,9 +98,9 @@ collections:
     folder: content/spells
     create: true
     preview: true
-    identifier_field: spellname
+    identifier_field: spell
     fields:
-      - { name: name, label: Spell, widget: string }
+      - { name: spell, label: Spell, widget: string }
       - { name: level, label: Spell Level, widget: number }
       - { name: description, label: Description, widget: markdown }
       - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
