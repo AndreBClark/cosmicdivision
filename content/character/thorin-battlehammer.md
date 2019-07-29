@@ -3,6 +3,8 @@ charname: Thorin Battlehammer
 class: Cleric
 level: 1
 race: Dwarf
+background: Acolyte
+alignment: Lawful Good
 abilityscores:
   cha: 7
   con: 18
@@ -10,6 +12,6 @@ abilityscores:
   int: 14
   str: 16
   wis: 16
-alignment: Lawful Good
+backstory: Short.
 ---
 
