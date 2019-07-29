@@ -28,6 +28,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        path: `${__dirname}/content/character`,
+        name: `character`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/spells`,
+        name: `spells`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
@@ -35,8 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -52,8 +65,8 @@ module.exports = {
             resolve: `gatsby-remark-vscode`,
             options: {
               colorTheme: 'Firefox Quantum Dark',
+            },
           },
-        },
 
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,

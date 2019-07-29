@@ -24,65 +24,65 @@ collections:
     identifier_field: charname
     fields:
       - { name: charname, label: "Character Name", widget: string }
-      - { name: class, label: Class, widget: select, 
+      - { name: class, label: Class, widget: select,
             options: [
-              Barbarian, 
-              Cleric, 
-              Bard, 
-              Fighter, 
-              Wizard, 
-              Warlock, 
-              Sorcerer, 
-              Druid, 
-              Rogue, 
-              Monk, 
-              Paladin, 
+              Barbarian,
+              Cleric,
+              Bard,
+              Fighter,
+              Wizard,
+              Warlock,
+              Sorcerer,
+              Druid,
+              Rogue,
+              Monk,
+              Paladin,
               Ranger
               ]}
       - { name: level, label: Level, widget: number, valueType: int, min: 1, max: 20}
-      - { name: race, label: Race, widget: select, 
+      - { name: race, label: Race, widget: select,
             options: [
               Dwarf,
-              Elf, 
-              Halfling, 
-              Human, 
-              Dragonborn, 
-              Gnome, 
-              Half-Elf, 
-              Half-Orc, 
+              Elf,
+              Halfling,
+              Human,
+              Dragonborn,
+              Gnome,
+              Half-Elf,
+              Half-Orc,
               Tiefling
               ]}
-      - { name: background, label: Background, widget: select, 
+      - { name: background, label: Background, widget: select,
             options: [  Acolyte,
-                        Charlatan, 
-                        Criminal, 
-                        Entertainer, 
-                        Folk Hero, 
-                        Gladiator, 
+                        Charlatan,
+                        Criminal,
+                        Entertainer,
+                        Folk Hero,
+                        Gladiator,
                         Guild Artisan,
-                        Hermit, 
-                        Knight, 
-                        Noble, 
-                        Outlander, 
-                        Pirate, 
-                        SageSailer, 
-                        Soldier, 
+                        Hermit,
+                        Knight,
+                        Noble,
+                        Outlander,
+                        Pirate,
+                        SageSailer,
+                        Soldier,
                         Urchin  ],
         }
-      - { name: alignment, label: Alignment, widget: select, 
+      - { name: alignment, label: Alignment, widget: select,
             options: [
-              "Lawful Good", 
-              "Neutral Good", 
-              "Chaotic Good", 
-              "Lawful Neutral", 
-              "True Neutral", 
-              "Chaotic Neutral", 
-              "Lawful Evil", 
-              "Neutral Evil", 
+              "Lawful Good",
+              "Neutral Good",
+              "Chaotic Good",
+              "Lawful Neutral",
+              "True Neutral",
+              "Chaotic Neutral",
+              "Lawful Evil",
+              "Neutral Evil",
               "Chaotic Evil"
             ]
         }
-      - name: abilityscores 
+      - name: abilityscores
         label: Ability Scores
         widget: object
         fields:
@@ -106,7 +106,7 @@ collections:
       - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
       - { name: duration, label: Duration, widget: string }
       - { name: range, label: Range, widget: string, default: "30 feet" }
-      - { name: classes, label: Classes, widget: list,  
+      - { name: classes, label: Classes, widget: select, multiple: true,
             field: {name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class }
       }
       - name: spellcomponents
@@ -115,5 +115,4 @@ collections:
         fields:
           - {label: Verbal, name: verbal, widget: boolean }
           - {label: Somatic, name: somatic, widget: boolean }
-          - {label: Material, name: meterial, widget: boolean }
-      
+          - {label: Material, name: material, widget: boolean }
