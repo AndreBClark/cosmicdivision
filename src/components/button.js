@@ -4,12 +4,11 @@ import theme from "../../config/theme"
 
 const Button = props => (
   <ThemeProvider theme={theme}>
-    <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
+    <ButtonWrapper props={props}> {props.children} </ButtonWrapper>{" "}
   </ThemeProvider>
 )
 
 const ButtonWrapper = styled.button`
-  display: block;
   border: none;
   text-align: center;
   box-sizing: border-box;
@@ -17,6 +16,7 @@ const ButtonWrapper = styled.button`
   padding: 10px 25px;
   cursor: pointer;
   text-transform: uppercase;
+  display: block;
   letter-spacing: 2px;
 
   background: none;
