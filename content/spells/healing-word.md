@@ -11,7 +11,7 @@ range: 60 feet
 classes:
   - Cleric
 spellcomponents:
-  meterial: false
+  material: false
   somatic: false
   verbal: true
 ---
