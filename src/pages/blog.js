@@ -58,7 +58,7 @@ class Blog extends React.Component {
             )
           })}
         </div>
-        <Link to="/"style={{textDecoration: 'none'}}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <Button marginTop="85px">Go Home</Button>
         </Link>
       </Layout>
@@ -77,13 +77,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-      frontmatter: {
-        title: {
-          ne: ""
-        }
-      }
-      }) {
+      filter: { frontmatter: { title: { ne: "" } } }
+    ) {
       edges {
         node {
           excerpt
