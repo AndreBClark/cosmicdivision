@@ -64,11 +64,13 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-vscode`,
                         options: {
+                            colorTheme: "Firefox Quantum Dark",
+                            injectStyles: true,
                             extensions: [{
-                                identifier: 'beastdestroyer.firefox-quantum-themes',
-                                version: '1.1.6'
-                            }]
-                        }
+                                identifier: "beastdestroyer.firefox-quantum-themes",
+                                version: "1.1.6",
+                            }, ],
+                        },
                     },
 
                     `gatsby-remark-copy-linked-files`,
