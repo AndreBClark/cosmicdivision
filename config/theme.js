@@ -1,4 +1,4 @@
-import { lighten } from 'polished'
+import { lighten } from "polished"
 
 const colors = {
     primary: "#26ffba", // Color for buttons or links
@@ -19,27 +19,27 @@ const colors = {
 }
 
 const layoutConstants = {
-    radius: '6px',
-    spacer: '1rem',
+    radius: "6px",
+    spacer: "1rem",
 }
 
 const transitions = {
-    normal: '0.5s',
+    normal: "0.5s",
 }
 
 const fontSize = {
-    small: '0.9rem',
+    small: "0.9rem",
 }
 
 const fontFamily = {
     mono: `'Fira Mono'`,
     serif: `'Bitter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', serif`,
-    sansSerif: `'Fira Sans', Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+    sans: `'Fira Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
 }
 
 const breakpoints = {
-    tablet: '1200px',
-    phone: '600px',
+    tablet: "1200px",
+    phone: "600px",
 }
 
 const theme = {
@@ -49,8 +49,8 @@ const theme = {
     breakpoints,
     fontFamily,
     layoutConstants,
-    maxWidth: '1000px',
-    baseFontSize: '18px',
+    maxWidth: "1000px",
+    baseFontSize: "18px",
 }
 
 export default theme
