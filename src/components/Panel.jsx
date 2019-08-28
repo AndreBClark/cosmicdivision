@@ -1,8 +1,23 @@
-import tw from 'twin.macro'
+import React from "react"
+import styled from "styled-components"
+import theme from "../../config/theme"
+import { rhythm } from "../../config/typography"
 
-const Panel = tw.section`
-  bg-neutral-400 p-8  m-4 rounded-tr-xl rounded-br-xl border-primary-200 border-l-4
-  lg:( py-4 px-6)
-`
+const Container = styled.section`
+  background-color: ${theme.colors.overlay.middle};
+  padding: ${rhythm(1)};
+  border-radius: ${theme.layoutConstants.radius};
+  margin: 2rem auto;
+
+  max-width: ${rhythm(24)};
+`;
+
+const Panel = ({ children }) => {
+  return (
+    <Container>
+        {children}
+    </Container>
+  )
+}
 
 export default Panel
