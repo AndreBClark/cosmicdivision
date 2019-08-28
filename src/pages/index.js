@@ -2,9 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import TemplateWrapper from "../components/layout"
+import SEO from "../components/SEO"
 import Button from "../components/button"
+import Hero from "../components/Hero"
+import Panel from "../components/Panel"
+
 
 const Logosvg = styled.img`
   transition: all 0.4s ease-in-out;
@@ -18,18 +21,20 @@ class IndexPage extends React.Component {
     const siteTitle = `Cosmic Division`
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <TemplateWrapper location={this.props.location} title={siteTitle}>
         <SEO
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
+        <Hero>
         <Logosvg
-          style={{ margin: 0 }}
+          style={{ margin: `0 auto` }}
           src="./GatsbyScene.svg"
-          alt="Gatsby Scene"
+          width="50%"
         />
+        <Panel>
         <h1>
-          Hey people{" "}
+          Hey people
           <span role="img" aria-label="wave emoji">
             👋
           </span>
@@ -43,7 +48,9 @@ class IndexPage extends React.Component {
         <Link to="/blog/" style={{ textDecoration: "none" }}>
           <Button marginTop="35px">Go to Blog</Button>
         </Link>
-      </Layout>
+        </Panel>
+        </Hero>
+      </TemplateWrapper>
     )
   }
 }
