@@ -7,17 +7,11 @@ const Container = styled.section`
   background-color: ${theme.colors.overlay.middle};
   padding: ${rhythm(1)};
   border-radius: ${theme.layoutConstants.radius};
-  margin: 2rem auto;
-
+  margin: 1rem auto;
   max-width: ${rhythm(24)};
-`;
-
+  height: 100%;
+`
 const Panel = ({ children }) => {
-  return (
-    <Container>
-        {children}
-    </Container>
-  )
+  return <Container>{children}</Container>
 }
-
 export default Panel
