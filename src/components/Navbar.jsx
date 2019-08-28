@@ -1,18 +1,19 @@
-import React from "react"
-import { Link } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import theme from "../../config/theme"
-import SvgLogo from "./Svglogo"
+import React from "react";
+import { Link } from "gatsby";
+import styled, { ThemeProvider } from "styled-components";
+import { rhythm } from "../../config/typography";
+import theme from "../../config/theme";
+import SvgLogo from "./Svglogo";
 
 const Header = styled.header`
   font-size: 20px;
   font-weight: 600;
-  background-color: ${props => props.theme.colors.grey.default};
+  background-color: ${props => props.theme.colors.primary};
   li a {
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.bg};
     margin: 10px 25px;
   }
-`
+`;
 
 const Nav = styled.nav`
   max-width: 1280px;
@@ -23,7 +24,7 @@ const Nav = styled.nav`
   @media screen and (min-width: 768px) {
     justify-content: space-between;
   }
-`
+`;
 const List = styled.ul`
   display: flex;
   list-style-type: none;
@@ -32,7 +33,7 @@ const List = styled.ul`
   li {
     margin: 20px 25px;
   }
-`
+`;
 
 const Navbar = () => {
   return (
@@ -40,13 +41,7 @@ const Navbar = () => {
       <Header>
         <Nav>
           <Link to="/" id="title" class="nav__item">
-            <SvgLogo
-              stroke={theme.colors.primary}
-              height={"50px"}
-              strokeWidth={"10px"}
-              fill={`none`}
-              style={{ margin: "1rem" }}
-            />
+            <SvgLogo fill={theme.colors.bg} />
           </Link>
           <List>
             <li>
@@ -59,7 +54,7 @@ const Navbar = () => {
         </Nav>
       </Header>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
