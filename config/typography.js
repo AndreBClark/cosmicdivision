@@ -38,7 +38,6 @@ function _defineProperty(obj, key, value) {
     return obj
 }
 
-
 const typography = new Typography({
     title: "Fira-console",
     baseFontSize: "21px",
@@ -57,7 +56,7 @@ const typography = new Typography({
     bodyFontFamily: ["Fira Mono", "georgia", "sans-serif"],
     bodyColor: `white`,
     headerWeight: 700,
-    headerColor: '#26ffba',
+    headerColor: "#26ffba",
     bodyWeight: 400,
     boldWeight: 700,
     overrideStyles: function overrideStyles(_ref, options) {
@@ -67,13 +66,13 @@ const typography = new Typography({
 
         var styles = _defineProperty({
                 a: {
-                    color: '#26ffba',
-                    textDecoration: "none"
+                    color: "#26ffba",
+                    textDecoration: "none",
                 },
                 "a:hover": {
                     textDecoration: "initial",
                     color: "#26ffba",
-                    opacity: '.9'
+                    opacity: ".9",
                 },
                 blockquote: _extends({}, scale(1 / 5), {
                     color: (0, _grayPercentage2.default)(30),
