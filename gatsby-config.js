@@ -81,7 +81,7 @@ module.exports = {
                 theme_color: `#26ffba`,
                 display: `minimal-ui`,
                 // edit below
-                icon: `content/assets/gatsby-icon.png`,
+                icon: `static/logo.svg`,
             },
         },
         {
