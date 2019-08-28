@@ -11,12 +11,7 @@ import theme from "../../config/theme"
 import Panel from "../components/Panel"
 
 const PostCard = styled.article`
-  padding: 0.001rem 2rem 1rem 2rem;
-  margin-top: 0 !important;
-  &:hover {
-    transition: 300ms all;
-    background: ${props => props.theme.colors.overlay.middle};
-    border-radius: ${props => props.theme.layoutConstants.radius};
+  padding: 0.001rem 2rem 0 2rem;
   }
 `
 class Blog extends React.Component {
@@ -34,8 +29,8 @@ class Blog extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <ThemeProvider theme={theme}>
+                <Link to={`${node.fields.slug}`}>
                 <Panel>
-
                 <PostCard key={node.fields.slug}>
                   <h3
                     style={{
@@ -57,6 +52,7 @@ class Blog extends React.Component {
                     />
                 </PostCard>
                     </Panel>
+                    </Link>
               </ThemeProvider>
             )
           })}
