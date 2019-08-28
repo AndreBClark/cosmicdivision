@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import theme from "../../config/theme"
-import { rhythm } from "../../config/typography"
+import React from 'react'
+import styled from 'styled-components'
+import theme from "../../config/theme";
+import { rhythm, scale } from "../../config/typography";
 
 const Container = styled.section`
   background-color: ${theme.colors.overlay.middle};
