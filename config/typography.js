@@ -72,8 +72,7 @@ const typography = new Typography({
                 "a:hover": {
                     textDecoration: "initial",
                     color: "#26ffba",
-                    filter: "brightness(2)",
-                    opacity: ""
+                    opacity: '.8'
                 },
                 blockquote: _extends({}, scale(1 / 5), {
                     color: (0, _grayPercentage2.default)(30),
