@@ -39,11 +39,11 @@ class Blog extends React.Component {
                     style={{
                       marginBottom: rhythm(1 / 4),
                     }}
-                  >
+                    >
                     <Link
                       style={{ boxShadow: `none` }}
                       to={`${node.fields.slug}`}
-                    >
+                      >
                       {title}
                     </Link>
                   </h3>
@@ -52,8 +52,9 @@ class Blog extends React.Component {
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
-                  />
+                    />
                 </PostCard>
+                    </Panel>
               </ThemeProvider>
             )
           })}
