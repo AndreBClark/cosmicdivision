@@ -21,23 +21,6 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
-        <Panel>
-        <h1>
-          Hey people
-          <span role="img" aria-label="wave emoji">
-            👋
-          </span>
-        </h1>
-        <p>Welcome to your new Gatsby website. You are on your home page.</p>
-        <p>
-          This starter comes out of the box with styled components and Gatsby's
-          default starter blog running on Netlify CMS.
-        </p>
-        <p>Now go build something great!</p>
-        <Link to="/blog/" style={{ textDecoration: "none" }}>
-          <Button marginTop="35px">Go to Blog</Button>
-        </Link>
-        </Panel>
           <SvgLogo fill={"none"} stroke={theme.colors.primary} />
           <Panel>
             <h1>
