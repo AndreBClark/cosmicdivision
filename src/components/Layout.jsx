@@ -1,7 +1,7 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import SEO from './SEO'
-import Panel from '../components/Panel'
+import React from "react"
+import Navbar from "../components/Navbar"
+import SEO from "./SEO"
+// import Panel from "../components/Panel"
 // import Footer from '../components/Footer'
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from "../../config/theme"
