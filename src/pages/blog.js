@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components"
 import Bio from "../components/bio"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
-import { rhythm } from "../utils/typography"
+import { rhythm } from "../../config/typography"
 import Button from "../components/button"
 
 import theme from "../../config/theme"

@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from "../../config/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
