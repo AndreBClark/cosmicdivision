@@ -2,20 +2,20 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
 import Bio from "../components/bio"
-import TemplateWrapper from "../components/layout"
-import SEO from "../components/seo"
+import TemplateWrapper from "../components/Layout"
+import SEO from "../components/SEO"
 import { rhythm } from "../utils/typography"
 import Button from "../components/button"
 
 import theme from "../../config/theme"
+import Panel from "../components/Panel"
 
 const PostCard = styled.article`
   padding: 0.001rem 2rem 1rem 2rem;
   margin-top: 0 !important;
   &:hover {
     transition: 300ms all;
-    transform-y: 20px;
-    background: ${props => props.theme.colors.overlay.low};
+    background: ${props => props.theme.colors.overlay.middle};
     border-radius: ${props => props.theme.layoutConstants.radius};
   }
 `
@@ -28,12 +28,14 @@ class Blog extends React.Component {
     return (
       <TemplateWrapper location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <div style={{ margin: "20px 0 40px" }}>
+          <Bio />
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <ThemeProvider theme={theme}>
+                <Panel>
+
                 <PostCard key={node.fields.slug}>
                   <h3
                     style={{
