@@ -4,7 +4,7 @@ import theme from "../../config/theme"
 import { rhythm, scale } from "../../config/typography"
 
 const Container = styled.section`
-  background-color: ${theme.colors.primary};
+  background-color: ${theme.colors.grey.dark};
   width: 100%;
   display: flex;
   min-height: 50vh;
