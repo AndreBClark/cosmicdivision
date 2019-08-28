@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import TemplateWrapper from "../components/layout"
+import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
 import Button from "../components/button"
 import Hero from "../components/Hero"
