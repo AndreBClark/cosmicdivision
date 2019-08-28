@@ -27,20 +27,20 @@ const Wrapper = styled.div`
   overflow: hidden;
 `
 
-const TemplateWrapper = ({ children }) => {
-    return (
-        <div>
-            <ThemeProvider theme={theme}>
-                <Wrapper>
-                    <GlobalStyle />
-                    <SEO />
-                    <Navbar />
-                    <main>{children}</main>
-                    { /* <Footer /> */}
-                </Wrapper>
-            </ThemeProvider>
-        </div>
-    )
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <GlobalStyle />
+          <SEO />
+          <Navbar />
+          <main>{children}</main>
+          {/* <Footer /> */}
+        </Wrapper>
+      </ThemeProvider>
+    </div>
+  )
 }
 
-export default TemplateWrapper
+export default Layout
