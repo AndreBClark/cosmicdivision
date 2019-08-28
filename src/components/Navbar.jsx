@@ -8,7 +8,7 @@ import SvgLogo from "./Svglogo"
 const Header = styled.header`
   font-size: 20px;
   font-weight: 600;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.grey.default};
   li a {
     color: ${props => props.theme.colors.bg};
     margin: 10px 25px;
