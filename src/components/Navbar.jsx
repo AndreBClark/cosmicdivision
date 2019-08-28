@@ -10,7 +10,7 @@ const Header = styled.header`
   font-weight: 600;
   background-color: ${props => props.theme.colors.grey.default};
   li a {
-    color: ${props => props.theme.colors.bg};
+    color: ${props => props.theme.colors.white};
     margin: 10px 25px;
   }
 `
