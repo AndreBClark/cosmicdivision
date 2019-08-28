@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import SEO from '../components/SEO'
+import SEO from './SEO'
 import Panel from '../components/Panel'
 // import Footer from '../components/Footer'
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
@@ -28,19 +28,19 @@ const Wrapper = styled.div`
 `
 
 const TemplateWrapper = ({ children }) => {
-  return (
-    <div>
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <GlobalStyle />
-          <SEO />
-          <Navbar />
-          <main>{children}</main>
-          {/* <Footer /> */}
-        </Wrapper>
-      </ThemeProvider>
-    </div>
-  )
+    return (
+        <div>
+            <ThemeProvider theme={theme}>
+                <Wrapper>
+                    <GlobalStyle />
+                    <SEO />
+                    <Navbar />
+                    <main>{children}</main>
+                    { /* <Footer /> */}
+                </Wrapper>
+            </ThemeProvider>
+        </div>
+    )
 }
 
 export default TemplateWrapper
