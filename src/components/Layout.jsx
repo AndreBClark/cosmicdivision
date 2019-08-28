@@ -9,7 +9,7 @@ import Typography, { rhythm, scale } from "../../config/typography"
 
 const GlobalStyle = createGlobalStyle`
 body {
-  font-family: ${props => props.theme.fontFamily.mono};
+  font-family: ${props => props.theme.fontFamily.sans};
   background-color: ${props => props.theme.colors.bg};
   margin: 0;
   text-rendering: optimizeLegibility;
