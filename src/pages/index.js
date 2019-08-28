@@ -1,12 +1,13 @@
-import React from "react"
 import { Link } from "gatsby"
+import React from "react"
 import styled from "styled-components"
-
-import TemplateWrapper from "../components/Layout"
-import SEO from "../components/SEO"
 import Button from "../components/button"
 import Hero from "../components/Hero"
+import TemplateWrapper from "../components/Layout"
 import Panel from "../components/Panel"
+import SEO from "../components/SEO"
+import theme from "../../config/theme"
+import SvgLogo from "../components/Svglogo"
 
 
 const Logosvg = styled.img`
