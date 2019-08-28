@@ -1,103 +1,94 @@
 module.exports = {
-  siteMetadata: {
-    // edit below
-    title: `Cosmic Division`,
-    author: `Andre Clark`,
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: ``,
-      github: `AndreBClark`,
+    siteMetadata: {
+        // edit below
+        title: `Cosmic Division`,
+        author: `Andre Clark`,
+        description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
+        siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+        social: {
+            twitter: ``,
+            github: `AndreBClark`,
+        },
     },
-  },
-  plugins: [
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/character`,
-        name: `character`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/spells`,
-        name: `spells`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [{
-            resolve: `gatsby-remark-images`,
+    plugins: [
+        `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-styled-components`,
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
+        `gatsby-plugin-feed`,
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-react-helmet`,
+        {
+            resolve: `gatsby-source-filesystem`,
             options: {
-              maxWidth: 590,
+                path: `${__dirname}/content/blog`,
+                name: `blog`,
             },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
+                path: `${__dirname}/content/assets`,
+                name: `assets`,
             },
-          },
-          {
-            resolve: `gatsby-remark-vscode`,
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
             options: {
-              colorTheme: 'Firefox Quantum Dark',
-            },
-          },
+                plugins: [{
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 590,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-responsive-iframe`,
+                        options: {
+                            wrapperStyle: `margin-bottom: 1.0725rem`,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-vscode`,
+                        options: {
+                            colorTheme: "Firefox Quantum Dark",
+                            injectStyles: true,
+                            extensions: [{
+                                identifier: "beastdestroyer.firefox-quantum-themes",
+                                version: "1.1.6",
+                            }, ],
+                        },
+                    },
 
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // edit below
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-  ],
+                    `gatsby-remark-copy-linked-files`,
+                    `gatsby-remark-smartypants`,
+                ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // edit below
+                // trackingId: `ADD YOUR TRACKING ID HERE`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `Gatsby Starter Blog`,
+                short_name: `GatsbyJS`,
+                start_url: `/`,
+                background_color: `#ffffff`,
+                theme_color: `#26ffba`,
+                display: `minimal-ui`,
+                // edit below
+                icon: `static/logo.svg`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `src/utils/typography`,
+            },
+        },
+    ],
 }
