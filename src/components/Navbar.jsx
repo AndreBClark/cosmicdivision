@@ -41,7 +41,13 @@ const Navbar = () => {
       <Header>
         <Nav>
           <Link to="/" id="title" class="nav__item">
-            <SvgLogo fill={theme.colors.bg} />
+            <SvgLogo
+              stroke={theme.colors.primary}
+              height={"50px"}
+              strokeWidth={"10px"}
+              fill={`none`}
+              style={{ margin: "1rem" }}
+            />
           </Link>
           <List>
             <li>
