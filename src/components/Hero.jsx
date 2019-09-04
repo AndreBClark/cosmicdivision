@@ -12,6 +12,7 @@ const Container = styled.section`
 const FlexLg = styled.div`
   @media screen and (min-width: 767px) {
     display: flex;
+    justify-content: space-between;
     align-content: center;
     align-items: center;
   }
