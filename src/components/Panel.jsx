@@ -8,7 +8,7 @@ const Container = styled.section`
   padding: ${theme.spacer};
   border-radius: ${theme.radius};
   margin: 1rem auto;
-  max-width: ${rhythm(24)};
+  max-width: ${theme.maxWidth};
   height: 100%;
 `
 const Panel = ({ children }) => {
