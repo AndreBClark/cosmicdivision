@@ -39,7 +39,7 @@ const Navbar = () => {
     <ThemeProvider theme={theme}>
       <Header>
         <Nav>
-          <Link to="/" id="title" class="nav__item">
+          <Link to="/" id="title">
             <SvgLogo
               stroke={theme.colors.primary}
               height={"2rem"}
@@ -50,10 +50,10 @@ const Navbar = () => {
           </Link>
           <List>
             <li>
-              <Link to="blog">Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="bio">Bio</Link>
+              <Link to="/bio">Bio</Link>
             </li>
           </List>
         </Nav>
