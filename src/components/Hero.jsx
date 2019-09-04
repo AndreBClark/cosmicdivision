@@ -6,14 +6,21 @@ const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
   width: 100%;
   min-height: 50vh;
-  padding: 1rem 0;
+  padding: 2rem;
+`
+const FlexLg = styled.div`
   @media screen and (min-width: 767px) {
     display: flex;
+    align-content: center;
+    align-items: center;
   }
 `
-
 const Hero = ({ children }) => {
-  return <Container>{children}</Container>
+  return (
+    <Container>
+      <FlexLg>{children}</FlexLg>
+    </Container>
+  )
 }
 
 export default Hero
