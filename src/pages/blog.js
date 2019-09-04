@@ -11,7 +11,7 @@ import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
 
 const PostCard = styled.article`
-  padding: 0.001rem 2rem 0 2rem;
+  padding: 3vmin;
   }
 `
 class Blog extends React.Component {
