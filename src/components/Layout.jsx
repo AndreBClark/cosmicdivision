@@ -10,6 +10,7 @@ body {
   background-color: ${props => props.theme.colors.grey.dark};
   box-sizing: border-box;
   margin: 0;
+  font-size: ${props => props.theme.baseFontSize}
 }
 * {
   box-sizing: inherit;
