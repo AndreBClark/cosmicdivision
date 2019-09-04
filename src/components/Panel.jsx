@@ -1,15 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import theme from "../../config/theme"
-import { rhythm } from "../../config/typography"
 
 const Container = styled.section`
   background-color: ${theme.colors.overlay.middle};
-  padding: ${theme.spacer};
-  border-radius: ${theme.radius};
+  padding: 4vmin;
   margin: 1rem auto;
-  max-width: ${theme.maxWidth};
   height: 100%;
+  @media screen and (min-width: 760px) {
+    border-radius: ${theme.radius};
+  }
 `
 const Panel = ({ children }) => {
   return <Container>{children}</Container>
