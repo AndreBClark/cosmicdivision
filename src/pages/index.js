@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import styled from "styled-components"
 import Button from "../components/button"
 import Hero from "../components/Hero"
 import TemplateWrapper from "../components/Layout"

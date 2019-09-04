@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
-import { rhythm } from "../../config/typography"
 import theme from "../../config/theme"
 import SvgLogo from "./Svglogo"
 
