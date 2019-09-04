@@ -5,8 +5,11 @@ import theme from "../../config/theme"
 const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
   width: 100%;
-  display: flex;
   min-height: 50vh;
+  padding: 1rem 0;
+  @media screen and (min-width: 767px) {
+    display: flex;
+  }
 `
 
 const Hero = ({ children }) => {
