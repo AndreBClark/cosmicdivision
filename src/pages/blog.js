@@ -11,11 +11,11 @@ import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
 
 const PostCard = styled.article`
-  padding: 3vmin;
   p {
     color: ${props => props.theme.colors.white};
   }
 `
+const Sidebar = styled.aside``
 class Blog extends React.Component {
   render() {
     const { data } = this.props
@@ -24,8 +24,9 @@ class Blog extends React.Component {
 
     return (
       <TemplateWrapper location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="All Posts" />
         <ContentContainer>
+          <h1>All Posts</h1>
           <div style={{ margin: "20px 0 40px" }}>
             <Bio />
             {posts.map(({ node }) => {
