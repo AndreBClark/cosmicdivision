@@ -15,7 +15,6 @@ const PostCard = styled.article`
     color: ${props => props.theme.colors.white};
   }
 `
-const Sidebar = styled.aside``
 class Blog extends React.Component {
   render() {
     const { data } = this.props
