@@ -15,7 +15,7 @@ const Header = styled.header`
 `
 
 const Nav = styled.nav`
-  max-width: 1280px;
+  max-width: ${theme.maxWidth};
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -45,7 +45,6 @@ const Navbar = () => {
               height={"2rem"}
               strokeWidth={"10px"}
               fill={`none`}
-              style={{ margin: "1rem" }}
             />
           </Link>
           <List>
