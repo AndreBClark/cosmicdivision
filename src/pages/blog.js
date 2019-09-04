@@ -30,29 +30,29 @@ class Blog extends React.Component {
             return (
               <ThemeProvider theme={theme}>
                 <Link to={`${node.fields.slug}`}>
-                <Panel>
-                <PostCard key={node.fields.slug}>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                    >
-                    <Link
-                      style={{ boxShadow: `none` }}
-                      to={`${node.fields.slug}`}
+                  <Panel>
+                    <PostCard key={node.fields.slug}>
+                      <h3
+                        style={{
+                          marginBottom: rhythm(1 / 4),
+                        }}
                       >
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                    />
-                </PostCard>
-                    </Panel>
-                    </Link>
+                        <Link
+                          style={{ boxShadow: `none` }}
+                          to={`${node.fields.slug}`}
+                        >
+                          {title}
+                        </Link>
+                      </h3>
+                      <small>{node.frontmatter.date}</small>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: node.frontmatter.description || node.excerpt,
+                        }}
+                      />
+                    </PostCard>
+                  </Panel>
+                </Link>
               </ThemeProvider>
             )
           })}
