@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const SVG = styled.svg`
-  margin: 0.5rem 1rem;
+  margin: 1rem 0;
 `
 
 const SvgLogo = props => {
