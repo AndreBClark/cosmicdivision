@@ -42,7 +42,7 @@ const Navbar = () => {
           <Link to="/" id="title" class="nav__item">
             <SvgLogo
               stroke={theme.colors.primary}
-              height={"50px"}
+              height={"2rem"}
               strokeWidth={"10px"}
               fill={`none`}
               style={{ margin: "1rem" }}
