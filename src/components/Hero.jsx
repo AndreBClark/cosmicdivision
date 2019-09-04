@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import theme from "../../config/theme"
+import ContentContainer from "./ContentContainer"
 
 const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
@@ -18,7 +19,9 @@ const FlexLg = styled.div`
 const Hero = ({ children }) => {
   return (
     <Container>
-      <FlexLg>{children}</FlexLg>
+      <ContentContainer>
+        <FlexLg>{children}</FlexLg>
+      </ContentContainer>
     </Container>
   )
 }
