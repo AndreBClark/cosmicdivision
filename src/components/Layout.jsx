@@ -7,7 +7,7 @@ import theme from "../../config/theme"
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${props => props.theme.fontFamily.sans};
-  background-color: ${props => props.theme.colors.bg};
+  background-color: ${props => props.theme.colors.grey.dark};
   box-sizing: border-box;
   margin: 0;
 }
