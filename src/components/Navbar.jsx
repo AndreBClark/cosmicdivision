@@ -1,81 +1,65 @@
-import React from 'react'
-import tw from 'twin.macro'
+import React from "react"
+import { Link } from "gatsby"
+import styled, { ThemeProvider } from "styled-components"
+import theme from "../../config/theme"
+import SvgLogo from "./Svglogo"
 
-import usePageList from 'hooks/usePageList'
-import useDesluggify from 'hooks/useDesluggify'
-
-import TransitionLink from 'components/Links'
-import { BtnSimple } from 'components/button'
-import Logo from 'images/icons/logo.svg'
-
-function Navbar() {
-  return (
-    <Header>
-      <NavButton
-        id="logo"
-        to="/"
-        as={TransitionLink}
-        tw="py-0"
-        aria-label="Cosmic division Website Logo Home Button">
-        <LogoBlock />
-      </NavButton>
-      <PageList />
-    </Header>
-  )
-}
-
-const Header = ({ children }) => {
-  return (
-    <HeaderStyle>
-      <Nav>{children}</Nav>
-    </HeaderStyle>
-  )
-}
-
-const LogoBlock = () => {
-  return (
-    <div tw="flex">
-      <Logo width="48" tw="inline" />
-      <span tw="hidden md:(px-6 py-4 uppercase inline)">Cosmic Division</span>
-    </div>
-  )
-}
-
-function PageList() {
-  const Pages = usePageList()
-  const deSlug = useDesluggify()
-
-  return (
-    <List>
-      {Pages.map(({ node }) => (
-        <li>
-          <NavButton to={node.path} as={TransitionLink}>
-            {deSlug(node.path)}
-          </NavButton>
-        </li>
-      ))}
-    </List>
-  )
-}
-
-const NavButton = tw(BtnSimple)`
-  bg-neutral-200 py-2
-  md:(mx-2 px-8)
+const Header = styled.header`
+  font-size: 20px;
+  font-weight: 600;
+  background-color: ${props => props.theme.colors.grey.default};
+  li a {
+    color: ${props => props.theme.colors.white};
+    margin: 10px 25px;
+  }
 `
 
-const HeaderStyle = tw.header`
-  font-heading font-black text-primary-200 tracking-widest bg-neutral-400 px-4 xl:px-0
+const Nav = styled.nav`
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+`
+const List = styled.ul`
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  li {
+    margin: 20px 25px;
+  }
 `
 
-const Nav = tw.nav`
-  leading-tight flex justify-around items-center
-  md:(mx-auto justify-between max-w-screen-lg)
-`
-
-const List = tw.ul`
-  text-xs flex justify-around items-center text-primary-100
-  md:(justify-between text-base)
-`
-
+const Navbar = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <Header>
+        <Nav>
+          <Link to="/" id="title" class="nav__item">
+            <SvgLogo
+              stroke={theme.colors.primary}
+              height={"50px"}
+              strokeWidth={"10px"}
+              fill={`none`}
+              style={{ margin: "1rem" }}
+            />
+          </Link>
+          <List>
+            <li>
+              <Link to="blog">Blog</Link>
+            </li>
+            <li>
+              <Link to="bio">Bio</Link>
+            </li>
+          </List>
+        </Nav>
+      </Header>
+    </ThemeProvider>
+  )
+}
 
 export default Navbar
