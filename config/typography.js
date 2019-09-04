@@ -39,7 +39,7 @@ function _defineProperty(obj, key, value) {
 
 const typography = new Typography({
         title: "Fira-console",
-        baseFontSize: "21px",
+        baseFontSize: "calc(18px + (64 - 18) * ((100vw - 300px) / (1920 - 300)))",
         baseLineHeight: 1.38,
         scaleRatio: 1.5,
         googleFonts: [{
@@ -51,12 +51,12 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
-        headerFontFamily: ["Fira Sans", "sans-serif"],
+        headerFontFamily: ["Fira Mono", "sans-serif"],
         bodyFontFamily: ["Fira Mono", "georgia", "sans-serif"],
         bodyColor: `white`,
-        headerWeight: 700,
+        headerWeight: 500,
         headerColor: "#26ffba",
-        bodyWeight: 400,
+        bodyWeight: 300,
         boldWeight: 700,
         overrideStyles: function overrideStyles(_ref, options) {
             // eslint-disable-next-line
@@ -72,7 +72,7 @@ const typography = new Typography({
                     "a:hover": {
                         textDecoration: "initial",
                         color: "#26ffba",
-                        opacity: '.8'
+                        opacity: ".8",
                     },
                     blockquote: _extends({}, scale(1 / 5), {
                         color: (0, _grayPercentage2.default)(30),
@@ -82,9 +82,12 @@ const typography = new Typography({
                         borderLeft: rhythm(1 / 4) + " solid " + (0, _grayPercentage2.default)(13),
                     }),
                     "h3,h4,h5,h6": {
-                        marginBottom: rhythm(1 / 2),
+                        // marginBottom: rhythm(1 / 2),
                     },
-                    table: _extends({}, scale(-1 / 5)),
+                    p: {
+                        marginBottom: 0,
+                    },
+                    e: _extends({}, scale(-1 / 5)),
                 },
                 _typographyBreakpointConstants.TABLET_MEDIA_QUERY, {
                     blockquote: {
