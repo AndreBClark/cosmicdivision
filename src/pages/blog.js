@@ -2,21 +2,16 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
 import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import TemplateWrapper from "../components/Layout"
+import SEO from "../components/SEO"
+import { rhythm } from "../../config/typography"
 import Button from "../components/button"
 
 import theme from "../../config/theme"
+import Panel from "../components/Panel"
 
 const PostCard = styled.article`
-  padding: 0.001rem 2rem 1rem 2rem;
-  margin-top: 0 !important;
-  &:hover {
-    transition: 300ms all;
-    transform-y: 20px;
-    background: ${props => props.theme.colors.overlay.low};
-    border-radius: ${props => props.theme.layoutConstants.radius};
+  padding: 0.001rem 2rem 0 2rem;
   }
 `
 class Blog extends React.Component {
@@ -26,24 +21,26 @@ class Blog extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <TemplateWrapper location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <div style={{ margin: "20px 0 40px" }}>
+          <Bio />
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <ThemeProvider theme={theme}>
+                <Link to={`${node.fields.slug}`}>
+                <Panel>
                 <PostCard key={node.fields.slug}>
                   <h3
                     style={{
                       marginBottom: rhythm(1 / 4),
                     }}
-                  >
+                    >
                     <Link
                       style={{ boxShadow: `none` }}
                       to={`${node.fields.slug}`}
-                    >
+                      >
                       {title}
                     </Link>
                   </h3>
@@ -52,8 +49,10 @@ class Blog extends React.Component {
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.description || node.excerpt,
                     }}
-                  />
+                    />
                 </PostCard>
+                    </Panel>
+                    </Link>
               </ThemeProvider>
             )
           })}
@@ -61,7 +60,7 @@ class Blog extends React.Component {
         <Link to="/" style={{ textDecoration: "none" }}>
           <Button marginTop="85px">Go Home</Button>
         </Link>
-      </Layout>
+      </TemplateWrapper>
     )
   }
 }

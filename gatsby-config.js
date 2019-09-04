@@ -77,17 +77,17 @@ module.exports = {
                 name: `Gatsby Starter Blog`,
                 short_name: `GatsbyJS`,
                 start_url: `/`,
-                background_color: `#ffffff`,
+                background_color: `#121212`,
                 theme_color: `#26ffba`,
                 display: `minimal-ui`,
                 // edit below
-                icon: `content/assets/gatsby-icon.png`,
+                icon: `static/logo.svg`,
             },
         },
         {
             resolve: `gatsby-plugin-typography`,
             options: {
-                pathToConfigModule: `src/utils/typography`,
+                pathToConfigModule: `config/typography`,
             },
         },
     ],

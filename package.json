@@ -1,5 +1,5 @@
 {
-    "name": "gatsbycosmic-division",
+    "name": "CosmicDivision-GatsbyBlog",
     "private": true,
     "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
     "version": "0.1.0",
@@ -19,7 +19,7 @@
         "gatsby-plugin-react-helmet": "^3.0.12",
         "gatsby-plugin-sharp": "^2.0.35",
         "gatsby-plugin-styled-components": "^3.0.7",
-        "gatsby-plugin-typography": "^2.2.13",
+        "gatsby-plugin-typography": "^2.3.5",
         "gatsby-remark-copy-linked-files": "^2.0.11",
         "gatsby-remark-images": "^2.0.6",
         "gatsby-remark-responsive-iframe": "^2.1.1",
