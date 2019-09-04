@@ -9,6 +9,7 @@ import Button from "../components/button"
 
 import theme from "../../config/theme"
 import Panel from "../components/Panel"
+import ContentContainer from "../components/ContentContainer"
 
 const PostCard = styled.article`
   padding: 0.001rem 2rem 0 2rem;
@@ -23,43 +24,35 @@ class Blog extends React.Component {
     return (
       <TemplateWrapper location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
-        <div style={{ margin: "20px 0 40px" }}>
-          <Bio />
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <ThemeProvider theme={theme}>
-                <Link to={`${node.fields.slug}`}>
-                  <Panel>
-                    <PostCard key={node.fields.slug}>
-                      <h3
-                        style={{
-                          marginBottom: rhythm(1 / 4),
-                        }}
-                      >
-                        <Link
-                          style={{ boxShadow: `none` }}
-                          to={`${node.fields.slug}`}
-                        >
-                          {title}
-                        </Link>
-                      </h3>
-                      <small>{node.frontmatter.date}</small>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: node.frontmatter.description || node.excerpt,
-                        }}
-                      />
-                    </PostCard>
-                  </Panel>
-                </Link>
-              </ThemeProvider>
-            )
-          })}
-        </div>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button marginTop="85px">Go Home</Button>
-        </Link>
+        <ContentContainer>
+          <div style={{ margin: "20px 0 40px" }}>
+            <Bio />
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <ThemeProvider theme={theme}>
+                  <Link to={`${node.fields.slug}`}>
+                    <Panel>
+                      <PostCard key={node.fields.slug}>
+                        <h3>{title}</h3>
+                        <small>{node.frontmatter.date}</small>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              node.frontmatter.description || node.excerpt,
+                          }}
+                        />
+                      </PostCard>
+                    </Panel>
+                  </Link>
+                </ThemeProvider>
+              )
+            })}
+          </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Button marginTop="85px">Go Home</Button>
+          </Link>
+        </ContentContainer>
       </TemplateWrapper>
     )
   }

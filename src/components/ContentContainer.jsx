@@ -6,19 +6,9 @@ const Container = styled.main`
   margin: 0 auto;
   height: 100%;
 `
-const FlexLg = styled.div`
-  @media screen and (min-width: 767px) {
-    display: flex;
-    align-content: center;
-    align-items: center;
-  }
-`
+
 const ContentContainer = ({ children }) => {
-  return (
-    <Container>
-      <FlexLg>{children}</FlexLg>
-    </Container>
-  )
+  return <Container>{children}</Container>
 }
 
 export default ContentContainer
