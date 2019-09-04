@@ -19,7 +19,8 @@ const Nav = styled.nav`
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 1rem;
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     padding: 0;
