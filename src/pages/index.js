@@ -10,6 +10,8 @@ import SvgLogo from "../components/Svglogo"
 
 const HeadingOne = styled.h1`
   font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 0;
 `
 
 class IndexPage extends React.Component {
