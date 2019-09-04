@@ -1,4 +1,5 @@
 import Typography from "typography"
+import theme from "./theme"
 var _extends =
     Object.assign ||
     function(target) {
@@ -39,7 +40,7 @@ function _defineProperty(obj, key, value) {
 
 const typography = new Typography({
         title: "Fira-console",
-        baseFontSize: "calc(18px + (64 - 18) * ((100vw - 300px) / (1920 - 300)))",
+        baseFontSize: theme.baseFontSize,
         baseLineHeight: 1.38,
         scaleRatio: 1.5,
         googleFonts: [{
@@ -66,12 +67,12 @@ const typography = new Typography({
 
             var styles = _defineProperty({
                     a: {
-                        color: "#26ffba",
+                        color: theme.colors.primary,
                         textDecoration: "none",
                     },
                     "a:hover": {
                         textDecoration: "initial",
-                        color: "#26ffba",
+                        color: theme.colors.primary,
                         opacity: ".8",
                     },
                     blockquote: _extends({}, scale(1 / 5), {
@@ -81,11 +82,14 @@ const typography = new Typography({
                         marginRight: 0,
                         borderLeft: rhythm(1 / 4) + " solid " + (0, _grayPercentage2.default)(13),
                     }),
+                    h1: {
+                        marginTop: `1rem`,
+                    },
                     "h3,h4,h5,h6": {
-                        // marginBottom: rhythm(1 / 2),
+                        // marginTop: rhythm(1 / 2),
                     },
                     p: {
-                        marginBottom: 0,
+                        marginBottom: theme.spacer,
                     },
                     e: _extends({}, scale(-1 / 5)),
                 },
