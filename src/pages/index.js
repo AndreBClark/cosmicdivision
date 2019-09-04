@@ -3,10 +3,15 @@ import React from "react"
 import Button from "../components/button"
 import Hero from "../components/Hero"
 import TemplateWrapper from "../components/Layout"
-import Panel from "../components/Panel"
 import SEO from "../components/SEO"
+import styled from "styled-components"
 import theme from "../../config/theme"
 import SvgLogo from "../components/Svglogo"
+import ContentContainer from "../components/ContentContainer"
+
+const HeadingOne = styled.h1`
+  font-size: 5rem;
+`
 
 class IndexPage extends React.Component {
   render() {
@@ -19,26 +24,21 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
-          <SvgLogo fill={"none"} stroke={theme.colors.primary} />
-          <Panel>
-            <h1>
-              Hey people
-              <span role="img" aria-label="wave emoji">
-                👋
-              </span>
-            </h1>
-            <p>
-              Welcome to your new Gatsby website. You are on your home page.
-            </p>
-            <p>
-              This starter comes out of the box with styled components and
-              Gatsby's default starter blog running on Netlify CMS.
-            </p>
-            <p>Now go build something great!</p>
-            <Link to="/blog/" style={{ textDecoration: "none" }}>
-              <Button marginTop="35px">Go to Blog</Button>
-            </Link>
-          </Panel>
+          <ContentContainer>
+            <div>
+              <HeadingOne>Andre Clark</HeadingOne>
+              <h2>Front End Developer</h2>
+              <Link to="/blog/" style={{ textDecoration: "none" }}>
+                <Button marginTop="35px">Go to Blog</Button>
+              </Link>
+            </div>
+            <SvgLogo
+              fill={"none"}
+              stroke={theme.colors.primary}
+              height={`45vh`}
+              strokeWidth={`4px`}
+            />
+          </ContentContainer>
         </Hero>
       </TemplateWrapper>
     )
