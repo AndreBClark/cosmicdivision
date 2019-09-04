@@ -8,7 +8,6 @@ import SEO from "../components/SEO"
 import theme from "../../config/theme"
 import SvgLogo from "../components/Svglogo"
 
-
 class IndexPage extends React.Component {
   render() {
     const siteTitle = `Cosmic Division`

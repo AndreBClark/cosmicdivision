@@ -8,7 +8,7 @@ const Container = styled.section`
   min-height: 50vh;
   padding: 1rem 0;
   @media screen and (min-width: 767px) {
-  display: flex;
+    display: flex;
   }
 `
 

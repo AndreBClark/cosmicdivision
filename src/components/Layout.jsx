@@ -4,7 +4,6 @@ import SEO from "./SEO"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from "../../config/theme"
 
-
 const GlobalStyle = createGlobalStyle`
 body {
   font-family: ${props => props.theme.fontFamily.sans};
