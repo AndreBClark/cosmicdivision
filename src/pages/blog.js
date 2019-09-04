@@ -12,6 +12,8 @@ import ContentContainer from "../components/ContentContainer"
 
 const PostCard = styled.article`
   padding: 3vmin;
+  p {
+    color: ${props => props.theme.colors.white};
   }
 `
 class Blog extends React.Component {
