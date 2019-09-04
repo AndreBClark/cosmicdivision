@@ -1,10 +1,14 @@
 import React from "react"
 import Layout from "../components/Layout"
 import Bio from "../components/bio"
+import ContentContainer from "../components/ContentContainer"
 const bio = () => {
   return (
     <Layout>
-      <Bio />
+      <ContentContainer>
+        <h1>About Andre</h1>
+        <Bio />
+      </ContentContainer>
     </Layout>
   )
 }
