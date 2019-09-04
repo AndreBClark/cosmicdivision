@@ -24,21 +24,19 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
-          <ContentContainer>
-            <div>
-              <HeadingOne>Andre Clark</HeadingOne>
-              <h2>Front End Developer</h2>
-              <Link to="/blog/" style={{ textDecoration: "none" }}>
-                <Button marginTop="35px">Go to Blog</Button>
-              </Link>
-            </div>
-            <SvgLogo
-              fill={"none"}
-              stroke={theme.colors.primary}
-              height={`45vh`}
-              strokeWidth={`4px`}
-            />
-          </ContentContainer>
+          <div>
+            <HeadingOne>Andre Clark</HeadingOne>
+            <h2>Front End Developer</h2>
+            <Link to="/blog/" style={{ textDecoration: "none" }}>
+              <Button marginTop="35px">Go to Blog</Button>
+            </Link>
+          </div>
+          <SvgLogo
+            fill={"none"}
+            stroke={theme.colors.primary}
+            height={`45vh`}
+            strokeWidth={`4px`}
+          />
         </Hero>
       </TemplateWrapper>
     )
