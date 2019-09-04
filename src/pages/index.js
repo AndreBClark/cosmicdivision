@@ -7,7 +7,6 @@ import SEO from "../components/SEO"
 import styled from "styled-components"
 import theme from "../../config/theme"
 import SvgLogo from "../components/Svglogo"
-import ContentContainer from "../components/ContentContainer"
 
 const HeadingOne = styled.h1`
   font-size: 5rem;
@@ -34,8 +33,8 @@ class IndexPage extends React.Component {
           <SvgLogo
             fill={"none"}
             stroke={theme.colors.primary}
-            height={`45vh`}
             strokeWidth={`4px`}
+            height={"40vh"}
           />
         </Hero>
       </TemplateWrapper>

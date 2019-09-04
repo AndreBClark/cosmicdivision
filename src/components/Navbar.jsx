@@ -22,6 +22,7 @@ const Nav = styled.nav`
   justify-content: center;
   @media screen and (min-width: 768px) {
     justify-content: space-between;
+    padding: 0;
   }
 `
 const List = styled.ul`
@@ -41,10 +42,10 @@ const Navbar = () => {
         <Nav>
           <Link to="/" id="title">
             <SvgLogo
-              stroke={theme.colors.primary}
+              stroke={`none`}
               height={"2rem"}
               strokeWidth={"10px"}
-              fill={`none`}
+              fill={theme.colors.primary}
             />
           </Link>
           <List>
