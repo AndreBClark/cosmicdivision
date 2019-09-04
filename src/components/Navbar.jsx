@@ -5,7 +5,7 @@ import theme from "../../config/theme"
 import SvgLogo from "./Svglogo"
 
 const Header = styled.header`
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 600;
   background-color: ${props => props.theme.colors.grey.default};
   li a {
