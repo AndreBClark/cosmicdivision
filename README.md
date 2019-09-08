@@ -1,14 +1,6 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's personal blog starter
+  Cosmic Division Development Blog
 </h1>
-
-<img alt="screesnhot" src="./screenshot.png">
 
 This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
 
@@ -38,7 +30,7 @@ This starter is a fork of Gatsby Starter Blog, the most popular starter by far �
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-blog-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `cosmicdiviison` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🎓 Learning Gatsby
 
