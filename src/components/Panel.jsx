@@ -7,6 +7,7 @@ const Container = styled.section`
   padding: 4vmin;
   margin: 1rem auto;
   height: 100%;
+  border-left: solid ${theme.stroke} ${props => props.theme.colors.primary};
   @media screen and (min-width: 760px) {
     border-radius: ${theme.radius};
   }
