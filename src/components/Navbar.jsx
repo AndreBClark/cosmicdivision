@@ -22,9 +22,21 @@ const Nav = styled.nav`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 1rem;
+  a {
+    display: flex;
+    align-items: center;
+    span {
+      display: none;
+      padding: 0 1.5rem;
+      font-size: 2rem;
+    }
+  }
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     padding: 0;
+    a span {
+      display: inline;
+    }
   }
 `
 const List = styled.ul`
