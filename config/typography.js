@@ -74,6 +74,7 @@ const typography = new Typography({
                         textDecoration: "initial",
                         color: theme.colors.primary,
                         opacity: ".8",
+                        cursor: "pointer",
                     },
                     blockquote: _extends({}, scale(1 / 5), {
                         color: (0, _grayPercentage2.default)(30),
