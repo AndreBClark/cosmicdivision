@@ -42,7 +42,7 @@ const Navbar = () => {
     <ThemeProvider theme={theme}>
       <Header>
         <Nav>
-          <Link to="/" id="title">
+          <Link to="/" id="logo" aria-label="Cosmic division Website Logo Home Button">
             <SvgLogo
               stroke={`none`}
               height={"2rem"}
