@@ -7,7 +7,10 @@ const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
   width: 100%;
   min-height: 50vh;
-  padding: 2rem;
+  padding: .25rem;
+  @media screen and (min-width: 769px){
+  padding: 4rem;
+  }
 `
 const FlexLg = styled.div`
   @media screen and (min-width: 767px) {
