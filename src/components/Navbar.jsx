@@ -49,6 +49,7 @@ const Navbar = () => {
               strokeWidth={"10px"}
               fill={theme.colors.primary}
             />
+            <span>Cosmic Division</span>
           </Link>
           <List>
             <li>
