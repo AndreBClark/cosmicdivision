@@ -32,12 +32,12 @@ class IndexPage extends React.Component {
               <Button marginTop="35px">Go to Blog</Button>
             </Link>
           </div>
-          <SvgLogo
+          {/* <SvgLogo
             fill={"none"}
             stroke={theme.colors.primary}
             strokeWidth={`4px`}
             height={"40vh"}
-          />
+          /> */}
         </Hero>
       </TemplateWrapper>
     )
