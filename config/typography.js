@@ -21,7 +21,9 @@ var _grayPercentage2 = _interopRequireDefault(_grayPercentage)
 var _typographyBreakpointConstants = require("typography-breakpoint-constants")
 
 function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj }
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    }
 }
 
 function _defineProperty(obj, key, value) {
