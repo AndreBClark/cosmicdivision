@@ -54,7 +54,7 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
-        headerFontFamily: ["Fira Mono", "sans-serif"],
+        headerFontFamily: ["Orbitron", "sans-serif"],
         bodyFontFamily: ["Fira Mono", "georgia", "sans-serif"],
         bodyColor: `white`,
         headerWeight: 500,
