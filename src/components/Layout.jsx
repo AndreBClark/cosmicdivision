@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import SEO from "./SEO"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import theme from "../../config/theme"
+import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -22,6 +23,9 @@ const Wrapper = styled.div`
   max-width: 100vw;
   margin: 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 const Layout = ({ children }) => {
@@ -33,6 +37,7 @@ const Layout = ({ children }) => {
           <SEO />
           <Navbar />
           <main>{children}</main>
+          <Footer />
         </Wrapper>
       </ThemeProvider>
     </div>
