@@ -5,8 +5,8 @@ import Hero from "../components/Hero"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
 import styled from "styled-components"
-import theme from "../../config/theme"
-import SvgLogo from "../components/Svglogo"
+// import theme from "../../config/theme"
+// import SvgLogo from "../components/Svglogo"
 
 const HeadingOne = styled.h1`
   font-size: 5rem;
@@ -26,8 +26,8 @@ class IndexPage extends React.Component {
         />
         <Hero>
           <div>
-            <HeadingOne>Andre Clark</HeadingOne>
-            <h2>Front End Developer</h2>
+            <HeadingOne>Cosmic Division</HeadingOne>
+            <h2>Web Development Blog</h2>
             <Link to="/blog/" style={{ textDecoration: "none" }}>
               <Button marginTop="35px">Go to Blog</Button>
             </Link>
