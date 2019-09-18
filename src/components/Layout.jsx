@@ -33,7 +33,6 @@ const Wrapper = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `
 
 const Layout = ({ children }) => {
