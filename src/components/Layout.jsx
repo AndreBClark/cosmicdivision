@@ -6,6 +6,9 @@ import theme from "../../config/theme"
 import Footer from "./Footer"
 
 const GlobalStyle = createGlobalStyle`
+html {
+  height: 100%;
+}
 body {
   font-family: ${props => props.theme.fontFamily.sans};
   background-color: ${props => props.theme.colors.grey.dark};
