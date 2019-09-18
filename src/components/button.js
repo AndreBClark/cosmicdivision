@@ -11,6 +11,7 @@ const Button = props => (
 const ButtonWrapper = styled.button`
   display: block;
   border: none;
+  margin: 0 auto;
   text-align: center;
   box-sizing: border-box;
   text-decoration: none;
