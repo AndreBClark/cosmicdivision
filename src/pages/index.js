@@ -5,7 +5,6 @@ import Hero from "../components/Hero"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
 import styled from "styled-components"
-// import theme from "../../config/theme"
 // import SvgLogo from "../components/Svglogo"
 
 const HeroInner = styled.div`
