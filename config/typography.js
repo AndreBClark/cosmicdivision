@@ -92,7 +92,7 @@ const typography = new Typography({
                         // marginTop: rhythm(1 / 2),
                     },
                     p: {
-                        marginBottom: theme.spacer,
+                        marginBottom: '1rem',
                     },
                     e: _extends({}, scale(-1 / 5)),
                 },
