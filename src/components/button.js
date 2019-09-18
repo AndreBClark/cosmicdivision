@@ -27,6 +27,7 @@ const ButtonWrapper = styled.button`
   font-size: ${props => props.theme.fontSize};
   font-weight: ${props => props.theme.fontWeight};
   border-radius: ${props => props.theme.radius};
+  font-family: ${props => props.theme.fontFamily.heading};
 
   &:hover {
     text-decoration: none !important;
