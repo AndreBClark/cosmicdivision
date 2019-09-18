@@ -29,6 +29,7 @@ const Nav = styled.nav`
       display: none;
       padding: 0 1.5rem;
       font-size: 2rem;
+      margin-bottom: 0;
     }
   }
   @media screen and (min-width: 768px) {
