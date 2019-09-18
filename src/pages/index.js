@@ -8,6 +8,10 @@ import styled from "styled-components"
 // import theme from "../../config/theme"
 // import SvgLogo from "../components/Svglogo"
 
+const HeroInner = styled.div`
+  text-align: center;
+  margin: 0 auto;
+`
 const HeadingOne = styled.h1`
   font-size: 5rem;
   line-height: 1;
@@ -25,13 +29,12 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
-          <div>
+          <HeroInner>
             <HeadingOne>Cosmic Division</HeadingOne>
             <h2>Web Development Blog</h2>
             <Link to="/blog/" style={{ textDecoration: "none" }}>
               <Button marginTop="35px">Go to Blog</Button>
             </Link>
-          </div>
           {/* <SvgLogo
             fill={"none"}
             stroke={theme.colors.primary}

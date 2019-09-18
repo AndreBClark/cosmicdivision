@@ -19,8 +19,7 @@ const ButtonWrapper = styled.button`
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
-
-  background: none;
+background: ${props => props.theme.colors.bg};
   text-decoration: none;
   border-color: ${props => props.theme.primary};
   border: 3px solid;
