@@ -19,6 +19,11 @@ body {
 * {
   box-sizing: inherit;
 }
+
+*::selection {
+  background-color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.bg};
+}
 `
 
 const Wrapper = styled.div`
