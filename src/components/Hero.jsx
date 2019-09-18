@@ -9,6 +9,7 @@ const Container = styled.section`
   width: 100%;
   min-height: 50vh;
   padding: 0.25rem;
+  text-align: center;
   background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25), rgba(0,0,0,0.25), rgba(0,0,0,1)),
   url(${Background});
   background-size: cover;
