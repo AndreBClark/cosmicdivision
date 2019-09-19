@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import theme from "../../config/theme"
 import ContentContainer from "./ContentContainer"
-import Background from "../../content/assets/orbital-bw.jpg"
+import Background from "../images/orbital-bw.jpg"
 
 const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
