@@ -13,8 +13,8 @@ const HeroInner = styled.div`
 `
 const HeadingOne = styled.h1`
   font-size: 5rem;
-  line-height: 1;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
+`
 const Subtitle = styled.p`
   font-size: 1.5rem;
   font-weight: semi-bold;
