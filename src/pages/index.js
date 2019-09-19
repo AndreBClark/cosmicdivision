@@ -36,10 +36,8 @@ class IndexPage extends React.Component {
         />
         <Hero>
           <HeroInner>
-            <HeadingOne>Cosmic Division</HeadingOne>
-            <h3>JAMSTACK Web Dev Blog</h3>
-            <h5>Documenting my jourey Learning JAMSTACK as a recent College Graduate</h5>
-
+            <HeadingOne>Cosmic Division Blog</HeadingOne>
+            <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <Link to="/blog/" style={{ textDecoration: "none" }}>
               <Button marginTop="35px">Begin Reading</Button>
             </Link>
