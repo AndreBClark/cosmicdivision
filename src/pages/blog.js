@@ -27,7 +27,6 @@ class Blog extends React.Component {
         <ContentContainer>
           <h1>All Posts</h1>
           <div style={{ margin: "20px 0 40px" }}>
-            <Bio />
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
