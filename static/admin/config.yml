@@ -3,8 +3,8 @@ backend:
   branch: master
   repo: AndreBClark/gatsby-personal-starter-blog
 
-media_folder: static/assets
-public_folder: assets
+media_folder: src/images
+public_folder: images
 
 collections:
   - name: blog
@@ -13,6 +13,7 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
+      - { name: featuredimage, "Featured Image" widget: image, default: "/src/images/orbital-bw.jpg"}
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
