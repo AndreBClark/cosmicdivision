@@ -13,11 +13,11 @@ module.exports = {
     plugins: [
         `gatsby-plugin-netlify-cms`,
         `gatsby-plugin-styled-components`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-background-image`,
+
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -28,10 +28,12 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/assets`,
-                name: `assets`,
+                name: `images`,
+                path: `${__dirname}/src/images`,
             },
         },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
