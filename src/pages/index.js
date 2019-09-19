@@ -34,7 +34,7 @@ class IndexPage extends React.Component {
             <h5>Documenting my jourey Learning JAMSTACK as a recent College Graduate</h5>
 
             <Link to="/blog/" style={{ textDecoration: "none" }}>
-              <Button marginTop="35px">Start Reading</Button>
+              <Button marginTop="35px">Begin Reading</Button>
             </Link>
           </HeroInner>
           {/* <SvgLogo
