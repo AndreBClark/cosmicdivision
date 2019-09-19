@@ -50,9 +50,6 @@ class Blog extends React.Component {
               )
             })}
           </div>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Button marginTop="85px">Go Home</Button>
-          </Link>
         </ContentContainer>
       </TemplateWrapper>
     )
