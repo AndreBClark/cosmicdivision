@@ -1,9 +1,9 @@
 {
-    "name": "CosmicDivision-GatsbyBlog",
+    "name": "cosmicdivision-gatsbyblog",
     "private": true,
     "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
     "version": "0.1.0",
-    "author": "Andre Clark <abclark@cosmicdivision,design>",
+    "author": "Andre Clark <andrek@cosmicdivision,dev>",
     "bugs": {
         "url": "https://github.com/gatsbyjs/gatsby/issues"
     },
