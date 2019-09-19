@@ -15,6 +15,13 @@ const HeadingOne = styled.h1`
   font-size: 5rem;
   line-height: 1;
   margin-bottom: 0;
+const Subtitle = styled.p`
+  font-size: 1.5rem;
+  font-weight: semi-bold;
+  text-shadow: black 3px 3px 3px;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+  font-family: ${props => props.theme.fontFamily.mono};
 `
 
 class IndexPage extends React.Component {
