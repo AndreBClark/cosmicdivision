@@ -25,16 +25,17 @@ const Nav = styled.nav`
   a {
     display: flex;
     align-items: center;
-    span {
+    h3 {
       display: none;
       padding: 0 1.5rem;
       font-size: 2rem;
+      margin-bottom: 0;
     }
   }
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     padding: 0;
-    a span {
+    a h3 {
       display: inline;
     }
   }
@@ -54,14 +55,18 @@ const Navbar = () => {
     <ThemeProvider theme={theme}>
       <Header>
         <Nav>
-          <Link to="/" id="logo" aria-label="Cosmic division Website Logo Home Button">
+          <Link
+            to="/"
+            id="logo"
+            aria-label="Cosmic division Website Logo Home Button"
+          >
             <SvgLogo
               stroke={`none`}
               height={"2rem"}
               strokeWidth={"10px"}
               fill={theme.colors.primary}
             />
-            <span>Cosmic Division</span>
+            <h3>Cosmic Division</h3>
           </Link>
           <List>
             <li>

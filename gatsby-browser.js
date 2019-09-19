@@ -1,3 +1,3 @@
-// custom typefaces
-import "typeface-fira-mono"
-import "typeface-fira-sans"
+import "typeface-orbitron";
+import "typeface-fira-mono";
+import "typeface-fira-sans";

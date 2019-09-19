@@ -21,7 +21,9 @@ var _grayPercentage2 = _interopRequireDefault(_grayPercentage)
 var _typographyBreakpointConstants = require("typography-breakpoint-constants")
 
 function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : { default: obj }
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    }
 }
 
 function _defineProperty(obj, key, value) {
@@ -52,7 +54,7 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
-        headerFontFamily: ["Fira Mono", "sans-serif"],
+        headerFontFamily: ["Orbitron", "sans-serif"],
         bodyFontFamily: ["Fira Mono", "georgia", "sans-serif"],
         bodyColor: `white`,
         headerWeight: 500,
@@ -74,6 +76,7 @@ const typography = new Typography({
                         textDecoration: "initial",
                         color: theme.colors.primary,
                         opacity: ".8",
+                        cursor: "pointer",
                     },
                     blockquote: _extends({}, scale(1 / 5), {
                         color: (0, _grayPercentage2.default)(30),
@@ -89,7 +92,7 @@ const typography = new Typography({
                         // marginTop: rhythm(1 / 2),
                     },
                     p: {
-                        marginBottom: theme.spacer,
+                        marginBottom: '1rem',
                     },
                     e: _extends({}, scale(-1 / 5)),
                 },

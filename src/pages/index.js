@@ -5,13 +5,23 @@ import Hero from "../components/Hero"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
 import styled from "styled-components"
-import theme from "../../config/theme"
-import SvgLogo from "../components/Svglogo"
+// import SvgLogo from "../components/Svglogo"
 
+const HeroInner = styled.div`
+  text-align: center;
+  margin: 0 auto;
+`
 const HeadingOne = styled.h1`
   font-size: 5rem;
-  line-height: 1;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
+`
+const Subtitle = styled.p`
+  font-size: 1.5rem;
+  font-weight: semi-bold;
+  text-shadow: black 3px 3px 3px;
+  margin-bottom: 3rem;
+  text-transform: capitalize;
+  font-family: ${props => props.theme.fontFamily.mono};
 `
 
 class IndexPage extends React.Component {
@@ -25,19 +35,19 @@ class IndexPage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
-          <div>
-            <HeadingOne>Andre Clark</HeadingOne>
-            <h2>Front End Developer</h2>
+          <HeroInner>
+            <HeadingOne>Cosmic Division Blog</HeadingOne>
+            <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <Link to="/blog/" style={{ textDecoration: "none" }}>
-              <Button marginTop="35px">Go to Blog</Button>
+              <Button marginTop="35px">Begin Reading</Button>
             </Link>
-          </div>
-          <SvgLogo
+          </HeroInner>
+          {/* <SvgLogo
             fill={"none"}
             stroke={theme.colors.primary}
             strokeWidth={`4px`}
             height={"40vh"}
-          />
+          /> */}
         </Hero>
       </TemplateWrapper>
     )

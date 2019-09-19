@@ -30,6 +30,7 @@ const fontFamily = {
     mono: `'Fira Mono'`,
     serif: `'Bitter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', serif`,
     sans: `'Fira Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+    heading: `'Orbitron'`
 }
 
 const breakpoints = {
@@ -43,9 +44,9 @@ const theme = {
     fontSize,
     breakpoints,
     fontFamily,
-    radius: "6px",
-    spacer: "1rem",
-    maxWidth: "1280px",
+    radius: `6px`,
+    spacer: `1rem`,
+    maxWidth: `1280px`,
     baseFontSize: "calc(18px + (28 - 16) * ((100vw - 300px) / (1920 - 300)))",
 }
 
