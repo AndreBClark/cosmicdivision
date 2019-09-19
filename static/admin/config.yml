@@ -13,7 +13,12 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
-      - { name: featuredimage, "Featured Image" widget: image, default: "/src/images/orbital-bw.jpg"}
+      - {
+          name: featuredimage,
+          "Featured Image",
+          widget: image,
+          default: "/src/images/orbital-bw.jpg",
+        }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
