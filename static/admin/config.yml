@@ -15,7 +15,7 @@ collections:
       - { name: path, label: Path }
       - {
           name: featuredimage,
-          "Featured Image",
+          label: "Featured Image",
           widget: image,
           default: "src/images/orbital-bw.jpg",
         }
