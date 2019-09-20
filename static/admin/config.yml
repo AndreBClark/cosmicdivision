@@ -17,7 +17,7 @@ collections:
           name: featuredimage,
           "Featured Image",
           widget: image,
-          default: "/src/images/orbital-bw.jpg",
+          default: "src/images/orbital-bw.jpg",
         }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
