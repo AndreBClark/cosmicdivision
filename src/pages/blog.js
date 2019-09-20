@@ -1,10 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
-import Bio from "../components/bio"
 import TemplateWrapper from "../components/Layout"
 import SEO from "../components/SEO"
-import Button from "../components/button"
 
 import theme from "../../config/theme"
 import Panel from "../components/Panel"

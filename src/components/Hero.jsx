@@ -10,8 +10,8 @@ const Container = styled.section`
   min-height: 84vh;
   padding: 0.25rem;
   text-align: center;
-  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25), rgba(0,0,0,0.25), rgba(0,0,0,1)),
-  url(${Background});
+  background-image: linear-gradient(0deg, rgba(18,18,18,1) 5%, rgba(18,18,18,0) 25%, rgba(18,18,18,0) 50%),
+    url(${Background});
   background-size: cover;
   background-position: center center;
   display: flex;

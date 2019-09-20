@@ -5,10 +5,10 @@ const colors = {
     primaryLight: lighten(0.1, "#26ffba"),
     bg: "#121212", // Background color
     grey: {
-        dark: "#1D1D1D",
-        default: "#282828",
-        light: "#343434",
         ultraLight: "#4D4D4D",
+        light: "#343434",
+        default: "#282828",
+        dark: "#1D1D1D",
     },
     overlay: {
         low: "rgba(255,255,255,.05)",

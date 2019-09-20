@@ -8,7 +8,7 @@ const Header = styled.header`
   font-size: 1rem;
   font-weight: 600;
   border-bottom: solid ${theme.stroke} ${props => props.theme.colors.primary};
-  background-color: ${props => props.theme.colors.grey.default};
+  background-color: ${props => props.theme.colors.grey.dark};
   li a {
     color: ${props => props.theme.colors.white};
     margin: 10px 25px;

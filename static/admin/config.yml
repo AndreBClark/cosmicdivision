@@ -3,8 +3,8 @@ backend:
   branch: master
   repo: AndreBClark/gatsby-personal-starter-blog
 
-media_folder: static/assets
-public_folder: assets
+media_folder: src/images
+public_folder: images
 
 collections:
   - name: blog
@@ -13,104 +13,13 @@ collections:
     create: true
     fields:
       - { name: path, label: Path }
+      - {
+          name: featuredimage,
+          label: "Featured Image",
+          widget: image,
+          default: "src/images/orbital-bw.jpg",
+        }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: body, label: Body, widget: markdown }
-  - name: character
-    label: Character
-    folder: content/character
-    create: true
-    identifier_field: charname
-    fields:
-      - { name: charname, label: "Character Name", widget: string }
-      - { name: class, label: Class, widget: select,
-            options: [
-              Barbarian,
-              Cleric,
-              Bard,
-              Fighter,
-              Wizard,
-              Warlock,
-              Sorcerer,
-              Druid,
-              Rogue,
-              Monk,
-              Paladin,
-              Ranger
-              ]}
-      - { name: level, label: Level, widget: number, valueType: int, min: 1, max: 20}
-      - { name: race, label: Race, widget: select,
-            options: [
-              Dwarf,
-              Elf,
-              Halfling,
-              Human,
-              Dragonborn,
-              Gnome,
-              Half-Elf,
-              Half-Orc,
-              Tiefling
-              ]}
-      - { name: background, label: Background, widget: select,
-            options: [  Acolyte,
-                        Charlatan,
-                        Criminal,
-                        Entertainer,
-                        Folk Hero,
-                        Gladiator,
-                        Guild Artisan,
-                        Hermit,
-                        Knight,
-                        Noble,
-                        Outlander,
-                        Pirate,
-                        SageSailer,
-                        Soldier,
-                        Urchin  ],
-        }
-      - { name: alignment, label: Alignment, widget: select,
-            options: [
-              "Lawful Good",
-              "Neutral Good",
-              "Chaotic Good",
-              "Lawful Neutral",
-              "True Neutral",
-              "Chaotic Neutral",
-              "Lawful Evil",
-              "Neutral Evil",
-              "Chaotic Evil"
-            ]
-        }
-      - name: abilityscores
-        label: Ability Scores
-        widget: object
-        fields:
-          - { name: str, label: Strength, widget: number, valueType: int, default: 10  }
-          - { name: dex, label: Dexterity, widget: number, valueType: int, default: 10  }
-          - { name: con, label: Constitution, widget: number, valueType: int, default: 10  }
-          - { name: int, label: Intelligence, widget: number, valueType: int, default: 10  }
-          - { name: wis, label: Wisdom, widget: number, valueType: int, default: 10  }
-          - { name: cha, label: Charisma, widget: number, valueType: int, default: 10  }
-      - { name: backstory, label: Back Story, widget: markdown}
-  - name: spells
-    label: Spells
-    folder: content/spells
-    create: true
-    preview: true
-    identifier_field: spell
-    fields:
-      - { name: spell, label: Spell, widget: string }
-      - { name: level, label: Spell Level, widget: number }
-      - { name: description, label: Description, widget: markdown }
-      - { name: castingtime, label: Casting Time, widget: string, default: "1 action" }
-      - { name: duration, label: Duration, widget: string }
-      - { name: range, label: Range, widget: string, default: "30 feet" }
-      - { name: classes, label: Classes, widget: relation, collection: character, valueField: class, searchField: class, multiple: true }
-      - name: spellcomponents
-        label: Components
-        widget: object
-        fields:
-          - {label: Verbal, name: verbal, widget: boolean }
-          - {label: Somatic, name: somatic, widget: boolean }
-          - {label: Material, name: material, widget: boolean }
