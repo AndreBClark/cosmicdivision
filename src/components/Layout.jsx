@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: ${theme.colors.bg};
 `
 
 const Layout = ({ children }) => {
