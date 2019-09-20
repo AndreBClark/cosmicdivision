@@ -7,7 +7,7 @@ html {
 }
 body {
   font-family: ${theme.fontFamily.sans};
-  background-color: ${theme.colors.grey.dark};
+  background-color: ${theme.colors.bg};
   box-sizing: border-box;
   margin: 0;
   font-size: ${theme.baseFontSize}
