@@ -10,7 +10,8 @@ body {
   background-color: ${theme.colors.bg};
   box-sizing: border-box;
   margin: 0;
-  font-size: ${theme.baseFontSize}
+  font-size: ${theme.baseFontSize};
+  line-height:1.6;
 }
 * {
   box-sizing: inherit;
