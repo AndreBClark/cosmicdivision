@@ -2,8 +2,8 @@
 path: colorable-colorcontrast-tool
 featuredimage: /images/orbital-bw.jpg
 date: 2019-09-21T06:15:19.345Z
-title: 'Colorable: Color Contrast tool'
-description: Tool
+title: 'Colorable: Quickly Test Color Combinations for Better Contrast'
+description: overview of a useful Color Contrast tool
 ---
 # Introduction
 
@@ -27,17 +27,17 @@ The AA and AAA you see next to the contrast score are part of a contrast scale o
 
 A simplified overview of the guidelines:
 
-- **Fail: score of 3.0 or lower** unreadable
-- **AA Large: 3.01-4.4** readable with larger font sizes
-- **AA: 4.5+**  acceptable for the majority of the population
-- **AAA: 7.0+** almost universally accessible ideal for long-form text and articles
+* **Fail: score of 3.0 or lower** unreadable
+* **AA Large: 3.01-4.4** readable with larger font sizes
+* **AA: 4.5+**  acceptable for the majority of the population
+* **AAA: 7.0+** almost universally accessible ideal for long-form text and articles
 
 # How do I use it?
 
 First thing you are likely to notice are two hexadecimal color codes. One for text, one for the background. You could manually change the hexadecimal values, but I don't recommend that approach. Below that, you have three sliders:
 
-- **Hue** uses a 360-degree color wheel to determine the color.
-- **Saturation** determines the intensity of your color.
-- **Lightness** determines how bright you're color will be. Zero is black, and one is pure white.
+* **Hue** uses a 360-degree color wheel to determine the color.
+* **Saturation** determines the intensity of your color.
+* **Lightness** determines how bright you're color will be. Zero is black, and one is pure white.
 
-*Now that you know how to use this tool. What surprisingly awesome color combinations have you discovered?*
+_Now that you know how to use this tool. What surprisingly awesome color combinations have you discovered? let me know in the comments for this post on dev.to_
