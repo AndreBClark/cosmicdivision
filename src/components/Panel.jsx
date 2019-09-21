@@ -8,8 +8,12 @@ const Container = styled.section`
   margin: 1rem auto;
   height: 100%;
   border-left: solid ${theme.stroke} ${props => props.theme.colors.primary};
+    ul {
+      margin-left: 1.5rem;
+    }
   @media screen and (min-width: 760px) {
     border-radius: ${theme.radius};
+    padding: 4vmin 6vmin;
   }
 `
 const Panel = ({ children }) => {
