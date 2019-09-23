@@ -3,9 +3,7 @@ path: colorable-colorcontrast-tool
 featuredimage: /images/orbital-bw.jpg
 date: 2019-09-21T06:15:19.345Z
 title: Quickly Test Color Combinations for Better Contrast
-description: >-
-  [Colorable](https://colorable.jxnblk.com/26ffba/121212) to be much faster than
-  other tools and easier to use for testing colors combinations.
+description: Colorable is quick and easy to use for testing colors combinations.
 ---
 ## Introduction
 
