@@ -2,8 +2,10 @@
 path: colorable-colorcontrast-tool
 featuredimage: /images/orbital-bw.jpg
 date: 2019-09-21T06:15:19.345Z
-title: 'Colorable: Quickly Test Color Combinations for Better Contrast'
-description: overview of a useful Color Contrast tool
+title: Quickly Test Color Combinations for Better Contrast
+description: >-
+  [Colorable](https://colorable.jxnblk.com/26ffba/121212) to be much faster than
+  other tools and easier to use for testing colors combinations.
 ---
 ## Introduction
 
@@ -15,7 +17,7 @@ Most of the time, clients at that price range did not have a brand color, let al
 
 ## The Solution
 
-Initially, I used the [material color tool](https://material.io/resources/color/) to test color combinations. However, I found [Colorable](https://colorable.jxnblk.com/26ffba/121212) to be much faster and easier to use for testing color combinations. This tool removed all of the guesswork involved in making sure my text color is legible. I found it particularly useful for creating the color theme of this blog. Be sure to star the original author's [repo on GitHub](https://github.com/jxnblk/colorable/).
+Initially, I used the [material color tool](https://material.io/resources/color/) to test color combinations. However, I found [Colorable](https://colorable.jxnblk.com/26ffba/121212) to be much faster and easier to use for testing color combinations. This tool removed all of the guesswork involved in making sure my text color is legible. I found it particularly useful for creating the color theme of this blog. Be sure to star the original author's [repo on GitHub](https://github.com/jxnblk/colorable/).
 
 ## Why is Good Contrast Important?
 
@@ -23,21 +25,22 @@ Text with bad color contrast is hard to read, and people won't want to read it. 
 
 ## What's the deal with all the As?
 
-The AA and AAA you see next to the contrast score are part of a contrast scale outlined by the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
+The AA and AAA you see next to the contrast score are part of a contrast scale outlined by the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
 A simplified overview of the guidelines:
 
-* **Fail: score of 3.0 or lower** unreadable
-* **AA Large: 3.01-4.4** readable with larger font sizes
-* **AA: 4.5+**  acceptable for the majority of the population
-* **AAA: 7.0+** almost universally accessible ideal for long-form text and articles
+- **Fail: score of 3.0 or lower** unreadable
+- **AA Large: 3.01-4.4** readable with larger font sizes
+- **AA: 4.5+**  acceptable for the majority of the population
+- **AAA: 7.0+** almost universally accessible ideal for long-form text and articles
 
 ## How do I use it?
 
 First thing you are likely to notice are two hexadecimal color codes. One for text, one for the background. You could manually change the hexadecimal values, but I don't recommend that approach. Below that, you have three sliders:
 
-* **Hue** uses a 360-degree color wheel to determine the color.
-* **Saturation** determines the intensity of your color.
-* **Lightness** determines how bright you're color will be. Zero is black, and one is pure white.
+- **Hue** uses the 360-degree color wheel to determine the color.
+- **Saturation** determines the intensity of your color, on a scale of 0 to 100
+- **Lightness** determines how bright you're color will be. Zero is black, and 100 is pure white.
 
-_Now that you know how to use this tool. What surprisingly awesome color combinations have you discovered? let me know in the comments for this post on dev.to_
+
+_Now that you know how to use this tool. What surprisingly awesome color combinations have you discovered? let me know in the comments for this [post on dev.to](https://dev.to/andrebclark/quickly-test-color-combinations-for-better-contrast-1h1n)_
