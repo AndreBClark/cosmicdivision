@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 
 const Layout = ({ children }) => {
   return (
-    <div>
       <ThemeProvider theme={theme}>
         <Wrapper>
           <GlobalStyle />
@@ -28,7 +27,6 @@ const Layout = ({ children }) => {
           <Footer />
         </Wrapper>
       </ThemeProvider>
-    </div>
   )
 }
 
