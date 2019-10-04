@@ -3,7 +3,7 @@ import theme from "../../config/theme"
 
 const GlobalStyle = createGlobalStyle`
 html {
-  height: 100%;
+  min-height: 100%;
 }
 body {
   font-family: ${theme.fontFamily.sans};
