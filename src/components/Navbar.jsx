@@ -61,9 +61,9 @@ const Navbar = () => {
           >
             <SvgLogo
               stroke={`none`}
-              height={"2rem"}
               strokeWidth={"10px"}
               fill={theme.colors.primary}
+              height={`2rem`}
             />
             <h3>Cosmic Division</h3>
           </Link>
