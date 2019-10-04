@@ -32,7 +32,7 @@ const Nav = styled.nav`
       margin-bottom: 0;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${theme.breakpoints.phone}) {
     justify-content: space-between;
     padding: 0;
     a h3 {
