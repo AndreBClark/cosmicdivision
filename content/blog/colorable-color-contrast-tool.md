@@ -24,9 +24,7 @@ Text with bad color contrast is hard to read, and people won't want to read it. 
 ## What's the deal with all the As?
 
 The AA and AAA you see next to the contrast score are part of a contrast scale outlined by the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
-
 A simplified overview of the guidelines:
-
 - **Fail: score of 3.0 or lower** unreadable
 - **AA Large: 3.01-4.4** readable with larger font sizes
 - **AA: 4.5+**  acceptable for the majority of the population
@@ -35,7 +33,6 @@ A simplified overview of the guidelines:
 ## How do I use it?
 
 First thing you are likely to notice are two hexadecimal color codes. One for text, one for the background. You could manually change the hexadecimal values, but I don't recommend that approach. Below that, you have three sliders:
-
 - **Hue** uses the 360-degree color wheel to determine the color.
 - **Saturation** determines the intensity of your color, on a scale of 0 to 100
 - **Lightness** determines how bright you're color will be. Zero is black, and 100 is pure white.
