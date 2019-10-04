@@ -6,6 +6,8 @@ import SEO from "../components/SEO"
 import { rhythm, scale } from "../../config/typography"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
+import styled from 'styled-components'
+import theme from "../../config/theme"
 
 class BlogPostTemplate extends React.Component {
   render() {
