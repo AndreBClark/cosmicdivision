@@ -16,10 +16,6 @@ const Article = styled.article`
 h2 {
 margin-bottom: calc(.5 * ${theme.spacer});
 }
-
-ul {
-  /* margin-top: calc(-3 * ${theme.spacer}) */
-}
 `
 const ArticleHeading = styled.h1`
   margin: ${theme.spacer};
