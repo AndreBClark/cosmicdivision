@@ -32,6 +32,7 @@ const fontFamily = {
     sans: `'Fira Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
     heading: `'Orbitron'`,
     headingCase: `uppercase`,
+    headingWeight: `600`,
 }
 
 const breakpoints = {
