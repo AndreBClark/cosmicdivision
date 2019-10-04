@@ -9,6 +9,18 @@ import ContentContainer from "../components/ContentContainer"
 import styled from 'styled-components'
 import theme from "../../config/theme"
 
+const Article = styled.article`
+*:not(li) + * {
+	margin-bottom: calc(4 * ${theme.spacer});
+}
+h2 {
+margin-bottom: calc(.5 * ${theme.spacer});
+}
+
+ul {
+  /* margin-top: calc(-3 * ${theme.spacer}) */
+}
+`
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -33,13 +45,9 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date}
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr
-              style={{
-                marginBottom: rhythm(1),
-              }}
-            />
+            </Date>
+          <Panel>
+            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </Panel>
           <Bio />
           <Panel>
