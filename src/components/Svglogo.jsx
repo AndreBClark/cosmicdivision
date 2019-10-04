@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 const SVG = styled.svg`
-  margin: 1rem 0;
+  margin: 1rem;
+  height: ${props => props.height};
 `
 
 const SvgLogo = props => {
@@ -12,8 +13,8 @@ const SvgLogo = props => {
       <SVG
         fill={props.fill}
         stroke={props.stroke}
-        height={props.height}
         strokeWidth={props.strokeWidth}
+        height={props.height}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 40 31"
       >
@@ -26,7 +27,7 @@ const SvgLogo = props => {
 SvgLogo.propTypes = {
   fill: PropTypes.string,
   stroke: PropTypes.string,
-  height: PropTypes.string,
   strokeWidth: PropTypes.string,
+  height: PropTypes.string
 }
 export default SvgLogo

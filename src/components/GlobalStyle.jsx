@@ -3,7 +3,7 @@ import theme from "../../config/theme"
 
 const GlobalStyle = createGlobalStyle`
 html {
-  height: 100%;
+  min-height: 100%;
 }
 body {
   font-family: ${theme.fontFamily.sans};
@@ -12,6 +12,10 @@ body {
   margin: 0;
   font-size: ${theme.baseFontSize};
   line-height:1.6;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: ${theme.fontFamily.heading};
+  font-weight: ${theme.fontFamily.headingWeight};
 }
 * {
   box-sizing: inherit;

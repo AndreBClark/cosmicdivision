@@ -5,6 +5,7 @@ import theme from "../../config/theme"
 import SvgLogo from "./Svglogo"
 
 const Header = styled.header`
+  font-family: ${theme.fontFamily.heading};
   font-size: 1rem;
   font-weight: 600;
   border-bottom: solid ${theme.stroke} ${props => props.theme.colors.primary};
@@ -32,7 +33,7 @@ const Nav = styled.nav`
       margin-bottom: 0;
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${theme.breakpoints.phone}) {
     justify-content: space-between;
     padding: 0;
     a h3 {
@@ -62,9 +63,9 @@ const Navbar = () => {
           >
             <SvgLogo
               stroke={`none`}
-              height={"2rem"}
               strokeWidth={"10px"}
               fill={theme.colors.primary}
+              height={`2rem`}
             />
             <h3>Cosmic Division</h3>
           </Link>

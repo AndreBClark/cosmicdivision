@@ -12,12 +12,12 @@ const HeroInner = styled.div`
   margin: 0 auto;
 `
 const HeadingOne = styled.h1`
-  font-size: 5rem;
+  font-size: 4.5rem;
   margin-bottom: .5rem;
 `
 const Subtitle = styled.p`
   font-size: 1.5rem;
-  font-weight: semi-bold;
+  font-weight: semibold;
   text-shadow: black 3px 3px 3px;
   margin-bottom: 3rem;
   text-transform: capitalize;

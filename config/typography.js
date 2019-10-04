@@ -43,21 +43,22 @@ function _defineProperty(obj, key, value) {
 const typography = new Typography({
         title: "Fira-console",
         baseFontSize: theme.baseFontSize,
-        baseLineHeight: 1.38,
+        baseLineHeight: 1.6,
         scaleRatio: 1.5,
         googleFonts: [{
-                name: "Fira Sans",
+                name: "Orbitron",
                 styles: ["700"],
             },
             {
-                name: "Fira Mono",
+                name: "Fira sans",
                 styles: ["400", "700"],
             },
         ],
-        headerFontFamily: ["Orbitron", "sans-serif"],
-        bodyFontFamily: ["Fira Mono", "georgia", "sans-serif"],
+        headerFontFamily: [theme.fontFamily.heading],
+        bodyFontFamily: [theme.fontFamily.sans],
         bodyColor: `white`,
         headerWeight: 500,
+        headerTextTransform: theme.fontFamily.headingCase,
         headerColor: "#26ffba",
         bodyWeight: 300,
         boldWeight: 700,
@@ -87,12 +88,13 @@ const typography = new Typography({
                     }),
                     h1: {
                         marginTop: `1rem`,
+                        TextTransform: theme.fontFamily.headingCase,
                     },
-                    "h3,h4,h5,h6": {
-                        // marginTop: rhythm(1 / 2),
+                    "h2,h3,h4,h5,h6": {
+                        TextTransform: theme.fontFamily.headingCase,
                     },
                     p: {
-                        marginBottom: '1rem',
+
                     },
                     e: _extends({}, scale(-1 / 5)),
                 },

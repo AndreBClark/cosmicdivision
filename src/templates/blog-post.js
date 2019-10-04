@@ -6,7 +6,25 @@ import SEO from "../components/SEO"
 import { rhythm, scale } from "../../config/typography"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
+import styled from 'styled-components'
+import theme from "../../config/theme"
 
+const Article = styled.article`
+*:not(li) + * {
+	margin-bottom: calc(4 * ${theme.spacer});
+}
+h2 {
+margin-bottom: calc(.5 * ${theme.spacer});
+}
+`
+const ArticleHeading = styled.h1`
+  margin: ${theme.spacer};
+  max-width: ${theme.maxWidth};
+`
+
+const Date = styled.p`
+  padding: 0 ${theme.spacer};
+`
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -20,19 +38,12 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <ContentContainer>
-          <h1>{post.frontmatter.title}</h1>
-          <Panel>
-            <p
-              style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-                marginTop: rhythm(-1),
-              }}
-            >
+          <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
+            <Date>
               {post.frontmatter.date}
-            </p>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Date>
+          <Panel>
+            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </Panel>
           <Bio />
           <Panel>
