@@ -19,9 +19,9 @@ const Footer = () => {
     <FooterSection>
       <Inner>
         <p>
-          Submit an 
-        <a href="">
-          Issue on Github
+          Submit an
+        <a href="https://github.com/AndreBClark/CosmicDivision/issues">
+          &nbsp;Issue on Github
           </a>
         </p>
           
