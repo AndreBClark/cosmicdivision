@@ -16,8 +16,17 @@ const Footer = () => {
   return (
     <FooterSection>
       <Inner>
+        <p>
+          Submit an 
+        <a href="">
+          Issue on Github
+          </a>
+        </p>
+          
+        <p>
         © {new Date().getFullYear()}, Built with {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </p>
       </Inner>
     </FooterSection>
   )
