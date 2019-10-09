@@ -76,12 +76,12 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby Starter Blog`,
-                short_name: `GatsbyJS`,
+                name: `Cosmic Division Jamstack Blog`,
+                short_name: `CosmicDiv`,
                 start_url: `/`,
                 background_color: `#121212`,
                 theme_color: `#26ffba`,
-                display: `minimal-ui`,
+                display: `standalone`,
                 // edit below
                 icon: `static/logo.svg`,
             },
