@@ -20,7 +20,7 @@ const Footer = () => {
       <Inner>
         <p>
           Submit an
-        <a href="https://github.com/AndreBClark/CosmicDivision/issues">
+        <a target="_blank" href="https://github.com/AndreBClark/CosmicDivision/issues">
           &nbsp;Issue on Github
           </a>
         </p>
