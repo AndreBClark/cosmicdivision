@@ -31,6 +31,7 @@ const Nav = styled.nav`
       padding: 0 1.5rem;
       font-size: 2rem;
       margin-bottom: 0;
+    text-transform: ${theme.fontFamily.logoCase};
     }
   }
   @media screen and (min-width: ${theme.breakpoints.phone}) {
