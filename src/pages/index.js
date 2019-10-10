@@ -14,14 +14,14 @@ const HeroInner = styled.div`
 const HeadingOne = styled.h1`
   font-size: 4.5rem;
   margin-bottom: .5rem;
+  text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 const Subtitle = styled.p`
   font-size: 1.5rem;
   font-weight: semibold;
-  text-shadow: black 3px 3px 3px;
   margin-bottom: 3rem;
   text-transform: capitalize;
-  font-family: ${props => props.theme.fontFamily.mono};
+  font-family: ${props => props.theme.fontFamily.heading};
 `
 
 class IndexPage extends React.Component {
