@@ -48,9 +48,9 @@ const theme = {
     breakpoints,
     fontFamily,
     radius: `6px`,
-    spacer: `1rem`,
+    spacer: '0.5rem',
     maxWidth: `1280px`,
-    baseFontSize: "calc(18px + (28 - 16) * ((100vw - 300px) / (1600 - 300)))",
+    baseFontSize: "calc(16px + (24 - 14) * ((100vw - 300px) / (1600 - 300)))",
 }
 
 export default theme
