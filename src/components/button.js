@@ -13,7 +13,6 @@ const ButtonWrapper = styled.button`
   border: none;
   margin: 0 auto;
   text-align: center;
-  box-sizing: border-box;
   text-decoration: none;
   padding: 10px 25px;
   cursor: pointer;

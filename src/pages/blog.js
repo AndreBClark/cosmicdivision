@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
-import TemplateWrapper from "../components/Layout"
+import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 
 import theme from "../../config/theme"

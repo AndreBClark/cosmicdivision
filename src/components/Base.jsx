@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "../components/Navbar"
+import Navbar from "./Navbar"
 import SEO from "./SEO"
 import styled, { ThemeProvider } from "styled-components"
 import theme from "../../config/theme"
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   background-color: ${theme.colors.bg};
 `
 
-const Layout = ({ children }) => {
+const Base = ({ children }) => {
   return (
       <ThemeProvider theme={theme}>
         <Wrapper>
@@ -30,4 +30,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default Base

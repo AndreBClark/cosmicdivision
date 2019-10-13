@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import TemplateWrapper from "../components/Layout"
+import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 
 class NotFoundPage extends React.Component {
