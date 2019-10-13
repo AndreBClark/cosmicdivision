@@ -1,15 +1,33 @@
-import React from 'react'
-import 'twin.macro'
+import React from "react"
+import Navbar from "./Navbar"
+import SEO from "./SEO"
+import styled, { ThemeProvider } from "styled-components"
+import theme from "../../config/theme"
+import Footer from "./Footer"
+import GlobalStyle from "./GlobalStyle"
 
-import Navbar from './Navbar'
-import Footer from './Footer'
+const Wrapper = styled.div`
+  min-height: 100vh;
+  max-width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: ${theme.colors.bg};
+`
 
-const Base = ({ children }) => (
-  <div tw="min-h-screen m-0 flex flex-col bg-neutral-100">
-    <Navbar />
-    <main>{children}</main>
-    <Footer />
-  </div>
-)
+const Base = ({ children }) => {
+  return (
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <GlobalStyle />
+          <SEO />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </Wrapper>
+      </ThemeProvider>
+  )
+}
 
 export default Base
