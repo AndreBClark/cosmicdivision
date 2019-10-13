@@ -10,7 +10,7 @@ import styled from "styled-components"
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
-  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
+  @media screen and (min-width: 769px) {
     margin: 0 auto;
   }
 `
@@ -20,7 +20,7 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 const Subtitle = styled.p`
-  letter-spacing: ${props => props.theme.letterSpacing};
+  letter-spacing: .1em;
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props=> props.theme.fontFamily.headingCase};
   font-weight: semibold;
@@ -29,7 +29,7 @@ const Subtitle = styled.p`
   background-color: ${props => props.theme.colors.primary};
   font-weight: 500;
   font-size: ${props => props.theme.baseFontSize};
-@media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
+@media screen and (min-width: 769px) {
   font-size: 1.5rem;
 }
 `
