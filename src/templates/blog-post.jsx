@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Bio from "../components/bio"
 import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 import Panel from "../components/Panel"
@@ -42,6 +43,7 @@ class BlogPostTemplate extends React.Component {
           <Panel>
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </Panel>
+          <Bio />
           <Panel>
             <ul
               style={{
