@@ -6,23 +6,22 @@ import SEO from "../components/SEO"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
 import styled from 'styled-components'
-import theme from "../../config/theme"
 
 const Article = styled.article`
 *:not(li) + * {
-	margin-bottom: calc(4 * ${theme.spacer});
+	margin-bottom: calc(${props => props.theme.spacer} * 4);
 }
 h2 {
-margin-bottom: calc(.5 * ${theme.spacer});
+margin-bottom:  ${props => props.theme.spacer};
 }
 `
-const ArticleHeading = styled.h1`
-  margin: ${theme.spacer};
-  max-width: ${theme.maxWidth};
+const ArticleHeading = styled.h1 `
+  margin: ${props => props.theme.spacer};
+  max-width: ${props => props.theme.maxWidth};
 `
 
-const Date = styled.p`
-  padding: 0 ${theme.spacer};
+const Date = styled.p `
+  padding: 0 ${props => props.theme.spacer};
 `
 class BlogPostTemplate extends React.Component {
   render() {
