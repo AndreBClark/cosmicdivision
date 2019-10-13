@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const FooterSection = styled.footer`
   background-color: ${props => props.theme.colors.bg};
-  padding: 2rem;
+  padding: ${props => props.theme.spacer * 4};
   margin-top: auto;
 `
 const Inner = styled.div`
