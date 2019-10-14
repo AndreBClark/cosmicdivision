@@ -1,8 +1,8 @@
 import React from "react"
 import Layout from "../components/Base"
-import Bio from "../components/bio"
+import Bio from "../components/Bio"
 import ContentContainer from "../components/ContentContainer"
-const bio = () => {
+const BioPage = () => {
   return (
     <Layout>
       <ContentContainer>
@@ -13,4 +13,4 @@ const bio = () => {
   )
 }
 
-export default bio
+export default BioPage
