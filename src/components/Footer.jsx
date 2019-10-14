@@ -1,32 +1,43 @@
-import React from 'react'
-import tw from 'twin.macro'
-import { LinkExternal } from 'components/Links';
+import React from "react"
+import styled from "styled-components"
 
-const Row = tw.footer`bg-neutral-100 md:p-8 mt-auto`
+const FooterSection = styled.footer`
+  background-color: ${props => props.theme.colors.bg};
+  padding: ${props => props.theme.spacer * 4};
+  margin-top: auto;
+`
+const Inner = styled.div`
+  margin: 0 auto;
+  @media screen and (min-width: ${props => props.theme.breakpoints.phone}){
+  }
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  max-width: ${props => props.theme.maxWidth};
+`
 
-const Inner = tw.div`mx-auto flex justify-between text-sm max-w-5xl`
-
-const Item = tw.p`my-4 mx-3 text-primary-100 `
-
+const Item = styled.p`
+  margin:calc(2 * ${props => props.theme.spacer});
+`
 const Footer = () => {
   return (
-    <Row>
+    <FooterSection>
       <Inner>
         <Item>
           Submit an &nbsp;
-          <LinkExternal
-            target="_blank"
-            rel="noopener noreferrer"
+        <a  target="_blank" 
+            rel="noopener noreferrer" 
             href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose">
-            Issue on Github
-          </LinkExternal>
+          Issue on Github
+          </a>
         </Item>
+          
         <Item>
-          © {new Date().getFullYear()}, Built with &nbsp;
-          <LinkExternal href="https://www.gatsbyjs.org">Gatsby</LinkExternal>
+        © {new Date().getFullYear()}, Built with &nbsp;
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
         </Item>
       </Inner>
-    </Row>
+    </FooterSection>
   )
 }
 
