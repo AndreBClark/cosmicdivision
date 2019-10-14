@@ -13,23 +13,27 @@ const Inner = styled.div`
   font-size: .8rem;
   max-width: ${props => props.theme.maxWidth};
 `
+
+const Item = styled.p`
+  margin:calc(2 * ${props => props.theme.spacer});
+`
 const Footer = () => {
   return (
     <FooterSection>
       <Inner>
-        <p>
+        <Item>
           Submit an &nbsp;
         <a  target="_blank" 
             rel="noopener noreferrer" 
             href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose">
           Issue on Github
           </a>
-        </p>
+        </Item>
           
-        <p>
-        © {new Date().getFullYear()}, Built with 
+        <Item>
+        © {new Date().getFullYear()}, Built with &nbsp;
         <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </p>
+        </Item>
       </Inner>
     </FooterSection>
   )
