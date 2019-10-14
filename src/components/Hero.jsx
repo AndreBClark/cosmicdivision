@@ -8,10 +8,8 @@ const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
   width: 100%;
   min-height: 75vh;
-  padding: 0.25rem;
   text-align: center;
-  background-image: linear-gradient(0deg, rgba(18,18,18,1) 5%, rgba(18,18,18,0) 25%, rgba(18,18,18,0) 50%),
-    url(${Background});
+  background-image: url(${Background});
   background-size: cover;
   background-position: center center;
   display: flex;
