@@ -10,7 +10,7 @@ import styled from "styled-components"
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
     margin: 0 auto;
   }
 `
@@ -29,7 +29,7 @@ const Subtitle = styled.p`
   background-color: ${props => props.theme.colors.primary};
   font-weight: 500;
   font-size: ${props => props.theme.baseFontSize};
-@media screen and (min-width: 769px) {
+@media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
   font-size: 1.5rem;
 }
 `

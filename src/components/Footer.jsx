@@ -9,6 +9,8 @@ const FooterSection = styled.footer`
 `
 const Inner = styled.div`
   margin: 0 auto;
+  @media screen and (min-width: ${props => props.theme.breakpoints.phone}){
+  }
   display: flex;
   justify-content: space-between;
   font-size: .8rem;
