@@ -9,7 +9,14 @@ const Container = styled.section`
   width: 100%;
   min-height: 75vh;
   text-align: center;
-  background-image: url(${Background});
+  background-image: 
+    linear-gradient(
+      0deg, 
+      rgba(18,18,18,1) 5%,
+      rgba(18,18,18,0) 25%,
+      rgba(18,18,18,0) 50%),
+      url(${Background}
+      );
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -20,10 +27,11 @@ const Container = styled.section`
   }
 `
 const FlexLg = styled.div`
-  @media screen and (min-width: 767px) {
     display: flex;
-    justify-content: space-between;
     align-content: center;
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {}
+    justify-content: space-between;
     align-items: center;
   }
 `
