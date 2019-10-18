@@ -76,7 +76,6 @@ const typography = new Typography({
                     "a:hover": {
                         textDecoration: "initial",
                         color: theme.colors.primary,
-                        opacity: ".8",
                         cursor: "pointer",
                     },
                     blockquote: _extends({}, scale(1 / 5), {
@@ -84,7 +83,9 @@ const typography = new Typography({
                         paddingLeft: rhythm(3 / 4),
                         marginLeft: 0,
                         marginRight: 0,
-                        borderLeft: rhythm(1 / 4) + " solid " + (0, _grayPercentage2.default)(13),
+                        borderLeft: rhythm(1 / 4) +
+                            " solid " +
+                            (0, _grayPercentage2.default)(13),
                     }),
                     h1: {
                         marginTop: `1rem`,
@@ -92,9 +93,6 @@ const typography = new Typography({
                     },
                     "h2,h3,h4,h5,h6": {
                         TextTransform: theme.fontFamily.headingCase,
-                    },
-                    p: {
-
                     },
                     e: _extends({}, scale(-1 / 5)),
                 },
