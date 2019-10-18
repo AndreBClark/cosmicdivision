@@ -12,8 +12,14 @@ const Container = styled.section`
       margin-left: 1.5rem;
     }
   @media screen and (min-width: 760px) {
+    opacity: .7;
     border-radius: ${theme.radius};
     padding: 4vmin 6vmin;
+    transition: all ${props => props.theme.transitions.normal};
+    &:hover {
+      transform: translateY(-4px);
+      opacity: 1;
+    }
   }
 `
 const Panel = ({ children }) => {
