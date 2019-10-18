@@ -20,7 +20,7 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 const Subtitle = styled.p`
-  letter-spacing: .1em;
+  letter-spacing: ${props => props.theme.letterSpacing};
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props=> props.theme.fontFamily.headingCase};
   font-weight: semibold;
