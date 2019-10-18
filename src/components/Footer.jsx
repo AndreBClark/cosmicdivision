@@ -17,7 +17,8 @@ const Inner = styled.div`
 `
 
 const Item = styled.p`
-  margin:calc(2 * ${props => props.theme.spacer});
+  margin: calc(2 * ${props => props.theme.spacer})
+          calc(1.5 * ${props => props.theme.spacer});
 `
 const Footer = () => {
   return (
