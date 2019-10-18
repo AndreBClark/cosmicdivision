@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import TemplateWrapper from "../components/Base"
+import styled from "styled-components"
+import Base from "../components/Base"
 import SEO from "../components/SEO"
 
 import Panel from "../components/Panel"
@@ -19,14 +19,13 @@ class Blog extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
+      <Base location={this.props.location} title={siteTitle}>
         <SEO title="All Posts" />
         <ContentContainer>
           <h1>All Posts</h1>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <ThemeProvider theme={theme}>
                   <Link to={`${node.fields.slug}`}>
                     <Panel>
                       <PostCard key={node.fields.slug}>
@@ -41,11 +40,10 @@ class Blog extends React.Component {
                       </PostCard>
                     </Panel>
                   </Link>
-                </ThemeProvider>
               )
             })}
         </ContentContainer>
-      </TemplateWrapper>
+      </Base>
     )
   }
 }

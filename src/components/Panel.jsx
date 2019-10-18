@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.section`
+const Frame = styled.section`
   background-color: ${props => props.theme.colors.overlay.middle};
   padding: 4vmin;
   margin: ${props => props.theme.spacer};
