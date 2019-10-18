@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import TemplateWrapper from "../components/Base"
+import Base from "../components/Base"
 import SEO from "../components/SEO"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
+      <Base location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -69,7 +69,7 @@ class BlogPostTemplate extends React.Component {
             </ul>
           </Panel>
         </ContentContainer>
-      </TemplateWrapper>
+      </Base>
     )
   }
 }

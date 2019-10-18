@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const FooterSection = styled.footer`
+const Row = styled.footer`
   background-color: ${props => props.theme.colors.bg};
   padding: ${props => props.theme.spacer * 4};
   margin-top: auto;
@@ -22,7 +22,7 @@ const Item = styled.p`
 `
 const Footer = () => {
   return (
-    <FooterSection>
+    <Row>
       <Inner>
         <Item>
           Submit an &nbsp;
@@ -38,7 +38,7 @@ const Footer = () => {
         <a href="https://www.gatsbyjs.org">Gatsby</a>
         </Item>
       </Inner>
-    </FooterSection>
+    </Row>
   )
 }
 
