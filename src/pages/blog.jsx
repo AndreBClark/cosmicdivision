@@ -4,8 +4,10 @@ import styled from "styled-components"
 import Base from "../components/Base"
 import SEO from "../components/SEO"
 
-import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
+import PanelHover from "../components/PanelHover"
+
+
 
 const PostCard = styled.article`
   p {
@@ -27,7 +29,7 @@ class Blog extends React.Component {
               const title = node.frontmatter.title || node.fields.slug
               return (
                   <Link to={`${node.fields.slug}`}>
-                    <Panel>
+                  <PanelHover>
                       <PostCard key={node.fields.slug}>
                         <h3>{title}</h3>
                         <small>{node.frontmatter.date}</small>
@@ -38,7 +40,7 @@ class Blog extends React.Component {
                           }}
                         />
                       </PostCard>
-                    </Panel>
+                    </PanelHover>
                   </Link>
               )
             })}
