@@ -1,16 +1,16 @@
 import React from "react"
 import Layout from "../components/Base"
-import Bio from "../components/Bio"
+import BioCard from "../components/BioCard"
 import ContentContainer from "../components/ContentContainer"
-const BioPage = () => {
+const Bio = () => {
   return (
     <Layout>
       <ContentContainer>
         <h1>About Andre</h1>
-        <Bio />
+        <BioCard />
       </ContentContainer>
     </Layout>
   )
 }
 
-export default BioPage
+export default Bio

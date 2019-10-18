@@ -12,7 +12,7 @@ import styled from "styled-components"
 import Panel from "./Panel"
 import theme from "../../config/theme"
 
-function Bio() {
+function BioCard() {
   return (
     <StaticQuery
       query={bioQuery}
@@ -74,4 +74,4 @@ const Container = styled.div`
   display: flex;
 `
 
-export default Bio
+export default BioCard
