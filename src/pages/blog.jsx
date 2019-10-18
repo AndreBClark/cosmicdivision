@@ -4,7 +4,6 @@ import styled, { ThemeProvider } from "styled-components"
 import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 
-import theme from "../../config/theme"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
 
@@ -24,7 +23,6 @@ class Blog extends React.Component {
         <SEO title="All Posts" />
         <ContentContainer>
           <h1>All Posts</h1>
-          <div style={{ margin: "20px 0 40px" }}>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
@@ -46,7 +44,6 @@ class Blog extends React.Component {
                 </ThemeProvider>
               )
             })}
-          </div>
         </ContentContainer>
       </TemplateWrapper>
     )
