@@ -5,7 +5,7 @@ import theme from "../../config/theme"
 const Container = styled.section`
   background-color: ${theme.colors.overlay.middle};
   padding: 4vmin;
-  margin: 1rem auto;
+  margin: ${props => props.theme.spacer};
   height: 100%;
   border-left: solid ${theme.stroke} ${props => props.theme.colors.primary};
     ul {
