@@ -1,12 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import TemplateWrapper from "../components/Base"
+import styled from "styled-components"
+import Base from "../components/Base"
 import SEO from "../components/SEO"
 
-import theme from "../../config/theme"
-import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
+import PanelHover from "../components/PanelHover"
+
+
 
 const PostCard = styled.article`
   p {
@@ -20,17 +21,15 @@ class Blog extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
+      <Base location={this.props.location} title={siteTitle}>
         <SEO title="All Posts" />
         <ContentContainer>
           <h1>All Posts</h1>
-          <div style={{ margin: "20px 0 40px" }}>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               return (
-                <ThemeProvider theme={theme}>
                   <Link to={`${node.fields.slug}`}>
-                    <Panel>
+                  <PanelHover>
                       <PostCard key={node.fields.slug}>
                         <h3>{title}</h3>
                         <small>{node.frontmatter.date}</small>
@@ -41,14 +40,12 @@ class Blog extends React.Component {
                           }}
                         />
                       </PostCard>
-                    </Panel>
+                    </PanelHover>
                   </Link>
-                </ThemeProvider>
               )
             })}
-          </div>
         </ContentContainer>
-      </TemplateWrapper>
+      </Base>
     )
   }
 }
