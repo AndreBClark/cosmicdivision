@@ -6,11 +6,11 @@ const Button = props => (
 )
 
 const ButtonWrapper = styled.button`
-  padding: 10px 25px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  padding: .5em 1.5em;
+  text-transform: ${props => props.theme.fontFamily.logoCase};
+  letter-spacing: ${props => props.theme.letterSpacing};
   background: none;
+  border: ${props => props.theme.border} solid;
   border-color: ${props => props.theme.primary};
   color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontWeight};
