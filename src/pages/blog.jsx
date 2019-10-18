@@ -1,60 +1,67 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import 'twin.macro'
+import React from "react"
+import { Link, graphql } from "gatsby"
+import styled, { ThemeProvider } from "styled-components"
+import TemplateWrapper from "../components/Base"
+import SEO from "../components/SEO"
 
-import TransitionLink from 'components/Links'
-import Panel from 'components/Panel'
-import { PageView } from 'components/Views'
+import theme from "../../config/theme"
+import Panel from "../components/Panel"
+import ContentContainer from "../components/ContentContainer"
 
-const page = {
-  title: 'All Posts',
-}
+const PostCard = styled.article`
+  p {
+    color: ${props => props.theme.colors.white};
+  }
+`
+class Blog extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
-const Blog = ({ location }) => {
-  return (
-    <PageView
-      location={location}
-      title={page.title}
-      pageHeading={page.title}>
-      <PostList />
-    </PageView>
-  )
-}
-
-const PostList = () => {
-  const data = useStaticQuery(PostsQuery)
-  const posts = data.allMarkdownRemark.edges
-
-  return posts.map(({ node }) => {
-    const title = node.frontmatter.title || node.fields.slug
     return (
-      <PostCard
-        slug={node.fields.slug}
-        key={node.fields.slug}
-        date={node.frontmatter.date}
-        description={node.frontmatter.description || node.excerpt}
-        title={title}
-      />
+      <TemplateWrapper location={this.props.location} title={siteTitle}>
+        <SEO title="All Posts" />
+        <ContentContainer>
+          <h1>All Posts</h1>
+          <div style={{ margin: "20px 0 40px" }}>
+            {posts.map(({ node }) => {
+              const title = node.frontmatter.title || node.fields.slug
+              return (
+                <ThemeProvider theme={theme}>
+                  <Link to={`${node.fields.slug}`}>
+                    <Panel>
+                      <PostCard key={node.fields.slug}>
+                        <h3>{title}</h3>
+                        <small>{node.frontmatter.date}</small>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              node.frontmatter.description || node.excerpt,
+                          }}
+                        />
+                      </PostCard>
+                    </Panel>
+                  </Link>
+                </ThemeProvider>
+              )
+            })}
+          </div>
+        </ContentContainer>
+      </TemplateWrapper>
     )
-  })
+  }
 }
 
-const PostCard = ({ key, slug, date, description, title }) => (
-  <Panel as="article" key={key}>
-    <TransitionLink to={slug}>
-      <h3 tw="text-primary-100">{title}</h3>
-      <small tw="text-primary-100">{date}</small>
-      <p tw="text-primary-100"
-        dangerouslySetInnerHTML={{
-          __html: description,
-        }}
-      />
-    </TransitionLink>
-  </Panel>
-)
+export default Blog
 
-export const PostsQuery = graphql`
-  {
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { title: { ne: "" } } }
@@ -75,4 +82,3 @@ export const PostsQuery = graphql`
     }
   }
 `
-export default Blog

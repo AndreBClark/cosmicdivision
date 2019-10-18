@@ -1,24 +1,39 @@
-import tw from 'twin.macro'
+import React from "react"
+import styled, { ThemeProvider } from "styled-components"
+import theme from "../../config/theme"
 
-export const Btn = tw.button`
-  block p-2 m-2
-  md:(px-20 m-4)
-  font-heading font-bold tracking-widest uppercase
-  text-neutral-100 bg-secondary-100  border-secondary-100
-  border-2 rounded-lg
-  hover:(text-secondary-100  bg-transparent cursor-pointer)
+const Button = props => (
+  <ThemeProvider theme={theme}>
+    <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
+  </ThemeProvider>
+)
+
+const ButtonWrapper = styled.button`
+  display: block;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: none;
+  text-decoration: none;
+  border-color: ${props => props.theme.primary};
+  border: 3px solid;
+  color: ${props => props.theme.colors.primary};
+  font-size: ${props => props.theme.fontSize};
+  font-weight: ${props => props.theme.fontWeight};
+  border-radius: ${props => props.theme.radius};
+  font-family: ${props => props.theme.fontFamily.heading};
+
+  &:hover {
+    text-decoration: none !important;
+    color: ${props => props.theme.colors.bg};
+    background-color: ${props => props.theme.colors.primary};
+    border-color: ${props => props.theme.colors.primary};
+  }
 `
-export const BtnOutline = tw(Btn)`
-  bg-transparent text-secondary-100  border-secondary-100
-  hover:(text-neutral-100 bg-secondary-100 ) 
-  active:(text-neutral-100 bg-secondary-100 ) 
-`
 
-export const BtnSimple = tw(Btn)`
-  bg-transparent text-secondary-100  border-transparent
-  hover:(border-secondary-100)
-`
-
-export const SmBtn = tw(Btn)`text-xs`
-
-export const SmBtnOutline = tw(BtnOutline)`text-xs`
+export default Button
