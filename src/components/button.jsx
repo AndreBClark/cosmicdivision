@@ -9,21 +9,14 @@ const Button = props => (
 )
 
 const ButtonWrapper = styled.button`
-  display: block;
-  border: none;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
   padding: 10px 25px;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2px;
   background: none;
-  text-decoration: none;
   border-color: ${props => props.theme.primary};
   border: 3px solid;
   color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontSize};
   font-weight: ${props => props.theme.fontWeight};
   border-radius: ${props => props.theme.radius};
   font-family: ${props => props.theme.fontFamily.heading};
