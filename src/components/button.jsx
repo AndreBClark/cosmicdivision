@@ -1,38 +1,27 @@
 import React from "react"
-import styled, { ThemeProvider } from "styled-components"
-import theme from "../../config/theme"
+import styled from "styled-components"
 
 const Button = props => (
-  <ThemeProvider theme={theme}>
     <ButtonWrapper props={props}>{props.children}</ButtonWrapper>
-  </ThemeProvider>
 )
 
 const ButtonWrapper = styled.button`
-  display: block;
-  border: none;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;
-  padding: 10px 25px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  padding: .5em 1.5em;
+  text-transform: ${props => props.theme.fontFamily.logoCase};
+  letter-spacing: ${props => props.theme.letterSpacing};
   background: none;
-  text-decoration: none;
+  border: ${props => props.theme.border} solid;
   border-color: ${props => props.theme.primary};
-  border: 3px solid;
   color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontSize};
   font-weight: ${props => props.theme.fontWeight};
   border-radius: ${props => props.theme.radius};
   font-family: ${props => props.theme.fontFamily.heading};
 
   &:hover {
-    text-decoration: none !important;
     color: ${props => props.theme.colors.bg};
     background-color: ${props => props.theme.colors.primary};
     border-color: ${props => props.theme.colors.primary};
+      cursor: pointer !important;
   }
 `
 
