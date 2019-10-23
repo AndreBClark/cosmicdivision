@@ -18,8 +18,11 @@ const Article = styled.article`
   }
 `
 const ArticleHeading = styled.h1`
-  margin: ${props => props.theme.spacer};
+  margin: calc(4 * ${props => props.theme.spacer});
   max-width: ${props => props.theme.maxWidth};
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+    margin: ${props=> props.theme.spacer}
+  }
 `
 const SequentialLinks = styled.ul`
   display: flex;
@@ -29,7 +32,11 @@ const SequentialLinks = styled.ul`
   padding: 0;
 `
 const Date = styled.p`
-  padding: 0 ${props => props.theme.spacer};
+    margin: calc(4 * ${props => props.theme.spacer});
+  max-width: ${props => props.theme.maxWidth};
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+    margin: ${props => props.theme.spacer}
+  }
 `
 class BlogPostTemplate extends React.Component {
   render() {
