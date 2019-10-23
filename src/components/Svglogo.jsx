@@ -28,6 +28,6 @@ SvgLogo.propTypes = {
   fill: PropTypes.string,
   stroke: PropTypes.string,
   strokeWidth: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
 }
 export default SvgLogo
