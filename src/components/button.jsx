@@ -2,7 +2,9 @@ import React from "react"
 import styled from "styled-components"
 
 const Button = props => (
-  <ButtonWrapper {...props} onclick={props}>{props.children}</ButtonWrapper>
+  <ButtonWrapper {...props} onclick={props}>
+    {props.children}
+  </ButtonWrapper>
 )
 
 const ButtonWrapper = styled.button`

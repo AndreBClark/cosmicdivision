@@ -5,10 +5,10 @@ import SEO from "../components/SEO"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
 import styled from "styled-components"
-import { liveRemarkForm } from 'gatsby-tinacms-remark'
-import { Wysiwyg } from '@tinacms/fields'
-import { TinaField } from '@tinacms/form-builder'
-import Button from '../components/button'
+import { liveRemarkForm } from "gatsby-tinacms-remark"
+import { Wysiwyg } from "@tinacms/fields"
+import { TinaField } from "@tinacms/form-builder"
+import Button from "../components/button"
 const Article = styled.article`
   *:not(li) + * {
     margin-bottom: calc(${props => props.theme.spacer} * 4);
@@ -21,7 +21,7 @@ const ArticleHeading = styled.h1`
   margin: calc(4 * ${props => props.theme.spacer});
   max-width: ${props => props.theme.maxWidth};
   @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
-    margin: ${props=> props.theme.spacer}
+    margin: ${props => props.theme.spacer};
   }
 `
 const SequentialLinks = styled.ul`
@@ -32,10 +32,10 @@ const SequentialLinks = styled.ul`
   padding: 0;
 `
 const Date = styled.p`
-    margin: calc(4 * ${props => props.theme.spacer});
+  margin: calc(4 * ${props => props.theme.spacer});
   max-width: ${props => props.theme.maxWidth};
   @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
-    margin: ${props => props.theme.spacer}
+    margin: ${props => props.theme.spacer};
   }
 `
 class BlogPostTemplate extends React.Component {
@@ -51,14 +51,16 @@ class BlogPostTemplate extends React.Component {
         />
         <ContentContainer>
           <TinaField name="rawFrontmatter.title" Component={Wysiwyg}>
-          <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
+            <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
           </TinaField>
           <Date>{post.frontmatter.date}</Date>
           <Panel>
             <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
-            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
+              <Article dangerouslySetInnerHTML={{ __html: post.html }} />
             </TinaField>
-            <Button onClick={() => this.props.setIsEditing(p => !p)}>{this.props.isEditing ? 'Preview' : 'Edit'}</Button>
+            <Button onClick={() => this.props.setIsEditing(p => !p)}>
+              {this.props.isEditing ? "Preview" : "Edit"}
+            </Button>
           </Panel>
           <Panel>
             <SequentialLinks>
