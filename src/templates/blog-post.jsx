@@ -4,22 +4,25 @@ import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
-import styled from 'styled-components'
-
+import styled from "styled-components"
+import { liveRemarkForm } from 'gatsby-tinacms-remark'
+import { Wysiwyg } from '@tinacms/fields'
+import { TinaField } from '@tinacms/form-builder'
+import Button from '../components/button'
 const Article = styled.article`
-*:not(li) + * {
-	margin-bottom: calc(${props => props.theme.spacer} * 4);
-}
-h2 {
-margin-bottom:  ${props => props.theme.spacer};
-}
+  *:not(li) + * {
+    margin-bottom: calc(${props => props.theme.spacer} * 4);
+  }
+  h2 {
+    margin-bottom: ${props => props.theme.spacer};
+  }
 `
-const ArticleHeading = styled.h1 `
+const ArticleHeading = styled.h1`
   margin: ${props => props.theme.spacer};
   max-width: ${props => props.theme.maxWidth};
 `
 
-const Date = styled.p `
+const Date = styled.p`
   padding: 0 ${props => props.theme.spacer};
 `
 class BlogPostTemplate extends React.Component {
@@ -27,7 +30,6 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
     return (
       <TemplateWrapper location={this.props.location} title={siteTitle}>
         <SEO
@@ -36,11 +38,12 @@ class BlogPostTemplate extends React.Component {
         />
         <ContentContainer>
           <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
-            <Date>
-              {post.frontmatter.date}
-            </Date>
+          <Date>{post.frontmatter.date}</Date>
           <Panel>
+            <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
+            </TinaField>
+            <Button onClick={() => this.props.setIsEditing(p => !p)}>{this.props.isEditing ? 'Preview' : 'Edit'}</Button>
           </Panel>
           <Panel>
             <ul
@@ -74,7 +77,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default liveRemarkForm(BlogPostTemplate)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -93,6 +96,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
+      fileRelativePath
+      rawFrontmatter
+      rawMarkdownBody
     }
   }
 `
