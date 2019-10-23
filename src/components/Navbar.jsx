@@ -8,7 +8,8 @@ const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
   font-size: 1rem;
   font-weight: 600;
-  border-bottom: solid ${props => props.theme.stroke} ${props => props.theme.colors.primary};
+  border-bottom: solid ${props => props.theme.stroke}
+    ${props => props.theme.colors.primary};
   background-color: ${props => props.theme.colors.grey.dark};
   li a {
     color: ${props => props.theme.colors.white};
@@ -31,7 +32,7 @@ const Nav = styled.nav`
       padding: 0 1.5rem;
       font-size: 2rem;
       margin-bottom: 0;
-    text-transform: ${theme.fontFamily.logoCase};
+      text-transform: ${theme.fontFamily.logoCase};
     }
   }
   @media screen and (min-width: ${theme.breakpoints.phone}) {

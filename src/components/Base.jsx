@@ -18,15 +18,15 @@ const Wrapper = styled.div`
 
 const Base = ({ children }) => {
   return (
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <GlobalStyle />
-          <SEO />
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </Wrapper>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <GlobalStyle />
+        <SEO />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 

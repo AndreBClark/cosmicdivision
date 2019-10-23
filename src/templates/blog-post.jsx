@@ -4,22 +4,22 @@ import Base from "../components/Base"
 import SEO from "../components/SEO"
 import Panel from "../components/Panel"
 import ContentContainer from "../components/ContentContainer"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const Article = styled.article`
-*:not(li) + * {
-	margin-bottom: calc(${props => props.theme.spacer} * 4);
-}
-h2 {
-margin-bottom:  ${props => props.theme.spacer};
-}
+  *:not(li) + * {
+    margin-bottom: calc(${props => props.theme.spacer} * 4);
+  }
+  h2 {
+    margin-bottom: ${props => props.theme.spacer};
+  }
 `
-const ArticleHeading = styled.h1 `
+const ArticleHeading = styled.h1`
   margin: ${props => props.theme.spacer};
   max-width: ${props => props.theme.maxWidth};
 `
 
-const Date = styled.p `
+const Date = styled.p`
   padding: 0 ${props => props.theme.spacer};
 `
 class BlogPostTemplate extends React.Component {
@@ -36,9 +36,7 @@ class BlogPostTemplate extends React.Component {
         />
         <ContentContainer>
           <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
-            <Date>
-              {post.frontmatter.date}
-            </Date>
+          <Date>{post.frontmatter.date}</Date>
           <Panel>
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </Panel>

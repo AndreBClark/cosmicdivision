@@ -16,22 +16,22 @@ const HeroInner = styled.div`
 `
 const HeadingOne = styled.h1`
   font-size: 4.5rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 const Subtitle = styled.p`
   letter-spacing: ${props => props.theme.letterSpacing};
   font-family: ${props => props.theme.fontFamily.heading};
-  text-transform: ${props=> props.theme.fontFamily.headingCase};
+  text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;
   margin-bottom: 3rem;
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: 500;
   font-size: ${props => props.theme.baseFontSize};
-@media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
-  font-size: 1.5rem;
-}
+  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
+    font-size: 1.5rem;
+  }
 `
 
 class IndexPage extends React.Component {

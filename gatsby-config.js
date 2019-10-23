@@ -12,6 +12,14 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-netlify-cms`,
+        {
+            resolve: "gatsby-plugin-tinacms",
+            options: {
+                plugins: [
+                    // We'll add some Tinacms plugins in the next step.
+                ],
+            },
+        },
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
