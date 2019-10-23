@@ -21,7 +21,13 @@ const ArticleHeading = styled.h1`
   margin: ${props => props.theme.spacer};
   max-width: ${props => props.theme.maxWidth};
 `
-
+const SequentialLinks = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`
 const Date = styled.p`
   padding: 0 ${props => props.theme.spacer};
 `
@@ -46,15 +52,7 @@ class BlogPostTemplate extends React.Component {
             <Button onClick={() => this.props.setIsEditing(p => !p)}>{this.props.isEditing ? 'Preview' : 'Edit'}</Button>
           </Panel>
           <Panel>
-            <ul
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0,
-              }}
-            >
+            <SequentialLinks>
               <li>
                 {previous && (
                   <Link to={`${previous.fields.slug}`} rel="prev">
@@ -69,7 +67,7 @@ class BlogPostTemplate extends React.Component {
                   </Link>
                 )}
               </li>
-            </ul>
+            </SequentialLinks>
           </Panel>
         </ContentContainer>
       </TemplateWrapper>
