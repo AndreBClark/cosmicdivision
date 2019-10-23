@@ -1,8 +1,8 @@
 <h1 align="center">
   Cosmic Division Development Blog
 </h1>
-
-This starter is a fork of Gatsby Starter Blog, the most popular starter by far – with second place being Gatsby Starter Netlify CMS. So I decided to combine the 2!
+originally forked from:
+https://github.com/thomaswangio/gatsby-personal-starter-blog
 
 ## 🚀 Quick start
 
