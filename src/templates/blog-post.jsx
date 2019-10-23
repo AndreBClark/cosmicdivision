@@ -50,7 +50,9 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.description || post.excerpt}
         />
         <ContentContainer>
+          <TinaField name="rawFrontmatter.title" Component={Wysiwyg}>
           <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
+          </TinaField>
           <Date>{post.frontmatter.date}</Date>
           <Panel>
             <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
