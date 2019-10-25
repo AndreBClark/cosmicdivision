@@ -21,7 +21,12 @@ module.exports = {
                 ],
             },
         },
-        `gatsby-plugin-styled-components`,
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                displayName: true
+            }
+        },
         `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
