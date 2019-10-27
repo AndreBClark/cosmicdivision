@@ -9,6 +9,9 @@ import { liveRemarkForm } from "gatsby-tinacms-remark"
 import { Wysiwyg } from "@tinacms/fields"
 import { TinaField } from "@tinacms/form-builder"
 import Button from "../components/button"
+import { useSidebar } from "tinacms"
+import useSiteMetadata from '../hooks/useSiteMetaData';
+
 const Article = styled.article`
   *:not(li) + * {
     margin-bottom: calc(${props => props.theme.spacer} * 4);
@@ -38,13 +41,13 @@ const Date = styled.p`
     margin: ${props => props.theme.spacer};
   }
 `
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = ({ data, pageContext, location, setIsEditing, isEditing }) => {
+    const post = data.markdownRemark
+    const siteTitle = useSiteMetadata()
+    const { previous, next } = pageContext
+    const sidebar = useSidebar()
     return (
-      <Base location={this.props.location} title={siteTitle}>
+      <Base location={location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -58,9 +61,11 @@ class BlogPostTemplate extends React.Component {
             <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
               <Article dangerouslySetInnerHTML={{ __html: post.html }} />
             </TinaField>
-            <Button onClick={() => this.props.setIsEditing(p => !p)}>
-              {this.props.isEditing ? "Preview" : "Edit"}
+            {!sidebar.hidden && (
+            <Button onClick={() => setIsEditing(p => !p)}>
+              {isEditing ? "Preview" : "Edit"}
             </Button>
+            )}
           </Panel>
           <Panel>
             <SequentialLinks>
@@ -84,7 +89,6 @@ class BlogPostTemplate extends React.Component {
       </Base>
     )
   }
-}
 
 export default liveRemarkForm(BlogPostTemplate)
 
