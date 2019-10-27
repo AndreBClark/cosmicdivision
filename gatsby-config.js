@@ -11,7 +11,7 @@ module.exports = {
         },
     },
     plugins: [
-        `gatsby-plugin-netlify-cms`,
+        // `gatsby-plugin-netlify-cms`,
         {
             resolve: "gatsby-plugin-tinacms",
             options: {
@@ -25,8 +25,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-styled-components`,
             options: {
-                displayName: true
-            }
+                displayName: true,
+            },
         },
         `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
