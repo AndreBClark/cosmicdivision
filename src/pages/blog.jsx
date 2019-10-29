@@ -6,6 +6,8 @@ import SEO from "../components/SEO"
 
 import ContentContainer from "../components/ContentContainer"
 import PanelHover from "../components/PanelHover"
+import { withPlugin } from 'react-tinacms'
+import { createRemarkButton } from 'gatsby-tinacms-remark'
 
 const PostCard = styled.article`
   p {
@@ -46,8 +48,29 @@ class Blog extends React.Component {
     )
   }
 }
+const CreateBlogPlugin = createRemarkButton({
+  label: 'Add New Blog',
+  fields: [
+    {
+      name: 'title',
+      label: 'Title',
+      component: 'text',
+    },
+  ],
+  filename: ({ title }) => {
+    const slug = title.replace(/\s+/, '-').toLowerCase()
 
-export default Blog
+    return `content/blog/${slug}.md`
+  },
+  frontmatter: ({ title }) => ({
+    title,
+    date: new Date(),
+  }),
+  body: () => `Speak your mind.`,
+})
+
+export default withPlugin(Blog, CreateBlogPlugin)
+
 
 export const pageQuery = graphql`
   query {
