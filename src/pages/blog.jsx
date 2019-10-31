@@ -58,7 +58,15 @@ const CreateBlogPlugin = createRemarkButton({
     },
   ],
   filename: ({ title }) => {
-    const slug = title.replace(/\s+/, '-').toLowerCase()
+    const slug = title.replace(/\s+/g, '-')
+      .replace(/&/g, '-and-')
+      // eslint-disable-next-line
+      .replace(/[^\w\-]+/g, '')
+      // eslint-disable-next-line
+      .replace(/\-\-+/g, '-')
+      .replace(/^-+/, '')
+      .replace(/-+$/, '')
+      .toLowerCase()
 
     return `content/blog/${slug}.md`
   },
