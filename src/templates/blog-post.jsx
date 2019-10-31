@@ -89,8 +89,35 @@ const BlogPostTemplate = ({ data, pageContext, location, setIsEditing, isEditing
       </Base>
     )
   }
+const BlogTemplateOptions = {
+  fields: [
+    {
+      label: 'Title',
+      name: 'rawFrontmatter.title',
+      component: 'text',
+    },
+    {
+      name: "frontmatter.draft",
+      component: "toggle",
+      label: "Draft",
+    },
+    {
+      label: 'Date Posted',
+      name: 'rawFrontmatter.date',
+      component: 'date',
+      dateFormat: 'MMMM DD YYYY',
+      timeFormat: false,
+    },
+    {
+      label: 'Body',
+      name: 'rawMarkdownBody',
+      component: 'markdown',
+    },
+  ],
+}
 
-export default liveRemarkForm(BlogPostTemplate)
+
+export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
