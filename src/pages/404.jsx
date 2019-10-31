@@ -19,7 +19,9 @@ class NotFoundPage extends React.Component {
           <h1>Not Found</h1>
           <Panel>
             <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+            <Link to="/">
             <Button>GO HOME</Button>
+            </Link>
           </Panel>
         </ContentContainer>
       </TemplateWrapper>
