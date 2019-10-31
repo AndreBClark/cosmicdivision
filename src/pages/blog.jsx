@@ -74,7 +74,7 @@ const CreateBlogPlugin = createRemarkButton({
     title,
     date: new Date(),
   }),
-  body: () => `Speak your mind.`,
+  body: () => `I forgot to put content here. whoops.`,
 })
 
 export default withPlugin(Blog, CreateBlogPlugin)
