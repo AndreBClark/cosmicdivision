@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const Button = props => (
-  <ButtonWrapper {...props} onclick={props}>
+  <OutlineButton {...props} onclick={props}>
     {props.children}
-  </ButtonWrapper>
+  </OutlineButton>
 )
 
-const ButtonWrapper = styled.button`
+const OutlineButton = styled.button`
   padding: 0.5em 1.5em;
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
@@ -26,5 +26,13 @@ const ButtonWrapper = styled.button`
     cursor: pointer !important;
   }
 `
+export const SolidButton = styled(OutlineButton)`
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.grey.default};
+  border-color: ${props => props.theme.colors.primary};
+  &:hover {
+    color: ${props => props.theme.colors.bg};
+    background-color: ${props => props.theme.colors.primary};
+  }`
 
 export default Button
