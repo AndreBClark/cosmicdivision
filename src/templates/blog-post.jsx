@@ -11,6 +11,7 @@ import { TinaField } from "@tinacms/form-builder"
 import Button from "../components/button"
 import { useSidebar } from "tinacms"
 import useSiteMetadata from '../hooks/useSiteMetaData';
+import PageHeading from "../components/PageHeading"
 
 const Article = styled.article`
   *:not(li) + * {
@@ -20,13 +21,7 @@ const Article = styled.article`
     margin-bottom: ${props => props.theme.spacer};
   }
 `
-const ArticleHeading = styled.h1`
-  margin: calc(4 * ${props => props.theme.spacer});
-  max-width: ${props => props.theme.maxWidth};
-  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
-    margin: ${props => props.theme.spacer};
-  }
-`
+
 const SequentialLinks = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location, setIsEditing, isEditing
           description={post.frontmatter.description || post.excerpt}
         />
         <ContentContainer>
-            <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
+            <PageHeading>{post.frontmatter.title}</PageHeading>
           <Date>{post.frontmatter.date}</Date>
           <Panel>
             <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
