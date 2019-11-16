@@ -78,6 +78,9 @@ const Navbar = () => {
             <li>
               <Link to="/Bio">Bio</Link>
             </li>
+            <li>
+              <Link to="/Contact">Contact</Link>
+            </li>
           </List>
         </Nav>
       </Header>
