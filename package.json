@@ -8,6 +8,7 @@
         "url": "https://github.com/gatsbyjs/gatsby/issues"
     },
     "dependencies": {
+        "@openfonts/fira-code_latin": "^1.44.0",
         "depcheck": "^0.9.1",
         "gatsby": "^2.3.25",
         "gatsby-background-image": "^0.8.11",
