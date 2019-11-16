@@ -1,3 +1,3 @@
-import "typeface-orbitron";
-import "typeface-fira-mono";
-import "typeface-fira-sans";
+import "typeface-fira-sans"
+import "typeface-orbitron"
+import "@openfonts/fira-code_latin"
