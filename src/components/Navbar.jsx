@@ -6,9 +6,12 @@ import SvgLogo from "./Svglogo"
 
 const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
-  font-size: 1rem;
-  font-weight: 600;
-  border-bottom: solid ${props => props.theme.stroke} ${props => props.theme.colors.primary};
+  font-weight: ${props => props.theme.fontFamily.headingWeight};
+  letter-spacing: ${props => props.theme.tracking};
+  border-bottom: solid ${props => [
+    props.theme.stroke,  
+    props.theme.colors.primary
+    ]};
   background-color: ${props => props.theme.colors.grey.dark};
 `
 
@@ -16,35 +19,42 @@ const Nav = styled.nav`
   max-width: ${theme.maxWidth};
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 1rem;
+  justify-content: space-around;
+  align-items: center;
   a {
     display: flex;
     align-items: center;
-    h3 {
+    span {
       display: none;
       padding: 0 1.5rem;
-      font-size: 2rem;
-      margin-bottom: 0;
-    text-transform: ${theme.fontFamily.logoCase};
+      text-transform: ${props => props.theme.fontFamily.logoCase};
     }
   }
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
+    ${tw`mx-auto`}
     justify-content: space-between;
-    padding: 0;
-    a h3 {
+    & > * {
+      flex: 1 1 auto;
+    }
+    a span {
       display: inline;
     }
   }
 `
 const List = styled.ul`
   display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding-left: 0;
+  justify-content: space-around;
+  align-items: center;
+    flex: 1 2 auto;
+
   li {
-    margin: 1rem 0;
+    margin-block-end: 0;
+    a {
+      color: ${props => props.theme.colors.white};
+    }
+  }
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
+    justify-content: space-between;
   }
 `
 
