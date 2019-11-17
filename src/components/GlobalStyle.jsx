@@ -10,13 +10,6 @@ ${Preflight}
 h1 {
   ${tw`text-5xl`}
 }
-body {
-  font-family: ${theme.fontFamily.sans};
-  background-color: ${theme.colors.bg};
-  box-sizing: border-box;
-  margin: 0;
-  font-size: ${theme.baseFontSize};
-  line-height:1.6;
 h2 {
   ${tw`text-3xl`}
 }
