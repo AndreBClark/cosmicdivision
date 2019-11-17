@@ -32,7 +32,7 @@ const fontFamily = {
     sans: `'Fira Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
     heading: `'Orbitron'`,
     headingCase: `capitalize`,
-    headingWeight: `600`,
+    headingWeight: `700`,
     logoCase: 'uppercase'
 }
 
