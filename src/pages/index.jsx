@@ -17,8 +17,7 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
   ${tw`text-5xl`}
 `
-const Subtitle = styled.p`
-  letter-spacing: ${props => props.theme.letterSpacing};
+const Subtitle = styled.h5`
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;
