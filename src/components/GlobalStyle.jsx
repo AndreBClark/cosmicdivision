@@ -7,22 +7,22 @@ const GlobalStyle = createGlobalStyle`
 html {
   min-height: 100%;
 ${Preflight}
-h1 {
   ${tw`text-5xl`}
+h1, .h1 {
 }
-h2 {
+h2, .h2 {
   ${tw`text-3xl`}
 }
-h3 {
+h3, .h3 {
   ${tw`text-2xl`}
 }
-h4 {
+h4, .h4 {
   ${tw`text-xl`}
 }
-h5 {
+h5, .h5 {
   ${tw`text-lg`}
 }
-h6 {
+h6, .h6 {
   ${tw`text-base`}
 }
 svg path {
