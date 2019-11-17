@@ -1,17 +1,17 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Base from "../components/Base"
-import SEO from "../components/SEO"
-import Panel from "../components/Panel"
-import ContentContainer from "../components/ContentContainer"
-import styled from "styled-components"
-import { liveRemarkForm } from "gatsby-tinacms-remark"
-import { Wysiwyg } from "@tinacms/fields"
-import { TinaField } from "@tinacms/form-builder"
-import { SolidBtn } from "../components/button"
-import { useSidebar } from "tinacms"
-import useSiteMetadata from '../hooks/useSiteMetaData';
-import PageHeading from "../components/PageHeading"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Base from '../components/Base'
+import SEO from '../components/SEO'
+import Panel from '../components/Panel'
+import ContentContainer from '../components/ContentContainer'
+import styled from 'styled-components'
+import { liveRemarkForm } from 'gatsby-tinacms-remark'
+import { Wysiwyg } from '@tinacms/fields'
+import { TinaField } from '@tinacms/form-builder'
+import { SolidBtn } from '../components/button'
+import { useSidebar } from 'tinacms'
+import useSiteMetadata from '../hooks/useSiteMetaData'
+import PageHeading from '../components/PageHeading'
 
 const Article = styled.article`
   *:not(li) + * {
@@ -36,52 +36,58 @@ const Date = styled.p`
     margin: ${props => props.theme.spacer};
   }
 `
-const BlogPostTemplate = ({ data, pageContext, location, setIsEditing, isEditing }) => {
-    const post = data.markdownRemark
-    const siteTitle = useSiteMetadata()
-    const { previous, next } = pageContext
-    const sidebar = useSidebar()
-    return (
-      <Base location={location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <ContentContainer>
-            <PageHeading>{post.frontmatter.title}</PageHeading>
-          <Date>{post.frontmatter.date}</Date>
-          <Panel>
-            <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
-              <Article dangerouslySetInnerHTML={{ __html: post.html }} />
-            </TinaField>
-            {!sidebar.hidden && (
+const BlogPostTemplate = ({
+  data,
+  pageContext,
+  location,
+  setIsEditing,
+  isEditing,
+}) => {
+  const post = data.markdownRemark
+  const siteTitle = useSiteMetadata()
+  const { previous, next } = pageContext
+  const sidebar = useSidebar()
+  return (
+    <Base location={location} title={siteTitle}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <ContentContainer>
+        <PageHeading>{post.frontmatter.title}</PageHeading>
+        <Date>{post.frontmatter.date}</Date>
+        <Panel>
+          <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
+            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
+          </TinaField>
+          {!sidebar.hidden && (
             <SolidBtn onClick={() => setIsEditing(p => !p)}>
-              {isEditing ? "Preview" : "Edit"}
+              {isEditing ? 'Preview' : 'Edit'}
             </SolidBtn>
-            )}
-          </Panel>
-          <Panel>
-            <SequentialLinks>
-              <li>
-                {previous && (
-                  <Link to={`${previous.fields.slug}`} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={`${next.fields.slug}`} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </SequentialLinks>
-          </Panel>
-        </ContentContainer>
-      </Base>
-    )
-  }
+          )}
+        </Panel>
+        <Panel>
+          <SequentialLinks>
+            <li>
+              {previous && (
+                <Link to={`${previous.fields.slug}`} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={`${next.fields.slug}`} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </SequentialLinks>
+        </Panel>
+      </ContentContainer>
+    </Base>
+  )
+}
 const BlogTemplateOptions = {
   fields: [
     {
@@ -90,9 +96,9 @@ const BlogTemplateOptions = {
       component: 'text',
     },
     {
-      name: "frontmatter.draft",
-      component: "toggle",
-      label: "Draft",
+      name: 'frontmatter.draft',
+      component: 'toggle',
+      label: 'Draft',
     },
     {
       label: 'Date Posted',
@@ -108,7 +114,6 @@ const BlogTemplateOptions = {
     },
   ],
 }
-
 
 export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
 

@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import useSiteMetaData from "../hooks/useSiteMetaData"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import useSiteMetaData from '../hooks/useSiteMetaData'
 
 const SEO = ({ description, lang, meta, keywords, title }) => {
-const site = useSiteMetaData();
+  const site = useSiteMetaData()
 
   const metaDescription = description || site.description
 

@@ -1,11 +1,11 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import styled from "styled-components"
-import Base from "../components/Base"
-import SEO from "../components/SEO"
-import PageHeading from "../components/PageHeading"
-import ContentContainer from "../components/ContentContainer"
-import PanelHover from "../components/PanelHover"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import styled from 'styled-components'
+import Base from '../components/Base'
+import SEO from '../components/SEO'
+import PageHeading from '../components/PageHeading'
+import ContentContainer from '../components/ContentContainer'
+import PanelHover from '../components/PanelHover'
 import { withPlugin } from 'react-tinacms'
 import { createRemarkButton } from 'gatsby-tinacms-remark'
 
@@ -58,7 +58,8 @@ const CreateBlogPlugin = createRemarkButton({
     },
   ],
   filename: ({ title }) => {
-    const slug = title.replace(/\s+/g, '-')
+    const slug = title
+      .replace(/\s+/g, '-')
       .replace(/&/g, '-and-')
       // eslint-disable-next-line
       .replace(/[^\w\-]+/g, '')
@@ -78,7 +79,6 @@ const CreateBlogPlugin = createRemarkButton({
 })
 
 export default withPlugin(Blog, CreateBlogPlugin)
-
 
 export const pageQuery = graphql`
   query {

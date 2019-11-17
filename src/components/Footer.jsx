@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react'
+import styled from 'styled-components'
 
 const Row = styled.footer`
   background-color: ${props => props.theme.colors.bg};

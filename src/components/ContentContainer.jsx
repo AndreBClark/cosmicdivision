@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import theme from "../../config/theme"
+import React from 'react'
+import styled from 'styled-components'
+import theme from '../../config/theme'
 
 const Container = styled.div`
   max-width: ${theme.maxWidth};

@@ -1,9 +1,9 @@
-import React from "react"
-import { SolidLink, OutlineLink } from "../components/button"
-import Hero from "../components/Hero"
-import Base from "../components/Base"
-import SEO from "../components/SEO"
-import styled from "styled-components"
+import React from 'react'
+import { SolidLink, OutlineLink } from '../components/button'
+import Hero from '../components/Hero'
+import Base from '../components/Base'
+import SEO from '../components/SEO'
+import styled from 'styled-components'
 import tw from 'tailwind.macro'
 const HeroInner = styled.div`
   text-align: center;

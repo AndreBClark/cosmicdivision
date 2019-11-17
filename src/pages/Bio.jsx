@@ -1,7 +1,7 @@
-import React from "react"
-import Base from "../components/Base"
-import BioCard from "../components/BioCard"
-import ContentContainer from "../components/ContentContainer"
+import React from 'react'
+import Base from '../components/Base'
+import BioCard from '../components/BioCard'
+import ContentContainer from '../components/ContentContainer'
 const Bio = () => {
   return (
     <Base>

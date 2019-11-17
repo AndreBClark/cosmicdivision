@@ -1,10 +1,9 @@
-import styled from "styled-components"
-import { rhythm } from "../../config/typography"
+import styled from 'styled-components'
+import { rhythm } from '../../config/typography'
 import { Link } from 'gatsby'
 
-
 export const OutlineLink = styled(Link)`
-  padding: ${[rhythm(1 / 3), " ", rhythm(1)]};
+  padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
   margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
@@ -31,10 +30,11 @@ export const SolidLink = styled(OutlineLink)`
   &:hover {
     color: ${props => props.theme.colors.primary};
     background-color: transparent;
-  }`
+  }
+`
 
 export const OutlineBtn = styled.button`
-  padding: ${[rhythm(1 / 3), " ", rhythm(1)]};
+  padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
   margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
@@ -61,10 +61,11 @@ export const SolidBtn = styled(OutlineBtn)`
   &:hover {
     color: ${props => props.theme.colors.primary};
     background-color: transparent;
-  }`
+  }
+`
 
 export const OutlineAnchor = styled.a`
-  padding: ${[rhythm(1 / 3), " ", rhythm(1)]};
+  padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
   margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
@@ -91,4 +92,5 @@ export const SolidAnchor = styled(OutlineBtn)`
   &:hover {
     color: ${props => props.theme.colors.primary};
     background-color: transparent;
-  }`
+  }
+`
