@@ -9,7 +9,7 @@ import tw from 'tailwind.macro'
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
-  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     margin: 0 auto;
   }
 `
