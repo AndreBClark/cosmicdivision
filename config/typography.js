@@ -77,7 +77,7 @@ const typography = new Typography({
             "h1,h2,h3,h4,h5,h6,button": {
                 letterSpacing: theme.tracking
             },
-            e: _extends({}, scale(-1 / 5)),
+            e: _extends({}, scale(-1 / 2)),
         }),
     })
     // Hot reload typography in development.

@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 import theme from "../../config/theme"
+import Preflight from "./Preflight"
 
 const GlobalStyle = createGlobalStyle`
 html {
   min-height: 100%;
+${Preflight}
 }
 body {
   font-family: ${theme.fontFamily.sans};
