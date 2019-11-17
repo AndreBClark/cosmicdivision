@@ -47,7 +47,7 @@ const theme = {
     fontSize,
     breakpoints,
     fontFamily,
-    letterSpacing: '.1em',
+    tracking: '.12em',
     radius: `1vmin`,
     border: '.4vmin',
     spacer: '0.5rem',
