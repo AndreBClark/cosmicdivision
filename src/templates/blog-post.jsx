@@ -8,7 +8,7 @@ import styled from "styled-components"
 import { liveRemarkForm } from "gatsby-tinacms-remark"
 import { Wysiwyg } from "@tinacms/fields"
 import { TinaField } from "@tinacms/form-builder"
-import Button from "../components/button"
+import { SolidBtn } from "../components/button"
 import { useSidebar } from "tinacms"
 import useSiteMetadata from '../hooks/useSiteMetaData';
 import PageHeading from "../components/PageHeading"
@@ -55,9 +55,9 @@ const BlogPostTemplate = ({ data, pageContext, location, setIsEditing, isEditing
               <Article dangerouslySetInnerHTML={{ __html: post.html }} />
             </TinaField>
             {!sidebar.hidden && (
-            <Button onClick={() => setIsEditing(p => !p)}>
+            <SolidBtn onClick={() => setIsEditing(p => !p)}>
               {isEditing ? "Preview" : "Edit"}
-            </Button>
+            </SolidBtn>
             )}
           </Panel>
           <Panel>
