@@ -1,7 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import TemplateWrapper from "../components/Base"
+import Base from "../components/Base"
 import SEO from "../components/SEO"
 import ContentContainer from "../components/ContentContainer"
 import Panel from "../components/Panel"
@@ -13,7 +13,7 @@ class NotFoundPage extends React.Component {
     const siteTitle = data.site.siteMetadata.title
 
     return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
+      <Base location={this.props.location} title={siteTitle}>
         <ContentContainer>
           <SEO title="404: Not Found" />
           <h1>Not Found</h1>
@@ -22,7 +22,7 @@ class NotFoundPage extends React.Component {
               <SolidBtn to="/">GO HOME</SolidBtn>
           </Panel>
         </ContentContainer>
-      </TemplateWrapper>
+      </Base>
     )
   }
 }
