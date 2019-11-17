@@ -6,8 +6,11 @@ const Frame = styled.section`
   padding: 4vmin;
   margin: ${props => props.theme.spacer};
   height: 100%;
-  border-left: solid ${props => props.theme.stroke}
-    ${props => props.theme.colors.primary};
+  border-left: solid ${props => [
+    props.theme.stroke, 
+    props.theme.colors.primary
+    ]
+  };
   ul {
     margin-left: 1.5rem;
   }
