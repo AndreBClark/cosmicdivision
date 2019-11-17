@@ -7,8 +7,8 @@ const GlobalStyle = createGlobalStyle`
 html {
   min-height: 100%;
 ${Preflight}
-  ${tw`text-5xl`}
 h1, .h1 {
+  ${tw`text-4xl`}
 }
 h2, .h2 {
   ${tw`text-3xl`}
