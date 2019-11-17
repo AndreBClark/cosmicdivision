@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import SvgLogo from "./Svglogo"
+import styled from "styled-components"
+import Logo from "../images/logo.svg"
 
 const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
@@ -58,15 +59,11 @@ const Navbar = () => {
           <Link
             to="/"
             id="logo"
-            aria-label="Cosmic division Website Logo Home Button"
-          >
-            <SvgLogo
-              stroke={`none`}
-              strokeWidth={"10px"}
-              fill={theme.colors.primary}
-              height={`2rem`}
-            />
             <h3>Cosmic Division</h3>
+            aria-label="Cosmic division Website Logo Home Button">
+            <Logo
+              width="48" 
+              />
           </Link>
           <List>
             <li>
