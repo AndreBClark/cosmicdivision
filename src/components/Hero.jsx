@@ -32,7 +32,6 @@ const FlexLg = styled.div`
 
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
-    align-items: center;
   }
 `
 const Hero = ({ children }) => {
