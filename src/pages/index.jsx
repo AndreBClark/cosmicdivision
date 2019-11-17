@@ -5,6 +5,7 @@ import Hero from "../components/Hero"
 import Base from "../components/Base"
 import SEO from "../components/SEO"
 import styled from "styled-components"
+import tw from 'tailwind.macro'
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
@@ -13,9 +14,8 @@ const HeroInner = styled.div`
   }
 `
 const HeadingOne = styled.h1`
-  font-size: 4.5rem;
-  margin-bottom: 0.5rem;
   text-transform: ${props => props.theme.fontFamily.logoCase};
+  ${tw`text-5xl`}
 `
 const Subtitle = styled.p`
   letter-spacing: ${props => props.theme.letterSpacing};
@@ -25,10 +25,6 @@ const Subtitle = styled.p`
   margin-bottom: 3rem;
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
-  font-weight: 500;
-  font-size: ${props => props.theme.baseFontSize};
-  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
-    font-size: 1.5rem;
   }
 `
 
