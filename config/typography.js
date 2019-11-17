@@ -41,8 +41,7 @@ function _defineProperty(obj, key, value) {
 }
 
 const typography = new Typography({
-        title: "Fira-console",
-        baseFontSize: theme.baseFontSize,
+        title: "CosmicDivision",
         baseLineHeight: 1.6,
         scaleRatio: 1.5,
         googleFonts: [{
