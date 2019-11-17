@@ -57,21 +57,21 @@ const Navbar = () => {
           <Link
             to="/"
             id="logo"
-            <h3>Cosmic Division</h3>
             aria-label="Cosmic division Website Logo Home Button">
             <Logo
               width="48" 
               />
+            <span>Cosmic Division</span>
           </Link>
           <List>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/Bio">Bio</Link>
+              <Link to="/bio">Bio</Link>
             </li>
             <li>
-              <Link to="/Contact">Contact</Link>
+              <Link to="/contact">Contact</Link>
             </li>
           </List>
         </Nav>
