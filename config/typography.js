@@ -43,7 +43,16 @@ function _defineProperty(obj, key, value) {
 const typography = new Typography({
         title: "CosmicDivision",
         baseLineHeight: 1.6,
-        scaleRatio: 1.5,
+        headerFontFamily: [theme.fontFamily.heading],
+        bodyFontFamily: theme.fontFamily.sans,
+        bodyColor: `white`,
+        headerWeight: 500,
+        headerTextTransform: theme.fontFamily.headingCase,
+        headerColor: theme.colors.primary,
+        headerLineHeight: 1.3,
+        bodyWeight: 300,
+        boldWeight: 700,
+        includeNormalize: false,
         googleFonts: [{
                 name: "Orbitron",
                 styles: ["700"],
@@ -53,14 +62,6 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
-        headerFontFamily: [theme.fontFamily.heading],
-        bodyFontFamily: [theme.fontFamily.sans],
-        bodyColor: `white`,
-        headerWeight: 500,
-        headerTextTransform: theme.fontFamily.headingCase,
-        headerColor: "#26ffba",
-        bodyWeight: 300,
-        boldWeight: 700,
         overrideStyles: function overrideStyles(_ref, options) {
             // eslint-disable-next-line
             var adjustFontSizeTo = _ref.adjustFontSizeTo,
