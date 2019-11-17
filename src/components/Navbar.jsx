@@ -35,7 +35,7 @@ const Nav = styled.nav`
       text-transform: ${theme.fontFamily.logoCase};
     }
   }
-  @media screen and (min-width: ${theme.breakpoints.phone}) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
     padding: 0;
     a h3 {

@@ -29,7 +29,7 @@ const FlexLg = styled.div`
     display: flex;
     align-content: center;
 
-  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {}
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
     align-items: center;
   }
