@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Base from "../components/Base"
 import SEO from "../components/SEO"
 import ContentContainer from "../components/ContentContainer"
