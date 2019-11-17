@@ -21,6 +21,6 @@ const Frame = styled.section`
 `
 
 const Panel = ({ children, className }) => (
-  <Frame className={className}>{children}</Frame>
+  <Frame>{children}</Frame>
 )
 export default Panel
