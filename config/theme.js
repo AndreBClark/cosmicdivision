@@ -52,7 +52,7 @@ const theme = {
     border: '.4vmin',
     spacer: '0.5rem',
     maxWidth: `1280px`,
-    baseFontSize: "calc(16px + (20 - 14) * ((100vw - 300px) / (1600 - 300)))",
+    baseFontSize: "calc(16px + (20 - 14) * ((100vw - 300px) / (1600 - 300)))"
 }
 
 export default theme
