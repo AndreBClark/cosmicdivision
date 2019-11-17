@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import Button from "../components/button"
 import Hero from "../components/Hero"
-import TemplateWrapper from "../components/Base"
+import Base from "../components/Base"
 import SEO from "../components/SEO"
 import styled from "styled-components"
 // import SvgLogo from "../components/Svglogo"
@@ -39,7 +39,7 @@ class IndexPage extends React.Component {
     const siteTitle = `Cosmic Division`
 
     return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
+      <Base location={this.props.location} title={siteTitle}>
         <SEO
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
@@ -53,7 +53,7 @@ class IndexPage extends React.Component {
             </Link>
           </HeroInner>
         </Hero>
-      </TemplateWrapper>
+      </Base>
     )
   }
 }
