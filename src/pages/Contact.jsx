@@ -1,11 +1,11 @@
 import Button, { SolidButton } from '../components/button'
-import Panel from '../components/Panel'
-import PageHeading from '../components/PageHeading'
 import React from "react"
 import Base from "../components/Base"
 import ContentContainer from "../components/ContentContainer"
 import styled from "styled-components"
 import tw from "tailwind.macro"
+import Panel from "../components/Panel"
+import PageHeading from "../components/PageHeading"
 
 const TextInput = styled.input`
   border: solid 3px ${props => props.theme.colors.primary};
