@@ -47,8 +47,7 @@
         "typeface-fira-mono": "0.0.72",
         "typeface-fira-sans": "0.0.75",
         "typeface-orbitron": "0.0.72",
-        "typography": "^0.16.19",
-        "typography-theme-irving": "^0.16.19"
+        "typography": "^0.16.19"
     },
     "devDependencies": {
         "prettier": "^1.17.0",
