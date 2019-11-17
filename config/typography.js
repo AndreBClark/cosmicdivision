@@ -62,51 +62,6 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
-        overrideStyles: function overrideStyles(_ref, options) {
-            // eslint-disable-next-line
-            var adjustFontSizeTo = _ref.adjustFontSizeTo,
-                scale = _ref.scale,
-                rhythm = _ref.rhythm
-
-            var styles = _defineProperty({
-                    a: {
-                        color: theme.colors.primary,
-                        textDecoration: "none",
-                    },
-                    "a:hover": {
-                        textDecoration: "initial",
-                        color: theme.colors.primary,
-                        cursor: "pointer",
-                    },
-                    blockquote: _extends({}, scale(1 / 5), {
-                        color: (0, _grayPercentage2.default)(30),
-                        paddingLeft: rhythm(3 / 4),
-                        marginLeft: 0,
-                        marginRight: 0,
-                        borderLeft: rhythm(1 / 4) +
-                            " solid " +
-                            (0, _grayPercentage2.default)(13),
-                    }),
-                    h1: {
-                        marginTop: `1rem`,
-                        TextTransform: theme.fontFamily.headingCase,
-                    },
-                    "h2,h3,h4,h5,h6": {
-                        TextTransform: theme.fontFamily.headingCase,
-                    },
-                    e: _extends({}, scale(-1 / 5)),
-                },
-                _typographyBreakpointConstants.TABLET_MEDIA_QUERY, {
-                    blockquote: {
-                        marginLeft: rhythm(-3 / 4),
-                        marginRight: 0,
-                        paddingLeft: rhythm(1 / 2),
-                    },
-                }
-            )
-
-            return styles
-        },
     })
     // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
