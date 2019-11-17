@@ -5,10 +5,11 @@ import theme from "../../config/theme"
 import SvgLogo from "./Svglogo"
 
 const Header = styled.header`
+  font-family: ${props => props.theme.fontFamily.heading};
   font-size: 1rem;
   font-weight: 600;
-  border-bottom: solid ${theme.stroke} ${props => props.theme.colors.primary};
-  background-color: ${props => props.theme.colors.grey.default};
+  border-bottom: solid ${props => props.theme.stroke} ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.grey.dark};
   li a {
     color: ${props => props.theme.colors.white};
     margin: 10px 25px;
@@ -29,9 +30,11 @@ const Nav = styled.nav`
       display: none;
       padding: 0 1.5rem;
       font-size: 2rem;
+      margin-bottom: 0;
+    text-transform: ${theme.fontFamily.logoCase};
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
     padding: 0;
     a h3 {
@@ -72,7 +75,10 @@ const Navbar = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
-              <Link to="/bio">Bio</Link>
+              <Link to="/Bio">Bio</Link>
+            </li>
+            <li>
+              <Link to="/Contact">Contact</Link>
             </li>
           </List>
         </Nav>
