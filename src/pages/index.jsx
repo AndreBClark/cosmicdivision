@@ -1,6 +1,5 @@
-import { Link } from "gatsby"
 import React from "react"
-import Button from "../components/button"
+import { SolidLink, OutlineLink } from "../components/button"
 import Hero from "../components/Hero"
 import Base from "../components/Base"
 import SEO from "../components/SEO"
@@ -10,7 +9,7 @@ const HeroInner = styled.div`
   text-align: center;
   margin: 0;
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    margin: 0 auto;
+    margin-inline: auto;
   }
 `
 const HeadingOne = styled.h1`
@@ -25,7 +24,6 @@ const Subtitle = styled.h5`
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontFamily.headingWeight};
-  }
 `
 
 class IndexPage extends React.Component {
@@ -42,9 +40,8 @@ class IndexPage extends React.Component {
           <HeroInner>
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
-            <Link to="/blog/" style={{ textDecoration: "none" }}>
-              <Button marginTop="35px">Begin Reading</Button>
-            </Link>
+            <SolidLink to="/blog/">Begin Reading</SolidLink>
+            <OutlineLink to="/contact/">Get in Touch</OutlineLink>
           </HeroInner>
         </Hero>
       </Base>
