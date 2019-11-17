@@ -62,6 +62,34 @@ const typography = new Typography({
                 styles: ["400", "700"],
             },
         ],
+        overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+            a: {
+                color: theme.colors.primary,
+                textDecoration: "none",
+            },
+            "a:hover": {
+                textDecoration: "initial",
+                color: theme.colors.primary,
+                cursor: "pointer",
+            },
+            blockquote: _extends({}, scale(1 / 5), {
+                color: (0, _grayPercentage2.default)(30),
+                paddingLeft: rhythm(3 / 4),
+                marginLeft: 0,
+                marginRight: 0,
+                borderLeft: rhythm(1 / 4) + " solid " + (0, _grayPercentage2.default)(13),
+            }),
+            h1: {
+                TextTransform: theme.fontFamily.headingCase,
+            },
+            "h2,h3,h4,h5,h6": {
+                TextTransform: theme.fontFamily.headingCase,
+            },
+            "h1,h2,h3,h4,h5,h6,button": {
+                letterSpacing: theme.tracking
+            },
+            e: _extends({}, scale(-1 / 5)),
+        }),
     })
     // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
