@@ -105,7 +105,7 @@ module.exports = {
                 theme_color: `#26ffba`,
                 display: `standalone`,
                 // edit below
-                icon: `static/logo.svg`,
+                icon: `src/images/logo.svg`,
             },
         },
         {
