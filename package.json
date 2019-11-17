@@ -10,7 +10,6 @@
     "dependencies": {
         "@openfonts/fira-code_latin": "^1.44.0",
         "depcheck": "^0.9.1",
-        "emotion-tailwind-preflight": "^1.0.0",
         "gatsby": "^2.3.25",
         "gatsby-background-image": "^0.8.11",
         "gatsby-image": "^2.0.39",
