@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Base from "../components/Base"
 import SEO from "../components/SEO"
-
+import PageHeading from "../components/PageHeading"
 import ContentContainer from "../components/ContentContainer"
 import PanelHover from "../components/PanelHover"
 import { withPlugin } from 'react-tinacms'
@@ -24,7 +24,7 @@ class Blog extends React.Component {
       <Base location={this.props.location} title={siteTitle}>
         <SEO title="All Posts" />
         <ContentContainer>
-          <h1>All Posts</h1>
+          <PageHeading>All Posts</PageHeading>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
