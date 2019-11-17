@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import theme from "../../config/theme"
-import ContentContainer from "./ContentContainer"
-import Background from "../images/orbital-bw.jpg"
+import React from 'react'
+import styled from 'styled-components'
+import theme from '../../config/theme'
+import ContentContainer from './ContentContainer'
+import Background from '../images/orbital-bw.jpg'
 
 const Container = styled.section`
   background-color: ${theme.colors.grey.dark};
@@ -27,8 +27,8 @@ const Container = styled.section`
   }
 `
 const FlexLg = styled.div`
-    display: flex;
-    align-content: center;
+  display: flex;
+  align-content: center;
 
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;

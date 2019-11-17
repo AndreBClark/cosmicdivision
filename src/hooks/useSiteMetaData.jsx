@@ -8,13 +8,7 @@ const useSiteMetadata = () => {
           siteMetadata {
             title
             description
-            authorBio {
-              author
-              location
-            }
-            social {
-              github
-            }
+            author
           }
         }
       }
@@ -22,5 +16,4 @@ const useSiteMetadata = () => {
   )
   return site.siteMetadata
 }
-
 export default useSiteMetadata

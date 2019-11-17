@@ -1,14 +1,18 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import TemplateWrapper from "../components/Base"
-import SEO from "../components/SEO"
-import Panel from "../components/Panel"
-import ContentContainer from "../components/ContentContainer"
-import styled from "styled-components"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Base from '../components/Base'
+import SEO from '../components/SEO'
+import Panel from '../components/Panel'
+import ContentContainer from '../components/ContentContainer'
+import styled from 'styled-components'
 import { liveRemarkForm } from 'gatsby-tinacms-remark'
 import { Wysiwyg } from '@tinacms/fields'
 import { TinaField } from '@tinacms/form-builder'
-import Button from '../components/button'
+import { SolidBtn } from '../components/button'
+import { useSidebar } from 'tinacms'
+import useSiteMetadata from '../hooks/useSiteMetaData'
+import PageHeading from '../components/PageHeading'
+
 const Article = styled.article`
   *:not(li) + * {
     margin-bottom: calc(${props => props.theme.spacer} * 4);
@@ -17,10 +21,7 @@ const Article = styled.article`
     margin-bottom: ${props => props.theme.spacer};
   }
 `
-const ArticleHeading = styled.h1`
-  margin: ${props => props.theme.spacer};
-  max-width: ${props => props.theme.maxWidth};
-`
+
 const SequentialLinks = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -29,53 +30,92 @@ const SequentialLinks = styled.ul`
   padding: 0;
 `
 const Date = styled.p`
-  padding: 0 ${props => props.theme.spacer};
-`
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-    return (
-      <TemplateWrapper location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
-        />
-        <ContentContainer>
-          <ArticleHeading>{post.frontmatter.title}</ArticleHeading>
-          <Date>{post.frontmatter.date}</Date>
-          <Panel>
-            <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
-            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
-            </TinaField>
-            <Button onClick={() => this.props.setIsEditing(p => !p)}>{this.props.isEditing ? 'Preview' : 'Edit'}</Button>
-          </Panel>
-          <Panel>
-            <SequentialLinks>
-              <li>
-                {previous && (
-                  <Link to={`${previous.fields.slug}`} rel="prev">
-                    ← {previous.frontmatter.title}
-                  </Link>
-                )}
-              </li>
-              <li>
-                {next && (
-                  <Link to={`${next.fields.slug}`} rel="next">
-                    {next.frontmatter.title} →
-                  </Link>
-                )}
-              </li>
-            </SequentialLinks>
-          </Panel>
-        </ContentContainer>
-      </TemplateWrapper>
-    )
+  margin: calc(4 * ${props => props.theme.spacer});
+  max-width: ${props => props.theme.maxWidth};
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+    margin: ${props => props.theme.spacer};
   }
+`
+const BlogPostTemplate = ({
+  data,
+  pageContext,
+  location,
+  setIsEditing,
+  isEditing,
+}) => {
+  const post = data.markdownRemark
+  const siteTitle = useSiteMetadata()
+  const { previous, next } = pageContext
+  const sidebar = useSidebar()
+  return (
+    <Base location={location} title={siteTitle}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <ContentContainer>
+        <PageHeading>{post.frontmatter.title}</PageHeading>
+        <Date>{post.frontmatter.date}</Date>
+        <Panel>
+          <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
+            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
+          </TinaField>
+          {!sidebar.hidden && (
+            <SolidBtn onClick={() => setIsEditing(p => !p)}>
+              {isEditing ? 'Preview' : 'Edit'}
+            </SolidBtn>
+          )}
+        </Panel>
+        <Panel>
+          <SequentialLinks>
+            <li>
+              {previous && (
+                <Link to={`${previous.fields.slug}`} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={`${next.fields.slug}`} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </SequentialLinks>
+        </Panel>
+      </ContentContainer>
+    </Base>
+  )
+}
+const BlogTemplateOptions = {
+  fields: [
+    {
+      label: 'Title',
+      name: 'rawFrontmatter.title',
+      component: 'text',
+    },
+    {
+      name: 'frontmatter.draft',
+      component: 'toggle',
+      label: 'Draft',
+    },
+    {
+      label: 'Date Posted',
+      name: 'rawFrontmatter.date',
+      component: 'date',
+      dateFormat: 'MMMM DD YYYY',
+      timeFormat: false,
+    },
+    {
+      label: 'Body',
+      name: 'rawMarkdownBody',
+      component: 'markdown',
+    },
+  ],
 }
 
-export default liveRemarkForm(BlogPostTemplate)
+export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
