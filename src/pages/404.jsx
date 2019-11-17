@@ -5,7 +5,7 @@ import TemplateWrapper from "../components/Base"
 import SEO from "../components/SEO"
 import ContentContainer from "../components/ContentContainer"
 import Panel from "../components/Panel"
-import Button from "../components/button"
+import { SolidBtn } from "../components/button"
 
 class NotFoundPage extends React.Component {
   render() {
@@ -19,9 +19,7 @@ class NotFoundPage extends React.Component {
           <h1>Not Found</h1>
           <Panel>
             <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-            <Link to="/">
-            <Button>GO HOME</Button>
-            </Link>
+              <SolidBtn to="/">GO HOME</SolidBtn>
           </Panel>
         </ContentContainer>
       </TemplateWrapper>
