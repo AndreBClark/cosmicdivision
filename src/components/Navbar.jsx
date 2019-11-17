@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../images/logo.svg"
+import tw from 'tailwind.macro'
 
 const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
@@ -17,13 +18,14 @@ const Header = styled.header`
 `
 
 const Nav = styled.nav`
-  max-width: ${theme.maxWidth};
-  margin: 0 auto;
+  max-width: ${props => props.theme.maxWidth};
+  ${tw`leading-tight mx-1 my-2`}
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 1rem;
   a {
+    ${tw`mx-auto`}
     display: flex;
     align-items: center;
     h3 {
