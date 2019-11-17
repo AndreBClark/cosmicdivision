@@ -49,6 +49,9 @@ const typography = new Typography({
             },
         ],
         overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+            html: {
+                fontSize: theme.baseFontSize
+            },
             a: {
                 color: theme.colors.primary,
                 textDecoration: "none",
