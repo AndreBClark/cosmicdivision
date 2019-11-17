@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import theme from "../../config/theme"
 import SvgLogo from "./Svglogo"
 
 const Header = styled.header`
@@ -55,7 +53,6 @@ const List = styled.ul`
 
 const Navbar = () => {
   return (
-    <ThemeProvider theme={theme}>
       <Header>
         <Nav>
           <Link
@@ -84,7 +81,6 @@ const Navbar = () => {
           </List>
         </Nav>
       </Header>
-    </ThemeProvider>
   )
 }
 
