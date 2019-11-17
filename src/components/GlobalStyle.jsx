@@ -40,6 +40,7 @@ h1,h2,h3,h4,h5,h6 {
 
 a, button {
   transition: all ${props => props.theme.transitions.normal};
+  color: ${theme.colors.primary};
 }
 `
 export default GlobalStyle
