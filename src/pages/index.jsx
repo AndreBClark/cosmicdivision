@@ -24,6 +24,7 @@ const Subtitle = styled.h5`
   margin-bottom: 3rem;
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
+  font-weight: ${props => props.theme.fontFamily.headingWeight};
   }
 `
 
