@@ -5,8 +5,6 @@ import Hero from "../components/Hero"
 import Base from "../components/Base"
 import SEO from "../components/SEO"
 import styled from "styled-components"
-// import SvgLogo from "../components/Svglogo"
-
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;

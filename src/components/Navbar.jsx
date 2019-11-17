@@ -11,10 +11,6 @@ const Header = styled.header`
   border-bottom: solid ${props => props.theme.stroke}
     ${props => props.theme.colors.primary};
   background-color: ${props => props.theme.colors.grey.dark};
-  li a {
-    color: ${props => props.theme.colors.white};
-    margin: 10px 25px;
-  }
 `
 
 const Nav = styled.nav`
