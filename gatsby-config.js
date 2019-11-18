@@ -89,6 +89,13 @@ module.exports = {
             },
         },
         {
+            resolve: "gatsby-plugin-google-tagmanager",
+            options: {
+                id: "GTM-KMKSS6R",
+                includeInDevelopment: false,
+            }
+        },
+        {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `Cosmic Division Jamstack Blog`,
