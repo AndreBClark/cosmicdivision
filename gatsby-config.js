@@ -3,30 +3,36 @@ module.exports = {
         // edit below
         title: `Cosmic Division`,
         author: `Andre Clark`,
-        description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-        siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+        description: `A personal blog with styled components, TinaCMS`,
+        siteUrl: `https://cosmicdivision.dev`,
         social: {
             twitter: ``,
             github: `AndreBClark`,
         },
     },
     plugins: [
-        `gatsby-plugin-netlify-cms`,
+        // `gatsby-plugin-netlify-cms`,
         {
             resolve: "gatsby-plugin-tinacms",
             options: {
-                plugins: [
-                    "gatsby-tinacms-git",
-                    "gatsby-tinacms-remark"
-                ],
+                sidebar: {
+                    position: "fixed",
+                    hidden: process.env.NODE_ENV === "production",
+                },
+                plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
             },
         },
-        `gatsby-plugin-styled-components`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-styled-components`,
+            options: {
+                displayName: true,
+            },
+        },
         `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-background-image`,
+
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -37,10 +43,12 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/assets`,
-                name: `assets`,
+                name: `images`,
+                path: `${__dirname}/src/images`,
             },
         },
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -67,30 +75,36 @@ module.exports = {
                             }, ],
                         },
                     },
-
+                    {
+                        resolve: "gatsby-plugin-react-svg",
+                        options: {
+                            rule: {
+                                include: /\.svg$/
+                            },
+                        },
+                    },
                     `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-smartypants`,
                 ],
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: "gatsby-plugin-google-tagmanager",
             options: {
-                // edit below
-                // trackingId: `ADD YOUR TRACKING ID HERE`,
-            },
+                id: "GTM-KMKSS6R",
+                includeInDevelopment: false,
+            }
         },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby Starter Blog`,
-                short_name: `GatsbyJS`,
+                name: `Cosmic Division Jamstack Blog`,
+                short_name: `CosmicDiv`,
                 start_url: `/`,
-                background_color: `#ffffff`,
+                background_color: `#121212`,
                 theme_color: `#26ffba`,
-                display: `minimal-ui`,
-                // edit below
-                icon: `static/logo.svg`,
+                display: `standalone`,
+                icon: `src/images/logo.svg`,
             },
         },
         {
