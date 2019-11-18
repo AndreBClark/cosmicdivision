@@ -11,7 +11,7 @@ import { Subtitle } from '.'
 
 const TextInput = styled.input`
   border: solid 3px ${props => props.theme.colors.primary};
-  ${tw` block rounded-lg text-white bg-transparent p-2`}
+  ${tw`block w-full rounded-lg text-white bg-transparent p-2`}
 `
 const Label = styled.label`
   ${tw`block my-2`}
