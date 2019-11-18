@@ -5,6 +5,7 @@ import Base from '../components/Base'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+import { rhythm } from '../../config/typography'
 import { DualWrapper } from './contact'
 const HeroInner = styled.div`
   text-align: center;
