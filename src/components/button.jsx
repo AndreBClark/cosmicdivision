@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 
 export const OutlineLink = styled(Link)`
   padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
-  margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
   background-color: none;
@@ -35,7 +34,6 @@ export const SolidLink = styled(OutlineLink)`
 
 export const OutlineBtn = styled.button`
   padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
-  margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
   background-color: none;
@@ -66,7 +64,6 @@ export const SolidBtn = styled(OutlineBtn)`
 
 export const OutlineAnchor = styled.a`
   padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
-  margin: ${rhythm(1 / 3)};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
   background-color: none;
