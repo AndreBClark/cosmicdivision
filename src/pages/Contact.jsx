@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { SolidBtn, OutlineBtn } from '../components/button'
 import Panel from '../components/Panel'
+import { rhythm } from '../../config/typography'
 import PageHeading from '../components/PageHeading'
 import { Subtitle } from '.'
 
@@ -15,18 +16,24 @@ const TextInput = styled.input`
 const Label = styled.label`
   ${tw`block my-2`}
 `
+export const DualWrapper = styled.div`
+  margin-block: ${rhythm(1)};
+  * + * {
+    margin-inline: ${rhythm(2 / 3)};
+  }
+`
 
 const Contact = () => {
   return (
     <Base>
       <ContentContainer>
         <PageHeading>Contact Me</PageHeading>
-        <h3>Get in touch with me</h3>
+        <Subtitle>Get in touch with me</Subtitle>
         <Panel>
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
             <Label>
-              Name
+              Full Name
               <TextInput type="text" name="name" id="name" />
             </Label>
             <Label>
