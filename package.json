@@ -48,6 +48,9 @@
         "typeface-orbitron": "0.0.72",
         "typography": "^0.16.19"
     },
+    "babelMacros": {
+        "tailwind": {}
+    },
     "devDependencies": {
         "prettier": "^1.17.0",
         "tailwindcss": "^1.1.3",
