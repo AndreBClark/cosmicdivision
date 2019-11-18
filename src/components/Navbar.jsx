@@ -45,7 +45,6 @@ const List = styled.ul`
   justify-content: space-around;
   align-items: center;
   flex: 1 2 auto;
-
   li {
     margin-block-end: 0;
     a {
@@ -54,6 +53,7 @@ const List = styled.ul`
   }
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
+    flex: 1 0;
   }
 `
 
