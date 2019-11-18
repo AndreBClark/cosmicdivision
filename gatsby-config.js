@@ -79,7 +79,7 @@ module.exports = {
                         resolve: "gatsby-plugin-react-svg",
                         options: {
                             rule: {
-                                include: /\.svg$/ // See below to configure properly
+                                include: /\.svg$/
                             },
                         },
                     },
@@ -88,13 +88,6 @@ module.exports = {
                 ],
             },
         },
-        // {
-        //     resolve: `gatsby-plugin-google-analytics`,
-        //     options: {
-        //         // edit below
-        //         // trackingId: `ADD YOUR TRACKING ID HERE`,
-        //     },
-        // },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -104,7 +97,6 @@ module.exports = {
                 background_color: `#121212`,
                 theme_color: `#26ffba`,
                 display: `standalone`,
-                // edit below
                 icon: `src/images/logo.svg`,
             },
         },
