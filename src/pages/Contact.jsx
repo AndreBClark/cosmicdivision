@@ -41,12 +41,14 @@ const Contact = () => {
               Message
               <TextInput name="message" id="message" rows="5" />
             </Label>
-            <div>
-              <SolidBtn type="submit">Send</SolidBtn>
+            <DualWrapper>
+              <SolidBtn type="submit">
+                Send
+              </SolidBtn>
               <OutlineBtn type="reset" value="Clear">
                 Reset
               </OutlineBtn>
-            </div>
+            </DualWrapper>
           </form>
         </Panel>
       </ContentContainer>

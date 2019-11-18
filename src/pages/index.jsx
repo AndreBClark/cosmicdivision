@@ -5,6 +5,7 @@ import Base from '../components/Base'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+import { DualWrapper } from './contact'
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
@@ -41,8 +42,10 @@ class IndexPage extends React.Component {
           <HeroInner>
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
-            <SolidLink to="/blog/">Begin Reading</SolidLink>
-            <OutlineLink to="/contact/">Get in Touch</OutlineLink>
+            <DualWrapper>
+              <SolidLink to="/blog/">Begin Reading</SolidLink>
+              <OutlineLink to="/contact/">Get in Touch</OutlineLink>
+            </DualWrapper>
           </HeroInner>
         </Hero>
       </Base>
