@@ -6,6 +6,7 @@ import tw from 'tailwind.macro'
 import { SolidBtn, OutlineBtn } from '../components/button'
 import Panel from '../components/Panel'
 import PageHeading from '../components/PageHeading'
+import { Subtitle } from '.'
 
 const TextInput = styled.input`
   border: solid 3px ${props => props.theme.colors.primary};

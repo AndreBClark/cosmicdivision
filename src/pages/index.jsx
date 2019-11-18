@@ -16,11 +16,12 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
   ${tw`text-5xl`}
 `
-const Subtitle = styled.h5`
+export const Subtitle = styled.h5`
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;
-  margin-bottom: 3rem;
+  margin-inline: ${rhythm(1 / 3)};
+  padding-inline: ${rhythm(1 / 3)};
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontFamily.headingWeight};
