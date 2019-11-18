@@ -49,7 +49,6 @@
         "react-switch": "^5.0.0",
         "react-typography": "^0.16.19",
         "styled-components": "^4.3.2",
-        "typeface-fira-mono": "0.0.72",
         "typeface-fira-sans": "0.0.75",
         "typeface-orbitron": "0.0.72",
         "typography": "^0.16.19"
