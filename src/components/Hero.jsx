@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import ContentContainer from './ContentContainer'
-import Background from '../images/orbital-bw.jpg'
 import BackgroundImage from 'gatsby-background-image'
 
 
