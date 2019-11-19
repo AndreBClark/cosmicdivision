@@ -35,10 +35,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 *::selection {
-  background-color: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.bg};
+  background-color: ${theme.colors.primary};
+  color: ${theme.colors.bg};
 }
-
 a, button {
   transition: all ${props => props.theme.transitions.normal};
   color: ${theme.colors.primary};
