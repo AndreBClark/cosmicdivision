@@ -10,8 +10,10 @@ import PageHeading from '../components/PageHeading'
 import { Subtitle } from '.'
 
 const TextInput = styled.input`
-  border: solid 3px ${props => props.theme.colors.primary};
-  ${tw`block w-1/2 rounded-lg text-white bg-transparent p-2`}
+  ${tw`block w-1/2 border-2 border-gray-300 rounded-lg text-white bg-gray-300 p-2`};
+  :hover, :focus {
+    ${tw`bg-gray-600 border-primary`}
+  }
 `
 const Label = styled.label`
   ${tw`block my-2`}
@@ -33,11 +35,13 @@ const Contact = () => {
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
             <Label>
-              Full Name
-              <TextInput type="text" name="name" id="name" />
+              <small>
+                Full Name
+              </small>
+              <TextInput type="text" name="name" id="name" placeholder="Nate Goullette" />
             </Label>
             <Label>
-              Email
+              Email Address
               <TextInput type="email" name="email" id="email" />
             </Label>
             <label>
