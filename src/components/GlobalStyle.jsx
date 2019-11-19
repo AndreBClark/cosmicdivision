@@ -6,6 +6,7 @@ import Preflight from './Preflight'
 const GlobalStyle = createGlobalStyle`
 html {
   min-height: 100%;
+}
 ${Preflight}
 h1, .h1 {
   ${tw`text-4xl`}

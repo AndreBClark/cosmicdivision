@@ -19,7 +19,7 @@ const colors = {
 }
 
 const transitions = {
-    normal: "0.5s",
+    normal: "400ms",
 }
 
 const fontSize = {
