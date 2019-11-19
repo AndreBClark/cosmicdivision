@@ -38,6 +38,9 @@ h1,h2,h3,h4,h5,h6 {
   background-color: ${theme.colors.primary};
   color: ${theme.colors.bg};
 }
+*:hover {
+  transition: all ${theme.transitions.normal}
+}
 a, button {
   transition: all ${props => props.theme.transitions.normal};
   color: ${theme.colors.primary};
