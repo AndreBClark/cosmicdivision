@@ -7,11 +7,6 @@
     "bugs": {
         "url": "https://github.com/gatsbyjs/gatsby/issues"
     },
-    "babelMacros": {
-        "tailwind": {
-            "config": "./tailwind.config.js"
-        }
-    },
     "dependencies": {
         "@babel/plugin-syntax-object-rest-spread": "^7.2.0",
         "@openfonts/fira-code_latin": "^1.44.0",
