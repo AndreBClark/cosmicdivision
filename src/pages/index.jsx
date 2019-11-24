@@ -23,6 +23,7 @@ export const Subtitle = styled.h5`
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;
+  border-radius: ${rhythm(1 / 8)};
   margin: ${rhythm(1 / 4)};
   padding: ${rhythm(1 / 8)} ${rhythm(1)};
   color: ${props => props.theme.colors.bg};
