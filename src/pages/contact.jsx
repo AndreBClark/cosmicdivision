@@ -11,7 +11,8 @@ import { Subtitle } from '.'
 
 const TextInput = styled.input`
   ${tw`block w-1/2 border-2 border-gray-300 rounded-lg text-white bg-gray-300 p-2`};
-  :hover, :focus {
+  :hover,
+  :focus {
     ${tw`bg-gray-600 border-primary`}
   }
 `
