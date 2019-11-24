@@ -37,27 +37,43 @@ const Contact = () => {
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
             <Label>
-              <small>
-                Full Name
-              </small>
-              <TextInput type="text" name="name" id="name" placeholder="Nate Goullette" />
+              <small>Full Name</small>
+              <TextInput
+                type="text"
+                name="name"
+                id="name"
+                placeholder="First Last"
+              />
             </Label>
             <Label>
               Email Address
-              <TextInput type="email" name="email" id="email" />
+              <TextInput
+                type="email"
+                name="email"
+                id="email"
+                placeholder="name@example.com"
+              />
             </Label>
             <label>
               Subject
-              <TextInput type="text" name="subject" id="subject" placeholder="Subject" />
+              <TextInput
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+              />
             </label>
             <Label>
               Message
-              <TextInput name="message" id="message" rows="5" placeholder="Message" />
+              <TextInput
+                name="message"
+                id="message"
+                rows="5"
+                placeholder="Message"
+              />
             </Label>
             <DualWrapper>
-              <SolidBtn type="submit">
-                Send
-              </SolidBtn>
+              <SolidBtn type="submit">Send</SolidBtn>
               <OutlineBtn type="reset" value="Clear">
                 Reset
               </OutlineBtn>
