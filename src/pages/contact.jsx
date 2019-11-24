@@ -19,9 +19,11 @@ const Label = styled.label`
   ${tw`block my-2`}
 `
 export const DualWrapper = styled.div`
-  margin-block: ${rhythm(1)};
+  margin-top: ${rhythm(1)};
+  margin-bottom: ${rhythm(1)};
   * + * {
-    margin-inline: ${rhythm(2 / 3)};
+    margin-left: ${rhythm(2 / 3)};
+    margin-right: ${rhythm(2 / 3)};
   }
 `
 
@@ -46,11 +48,11 @@ const Contact = () => {
             </Label>
             <label>
               Subject
-              <TextInput type="text" name="subject" id="subject" />
+              <TextInput type="text" name="subject" id="subject" placeholder="Subject" />
             </label>
             <Label>
               Message
-              <TextInput name="message" id="message" rows="5" />
+              <TextInput name="message" id="message" rows="5" placeholder="Message" />
             </Label>
             <DualWrapper>
               <SolidBtn type="submit">

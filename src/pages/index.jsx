@@ -11,7 +11,8 @@ const HeroInner = styled.div`
   text-align: center;
   margin: 0;
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 `
 const HeadingOne = styled.h1`
@@ -22,8 +23,8 @@ export const Subtitle = styled.h5`
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;
-  margin-inline: ${rhythm(1 / 3)};
-  padding-inline: ${rhythm(1 / 3)};
+  margin: ${rhythm(1 / 4)};
+  padding: ${rhythm(1 / 8)} ${rhythm(1)};
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontFamily.headingWeight};
