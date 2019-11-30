@@ -22,9 +22,10 @@ const Label = styled.label`
 export const DualWrapper = styled.div`
   margin-top: ${rhythm(1)};
   margin-bottom: ${rhythm(1)};
-  * + * {
-    margin-left: ${rhythm(2 / 3)};
-    margin-right: ${rhythm(2 / 3)};
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) { 
+    * + * {
+      margin: ${rhythm(2 / 3)};
+    }
   }
 `
 
