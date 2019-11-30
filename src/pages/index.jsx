@@ -1,5 +1,5 @@
 import React from 'react'
-import { SolidLink, OutlineLink } from '../components/button'
+import { BtnOutline, Btn } from '../components/button'
 import Hero from '../components/Hero'
 import Base from '../components/Base'
 import SEO from '../components/SEO'
@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { rhythm } from '../../config/typography'
 import { DualWrapper } from './contact'
+import { Link } from 'gatsby'
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
@@ -46,8 +47,8 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <SolidLink to="/blog/">Begin Reading</SolidLink>
-              <OutlineLink to="/contact/">Get in Touch</OutlineLink>
+              <Btn as={Link} to="/blog/">Begin Reading</Btn>
+              <BtnOutline as={Link} to="/contact/">Get in Touch</BtnOutline>
             </DualWrapper>
           </HeroInner>
         </Hero>

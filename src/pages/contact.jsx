@@ -3,7 +3,7 @@ import Base from '../components/Base'
 import ContentContainer from '../components/ContentContainer'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import { SolidBtn, OutlineBtn } from '../components/button'
+import { BtnOutline, Btn } from '../components/button'
 import Panel from '../components/Panel'
 import { rhythm } from '../../config/typography'
 import PageHeading from '../components/PageHeading'
@@ -77,7 +77,7 @@ const Contact = () => {
               <SolidBtn type="submit">Send</SolidBtn>
               <OutlineBtn type="reset" value="Clear">
                 Reset
-              </OutlineBtn>
+              </BtnOutline>
             </DualWrapper>
           </form>
         </Panel>
