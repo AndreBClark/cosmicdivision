@@ -46,4 +46,3 @@ export const BtnSimple = styled(Btn)`
     cursor: pointer !important;
   }
 `
-
