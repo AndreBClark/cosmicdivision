@@ -28,9 +28,9 @@ class Blog extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={`${node.fields.slug}`}>
-                <PanelHover>
-                  <PostCard key={node.fields.slug}>
+              <PanelHover>
+                <PostCard key={node.fields.slug}>
+                  <Link to={`${node.fields.slug}`}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p
@@ -38,9 +38,9 @@ class Blog extends React.Component {
                         __html: node.frontmatter.description || node.excerpt,
                       }}
                     />
-                  </PostCard>
-                </PanelHover>
-              </Link>
+                  </Link>
+                </PostCard>
+              </PanelHover>
             )
           })}
         </ContentContainer>
