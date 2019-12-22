@@ -33,7 +33,7 @@ const Hero = ({ children }) => (
       query {
         desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
-            fluid(quality: 75, maxWidth: 1920, fit: cover) {
+            fluid(quality: 75, maxWidth: 1920) {
               ...GatsbyImageSharpFluid
             }
           }
