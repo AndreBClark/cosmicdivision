@@ -15,7 +15,7 @@ const Header = styled.header`
 
 const Nav = styled.nav`
   max-width: ${props => props.theme.maxWidth};
-  ${tw`leading-tight mx-1 my-2`}
+  ${tw`leading-tight mx-3 my-2`}
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -66,7 +66,7 @@ const Navbar = () => {
           id="logo"
           aria-label="Cosmic division Website Logo Home Button"
         >
-          <Logo width="48" />
+          <Logo width="48" alt="Cosmic Division Logo" />
           <span>Cosmic Division</span>
         </Link>
         <List>
