@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import ContentContainer from './ContentContainer'
-import Background from '../images/orbital-bw.jpg'
 import BackgroundImage from 'gatsby-background-image'
 
 const Container = styled(BackgroundImage)`
@@ -34,9 +33,8 @@ const Hero = ({ children }) => (
       query {
         desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-              ...GatsbyImageSharpFluid_tracedSVG
+            fluid(quality: 75, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
