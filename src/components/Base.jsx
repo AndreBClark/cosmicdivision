@@ -5,6 +5,9 @@ import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
 import Footer from './Footer'
 import GlobalStyle from './GlobalStyle'
+import 'typeface-fira-sans'
+import 'typeface-orbitron'
+import '@openfonts/fira-code_latin'
 
 const Wrapper = styled.div`
   min-height: 100vh;
