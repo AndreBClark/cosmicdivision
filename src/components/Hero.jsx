@@ -5,7 +5,6 @@ import theme from '../../config/theme'
 import ContentContainer from './ContentContainer'
 import BackgroundImage from 'gatsby-background-image'
 
-
 const Container = styled(BackgroundImage)`
   background-color: ${theme.colors.grey.dark};
   width: 100%;
@@ -30,11 +29,11 @@ const FlexLg = styled.div`
 `
 const Hero = ({ children }) => (
   <StaticQuery
-  query={graphql`
+    query={graphql`
       query {
         desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
+            fluid(quality: 75, maxWidth: 1920) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -45,23 +44,17 @@ const Hero = ({ children }) => (
       // Set ImageData.
       const imageData = [
         data.desktop.childImageSharp.fluid,
-        `linear-gradient(0deg, rgba(18, 18, 18, 1) 5%, rgba(18, 18, 18, 0) 25%, rgba(18, 18, 18, 0) 50%)` 
+        `linear-gradient(0deg, rgba(18, 18, 18, 1) 5%, rgba(18, 18, 18, 0) 25%, rgba(18, 18, 18, 0) 50%)`,
       ].reverse()
       return (
-        <Container
-        Tag="section"
-        fluid={imageData}
-        backgroundColor={`#040e18`}
-        >
-      <ContentContainer>
-        <FlexLg>{children}</FlexLg>
-      </ContentContainer>
-    </Container>
-  )
-}
-}
-/>
+        <Container Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
+          <ContentContainer>
+            <FlexLg>{children}</FlexLg>
+          </ContentContainer>
+        </Container>
+      )
+    }}
+  />
 )
-
 
 export default Hero
