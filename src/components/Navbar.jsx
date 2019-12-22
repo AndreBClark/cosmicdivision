@@ -15,7 +15,7 @@ const Header = styled.header`
 
 const Nav = styled.nav`
   max-width: ${props => props.theme.maxWidth};
-  ${tw`leading-tight mx-3 my-2`}
+  ${tw`leading-tight mx-1 my-2`}
   display: flex;
   justify-content: space-around;
   align-items: center;
