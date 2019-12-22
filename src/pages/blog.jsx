@@ -6,7 +6,7 @@ import SEO from '../components/SEO'
 import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
-import { withPlugin } from 'react-tinacms'
+import { withPlugin } from 'tinacms'
 import { createRemarkButton } from 'gatsby-tinacms-remark'
 
 const PostCard = styled.article`
