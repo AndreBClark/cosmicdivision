@@ -66,7 +66,7 @@ const Navbar = () => {
           id="logo"
           aria-label="Cosmic division Website Logo Home Button"
         >
-          <Logo width="48" alt="Cosmic Division Logo" />
+          <Logo width="48" />
           <span>Cosmic Division</span>
         </Link>
         <List>
