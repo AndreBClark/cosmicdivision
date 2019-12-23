@@ -1,115 +1,89 @@
 import React from 'react'
-import 'twin.macro'
+import Base from '../components/Base'
+import ContentContainer from '../components/ContentContainer'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
+import { BtnOutline, Btn } from '../components/button'
+import Panel from '../components/Panel'
+import { rhythm } from '../../config/typography'
+import PageHeading from '../components/PageHeading'
+import { Subtitle } from '.'
 
-import { PageView } from 'components/Views'
-import Panel from 'components/Panel'
-import BioCard from 'components/BioCard'
-import { BtnOutline, Btn } from 'components/button'
-import { Label, TextInput } from 'components/TextInput'
-
-const page = {
-  title: 'Contact',
-  heading: 'Contact',
-  subtitle: 'Get In Touch With Me',
-}
+const TextInput = styled.input`
+  ${tw`block w-1/2 border-2 border-gray-300 rounded-lg text-white bg-gray-300 p-2`};
+  :hover,
+  :focus {
+    ${tw`bg-gray-600 border-primary`}
+  }
+`
+const Label = styled.label`
+  ${tw`block my-2`}
+`
+export const DualWrapper = styled.div`
+  margin-top: ${rhythm(1)};
+  margin-bottom: ${rhythm(1)};
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
+    * + * {
+      margin: ${rhythm(2 / 3)};
+    }
+  }
+`
 
 const Contact = () => {
-  const { title, heading, subtitle, keywords } = page
   return (
-    <PageView
-      pageTitle={title}
-      pageHeading={heading}
-      pageSubtitle={subtitle}
-      pageKeywords={keywords}>
-      <BioCard />
-      <NetlifyForm>
-        <TextFieldGroup />
-      </NetlifyForm>
-    </PageView>
+    <Base>
+      <ContentContainer>
+        <PageHeading>Contact Me</PageHeading>
+        <Subtitle>Get in touch with me</Subtitle>
+        <Panel>
+          <form method="post" netlify-honeypot="bot-field" data-netlify="true">
+            <input type="hidden" name="bot-field" />
+            <Label>
+              <small>Full Name</small>
+              <TextInput
+                type="text"
+                name="name"
+                id="name"
+                placeholder="First Last"
+              />
+            </Label>
+            <Label>
+              Email Address
+              <TextInput
+                type="email"
+                name="email"
+                id="email"
+                placeholder="name@example.com"
+              />
+            </Label>
+            <label>
+              Subject
+              <TextInput
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
+              />
+            </label>
+            <Label>
+              Message
+              <TextInput
+                name="message"
+                id="message"
+                rows="5"
+                placeholder="Message"
+              />
+            </Label>
+            <DualWrapper>
+              <Btn type="submit">Send</Btn>
+              <BtnOutline type="reset" value="Clear">
+                Reset
+              </BtnOutline>
+            </DualWrapper>
+          </form>
+        </Panel>
+      </ContentContainer>
+    </Base>
   )
 }
-
-const NetlifyForm = ({ children }) => (
-  <Panel>
-    <form
-      method="post"
-      netlify-honeypot="bot-field"
-      data-netlify-recaptcha="true"
-      data-netlify="true">
-      <div tw="flex flex-col md:(flex-wrap h-64)">
-        <input tw="hidden" name="name" netlify-honeypot="bot-field" />
-        <input tw="hidden" name="email" netlify-honeypot="bot-field2" />
-        <input tw="hidden" name="message" netlify-honeypot="bot-field3" />
-        {children}
-      </div>
-      <div data-netlify-recaptcha="true"></div>
-      <ButtonGroup />
-    </form>
-  </Panel>
-)
-
-const TextFieldGroup = () =>
-  contactFields.map((field) => {
-    const isTextArea = field.type === 'textarea'
-    return (
-      <Label tw="md:mx-4">
-        {field.label}
-        <TextInput
-          as={isTextArea && TextArea}
-          type={field.type}
-          name={field.id}
-          id={field.id}
-          placeholder={field.placeholder}
-          rows={field.rows}
-        />
-      </Label>
-    )
-  })
-
-const TextArea = ({ ...props }) => (
-  <textarea {...props} cols="30" rows="8" tw="w-3/4 h-52" />
-)
-
-const ButtonGroup = () => (
-  <div tw="flex -mx-2 md:mx-0">
-    <Btn tw="w-full md:w-auto" type="submit">
-      Send
-    </Btn>
-    <BtnOutline tw="w-full md:w-auto" type="reset" value="Clear">
-      Reset
-    </BtnOutline>
-  </div>
-)
-
-const contactFields = [
-  {
-    label: 'Full Name',
-    type: 'text',
-    id: 'fullName',
-    placeholder: 'First Last',
-    rows: '1',
-  },
-  {
-    label: 'Email',
-    type: 'email',
-    id: 'emailAddress',
-    placeholder: 'name@domain.org',
-    rows: '1',
-  },
-  {
-    label: 'Subject',
-    type: 'text',
-    id: 'messageSubject',
-    placeholder: 'Your Subject',
-    rows: '1',
-  },
-  {
-    label: 'Message',
-    type: 'textarea',
-    id: 'messageText',
-    placeholder: 'Your Message',
-    rows: '5',
-  },
-]
-
 export default Contact
