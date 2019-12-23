@@ -47,8 +47,12 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <Btn as={Link} to="/blog/">Begin Reading</Btn>
-              <BtnOutline as={Link} to="/contact/">Get in Touch</BtnOutline>
+              <Btn as={Link} to="/blog/">
+                Begin Reading
+              </Btn>
+              <BtnOutline as={Link} to="/contact/">
+                Get in Touch
+              </BtnOutline>
             </DualWrapper>
           </HeroInner>
         </Hero>
