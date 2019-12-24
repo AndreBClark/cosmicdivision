@@ -2,6 +2,8 @@ import { createGlobalStyle } from 'styled-components'
 import theme from '../../config/theme'
 import tw from 'tailwind.macro'
 import Preflight from './Preflight'
+import 'typeface-fira-sans'
+import 'typeface-orbitron'
 
 const GlobalStyle = createGlobalStyle`
 html {
