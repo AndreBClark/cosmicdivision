@@ -28,6 +28,7 @@ module.exports = {
                 displayName: true,
             },
         },
+        `gatsby-plugin-feed`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-background-image`,
