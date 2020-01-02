@@ -40,7 +40,7 @@ h1,h2,h3,h4,h5,h6 {
   background-color: ${theme.colors.primary};
   color: ${theme.colors.bg};
 }
-*:hover {
+a:hover {
   transition: all ${theme.transitions.normal}
 }
 a, button {
