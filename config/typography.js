@@ -39,15 +39,6 @@ const typography = new Typography({
         bodyWeight: 300,
         boldWeight: 700,
         includeNormalize: false,
-        googleFonts: [{
-                name: "Orbitron",
-                styles: ["700"],
-            },
-            {
-                name: "Fira sans",
-                styles: ["400", "700"],
-            },
-        ],
         overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
             html: {
                 fontSize: theme.baseFontSize

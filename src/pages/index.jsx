@@ -17,10 +17,11 @@ const HeroInner = styled.div`
   }
 `
 const HeadingOne = styled.h1`
-  text-transform: ${props => props.theme.fontFamily.logoCase};
   ${tw`text-5xl`}
+  text-transform: ${props => props.theme.fontFamily.logoCase};
 `
-export const Subtitle = styled.h5`
+export const Subtitle = styled.h2`
+${tw`text-lg`}
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
   font-weight: semibold;

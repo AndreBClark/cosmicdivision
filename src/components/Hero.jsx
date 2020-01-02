@@ -33,7 +33,7 @@ const Hero = ({ children }) => (
       query {
         desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
+            fluid(quality: 75, maxWidth: 1920) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -43,9 +43,9 @@ const Hero = ({ children }) => (
     render={data => {
       // Set ImageData.
       const imageData = [
-        data.desktop.childImageSharp.fluid,
         `linear-gradient(0deg, rgba(18, 18, 18, 1) 5%, rgba(18, 18, 18, 0) 25%, rgba(18, 18, 18, 0) 50%)`,
-      ].reverse()
+        data.desktop.childImageSharp.fluid,
+      ]
       return (
         <Container Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
           <ContentContainer>

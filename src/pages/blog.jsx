@@ -6,7 +6,7 @@ import SEO from '../components/SEO'
 import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
-import { withPlugin } from 'react-tinacms'
+import { withPlugin } from 'tinacms'
 import { createRemarkButton } from 'gatsby-tinacms-remark'
 
 const PostCard = styled.article`
@@ -28,9 +28,9 @@ class Blog extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Link to={`${node.fields.slug}`}>
-                <PanelHover>
-                  <PostCard key={node.fields.slug}>
+              <PanelHover>
+                <PostCard key={node.fields.slug}>
+                  <Link to={`${node.fields.slug}`}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p
@@ -38,9 +38,9 @@ class Blog extends React.Component {
                         __html: node.frontmatter.description || node.excerpt,
                       }}
                     />
-                  </PostCard>
-                </PanelHover>
-              </Link>
+                  </Link>
+                </PostCard>
+              </PanelHover>
             )
           })}
         </ContentContainer>
