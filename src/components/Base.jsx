@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   min-height: 100vh;
   max-width: 100vw;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   background-color: ${theme.colors.bg};

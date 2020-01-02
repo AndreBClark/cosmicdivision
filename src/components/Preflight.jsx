@@ -6,7 +6,6 @@ const Preflight = css`
   }
   body {
     margin: 0;
-    overflow-y: auto;
   }
   main {
     display: block;

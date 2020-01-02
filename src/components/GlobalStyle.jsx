@@ -8,6 +8,7 @@ import 'typeface-orbitron'
 const GlobalStyle = createGlobalStyle`
 html {
   min-height: 100%;
+  overflow-y: auto;
 }
 ${Preflight}
 h1, .h1 {
