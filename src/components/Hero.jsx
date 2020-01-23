@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import ContentContainer from './ContentContainer'
@@ -27,11 +27,18 @@ const FlexLg = styled.div`
     justify-content: space-between;
   }
 `
-const Hero = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+const Hero = ({ children }) => {
+  const { mobileImage, desktopImage } = useStaticQuery(
+    graphql`
       query {
-        desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
+        mobileImage: file(relativePath: {eq: "orbital-bw.jpg"}) {
+        childImageSharp {
+            fluid(quality: 100, maxWidth: 412) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+      }
+      desktopImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
             fluid(quality: 75, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -39,29 +46,23 @@ const Hero = ({ children }) => (
           }
         }
       }
-      mobile: file(relativePath: {eq: "orbital-bw.jpg"}) {
-        childImageSharp {
-            fluid(quality: 100, maxWidth: 412) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-      }
-    `}
-    render={data => {
-      // Set ImageData.
-      const imageData = [
-        `linear-gradient(0deg, rgba(18, 18, 18, 1) 5%, rgba(18, 18, 18, 0) 25%, rgba(18, 18, 18, 0) 50%)`,
-        data.desktop.childImageSharp.fluid,
-      ]
+    `
+  )
+  const sources = [
+    mobileImage.childImageSharp.fluid,
+    {
+      ...desktopImage.childImageSharp.fluid,
+      media: `(min-width: 491px)`,
+    },
+  ]
+
       return (
-        <Container Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
+        <Container Tag="section" fluid={sources} backgroundColor={`#040e18`}>
           <ContentContainer>
             <FlexLg>{children}</FlexLg>
           </ContentContainer>
         </Container>
       )
-    }}
-  />
-)
+}
 
 export default Hero
