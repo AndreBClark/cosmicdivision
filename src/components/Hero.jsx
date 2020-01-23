@@ -34,10 +34,17 @@ const Hero = ({ children }) => (
         desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
             fluid(quality: 75, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
+      }
+      mobile: file(relativePath: {eq: "orbital-bw.jpg"}) {
+        childImageSharp {
+            fluid(quality: 100, maxWidth: 412) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
       }
     `}
     render={data => {
