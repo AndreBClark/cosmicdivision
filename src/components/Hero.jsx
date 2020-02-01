@@ -10,14 +10,22 @@ const Container = styled(BackgroundImage)`
   width: 100%;
   min-height: 75vh;
   text-align: center;
+  position: relative;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   display: flex;
   align-items: center;
   @media screen and (min-width: 769px) {
-    padding: 4rem;
     min-height: 80vh;
   }
+`
+
+const Overlay = styled.div`
+    content: ' ';
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(0deg,rgb(18, 18, 18) 15%,rgba(18,18,18,0) 50%);
 `
 const FlexLg = styled.div`
   display: flex;
@@ -58,8 +66,11 @@ const Hero = ({ children }) => {
 
       return (
         <Container Tag="section" fluid={sources} backgroundColor={`#040e18`}>
+            <Overlay> </Overlay>
           <ContentContainer>
-            <FlexLg>{children}</FlexLg>
+            <FlexLg>
+              {children}
+            </FlexLg>
           </ContentContainer>
         </Container>
       )
