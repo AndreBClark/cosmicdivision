@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../../config/theme'
 import ContentContainer from './ContentContainer'
@@ -10,14 +10,23 @@ const Container = styled(BackgroundImage)`
   width: 100%;
   min-height: 75vh;
   text-align: center;
+  position: relative;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   display: flex;
   align-items: center;
   @media screen and (min-width: 769px) {
-    padding: 4rem;
     min-height: 80vh;
   }
+`
+
+const Overlay = styled.div`
+    content: '';
+    position: absolute;
+    height: 50vh;
+    z-index: -1;
+    width: 100%;
+    background-image: linear-gradient(0deg,rgb(18, 18, 18) 15%,rgba(18,18,18,0) 50%);
 `
 const FlexLg = styled.div`
   display: flex;
@@ -27,34 +36,45 @@ const FlexLg = styled.div`
     justify-content: space-between;
   }
 `
-const Hero = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+const Hero = ({ children }) => {
+  const { mobileImage, desktopImage } = useStaticQuery(
+    graphql`
       query {
-        desktop: file(relativePath: { eq: "orbital-bw.jpg" }) {
+        mobileImage: file(relativePath: {eq: "orbital-bw.jpg"}) {
+        childImageSharp {
+            fluid(quality: 100, maxWidth: 412) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+      }
+      desktopImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
-            fluid(quality: 75, maxWidth: 1920, fit: cover) {
-              ...GatsbyImageSharpFluid
+            fluid(quality: 75, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
       }
-    `}
-    render={data => {
-      // Set ImageData.
-      const imageData = [
-        data.desktop.childImageSharp.fluid,
-        `linear-gradient(0deg, rgba(18, 18, 18, 1) 5%, rgba(18, 18, 18, 0) 25%, rgba(18, 18, 18, 0) 50%)`,
-      ].reverse()
+    `
+  )
+  const sources = [
+    mobileImage.childImageSharp.fluid,
+    {
+      ...desktopImage.childImageSharp.fluid,
+      media: `(min-width: 491px)`,
+    },
+  ]
+
       return (
-        <Container Tag="section" fluid={imageData} backgroundColor={`#040e18`}>
+        <Container Tag="section" fluid={sources} backgroundColor={`#040e18`}>
+            <Overlay> </Overlay>
           <ContentContainer>
-            <FlexLg>{children}</FlexLg>
+            <FlexLg>
+              {children}
+            </FlexLg>
           </ContentContainer>
         </Container>
       )
-    }}
-  />
-)
+}
 
 export default Hero
