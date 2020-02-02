@@ -6,7 +6,7 @@ import 'typeface-fira-sans'
 import 'typeface-orbitron'
 
 const GlobalStyle = createGlobalStyle`
-html {
+html, body {
   min-height: 100%;
   overflow-y: auto;
 }

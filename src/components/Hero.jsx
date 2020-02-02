@@ -21,7 +21,7 @@ const Container = styled(BackgroundImage)`
 `
 
 const Overlay = styled.div`
-    content: ' ';
+    content: '';
     position: absolute;
     height: 100vh;
     width: 100%;
