@@ -23,7 +23,8 @@ const Container = styled(BackgroundImage)`
 const Overlay = styled.div`
     content: '';
     position: absolute;
-    height: 100vh;
+    height: 50vh;
+    z-index: -1;
     width: 100%;
     background-image: linear-gradient(0deg,rgb(18, 18, 18) 15%,rgba(18,18,18,0) 50%);
 `
