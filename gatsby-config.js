@@ -83,7 +83,6 @@ module.exports = {
                             },
                         },
                     },
-                    `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-smartypants`,
                 ],
             },
@@ -93,8 +92,10 @@ module.exports = {
             options: {
                 id: "GTM-KMKSS6R",
                 includeInDevelopment: false,
+                defaultDataLayer: { platform: "gatsby" },
             }
         },
+
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
