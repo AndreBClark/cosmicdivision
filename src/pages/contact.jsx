@@ -34,9 +34,9 @@ const Contact = () => {
   return (
     <Base>
       <ContentContainer>
-        <BioCard />
         <PageHeading>Contact Me</PageHeading>
         <Subtitle>Get in touch with me</Subtitle>
+        <BioCard />
         <Panel>
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />

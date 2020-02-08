@@ -3,7 +3,6 @@ import { rhythm } from '../../config/typography'
 import tw from 'tailwind.macro'
 
 export const Btn = styled.button`
-  ${tw`m-5`};
   display: block;
   padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
   text-transform: ${props => props.theme.fontFamily.logoCase};
@@ -45,4 +44,13 @@ export const BtnSimple = styled(Btn)`
     border-color: ${props => props.theme.colors.primary};
     cursor: pointer !important;
   }
+`
+
+export const SmBtn = styled(Btn)`
+${tw`text-xs`}
+  padding: ${[rhythm(1 / 6), ' ', rhythm(1 / 3)]};
+`
+export const SmBtnOutline = styled(BtnOutline)`
+  ${tw`text-xs`}
+  padding: ${[rhythm(1 / 6), ' ', rhythm(1 / 3)]};
 `
