@@ -1,6 +1,7 @@
 import React from 'react'
 import Base from '../components/Base'
 import ContentContainer from '../components/ContentContainer'
+import BioCard from '../components/BioCard'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { BtnOutline, Btn } from '../components/button'
@@ -35,6 +36,7 @@ const Contact = () => {
       <ContentContainer>
         <PageHeading>Contact Me</PageHeading>
         <Subtitle>Get in touch with me</Subtitle>
+        <BioCard />
         <Panel>
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
