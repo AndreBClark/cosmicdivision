@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Logo from '../images/logo.svg'
 import tw from 'tailwind.macro'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
@@ -15,7 +15,7 @@ const Header = styled.header`
 
 const Nav = styled.nav`
   max-width: ${props => props.theme.maxWidth};
-  ${tw`leading-tight mx-1 my-2`}
+  ${tw`mx-1 my-2 leading-tight`}
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -45,7 +45,6 @@ const List = styled.ul`
   justify-content: space-around;
   align-items: center;
   flex: 1 2 auto;
-
   li {
     margin-block-end: 0;
     a {
@@ -54,6 +53,7 @@ const List = styled.ul`
   }
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     justify-content: space-between;
+    flex: 1 0;
   }
 `
 
@@ -61,23 +61,31 @@ const Navbar = () => {
   return (
     <Header>
       <Nav>
-        <Link
+        <AniLink
+          paintDrip
+          hex="#1D1D1D"
           to="/"
           id="logo"
           aria-label="Cosmic division Website Logo Home Button"
         >
           <Logo width="48" />
           <span>Cosmic Division</span>
-        </Link>
+        </AniLink>
         <List>
           <li>
-            <Link to="/blog">Blog</Link>
+            <AniLink paintDrip hex="#1D1D1D" to="/blog">
+              Blog
+            </AniLink>
           </li>
           <li>
-            <Link to="/bio">Bio</Link>
+            <AniLink paintDrip hex="#1D1D1D" to="/projects">
+              Projects
+            </AniLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <AniLink paintDrip hex="#1D1D1D" to="/contact">
+              Contact
+            </AniLink>
           </li>
         </List>
       </Nav>
