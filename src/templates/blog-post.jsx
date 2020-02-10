@@ -60,7 +60,7 @@ const BlogPostTemplate = ({
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </TinaField>
           {process.env.NODE_ENV !== 'production' && (
-            <Btn as={AniLink} onClick={() => setIsEditing(p => !p)}>
+            <Btn onClick={() => setIsEditing(p => !p)}>
               {isEditing ? 'Preview' : 'Edit'}
             </Btn>
           )}
