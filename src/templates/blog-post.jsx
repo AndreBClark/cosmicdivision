@@ -11,7 +11,6 @@ import { TinaField } from '@tinacms/form-builder'
 import { Btn } from '../components/button'
 import useSiteMetadata from '../hooks/useSiteMetaData'
 import PageHeading from '../components/PageHeading'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Article = styled.article`
   *:not(li) + * {
@@ -64,34 +63,6 @@ const BlogPostTemplate = ({
               {isEditing ? 'Preview' : 'Edit'}
             </Btn>
           )}
-        </Panel>
-        <Panel>
-          <SequentialLinks>
-            <li>
-              {previous && (
-                <AniLink
-                  paintDrip
-                  hex="#1D1D1D"
-                  to={previous.fields.slug}
-                  rel="prev"
-                >
-                  ← {previous.frontmatter.title}
-                </AniLink>
-              )}
-            </li>
-            <li>
-              {next && (
-                <AniLink
-                  paintDrip
-                  hex="#1D1D1D"
-                  to={next.fields.slug}
-                  rel="next"
-                >
-                  {next.frontmatter.title} →
-                </AniLink>
-              )}
-            </li>
-          </SequentialLinks>
         </Panel>
       </ContentContainer>
     </Base>
