@@ -5,7 +5,6 @@ import SEO from '../components/SEO'
 import ContentContainer from '../components/ContentContainer'
 import Panel from '../components/Panel'
 import { Btn } from '../components/button'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 class NotFoundPage extends React.Component {
   render() {
@@ -19,7 +18,7 @@ class NotFoundPage extends React.Component {
           <h1>Not Found</h1>
           <Panel>
             <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-            <Btn as={AniLink} to="/">
+            <Btn as={Link} to="/">
               GO HOME
             </Btn>
           </Panel>

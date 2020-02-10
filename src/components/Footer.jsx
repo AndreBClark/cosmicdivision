@@ -29,7 +29,8 @@ const Footer = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose">
+            href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose"
+          >
             Issue on Github
           </a>
         </Item>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from '../images/logo.svg'
 import tw from 'tailwind.macro'
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Header = styled.header`
   font-family: ${props => props.theme.fontFamily.heading};
@@ -61,7 +61,9 @@ const Navbar = () => {
   return (
     <Header>
       <Nav>
-        <AniLink paintDrip hex="#1D1D1D"
+        <AniLink
+          paintDrip
+          hex="#1D1D1D"
           to="/"
           id="logo"
           aria-label="Cosmic division Website Logo Home Button"
@@ -71,13 +73,19 @@ const Navbar = () => {
         </AniLink>
         <List>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/blog">Blog</AniLink>
+            <AniLink paintDrip hex="#1D1D1D" to="/blog">
+              Blog
+            </AniLink>
           </li>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/projects">Projects</AniLink>
+            <AniLink paintDrip hex="#1D1D1D" to="/projects">
+              Projects
+            </AniLink>
           </li>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/contact">Contact</AniLink>
+            <AniLink paintDrip hex="#1D1D1D" to="/contact">
+              Contact
+            </AniLink>
           </li>
         </List>
       </Nav>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Base from '../components/Base'
 import SEO from '../components/SEO'
 import Panel from '../components/Panel'
@@ -9,7 +9,6 @@ import { liveRemarkForm } from 'gatsby-tinacms-remark'
 import { Wysiwyg } from '@tinacms/fields'
 import { TinaField } from '@tinacms/form-builder'
 import { Btn } from '../components/button'
-import { useSidebar } from 'tinacms'
 import useSiteMetadata from '../hooks/useSiteMetaData'
 import PageHeading from '../components/PageHeading'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
@@ -47,7 +46,6 @@ const BlogPostTemplate = ({
   const post = data.markdownRemark
   const siteTitle = useSiteMetadata()
   const { previous, next } = pageContext
-  const sidebar = useSidebar()
   return (
     <Base location={location} title={siteTitle}>
       <SEO
@@ -61,8 +59,8 @@ const BlogPostTemplate = ({
           <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </TinaField>
-          {process.env.NODE_ENV != "production" && (
-            <Btn onClick={() => setIsEditing(p => !p)}>
+          {process.env.NODE_ENV !== 'production' && (
+            <Btn as="AniLink" onClick={() => setIsEditing(p => !p)}>
               {isEditing ? 'Preview' : 'Edit'}
             </Btn>
           )}
@@ -71,14 +69,24 @@ const BlogPostTemplate = ({
           <SequentialLinks>
             <li>
               {previous && (
-                <AniLink paintDrip hex="#1D1D1D" to={`${previous.fields.slug}`} rel="prev">
+                <AniLink
+                  paintDrip
+                  hex="#1D1D1D"
+                  to={previous.fields.slug}
+                  rel="prev"
+                >
                   ← {previous.frontmatter.title}
                 </AniLink>
               )}
             </li>
             <li>
               {next && (
-                <AniLink paintDrip hex="#1D1D1D" to={`${next.fields.slug}`} rel="next">
+                <AniLink
+                  paintDrip
+                  hex="#1D1D1D"
+                  to={next.fields.slug}
+                  rel="next"
+                >
                   {next.frontmatter.title} →
                 </AniLink>
               )}
