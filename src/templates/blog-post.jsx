@@ -12,6 +12,7 @@ import { Btn } from '../components/button'
 import { useSidebar } from 'tinacms'
 import useSiteMetadata from '../hooks/useSiteMetaData'
 import PageHeading from '../components/PageHeading'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Article = styled.article`
   *:not(li) + * {
@@ -60,7 +61,7 @@ const BlogPostTemplate = ({
           <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           </TinaField>
-          {!sidebar.hidden && (
+          {process.env.NODE_ENV != "production" && (
             <Btn onClick={() => setIsEditing(p => !p)}>
               {isEditing ? 'Preview' : 'Edit'}
             </Btn>
@@ -70,16 +71,16 @@ const BlogPostTemplate = ({
           <SequentialLinks>
             <li>
               {previous && (
-                <Link to={`${previous.fields.slug}`} rel="prev">
+                <AniLink paintDrip hex="#1D1D1D" to={`${previous.fields.slug}`} rel="prev">
                   ← {previous.frontmatter.title}
-                </Link>
+                </AniLink>
               )}
             </li>
             <li>
               {next && (
-                <Link to={`${next.fields.slug}`} rel="next">
+                <AniLink paintDrip hex="#1D1D1D" to={`${next.fields.slug}`} rel="next">
                   {next.frontmatter.title} →
-                </Link>
+                </AniLink>
               )}
             </li>
           </SequentialLinks>

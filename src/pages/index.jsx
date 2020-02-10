@@ -7,7 +7,8 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { rhythm } from '../../config/typography'
 import { DualWrapper } from './contact'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
@@ -48,10 +49,10 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <Btn as={Link} to="/blog/">
+              <Btn paintDrip hex="#1D1D1D" as={AniLink} to="/blog/">
                 Begin Reading
               </Btn>
-              <BtnOutline as={Link} to="/contact/">
+              <BtnOutline paintDrip hex="#1D1D1D" as={AniLink} to="/contact/">
                 Get in Touch
               </BtnOutline>
             </DualWrapper>

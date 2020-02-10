@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Base from '../components/Base'
 import SEO from '../components/SEO'
@@ -8,6 +8,7 @@ import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
 import { withPlugin } from 'tinacms'
 import { createRemarkButton } from 'gatsby-tinacms-remark'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const PostCard = styled.article`
   p {
@@ -30,7 +31,7 @@ class Blog extends React.Component {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
-                  <Link to={`${node.fields.slug}`}>
+                  <AnyLink paintDrip hex="#1D1D1D" to={`${node.fields.slug}`}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p
@@ -38,7 +39,7 @@ class Blog extends React.Component {
                         __html: node.frontmatter.description || node.excerpt,
                       }}
                     />
-                  </Link>
+                  </AnyLink>
                 </PostCard>
               </PanelHover>
             )

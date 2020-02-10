@@ -21,13 +21,17 @@ const Container = styled(BackgroundImage)`
 `
 
 const Overlay = styled.div`
-    content: '';
-    position: absolute;
-    height: 50vh;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    background-image: linear-gradient(0deg,rgb(18, 18, 18) 15%,rgba(18,18,18,0) 50%);
+  content: '';
+  position: absolute;
+  height: 50vh;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgb(18, 18, 18) 15%,
+    rgba(18, 18, 18, 0) 50%
+  );
 `
 const FlexLg = styled.div`
   display: flex;
@@ -41,14 +45,14 @@ const Hero = ({ children }) => {
   const { mobileImage, desktopImage } = useStaticQuery(
     graphql`
       query {
-        mobileImage: file(relativePath: {eq: "orbital-bw.jpg"}) {
-        childImageSharp {
+        mobileImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
+          childImageSharp {
             fluid(quality: 100, maxWidth: 412) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
-      }
-      desktopImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
+        }
+        desktopImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
           childImageSharp {
             fluid(quality: 75, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_withWebp
@@ -66,16 +70,14 @@ const Hero = ({ children }) => {
     },
   ]
 
-      return (
-        <Container Tag="section" fluid={sources} backgroundColor={`#040e18`}>
-            <Overlay> </Overlay>
-          <ContentContainer>
-            <FlexLg>
-              {children}
-            </FlexLg>
-          </ContentContainer>
-        </Container>
-      )
+  return (
+    <Container Tag="section" fluid={sources} backgroundColor={`#040e18`}>
+      <Overlay> </Overlay>
+      <ContentContainer>
+        <FlexLg>{children}</FlexLg>
+      </ContentContainer>
+    </Container>
+  )
 }
 
 export default Hero

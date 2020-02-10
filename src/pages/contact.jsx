@@ -11,7 +11,7 @@ import PageHeading from '../components/PageHeading'
 import { Subtitle } from '.'
 
 const TextInput = styled.input`
-  ${tw`block w-72 border-2 border-gray-300 rounded-lg text-white bg-gray-300 p-2`};
+  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`};
   :hover,
   :focus {
     ${tw`bg-gray-600 border-primary`}
@@ -77,8 +77,8 @@ const Contact = () => {
               />
             </Label>
             <DualWrapper>
-              <Btn type="submit">Send</Btn>
-              <BtnOutline type="reset" value="Clear">
+              <Btn paintDrip hex="#1D1D1D" as={AnyLink} type="submit">Send</Btn>
+              <BtnOutline paintDrip hex="#1D1D1D" as={AnyLink} type="reset" value="Clear">
                 Reset
               </BtnOutline>
             </DualWrapper>
