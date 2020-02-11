@@ -1,5 +1,5 @@
 # netlify error
-
+```shell
 11:42:30 AM: Build ready to start
 11:42:33 AM: build-image version: 9cade8af58c2cf3a17a1e9433d2e979149488837
 11:42:33 AM: build-image tag: v3.3.5
@@ -223,3 +223,4 @@
 11:45:33 AM: Failing build: Failed to build site
 11:45:33 AM: failed during stage 'building site': Build script returned non-zero exit code: 1
 11:45:33 AM: Finished processing build request in 3m0.440105473s
+```
