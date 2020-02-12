@@ -30,7 +30,7 @@ class Blog extends React.Component {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
-                  <Link to={`${node.fields.slug}`}>
+                  <Link to={node.fields.slug}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p

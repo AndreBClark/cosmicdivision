@@ -25,7 +25,7 @@ function BioCard() {
                 fixed={data.avatar.childImageSharp.fixed}
                 alt={author}
                 style={{
-                  marginRight: `${theme.spacer}`,
+                  marginRight: theme.spacer,
                   marginBottom: 0,
                   minWidth: 50,
                   borderRadius: `100%`,
