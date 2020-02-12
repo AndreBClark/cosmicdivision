@@ -1,3 +1,6 @@
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
     siteMetadata: {
         // edit below
@@ -17,7 +20,7 @@ module.exports = {
             options: {
                 sidebar: {
                     position: "fixed",
-                    hidden: production.env.NODE_ENV === "production",
+                    hidden: process.env.NODE_ENV === "production",
                 },
                 plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
             },
