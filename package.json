@@ -10,6 +10,7 @@
     "dependencies": {
         "@openfonts/fira-code_latin": "^1.44.0",
         "babel-plugin-tailwind-components": "^0.5.10",
+        "dotenv": "^8.2.0",
         "gatsby": "^2.19.12",
         "gatsby-background-image": "^0.9.12",
         "gatsby-image": "^2.0.39",
