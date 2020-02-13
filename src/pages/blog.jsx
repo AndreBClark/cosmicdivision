@@ -7,7 +7,6 @@ import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
 import { withPlugin } from 'tinacms'
-import { createRemarkButton } from 'gatsby-tinacms-remark'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 const PostCard = styled.article`
   p {
@@ -51,37 +50,7 @@ class Blog extends React.Component {
     )
   }
 }
-const CreateBlogPlugin = createRemarkButton({
-  label: 'Add New Blog',
-  fields: [
-    {
-      name: 'title',
-      label: 'Title',
-      component: 'text',
-    },
-  ],
-  filename: ({ title }) => {
-    const slug = title
-      .replace(/\s+/g, '-')
-      .replace(/&/g, '-and-')
-      // eslint-disable-next-line
-      .replace(/[^\w\-]+/g, '')
-      // eslint-disable-next-line
-      .replace(/\-\-+/g, '-')
-      .replace(/^-+/, '')
-      .replace(/-+$/, '')
-      .toLowerCase()
 
-    return `content/blog/${slug}.md`
-  },
-  frontmatter: ({ title }) => ({
-    title,
-    date: new Date(),
-  }),
-  body: () => `I forgot to put content here. whoops.`,
-})
-
-export default withPlugin(Blog, CreateBlogPlugin)
 
 export const pageQuery = graphql`
   query {
