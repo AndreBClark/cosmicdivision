@@ -14,7 +14,7 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: https://cosmicdivision.dev,https://cosmicdivision.dev/projects,https://cosmicdivision.dev/blog,https://cosmicdivision.dev/contact,   
+          urls: https://cosmicdivision.dev,https://cosmicdivision.dev/projects,https://cosmicdivision.dev/blog,https://cosmicdivision.dev/contact
           sha: ${{ github.sha }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
@@ -26,7 +26,7 @@ jobs:
         with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "90"
-          minBestPracticesScore: "50"
-          minPerformanceScore: "50"
-          minProgressiveWebAppScore: "50"
-          minSeoScore: "50"
+          minBestPracticesScore: "90"
+          minPerformanceScore: "90"
+          minProgressiveWebAppScore: "90"
+          minSeoScore: "90"
