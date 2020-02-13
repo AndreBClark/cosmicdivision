@@ -63,10 +63,10 @@ const Projects = () => {
               Graphic Design Program
             </p>
             <Flex>
-              <SmBtnOutline as="a" href="https://github.com/AndreBClark/dscvr">
+              <SmBtnOutline as="a" href="https://github.com/AndreBClark/dscvr"  target="_blank">
                 Github Repo
               </SmBtnOutline>
-              <SmBtn as="a" href="https://dscvr2019.netlify.com/">
+              <SmBtn as="a" href="https://dscvr2019.netlify.com/" target="_blank">
                 Live Demo
               </SmBtn>
             </Flex>

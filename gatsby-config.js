@@ -49,7 +49,7 @@ module.exports = {
             options: {
                 layout: require.resolve(`./src/components/Base.jsx`)
             }
-        }
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
