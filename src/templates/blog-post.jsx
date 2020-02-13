@@ -45,8 +45,9 @@ const BlogPostTemplate = ({
   const siteTitle = useSiteMetadata()
   const { previous, next } = pageContext
   return (
-    <SEO
-        location={location} 
+    <>
+      <SEO
+        location={location}
         title={`${siteTitle} | ${post.frontmatter.title}`}
         description={post.frontmatter.description || post.excerpt}
       />
@@ -64,6 +65,7 @@ const BlogPostTemplate = ({
           )}
         </Panel>
       </ContentContainer>
+    </>
   )
 }
 const BlogTemplateOptions = {
