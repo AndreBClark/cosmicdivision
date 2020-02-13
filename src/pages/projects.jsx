@@ -3,6 +3,7 @@ import ContentContainer from '../components/ContentContainer'
 import Panel from '../components/Panel'
 import { SmBtnOutline, SmBtn } from '../components/button'
 import tw from 'tailwind.macro'
+import SEO from '../components/SEO'
 import styled from 'styled-components'
 const Flex = styled.div`
   ${tw`flex justify-between w-56 max-w-full`}
@@ -16,6 +17,11 @@ const Item = styled.div`
 `
 const Projects = () => {
   return (
+    <SEO
+    location={this.props.location}
+    title={Projects}
+    keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+  />
     <ContentContainer>
       <h1>Projects</h1>
       <Panel>

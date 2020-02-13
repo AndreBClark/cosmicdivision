@@ -10,7 +10,7 @@ import PageHeading from '../components/PageHeading'
 import { Subtitle } from '.'
 
 const TextInput = styled.input`
-  ${tw`block w-72 border-2 border-gray-300 rounded-lg text-white bg-gray-300 p-2`};
+  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`};
   :hover,
   :focus {
     ${tw`bg-gray-600 border-primary`}
@@ -30,7 +30,7 @@ export const DualWrapper = styled.div`
 `
 
 const Contact = () => {
-  return (
+    return (
     <ContentContainer>
       <PageHeading>Contact Me</PageHeading>
       <Subtitle>Get in touch with me</Subtitle>
