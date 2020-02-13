@@ -38,8 +38,8 @@ const BlogPostTemplate = ({
   data,
   pageContext,
   location,
-  setIsEditing,
-  isEditing,
+  // setIsEditing,
+  // isEditing,
 }) => {
   const post = data.markdownRemark
   const siteTitle = useSiteMetadata()
@@ -114,9 +114,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
       }
-      fileRelativePath
-      rawFrontmatter
-      rawMarkdownBody
     }
   }
 `
