@@ -6,19 +6,19 @@ module.exports = {
         description: `A personal blog with styled components, TinaCMS`,
         siteUrl: `https://cosmicdivision.dev`,
         social: {
-            twitter: ``,
             github: `AndreBClark`,
         },
     },
-    plugins: [{
-            resolve: "gatsby-plugin-tinacms",
-            options: {
-                plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
-                sidebar: {
-                    hidden: process.env.NODE_ENV === "production",
-                },
-            },
-        },
+    plugins: [
+        // {
+        //     resolve: "gatsby-plugin-tinacms",
+        //     options: {
+        //         plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
+        //         sidebar: {
+        //             hidden: process.env.NODE_ENV === "production",
+        //         },
+        //     },
+        // },
         {
             resolve: `gatsby-plugin-styled-components`,
             options: {

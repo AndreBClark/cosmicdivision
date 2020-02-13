@@ -4,9 +4,9 @@ import SEO from '../components/SEO'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
 import styled from 'styled-components'
-import { liveRemarkForm } from 'gatsby-tinacms-remark'
-import { Wysiwyg } from '@tinacms/fields'
-import { TinaField } from '@tinacms/form-builder'
+// import { liveRemarkForm } from 'gatsby-tinacms-remark'
+// import { Wysiwyg } from '@tinacms/fields'
+// import { TinaField } from '@tinacms/form-builder'
 import { Btn } from '../components/button'
 import useSiteMetadata from '../hooks/useSiteMetaData'
 import PageHeading from '../components/PageHeading'
@@ -55,47 +55,47 @@ const BlogPostTemplate = ({
         <PageHeading>{post.frontmatter.title}</PageHeading>
         <Date>{post.frontmatter.date}</Date>
         <Panel>
-          <TinaField name="rawMarkdownBody" Component={Wysiwyg}>
+          {/* <TinaField name="rawMarkdownBody" Component={Wysiwyg}> */}
             <Article dangerouslySetInnerHTML={{ __html: post.html }} />
-          </TinaField>
+          {/* </TinaField>
           {process.env.NODE_ENV !== 'production' && (
             <Btn onClick={() => setIsEditing(p => !p)}>
               {isEditing ? 'Preview' : 'Edit'}
             </Btn>
-          )}
+          )} */}
         </Panel>
       </ContentContainer>
     </>
   )
 }
-const BlogTemplateOptions = {
-  fields: [
-    {
-      label: 'Title',
-      name: 'rawFrontmatter.title',
-      component: 'text',
-    },
-    {
-      name: 'frontmatter.draft',
-      component: 'toggle',
-      label: 'Draft',
-    },
-    {
-      label: 'Date Posted',
-      name: 'rawFrontmatter.date',
-      component: 'date',
-      dateFormat: 'MMMM DD YYYY',
-      timeFormat: false,
-    },
-    {
-      label: 'Body',
-      name: 'rawMarkdownBody',
-      component: 'markdown',
-    },
-  ],
-}
+// const BlogTemplateOptions = {
+//   fields: [
+//     {
+//       label: 'Title',
+//       name: 'rawFrontmatter.title',
+//       component: 'text',
+//     },
+//     {
+//       name: 'frontmatter.draft',
+//       component: 'toggle',
+//       label: 'Draft',
+//     },
+//     {
+//       label: 'Date Posted',
+//       name: 'rawFrontmatter.date',
+//       component: 'date',
+//       dateFormat: 'MMMM DD YYYY',
+//       timeFormat: false,
+//     },
+//     {
+//       label: 'Body',
+//       name: 'rawMarkdownBody',
+//       component: 'markdown',
+//     },
+//   ],
+// }
 
-export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
+// export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
