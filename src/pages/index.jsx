@@ -35,13 +35,11 @@ ${tw`text-lg`}
 
 class IndexPage extends React.Component {
   render() {
-    const siteTitle = `Cosmic Division`
-
-    return(
+    return (
       <>
         <SEO
-          location={this.props.location} 
-          title={`${siteTitle} | Home`}
+          location={this.props.location}
+          title={home}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
@@ -49,10 +47,20 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <Btn swipe direction="left" entryOffset={80} as={AniLink} to="/blog/">
+              <Btn
+                swipe
+                direction="left"
+                entryOffset={100}
+                as={AniLink}
+                to="/blog/">
                 Begin Reading
               </Btn>
-              <BtnOutline swipe direction="left" entryOffset={80} as={AniLink} to="/contact/">
+              <BtnOutline
+                swipe
+                direction="left"
+                entryOffset={100}
+                as={AniLink}
+                to="/contact/">
                 Get in Touch
               </BtnOutline>
             </DualWrapper>
