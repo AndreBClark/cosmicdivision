@@ -48,7 +48,7 @@ const BlogPostTemplate = ({
     <>
       <SEO
         location={location}
-        title={`${siteTitle} | ${post.frontmatter.title}`}
+        title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
       <ContentContainer>

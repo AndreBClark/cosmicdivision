@@ -36,12 +36,11 @@ ${tw`text-lg`}
 class IndexPage extends React.Component {
   render() {
     const siteTitle = `Cosmic Division`
-
     return (
       <>
         <SEO
           location={this.props.location}
-          title={`${siteTitle} | Home`}
+          title={`${siteTitle}`}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>

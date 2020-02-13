@@ -17,14 +17,13 @@ const PostCard = styled.article`
 class Blog extends React.Component {
   render() {
     const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
       <>
         <SEO
           location={this.props.location}
-          title={`All Posts | ${siteTitle}`}
+          title={`All Posts`}
         />
         <ContentContainer>
           <PageHeading>All Posts</PageHeading>
