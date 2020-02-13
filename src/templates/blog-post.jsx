@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Base from '../components/Base'
 import SEO from '../components/SEO'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
@@ -46,9 +45,9 @@ const BlogPostTemplate = ({
   const siteTitle = useSiteMetadata()
   const { previous, next } = pageContext
   return (
-    <Base location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
+    <SEO
+        location={location} 
+        title={`${siteTitle} | ${post.frontmatter.title}`}
         description={post.frontmatter.description || post.excerpt}
       />
       <ContentContainer>
@@ -65,7 +64,6 @@ const BlogPostTemplate = ({
           )}
         </Panel>
       </ContentContainer>
-    </Base>
   )
 }
 const BlogTemplateOptions = {
