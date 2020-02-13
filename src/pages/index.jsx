@@ -37,10 +37,10 @@ class IndexPage extends React.Component {
   render() {
     const siteTitle = `Cosmic Division`
 
-    return(
+    return (
       <>
         <SEO
-          location={this.props.location} 
+          location={this.props.location}
           title={`${siteTitle} | Home`}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
@@ -49,10 +49,22 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <Btn swipe direction="left" entryOffset={80} as={AniLink} to="/blog/">
+              <Btn
+                swipe
+                direction="left"
+                entryOffset={80}
+                as={AniLink}
+                to="/blog/"
+              >
                 Begin Reading
               </Btn>
-              <BtnOutline swipe direction="left" entryOffset={80} as={AniLink} to="/contact/">
+              <BtnOutline
+                swipe
+                direction="left"
+                entryOffset={80}
+                as={AniLink}
+                to="/contact/"
+              >
                 Get in Touch
               </BtnOutline>
             </DualWrapper>
