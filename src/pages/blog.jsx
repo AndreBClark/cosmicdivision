@@ -5,7 +5,6 @@ import SEO from '../components/SEO'
 import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
-import { withPlugin } from 'tinacms'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 const PostCard = styled.article`
   p {
