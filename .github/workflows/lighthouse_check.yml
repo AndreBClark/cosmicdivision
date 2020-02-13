@@ -13,7 +13,7 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://cosmicdivision.dev, https://cosmicdivision.dev/blog, https://cosmicdivision.dev/projects'
+          urls: 'https://cosmicdivision.dev,https://cosmicdivision.dev/blog,https://cosmicdivision.dev/projects'
           sha: ${{ github.sha }}
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
           minAccessibilityScore: "99"
