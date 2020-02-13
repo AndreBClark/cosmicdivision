@@ -30,7 +30,7 @@ export const DualWrapper = styled.div`
 `
 
 const Contact = () => {
-    return (
+  return (
     <ContentContainer>
       <PageHeading>Contact Me</PageHeading>
       <Subtitle>Get in touch with me</Subtitle>

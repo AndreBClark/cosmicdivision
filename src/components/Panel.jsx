@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 
-const Frame = styled.section`
+const Panel = styled.section`
   background-color: ${props => props.theme.colors.overlay.middle};
   padding: 4vmin;
   margin: ${props => props.theme.spacer};
@@ -16,5 +15,4 @@ const Frame = styled.section`
   }
 `
 
-const Panel = ({ children, className }) => <Frame>{children}</Frame>
 export default Panel

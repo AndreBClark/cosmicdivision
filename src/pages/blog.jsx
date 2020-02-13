@@ -21,10 +21,7 @@ class Blog extends React.Component {
 
     return (
       <>
-        <SEO
-          location={this.props.location}
-          title={`All Posts`}
-        />
+        <SEO location={this.props.location} title={`All Posts`} />
         <ContentContainer>
           <PageHeading>All Posts</PageHeading>
           {posts.map(({ node }) => {
@@ -32,10 +29,10 @@ class Blog extends React.Component {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
-                  <AniLink 
+                  <AniLink
                     swipe
                     direction="left"
-                    entryOffset={100} 
+                    entryOffset={100}
                     to={node.fields.slug}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
