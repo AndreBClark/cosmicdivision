@@ -4,6 +4,9 @@
 originally forked from:
 https://github.com/thomaswangio/gatsby-personal-starter-blog
 
+![Test Lighthouse Check](https://github.com/AndreBClark/cosmicdivision/workflows/Test%20Lighthouse%20Check/badge.svg)
+
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
