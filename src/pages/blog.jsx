@@ -11,7 +11,7 @@ const PostCard = styled.article`
     color: ${props => props.theme.colors.white};
   }
 `
-export default class Blog extends React.Component {
+class Blog extends React.Component {
   render() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
@@ -77,3 +77,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export default Blog;

@@ -95,7 +95,7 @@ const BlogPostTemplate = ({
 //   ],
 // }
 
-// export default liveRemarkForm(BlogPostTemplate, BlogTemplateOptions)
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
