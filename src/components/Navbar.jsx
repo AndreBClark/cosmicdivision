@@ -66,8 +66,7 @@ const Navbar = () => {
           hex="#1D1D1D"
           to="/"
           id="logo"
-          aria-label="Cosmic division Website Logo Home Button"
-        >
+          aria-label="Cosmic division Website Logo Home Button">
           <Logo width="48" />
           <span>Cosmic Division</span>
         </AniLink>

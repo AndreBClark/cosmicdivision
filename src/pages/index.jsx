@@ -54,8 +54,7 @@ class IndexPage extends React.Component {
                 direction="left"
                 entryOffset={80}
                 as={AniLink}
-                to="/blog/"
-              >
+                to="/blog/">
                 Begin Reading
               </Btn>
               <BtnOutline
@@ -63,8 +62,7 @@ class IndexPage extends React.Component {
                 direction="left"
                 entryOffset={80}
                 as={AniLink}
-                to="/contact/"
-              >
+                to="/contact/">
                 Get in Touch
               </BtnOutline>
             </DualWrapper>

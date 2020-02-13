@@ -26,15 +26,13 @@ const Projects = () => {
             <SmBtnOutline
               as="a"
               target="_blank"
-              href="https://github.com/AndreBClark/companiondice"
-            >
+              href="https://github.com/AndreBClark/companiondice">
               Github Repo
             </SmBtnOutline>
             <SmBtn
               as="a"
               target="_blank"
-              href="https://companiondice.netlify.com/"
-            >
+              href="https://companiondice.netlify.com/">
               Live Demo
             </SmBtn>
           </Flex>
@@ -48,14 +46,12 @@ const Projects = () => {
           <Flex>
             <SmBtnOutline
               as="a"
-              href="https://github.com/AndreBClark/dribbble-realestate"
-            >
+              href="https://github.com/AndreBClark/dribbble-realestate">
               Github Repo
             </SmBtnOutline>
             <SmBtn
               href="https://dribbblechallenge-realestate.netlify.com/"
-              as="a"
-            >
+              as="a">
               Live Demo
             </SmBtn>
           </Flex>
@@ -71,8 +67,7 @@ const Projects = () => {
             <SmBtnOutline
               as="a"
               href="https://github.com/AndreBClark/dscvr"
-              target="_blank"
-            >
+              target="_blank">
               Github Repo
             </SmBtnOutline>
             <SmBtn as="a" href="https://dscvr2019.netlify.com/" target="_blank">
