@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import Base from '../components/Base'
 import SEO from '../components/SEO'
 import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
