@@ -15,12 +15,12 @@ const Item = styled.div`
     ${tw`py-3`}
   }
 `
-const Projects = () => {
+const Projects = ({props}) => {
   return (
     <>
       <SEO
-        location={this.props.location}
-        title={Projects}
+        location={props.location}
+        title={'Projects'}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       <ContentContainer>
