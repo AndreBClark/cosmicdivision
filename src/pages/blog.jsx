@@ -11,7 +11,7 @@ const PostCard = styled.article`
     color: ${props => props.theme.colors.white};
   }
 `
-class Blog extends React.Component {
+export default class Blog extends React.Component {
   render() {
     const { data } = this.props
     const posts = data.allMarkdownRemark.edges
