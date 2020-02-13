@@ -1,5 +1,4 @@
 import React from 'react'
-import Base from '../components/Base'
 import ContentContainer from '../components/ContentContainer'
 import BioCard from '../components/BioCard'
 import styled from 'styled-components'
@@ -32,7 +31,6 @@ export const DualWrapper = styled.div`
 
 const Contact = () => {
   return (
-    <Base>
       <ContentContainer>
         <PageHeading>Contact Me</PageHeading>
         <Subtitle>Get in touch with me</Subtitle>
@@ -85,7 +83,6 @@ const Contact = () => {
           </form>
         </Panel>
       </ContentContainer>
-    </Base>
   )
 }
 export default Contact

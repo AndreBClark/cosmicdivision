@@ -21,8 +21,9 @@ class Blog extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Base location={this.props.location} title={siteTitle}>
-        <SEO title="All Posts" />
+      <SEO
+        location={this.props.location}
+        title={`All Posts | ${siteTitle}`} />
         <ContentContainer>
           <PageHeading>All Posts</PageHeading>
           {posts.map(({ node }) => {
@@ -44,7 +45,6 @@ class Blog extends React.Component {
             )
           })}
         </ContentContainer>
-      </Base>
     )
   }
 }

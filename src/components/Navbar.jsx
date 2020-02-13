@@ -73,17 +73,17 @@ const Navbar = () => {
         </AniLink>
         <List>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/blog">
+            <AniLink swipe direction="left" entryOffset={80} to="/blog">
               Blog
             </AniLink>
           </li>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/projects">
+            <AniLink swipe direction="left" entryOffset={80} to="/projects">
               Projects
             </AniLink>
           </li>
           <li>
-            <AniLink paintDrip hex="#1D1D1D" to="/contact">
+            <AniLink swipe direction="left" entryOffset={80} to="/contact">
               Contact
             </AniLink>
           </li>

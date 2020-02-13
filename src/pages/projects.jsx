@@ -1,5 +1,4 @@
 import React from 'react'
-import Base from '../components/Base'
 import ContentContainer from '../components/ContentContainer'
 import Panel from '../components/Panel'
 import { SmBtnOutline, SmBtn } from '../components/button'
@@ -17,7 +16,6 @@ const Item = styled.div`
 `
 const Projects = () => {
   return (
-    <Base>
       <ContentContainer>
         <h1>Projects</h1>
         <Panel>
@@ -76,7 +74,6 @@ const Projects = () => {
           </Item>
         </Panel>
       </ContentContainer>
-    </Base>
   )
 }
 export default Projects
