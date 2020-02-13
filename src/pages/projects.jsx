@@ -19,7 +19,6 @@ const Projects = ({props}) => {
   return (
     <>
       <SEO
-        location={props.location}
         title={'Projects'}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
