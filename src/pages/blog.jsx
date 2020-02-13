@@ -32,7 +32,11 @@ class Blog extends React.Component {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
-                  <AniLink to={node.fields.slug}>
+                  <AniLink 
+                    swipe
+                    direction="left"
+                    entryOffset={100} 
+                    to={node.fields.slug}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p
