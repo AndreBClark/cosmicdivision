@@ -5,7 +5,6 @@ const Frame = styled.section`
   background-color: ${props => props.theme.colors.overlay.middle};
   padding: 4vmin;
   margin: ${props => props.theme.spacer};
-  height: 100%;
   border-left: solid
     ${props => [props.theme.stroke, props.theme.colors.primary]};
   ul {
