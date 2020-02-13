@@ -1,13 +1,13 @@
 import React from 'react'
 import { BtnOutline, Btn } from '../components/button'
 import Hero from '../components/Hero'
-import Base from '../components/Base'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { rhythm } from '../../config/typography'
 import { DualWrapper } from './contact'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
 const HeroInner = styled.div`
   text-align: center;
   margin: 0;
@@ -37,10 +37,11 @@ class IndexPage extends React.Component {
   render() {
     const siteTitle = `Cosmic Division`
 
-    return (
-      <Base location={this.props.location} title={siteTitle}>
+    return(
+      <>
         <SEO
-          title="Home"
+          location={this.props.location} 
+          title={`${siteTitle} | Home`}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
@@ -48,16 +49,16 @@ class IndexPage extends React.Component {
             <HeadingOne>Cosmic Division Blog</HeadingOne>
             <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
             <DualWrapper>
-              <Btn as={Link} to="/blog/">
+              <Btn swipe direction="left" entryOffset={80} as={AniLink} to="/blog/">
                 Begin Reading
               </Btn>
-              <BtnOutline as={Link} to="/contact/">
+              <BtnOutline swipe direction="left" entryOffset={80} as={AniLink} to="/contact/">
                 Get in Touch
               </BtnOutline>
             </DualWrapper>
           </HeroInner>
         </Hero>
-      </Base>
+      </>
     )
   }
 }

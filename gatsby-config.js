@@ -10,16 +10,13 @@ module.exports = {
             github: `AndreBClark`,
         },
     },
-    plugins: [
-        // `gatsby-plugin-netlify-cms`,
-        {
+    plugins: [{
             resolve: "gatsby-plugin-tinacms",
             options: {
+                plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
                 sidebar: {
-                    position: "fixed",
                     hidden: process.env.NODE_ENV === "production",
                 },
-                plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
             },
         },
         {
@@ -28,7 +25,7 @@ module.exports = {
                 displayName: true,
             },
         },
-        `gatsby-plugin-feed`,
+        `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-background-image`,
@@ -47,6 +44,12 @@ module.exports = {
                 path: `${__dirname}/src/images`,
             },
         },
+        {
+            resolve: "gatsby-plugin-transition-link",
+            options: {
+                layout: require.resolve(`./src/components/Base.jsx`)
+            }
+        }
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -83,7 +86,6 @@ module.exports = {
                             },
                         },
                     },
-                    `gatsby-remark-copy-linked-files`,
                     `gatsby-remark-smartypants`,
                 ],
             },
@@ -93,8 +95,10 @@ module.exports = {
             options: {
                 id: "GTM-KMKSS6R",
                 includeInDevelopment: false,
+                defaultDataLayer: { platform: "gatsby" },
             }
         },
+
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
