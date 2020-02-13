@@ -39,7 +39,7 @@ class IndexPage extends React.Component {
       <>
         <SEO
           location={this.props.location}
-          title={home}
+          title={'Home'}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero>
