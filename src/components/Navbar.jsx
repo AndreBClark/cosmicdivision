@@ -62,8 +62,9 @@ const Navbar = () => {
     <Header>
       <Nav>
         <AniLink
-          paintDrip
-          hex="#1D1D1D"
+          swipe
+          direction="left"
+          entryOffset={100}
           to="/"
           id="logo"
           aria-label="Cosmic division Website Logo Home Button">
@@ -72,17 +73,17 @@ const Navbar = () => {
         </AniLink>
         <List>
           <li>
-            <AniLink swipe direction="left" entryOffset={80} to="/blog">
+            <AniLink swipe direction="left" entryOffset={100} to="/blog">
               Blog
             </AniLink>
           </li>
           <li>
-            <AniLink swipe direction="left" entryOffset={80} to="/projects">
+            <AniLink swipe direction="left" entryOffset={100} to="/projects">
               Projects
             </AniLink>
           </li>
           <li>
-            <AniLink swipe direction="left" entryOffset={80} to="/contact">
+            <AniLink swipe direction="left" entryOffset={100} to="/contact">
               Contact
             </AniLink>
           </li>

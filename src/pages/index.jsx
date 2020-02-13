@@ -52,7 +52,7 @@ class IndexPage extends React.Component {
               <Btn
                 swipe
                 direction="left"
-                entryOffset={80}
+                entryOffset={100}
                 as={AniLink}
                 to="/blog/">
                 Begin Reading
@@ -60,7 +60,7 @@ class IndexPage extends React.Component {
               <BtnOutline
                 swipe
                 direction="left"
-                entryOffset={80}
+                entryOffset={100}
                 as={AniLink}
                 to="/contact/">
                 Get in Touch

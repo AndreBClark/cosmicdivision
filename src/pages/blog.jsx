@@ -8,7 +8,7 @@ import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
 import { withPlugin } from 'tinacms'
 import { createRemarkButton } from 'gatsby-tinacms-remark'
-
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 const PostCard = styled.article`
   p {
     color: ${props => props.theme.colors.white};
@@ -33,7 +33,7 @@ class Blog extends React.Component {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
-                  <Link to={node.fields.slug}>
+                  <AniLink to={node.fields.slug}>
                     <h3>{title}</h3>
                     <small>{node.frontmatter.date}</small>
                     <p
@@ -41,7 +41,7 @@ class Blog extends React.Component {
                         __html: node.frontmatter.description || node.excerpt,
                       }}
                     />
-                  </Link>
+                  </AniLink>
                 </PostCard>
               </PanelHover>
             )
