@@ -56,7 +56,7 @@ const BlogPostTemplate = ({
         <Date>{post.frontmatter.date}</Date>
         <Panel>
           {/* <TinaField name="rawMarkdownBody" Component={Wysiwyg}> */}
-            <Article dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Article dangerouslySetInnerHTML={{ __html: post.html }} />
           {/* </TinaField>
           {process.env.NODE_ENV !== 'production' && (
             <Btn onClick={() => setIsEditing(p => !p)}>
@@ -95,7 +95,7 @@ const BlogPostTemplate = ({
 //   ],
 // }
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

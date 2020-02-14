@@ -49,7 +49,6 @@ class Blog extends React.Component {
   }
 }
 
-
 export const pageQuery = graphql`
   query {
     site {
@@ -77,4 +76,4 @@ export const pageQuery = graphql`
     }
   }
 `
-export default Blog;
+export default Blog

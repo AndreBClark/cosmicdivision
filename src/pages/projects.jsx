@@ -15,7 +15,7 @@ const Item = styled.div`
     ${tw`py-3`}
   }
 `
-const Projects = ({props}) => {
+const Projects = ({ props }) => {
   return (
     <>
       <SEO
