@@ -31,6 +31,12 @@ export const DualWrapper = styled.div`
 
 const Contact = () => {
   return (
+    <>
+    <SEO
+    location={this.props.location}
+    title={'Contact'}
+    keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+  />
     <ContentContainer>
       <PageHeading>Contact Me</PageHeading>
       <Subtitle>Get in touch with me</Subtitle>
@@ -83,6 +89,7 @@ const Contact = () => {
         </form>
       </Panel>
     </ContentContainer>
+    </>
   )
 }
 export default Contact
