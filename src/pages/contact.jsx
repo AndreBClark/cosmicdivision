@@ -34,7 +34,6 @@ const Contact = () => {
   return (
     <>
       <SEO
-        location={this.props.location}
         title={'Contact'}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
