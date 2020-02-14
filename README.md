@@ -1,10 +1,8 @@
-<h1 align="center">
-  Cosmic Division Development Blog
+# Cosmic Division Development Blog ![Test Lighthouse Check](https://github.com/AndreBClark/cosmicdivision/workflows/Test%20Lighthouse%20Check/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/a982740a-b81c-48b1-bc72-cf2353550b30/deploy-status)](https://app.netlify.com/sites/cosmicdivision/deploys)
 </h1>
 originally forked from:
 https://github.com/thomaswangio/gatsby-personal-starter-blog
 
-![Test Lighthouse Check](https://github.com/AndreBClark/cosmicdivision/workflows/Test%20Lighthouse%20Check/badge.svg)
 
 
 ## 🚀 Quick start
