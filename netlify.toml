@@ -1,0 +1,2 @@
+[build]
+    ignore = "git diff --quiet HEAD^ HEAD src/ content/ config/ tailwind.config.js gatsby-config.js package.json"
