@@ -1,11 +1,9 @@
 import styled from 'styled-components'
-import { rhythm } from '../../config/typography'
 import tw from 'tailwind.macro'
 
 export const Btn = styled.button`
-  ${tw`m-5`};
+${tw`px-4 py-2 m-4`}
   display: block;
-  padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
   text-transform: ${props => props.theme.fontFamily.logoCase};
   letter-spacing: ${props => props.theme.letterSpacing};
   background-color: ${props => props.theme.colors.primary};
@@ -14,7 +12,6 @@ export const Btn = styled.button`
   font-weight: ${props => props.theme.fontFamily.headingWeight};
   border-radius: ${props => props.theme.radius};
   font-family: ${props => props.theme.fontFamily.heading};
-  border-color: ${props => props.theme.primary};
   border-width: ${props => props.theme.border};
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     display: inline;
@@ -45,4 +42,11 @@ export const BtnSimple = styled(Btn)`
     border-color: ${props => props.theme.colors.primary};
     cursor: pointer !important;
   }
+`
+
+export const SmBtn = styled(Btn)`
+${tw`text-xs`}
+`
+export const SmBtnOutline = styled(BtnOutline)`
+  ${tw`text-xs`}
 `

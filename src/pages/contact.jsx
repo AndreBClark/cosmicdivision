@@ -5,12 +5,11 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { BtnOutline, Btn } from '../components/button'
 import Panel from '../components/Panel'
-import { rhythm } from '../../config/typography'
 import PageHeading from '../components/PageHeading'
 import { Subtitle } from '.'
 
 const TextInput = styled.input`
-  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`};
+  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`}
   :hover,
   :focus {
     ${tw`bg-gray-600 border-primary`}
@@ -20,13 +19,6 @@ const Label = styled.label`
   ${tw`block my-2`}
 `
 export const DualWrapper = styled.div`
-  margin-top: ${rhythm(1)};
-  margin-bottom: ${rhythm(1)};
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    * + * {
-      margin: ${rhythm(2 / 3)};
-    }
-  }
 `
 
 const Contact = () => {
