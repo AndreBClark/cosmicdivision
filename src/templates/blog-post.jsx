@@ -4,31 +4,19 @@ import SEO from '../components/SEO'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
 import styled from 'styled-components'
-// import { liveRemarkForm } from 'gatsby-tinacms-remark'
-// import { Wysiwyg } from '@tinacms/fields'
-// import { TinaField } from '@tinacms/form-builder'
-import { Btn } from '../components/button'
-import useSiteMetadata from '../hooks/useSiteMetaData'
 import PageHeading from '../components/PageHeading'
 
 const Article = styled.article`
   *:not(li) + * {
-    margin-bottom: calc(${props => props.theme.spacer} * 4);
+    margin-bottom: ${props => props.theme.spacer * 4};
   }
   h2 {
     margin-bottom: ${props => props.theme.spacer};
   }
 `
 
-const SequentialLinks = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-`
 const Date = styled.p`
-  margin: calc(4 * ${props => props.theme.spacer});
+  margin: ${props => props.theme.spacer * 4};
   max-width: ${props => props.theme.maxWidth};
   @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
     margin: ${props => props.theme.spacer};
@@ -38,12 +26,8 @@ const BlogPostTemplate = ({
   data,
   pageContext,
   location,
-  // setIsEditing,
-  // isEditing,
 }) => {
   const post = data.markdownRemark
-  const siteTitle = useSiteMetadata()
-  const { previous, next } = pageContext
   return (
     <>
       <SEO
