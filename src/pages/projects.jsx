@@ -4,6 +4,7 @@ import Panel from '../components/Panel'
 import { SmBtnOutline, SmBtn } from '../components/button'
 import tw from 'tailwind.macro'
 import SEO from '../components/SEO'
+import PageHeading from '../components/PageHeading'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
@@ -13,7 +14,12 @@ const Flex = styled.div`
 }
 `
 const ButtonContainer = styled(Flex)`
+  a {
+  ${tw`mb-2`}
+  }
+@media screen and (min-width: ${props => props.theme.breakpoints.desktop}){ 
   ${tw`justify-between w-56`}
+}
 `
 const Item = styled(Flex)`
   border-bottom-width: 4px;
@@ -22,7 +28,7 @@ const Item = styled(Flex)`
 `
 
 const Thumbnail = styled(Img)`
-  ${tw`w-full p-4 rounded-lg`}
+  ${tw`w-full p-4 mb-4 rounded-lg`}
   flex: 1 0 15%;
   img {
     object-position: 0 center !important;
@@ -30,7 +36,7 @@ const Thumbnail = styled(Img)`
 `
 const Description = styled(Flex)`
   flex: 0 5 85%;
-  ${tw`flex-col content-start justify-between w-full px-4`}
+  ${tw`flex-col content-start justify-between w-full xl:px-4`}
   h2 {
     ${tw`-mt-1`}
   }
@@ -43,21 +49,21 @@ const Projects = ({ props }) => {
     query {
       dscvr: file(relativePath: { eq: "dscvr.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 412) {
+          fluid(quality: 100, maxWidth: 312) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       companiondice: file(relativePath: { eq: "companiondice.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 412) {
+          fluid(quality: 100, maxWidth: 312) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       dribbble01: file(relativePath: { eq: "dribbble01.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 412) {
+          fluid(quality: 100, maxWidth: 312) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -71,7 +77,7 @@ const Projects = ({ props }) => {
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       <ContentContainer>
-        <h1>Projects</h1>
+      <PageHeading>Projects</PageHeading>
         <Panel>
           <Item>
             <Thumbnail
