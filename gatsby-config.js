@@ -9,16 +9,15 @@ module.exports = {
             github: `AndreBClark`,
         },
     },
-    plugins: [
-        // {
-        //     resolve: "gatsby-plugin-tinacms",
-        //     options: {
-        //         plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
-        //         sidebar: {
-        //             hidden: process.env.NODE_ENV === "production",
-        //         },
-        //     },
-        // },
+    plugins: [{
+            resolve: `gatsby-plugin-sass`,
+            options: {
+                postCssPlugins: [
+                    require("tailwindcss"),
+                    require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
+                ],
+            }
+        },
         {
             resolve: `gatsby-plugin-styled-components`,
             options: {
@@ -29,7 +28,6 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-background-image`,
-
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -61,12 +59,7 @@ module.exports = {
                             maxWidth: 590,
                         },
                     },
-                    {
-                        resolve: `gatsby-remark-responsive-iframe`,
-                        options: {
-                            wrapperStyle: `margin-bottom: 1.0725rem`,
-                        },
-                    },
+                    `gatsby-remark-responsive-iframe`,
                     {
                         resolve: `gatsby-remark-vscode`,
                         options: {

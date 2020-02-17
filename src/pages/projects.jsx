@@ -9,22 +9,21 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
 const Flex = styled.div`
-@media screen and (min-width: ${props => props.theme.breakpoints.desktop}){
-  ${tw`flex max-w-full`}
-}
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+    ${tw`flex max-w-full`}
+  }
 `
 const ButtonContainer = styled(Flex)`
   a {
-  ${tw`mb-2`}
+    ${tw`mb-2`}
   }
-@media screen and (min-width: ${props => props.theme.breakpoints.desktop}){ 
-  ${tw`justify-between w-56`}
-}
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+    ${tw`justify-between w-56`}
+  }
 `
 const Item = styled(Flex)`
   border-bottom-width: 4px;
   ${tw`justify-between w-full pb-6 mb-8 border-primary`}
-
 `
 
 const Thumbnail = styled(Img)`
@@ -77,7 +76,7 @@ const Projects = ({ props }) => {
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       <ContentContainer>
-      <PageHeading>Projects</PageHeading>
+        <PageHeading>Projects</PageHeading>
         <Panel>
           <Item>
             <Thumbnail

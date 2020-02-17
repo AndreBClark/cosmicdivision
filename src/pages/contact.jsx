@@ -54,7 +54,7 @@ const Contact = () => {
                 placeholder="name@example.com"
               />
             </Label>
-            <label>
+            <Label for="subject">
               Subject
               <TextInput
                 type="text"
@@ -62,7 +62,7 @@ const Contact = () => {
                 id="subject"
                 placeholder="Subject"
               />
-            </label>
+            </Label>
             <Label>
               Message
               <TextInput

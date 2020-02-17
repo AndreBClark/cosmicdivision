@@ -22,11 +22,7 @@ const Date = styled.p`
     margin: ${props => props.theme.spacer};
   }
 `
-const BlogPostTemplate = ({
-  data,
-  pageContext,
-  location,
-}) => {
+const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   return (
     <>
