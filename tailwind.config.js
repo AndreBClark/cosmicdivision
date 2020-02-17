@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
 const tint = require('polished/lib/color/tint');
 const shade = require('polished/lib/color/shade');
 module.exports = {
@@ -23,6 +24,15 @@ module.exports = {
                     200: tint(0.3, "#121212"),
                     100: tint(0.4, "#121212")
                 }
+            },
+            fontFamily: {
+                'mono': `Fira Mono`,
+                'sans': [
+                    '"Fira Sans"',
+                    '"Open Sans"',
+                    ...defaultTheme.fontFamily.sans
+                ],
+                'heading': 'Orbitron',
             }
         }
     },
