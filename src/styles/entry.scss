@@ -1,0 +1,23 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind utilities;
+
+/* purgecss end ignore */
+
+:root {
+    font-size: 24px;
+}
+
+@import './core/core';
+html,
+body {
+    @apply min-h-full overflow-y-auto;
+}
+
+main,
+footer {
+    & a:hover {
+        @apply text-gray-500 duration-300 bg-primary;
+    }
+}
