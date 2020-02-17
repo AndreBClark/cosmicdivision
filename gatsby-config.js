@@ -111,11 +111,5 @@ module.exports = {
                 icon: `src/images/logo.svg`,
             },
         },
-        {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-                pathToConfigModule: `config/typography`,
-            },
-        },
     ],
 }

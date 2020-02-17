@@ -4,7 +4,6 @@ import Hero from '../components/Hero'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import { rhythm } from '../../config/typography'
 import { DualWrapper } from './contact'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
@@ -21,13 +20,9 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 export const Subtitle = styled.h2`
-${tw`text-lg`}
+${tw`mb-4 text-lg`}
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
-  font-weight: semibold;
-  border-radius: ${rhythm(1 / 8)};
-  margin: ${rhythm(1 / 4)};
-  padding: ${rhythm(1 / 8)} ${rhythm(1)};
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontFamily.headingWeight};
