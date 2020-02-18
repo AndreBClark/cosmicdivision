@@ -16,8 +16,7 @@ const HeroInner = styled.div`
   }
 `
 const HeadingOne = styled.h1`
-  ${tw`text-5xl`}
-  text-transform: ${props => props.theme.fontFamily.logoCase};
+${tw`xl:text-6xl`}
 `
 export const Subtitle = styled.h2`
 ${tw`mb-4 text-lg`}

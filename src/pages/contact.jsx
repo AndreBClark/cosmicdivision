@@ -20,6 +20,7 @@ const Label = styled.label`
   ${tw`block my-2`}
 `
 export const DualWrapper = styled.div`
+  ${tw`xl:my-8`}
 `
 
 const Contact = () => {

@@ -1,18 +1,9 @@
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+import styled from 'emotion/'
 
 export const Btn = styled.button`
-${tw`px-4 py-2 m-4`}
-  display: block;
-  text-transform: ${props => props.theme.fontFamily.logoCase};
-  letter-spacing: ${props => props.theme.letterSpacing};
-  background-color: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.grey.default};
-  border-color: ${props => props.theme.colors.primary};
-  font-weight: ${props => props.theme.fontFamily.headingWeight};
-  border-radius: ${props => props.theme.radius};
-  font-family: ${props => props.theme.fontFamily.heading};
-  border-width: ${props => props.theme.border};
+${tw`block px-8 py-2 m-4 font-bold tracking-widest text-gray-500 uppercase border rounded-lg bg-primary border-primary font-heading`}
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
     display: inline;
   }
