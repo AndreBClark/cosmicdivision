@@ -10,11 +10,6 @@ svg path {
   fill: ${tw`text-primary`}
 }
 
-
-*::selection {
-  background-color: ${theme.colors.primary};
-  color: ${tw`text-gray-500`};
-}
 a, button {
   transition: all ${props => props.theme.transitions.normal};
   color: ${theme.colors.primary};

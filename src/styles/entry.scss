@@ -5,11 +5,8 @@
 
 /* purgecss end ignore */
 
-:root {
-    font-size: 24px;
-}
-
 @import './core/core';
+@import './theme/theme';
 html,
 body {
     @apply min-h-full overflow-y-auto;
