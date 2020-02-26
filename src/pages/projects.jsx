@@ -91,12 +91,14 @@ const Projects = ({ props }) => {
                 <SmBtn
                   as="a"
                   target="_blank"
+                  rel="noopener"
                   href="https://companiondice.netlify.com/">
                   Live Demo
                 </SmBtn>
                 <SmBtnOutline
                   as="a"
                   target="_blank"
+                  rel="noopener"
                   href="https://github.com/AndreBClark/companiondice">
                   Github Repo
                 </SmBtnOutline>
@@ -117,12 +119,17 @@ const Projects = ({ props }) => {
               </p>
               <ButtonContainer>
                 <SmBtn
+                  rel="noopener"
+                  target="_blank"
+                  rel="noopener"
                   href="https://dribbblechallenge-realestate.netlify.com/"
                   as="a">
                   Live Demo
                 </SmBtn>
                 <SmBtnOutline
                   as="a"
+                  target="_blank"
+                  rel="noopener"
                   href="https://github.com/AndreBClark/dribbble-realestate">
                   Github Repo
                 </SmBtnOutline>
@@ -145,14 +152,16 @@ const Projects = ({ props }) => {
               <ButtonContainer>
                 <SmBtn
                   as="a"
-                  href="https://dscvr2019.netlify.com/"
-                  target="_blank">
+                  target="_blank"
+                  rel="noopener"
+                  href="https://dscvr2019.netlify.com/">
                   Live Demo
                 </SmBtn>
                 <SmBtnOutline
                   as="a"
-                  href="https://github.com/AndreBClark/dscvr"
-                  target="_blank">
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/AndreBClark/dscvr">
                   Github Repo
                 </SmBtnOutline>
               </ButtonContainer>
