@@ -6,19 +6,20 @@ module.exports = {
         description: `A personal blog with styled components, TinaCMS`,
         siteUrl: `https://cosmicdivision.dev`,
         social: {
-            twitter: ``,
             github: `AndreBClark`,
         },
     },
-    plugins: [{
-            resolve: "gatsby-plugin-tinacms",
-            options: {
-                plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
-                sidebar: {
-                    hidden: process.env.NODE_ENV === "production",
-                },
-            },
-        },
+    plugins: [
+        `gatsby-plugin-netlify`,
+        // {
+        //     resolve: "gatsby-plugin-tinacms",
+        //     options: {
+        //         plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
+        //         sidebar: {
+        //             hidden: process.env.NODE_ENV === "production",
+        //         },
+        //     },
+        // },
         {
             resolve: `gatsby-plugin-styled-components`,
             options: {
@@ -49,7 +50,7 @@ module.exports = {
             options: {
                 layout: require.resolve(`./src/components/Base.jsx`)
             }
-        }
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -109,6 +110,12 @@ module.exports = {
                 theme_color: `#26ffba`,
                 display: `standalone`,
                 icon: `src/images/logo.svg`,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `config/typography`,
             },
         },
     ],
