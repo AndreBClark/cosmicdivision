@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import styled from 'emotion/'
+import { rhythm } from '../../config/typography'
+import tw from 'twin.macro'
 
 export const Btn = styled.button`
 ${tw`block px-8 py-2 m-4 font-bold tracking-widest text-gray-500 uppercase border rounded-lg bg-primary border-primary font-heading`}

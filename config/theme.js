@@ -1,6 +1,6 @@
 import { lighten } from "polished"
 
-const colors = {
+export const colors = {
     primary: "#26ffba", // Color for buttons or links
     primaryLight: lighten(0.1, "#26ffba"),
     bg: "#121212", // Background color
@@ -22,11 +22,11 @@ const transitions = {
     normal: "400ms",
 }
 
-const fontSize = {
+export const fontSize = {
     small: "0.9rem",
 }
 
-const fontFamily = {
+export const fontFamily = {
     mono: `Fira Mono`,
     serif: `Bitter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto, Helvetica,Arial,serif`,
     sans: `Fira Sans,Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif`,
@@ -36,9 +36,9 @@ const fontFamily = {
     logoCase: 'uppercase'
 }
 
-const breakpoints = {
+export const breakpoints = {
     desktop: "1200px",
-    tablet: "600px",
+    tablet: "768px",
 }
 
 const theme = {

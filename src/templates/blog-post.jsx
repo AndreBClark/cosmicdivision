@@ -1,17 +1,18 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
-import styled from 'styled-components'
+import { styled } from 'twin.macro'
 import PageHeading from '../components/PageHeading'
+import theme from '../../config/theme'
 
 const Article = styled.article`
   *:not(li) + * {
-    margin-bottom: ${props => props.theme.spacer * 4};
+    margin-bottom: calc(${theme.spacer} * 4);
   }
   h2 {
-    margin-bottom: ${props => props.theme.spacer};
+    margin-bottom: ${theme.spacer};
   }
 `
 
@@ -26,7 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   return (
     <>
-      <SEO
+      <Seo
         location={location}
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -82,7 +83,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

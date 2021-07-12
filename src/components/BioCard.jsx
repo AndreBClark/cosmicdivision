@@ -7,7 +7,7 @@
 
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import Panel from './Panel'
 import theme from '../../config/theme'
@@ -21,22 +21,22 @@ function BioCard() {
         return (
           <Panel>
             <Container>
-              <Image
-                fixed={data.avatar.childImageSharp.fixed}
+              <GatsbyImage
+                image={data.avatar.childImageSharp.fixed}
                 alt={author}
                 style={{
                   marginRight: theme.spacer,
                   marginBottom: 0,
-                  minWidth: 50,
+                  minWidth: 100,
                   borderRadius: `100%`,
                 }}
                 imgStyle={{
-                  borderRadius: `50%`,
+                  borderRadius: `9999px`,
                 }}
               />
               <p>
                 Written by <strong>{author}</strong> who lives and works in
-                Coeur d'Alene, Idaho building useful things.
+                Spokane, Washington building useful things.
                 {` `}
                 <a href={`https://github.com/${social.github}`}>
                   You should follow him on Github
@@ -52,13 +52,11 @@ function BioCard() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+    avatar: file(relativePath: { eq: "profile-pic.jpg" }) {
       childImageSharp {
-        fixed(width: 50, height: 50) {
-          ...GatsbyImageSharpFixed
+          gatsbyImageData(layout: FIXED)
         }
       }
-    }
     site {
       siteMetadata {
         author

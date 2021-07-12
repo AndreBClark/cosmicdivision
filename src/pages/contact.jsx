@@ -1,32 +1,17 @@
 import React from 'react'
 import ContentContainer from '../components/ContentContainer'
 import BioCard from '../components/BioCard'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 import { BtnOutline, Btn } from '../components/button'
 import Panel from '../components/Panel'
 import PageHeading from '../components/PageHeading'
-import { Subtitle } from '.'
-import SEO from '../components/SEO'
-
-const TextInput = styled.input`
-  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`}
-  :hover,
-  :focus {
-    ${tw`bg-gray-600 border-primary`}
-  }
-`
-const Label = styled.label`
-  ${tw`block my-2`}
-`
-export const DualWrapper = styled.div`
-  ${tw`xl:my-8`}
-`
+import { Subtitle } from '../components/Hero'
+import { Label, TextInput, DualWrapper } from '../components/TextInput'
+import Seo from '../components/Seo'
 
 const Contact = () => {
   return (
     <>
-      <SEO
+      <Seo
         title={'Contact'}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
@@ -55,7 +40,7 @@ const Contact = () => {
                 placeholder="name@example.com"
               />
             </Label>
-            <Label for="subject">
+            <Label>
               Subject
               <TextInput
                 type="text"

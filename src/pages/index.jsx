@@ -1,37 +1,17 @@
 import React from 'react'
 import { BtnOutline, Btn } from '../components/button'
 import Hero from '../components/Hero'
-import SEO from '../components/SEO'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import { DualWrapper } from './contact'
+import Seo from '../components/Seo'
+import { HeroInner, HeadingOne, Subtitle } from '../components/Hero'
+import { DualWrapper } from '../components/TextInput'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const HeroInner = styled.div`
-  text-align: center;
-  margin: 0;
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-`
-const HeadingOne = styled.h1`
-${tw`xl:text-6xl`}
-`
-export const Subtitle = styled.h2`
-${tw`mb-4 text-lg`}
-  font-family: ${props => props.theme.fontFamily.heading};
-  text-transform: ${props => props.theme.fontFamily.headingCase};
-  color: ${props => props.theme.colors.bg};
-  background-color: ${props => props.theme.colors.primary};
-  font-weight: ${props => props.theme.fontFamily.headingWeight};
-`
 
 class IndexPage extends React.Component {
   render() {
     return (
       <>
-        <SEO
+        <Seo
           location={this.props.location}
           title={'Home'}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}

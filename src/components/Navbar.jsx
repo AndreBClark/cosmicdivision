@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../images/logo.svg'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Header = styled.header`
