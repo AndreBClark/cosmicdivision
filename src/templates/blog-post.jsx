@@ -3,27 +3,41 @@ import { graphql } from 'gatsby'
 import Seo from '../components/Seo'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
-import styled from 'styled-components'
+import { styled } from 'twin.macro'
 import PageHeading from '../components/PageHeading'
+import theme from '../../config/theme'
 
 const Article = styled.article`
   *:not(li) + * {
-    margin-bottom: ${props => props.theme.spacer * 4};
+    margin-bottom: calc(${theme.spacer} * 4);
   }
   h2 {
-    margin-bottom: ${props => props.theme.spacer};
+    margin-bottom: ${theme.spacer};
   }
 `
 
+// const SequentialLinks = styled.ul`
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   list-style: none;
+//   padding: 0;
+// `
 const Date = styled.p`
-  margin: ${props => props.theme.spacer * 4};
-  max-width: ${props => props.theme.maxWidth};
-  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
-    margin: ${props => props.theme.spacer};
+  margin: calc(4 * ${theme.spacer});
+  max-width: ${theme.maxWidth};
+  @media screen and (min-width: ${theme.breakpoints.desktop}) {
+    margin: ${theme.spacer};
   }
 `
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const BlogPostTemplate = ({
+  data,
+  // pageContext,
+  location
+}) => {
   const post = data.markdownRemark
+  // const siteTitle = useSiteMetadata()
+  // const { previous, next } = pageContext
   return (
     <>
       <Seo
@@ -82,7 +96,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
