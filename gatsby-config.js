@@ -83,14 +83,14 @@ module.exports = {
                 ],
             },
         },
-        {
-            resolve: "gatsby-plugin-google-tagmanager",
-            options: {
-                id: "GTM-KMKSS6R",
-                includeInDevelopment: false,
-                defaultDataLayer: { platform: "gatsby" },
-            }
-        },
+        // {
+        //     resolve: "gatsby-plugin-google-tagmanager",
+        //     options: {
+        //         id: "GTM-KMKSS6R",
+        //         includeInDevelopment: false,
+        //         defaultDataLayer: { platform: "gatsby" },
+        //     }
+        // },
 
         {
             resolve: `gatsby-plugin-manifest`,
