@@ -36,7 +36,7 @@ function BioCard() {
               />
               <p>
                 Written by <strong>{author}</strong> who lives and works in
-                Coeur d'Alene, Idaho building useful things.
+                Spokane, Washington building useful things.
                 {` `}
                 <a href={`https://github.com/${social.github}`}>
                   You should follow him on Github
