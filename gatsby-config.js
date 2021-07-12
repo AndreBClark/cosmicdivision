@@ -30,7 +30,11 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
         `gatsby-background-image`,
-
+        `gatsby-plugin-emotion`,
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
+        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -66,17 +70,6 @@ module.exports = {
                         resolve: `gatsby-remark-responsive-iframe`,
                         options: {
                             wrapperStyle: `margin-bottom: 1.0725rem`,
-                        },
-                    },
-                    {
-                        resolve: `gatsby-remark-vscode`,
-                        options: {
-                            colorTheme: "Firefox Quantum Dark",
-                            injectStyles: true,
-                            extensions: [{
-                                identifier: "beastdestroyer.firefox-quantum-themes",
-                                version: "1.1.6",
-                            }, ],
                         },
                     },
                     {
