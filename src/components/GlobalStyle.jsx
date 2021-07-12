@@ -10,7 +10,6 @@ html, body {
   min-height: 100%;
   overflow-y: auto;
 }
-${Preflight}
 h1, .h1 {
   ${tw`text-4xl`}
 }
