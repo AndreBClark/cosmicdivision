@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { rhythm } from '../../config/typography'
-import tw from 'tailwind.macro'
+import tw from 'twin.macro'
 
 export const Btn = styled.button`
   display: block;

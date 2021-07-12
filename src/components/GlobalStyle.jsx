@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import theme from '../../config/theme'
-import tw from 'tailwind.macro'
-import Preflight from './Preflight'
-import 'typeface-fira-sans'
-import 'typeface-orbitron'
+import tw from 'twin.macro'
 
 const GlobalStyle = createGlobalStyle`
 html, body {
