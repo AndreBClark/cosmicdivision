@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import styled from 'styled-components'
-import theme from '../../config/theme'
+import tw, { styled } from 'twin.macro'
+import { breakpoints,  fontFamily, colors } from '../../config/theme'
+import { rhythm } from '../../config/typography'
 import ContentContainer from './ContentContainer'
 import BackgroundImage from 'gatsby-background-image'
 
 const Container = styled(BackgroundImage)`
-  background-color: ${theme.colors.grey.dark};
+  background-color: ${colors.grey.dark};
   width: 100%;
   min-height: 75vh;
   text-align: center;
@@ -15,7 +16,7 @@ const Container = styled(BackgroundImage)`
   background-position: center;
   display: flex;
   align-items: center;
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: ${breakpoints.tablet}) {
     min-height: 80vh;
   }
 `
@@ -37,9 +38,34 @@ const FlexLg = styled.div`
   display: flex;
   align-content: center;
 
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${breakpoints.tablet}) {
     justify-content: space-between;
   }
+`
+
+export const HeroInner = styled.div`
+  text-align: center;
+  margin: 0;
+  @media screen and (min-width: ${breakpoints.tablet}) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
+export const HeadingOne = styled.h1`
+  ${tw`text-5xl`}
+  text-transform: ${fontFamily.logoCase};
+`
+export const Subtitle = styled.h2`
+${tw`text-lg`}
+  font-family: ${fontFamily.heading};
+  text-transform: ${fontFamily.headingCase};
+  font-weight: semibold;
+  border-radius: ${rhythm(1 / 8)};
+  margin: ${rhythm(1 / 4)};
+  padding: ${rhythm(1 / 8)} ${rhythm(1)};
+  color: ${colors.bg};
+  background-color: ${colors.primary};
+  font-weight: ${fontFamily.headingWeight};
 `
 const Hero = ({ children }) => {
   const { mobileImage, desktopImage } = useStaticQuery(
@@ -79,5 +105,6 @@ const Hero = ({ children }) => {
     </Container>
   )
 }
+
 
 export default Hero
