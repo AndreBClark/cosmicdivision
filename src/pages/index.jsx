@@ -1,10 +1,7 @@
 import React from 'react'
 import { BtnOutline, Btn } from '../components/button'
 import Hero from '../components/Hero'
-import SEO from '../components/SEO'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import { DualWrapper } from './contact'
+import Seo from '../components/Seo'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const HeroInner = styled.div`
@@ -20,9 +17,13 @@ const HeadingOne = styled.h1`
   text-transform: ${props => props.theme.fontFamily.logoCase};
 `
 export const Subtitle = styled.h2`
-${tw`mb-4 text-lg`}
+${tw`text-lg`}
   font-family: ${props => props.theme.fontFamily.heading};
   text-transform: ${props => props.theme.fontFamily.headingCase};
+  font-weight: semibold;
+  border-radius: ${rhythm(1 / 8)};
+  margin: ${rhythm(1 / 4)};
+  padding: ${rhythm(1 / 8)} ${rhythm(1)};
   color: ${props => props.theme.colors.bg};
   background-color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontFamily.headingWeight};
@@ -32,7 +33,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <>
-        <SEO
+        <Seo
           location={this.props.location}
           title={home}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}

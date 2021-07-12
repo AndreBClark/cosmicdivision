@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import SEO from './SEO'
+import Seo from './Seo'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
 import Footer from './Footer'
@@ -18,15 +18,15 @@ const Wrapper = styled.div`
 
 const Base = ({ children }) => {
   return (
-      <ThemeProvider theme={theme}>
-        <Wrapper>
-          <GlobalStyle />
-          <SEO />
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </Wrapper>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Wrapper>
+        <GlobalStyle />
+        <Seo />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </Wrapper>
+    </ThemeProvider>
   )
 }
 
