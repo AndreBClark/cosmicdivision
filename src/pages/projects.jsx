@@ -2,8 +2,7 @@ import React from 'react'
 import ContentContainer from '../components/ContentContainer'
 import Panel from '../components/Panel'
 import { SmBtnOutline, SmBtn } from '../components/button'
-import tw from 'tailwind.macro'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import PageHeading from '../components/PageHeading'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
@@ -72,7 +71,7 @@ const Projects = ({ props }) => {
   `)
   return (
     <>
-      <SEO
+      <Seo
         title={'Projects'}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />

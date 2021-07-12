@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import PageHeading from '../components/PageHeading'
 import ContentContainer from '../components/ContentContainer'
 import PanelHover from '../components/PanelHover'
@@ -18,7 +18,7 @@ class Blog extends React.Component {
 
     return (
       <>
-        <SEO location={this.props.location} title={`All Posts`} />
+        <Seo location={this.props.location} title={`All Posts`} />
         <ContentContainer>
           <PageHeading>All Posts</PageHeading>
           {posts.map(({ node }) => {

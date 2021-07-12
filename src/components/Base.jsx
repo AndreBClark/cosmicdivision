@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import SEO from './SEO'
+import Seo from './Seo'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../config/theme'
 import Footer from './Footer'
@@ -21,7 +21,7 @@ const Base = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Wrapper>
         <GlobalStyle />
-        <SEO />
+        <Seo />
         <Navbar />
         <main>{children}</main>
         <Footer />

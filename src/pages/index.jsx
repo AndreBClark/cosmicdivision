@@ -1,11 +1,7 @@
 import React from 'react'
 import { BtnOutline, Btn } from '../components/button'
 import Hero from '../components/Hero'
-import SEO from '../components/SEO'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import { rhythm } from '../../config/typography'
-import { DualWrapper } from './contact'
+import Seo from '../components/Seo'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const HeroInner = styled.div`
@@ -37,7 +33,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <>
-        <SEO
+        <Seo
           location={this.props.location}
           title={'Home'}
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}

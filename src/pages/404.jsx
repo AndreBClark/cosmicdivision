@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import ContentContainer from '../components/ContentContainer'
 import Panel from '../components/Panel'
 import { Btn } from '../components/button'
@@ -12,7 +12,7 @@ class NotFoundPage extends React.Component {
 
     return (
       <ContentContainer>
-        <SEO
+        <Seo
           location={this.props.location}
           title={`404: Not Found | ${siteTitle}`}
         />

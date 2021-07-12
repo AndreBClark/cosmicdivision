@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import Seo from '../components/Seo'
 import Panel from '../components/Panel'
 import ContentContainer from '../components/ContentContainer'
 import styled from 'styled-components'
@@ -46,7 +46,7 @@ const BlogPostTemplate = ({
   const { previous, next } = pageContext
   return (
     <>
-      <SEO
+      <Seo
         location={location}
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
