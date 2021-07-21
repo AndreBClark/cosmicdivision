@@ -6,11 +6,10 @@
  */
 
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
-import { GatsbyImage } from "gatsby-plugin-image"
-import styled from 'styled-components'
-import Panel from './Panel'
-import theme from '../../config/theme'
+import 'twin.macro'
+import Panel from 'components/Panel'
+import { theme } from 'twin.macro'
+
 
 function BioCard() {
   return (

@@ -13,20 +13,10 @@ const Header = styled.header`
   background-color: ${props => props.theme.colors.grey.dark};
 `
 
-const Nav = styled.nav`
-  max-width: ${props => props.theme.maxWidth};
-  ${tw`mx-1 my-2 leading-tight`}
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  a {
-    ${tw`mx-auto`}
-    display: flex;
-    align-items: center;
-    span {
-      display: none;
-      padding: 0 1.5rem;
-      text-transform: ${props => props.theme.fontFamily.logoCase};
+import AniLinkDefault from 'components/AniLinkDefault'
+import { BtnSimple } from 'components/button'
+import Logo from 'images/logo.svg'
+
     }
   }
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
@@ -92,5 +82,25 @@ const Navbar = () => {
     </Header>
   )
 }
+
+const NavButton = tw(BtnSimple)`
+  md:(mx-2 px-8)
+`
+
+const HeaderStyle = tw.header`
+  font-heading font-black text-primary tracking-widest border-primary bg-gray-700 border-b-4 px-4 xl:px-0
+`
+
+const Nav = tw.nav`
+  leading-tight flex justify-around items-center md:(mx-auto justify-between max-w-screen-xl)
+`
+
+
+const List = tw.ul`
+  text-xs flex justify-around items-center text-gray-50
+  md:(justify-between text-base)
+`
+
+
 
 export default Navbar

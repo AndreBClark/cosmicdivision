@@ -1,12 +1,5 @@
 import React from 'react'
-import ContentContainer from '../components/ContentContainer'
-import BioCard from '../components/BioCard'
-import { BtnOutline, Btn } from '../components/button'
-import Panel from '../components/Panel'
-import PageHeading from '../components/PageHeading'
-import { Subtitle } from '../components/Hero'
-import { Label, TextInput, DualWrapper } from '../components/TextInput'
-import Seo from '../components/Seo'
+import 'twin.macro'
 
 const Contact = () => {
   return (

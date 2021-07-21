@@ -1,11 +1,8 @@
-import styled from 'styled-components'
+import tw from 'twin.macro'
 import Panel from './Panel'
-const PanelHover = styled(Panel)`
-  opacity: 0.7;
-  transition: all ${props => props.theme.transitions.normal};
-  &:hover {
-    transform: translateY(-4px);
-    opacity: 1;
-  }
+
+const PanelHover = tw(Panel)`
+  opacity-80 hover:(-translate-y-1 opacity-100)
 `
+
 export default PanelHover

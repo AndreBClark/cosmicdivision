@@ -1,43 +1,24 @@
-import styled from 'styled-components'
-import { rhythm } from '../../config/typography'
-import tw from 'twin.macro'
+import tw from 'twin.macro';
 
-export const Btn = styled.button`
-${tw`block px-8 py-2 m-4 font-bold tracking-widest text-gray-500 uppercase border rounded-lg bg-primary border-primary font-heading`}
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    display: inline;
-  }
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-    background-color: transparent;
-  }
+export const Btn = tw.button`
+  block p-2 m-2 mb-4
+  md:(px-20 m-4)
+  font-heading font-bold tracking-widest uppercase
+  text-gray bg-primary border-primary
+  border-2 rounded-lg
+  hover:(text-primary bg-transparent cursor-pointer)
 `
-export const BtnOutline = styled(Btn)`
-  background: none;
-  color: ${props => props.theme.colors.primary};
-  &:hover {
-    color: ${props => props.theme.colors.bg};
-    background-color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary};
-    cursor: pointer !important;
-  }
+export const BtnOutline = tw(Btn)`
+  bg-transparent text-primary border-primary
+  hover:(text-gray-700 bg-primary) 
+  active:(text-gray-700 bg-primary) 
 `
 
-export const BtnSimple = styled(Btn)`
-  background: none;
-  color: ${props => props.theme.colors.primary};
-  ${tw`border-0`}
-  &:hover {
-    color: ${props => props.theme.colors.bg};
-    background-color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary};
-    cursor: pointer !important;
-  }
+export const BtnSimple = tw(Btn)`
+  bg-transparent text-primary border-transparent
+  hover:(border-primary)
 `
 
-export const SmBtn = styled(Btn)`
-${tw`text-xs`}
-`
-export const SmBtnOutline = styled(BtnOutline)`
-  ${tw`text-xs`}
-`
+export const SmBtn = tw(Btn)`text-xs`
+
+export const SmBtnOutline = tw(BtnOutline)`text-xs`
