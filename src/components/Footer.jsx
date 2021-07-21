@@ -1,25 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import tw from 'twin.macro'
 
-const Row = styled.footer`
-  background-color: ${props => props.theme.colors.bg};
-  padding: ${props => props.theme.spacer * 4};
-  margin-top: auto;
-`
-const Inner = styled.div`
-  margin: 0 auto;
-  @media screen and (min-width: ${props => props.theme.breakpoints.phone}) {
-  }
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  max-width: ${props => props.theme.maxWidth};
-`
 
-const Item = styled.p`
-  margin: calc(2 * ${props => props.theme.spacer})
-    calc(1.5 * ${props => props.theme.spacer});
-`
+const Row = tw.footer`bg-gray-800 md:p-8 mt-auto`
+
+const Inner = tw.div`mx-auto flex justify-between text-sm max-w-screen-xl`
+
+const Item = tw.p`my-4 mx-3 text-gray-50`
+
 const Footer = () => {
   return (
     <Row>

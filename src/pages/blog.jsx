@@ -1,14 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import Seo from '../components/Seo'
-import PageHeading from '../components/PageHeading'
-import ContentContainer from '../components/ContentContainer'
-import PanelHover from '../components/PanelHover'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-const PostCard = styled.article`
-  p {
-    color: ${props => props.theme.colors.white};
+import 'twin.macro'
   }
 `
 class Blog extends React.Component {

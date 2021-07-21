@@ -1,43 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Seo from '../components/Seo'
-import Panel from '../components/Panel'
-import ContentContainer from '../components/ContentContainer'
-import { styled } from 'twin.macro'
-import PageHeading from '../components/PageHeading'
-import theme from '../../config/theme'
+import 'twin.macro'
 
-const Article = styled.article`
-  *:not(li) + * {
-    margin-bottom: calc(${theme.spacer} * 4);
-  }
-  h2 {
-    margin-bottom: ${theme.spacer};
-  }
-`
-
-// const SequentialLinks = styled.ul`
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   list-style: none;
-//   padding: 0;
-// `
-const Date = styled.p`
-  margin: calc(4 * ${theme.spacer});
-  max-width: ${theme.maxWidth};
-  @media screen and (min-width: ${theme.breakpoints.desktop}) {
-    margin: ${theme.spacer};
-  }
-`
-const BlogPostTemplate = ({
-  data,
-  // pageContext,
-  location
-}) => {
-  const post = data.markdownRemark
-  // const siteTitle = useSiteMetadata()
-  // const { previous, next } = pageContext
+import Panel from 'components/Panel'
+import { PageContained } from 'components/PageBase'
+const BlogPostTemplate = ({ location, data }) => {
+  const post = data.markdownRemark;
   return (
     <>
       <Seo

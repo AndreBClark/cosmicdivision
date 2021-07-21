@@ -170,5 +170,18 @@ const Projects = ({ props }) => {
       </ContentContainer>
     </>
   )
+
+const Detail = tw.div`
+  flex flex-col justify-between
+  md:(w-2/3 ml-8)
+`
+
+const Flex = tw.div`flex flex-col md:(max-w-full flex-row)`
+
+
+const Item = tw(Flex)`
+  justify-between w-full
+`
+
 }
 export default Projects
