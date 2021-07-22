@@ -1,33 +1,22 @@
 module.exports = {
     siteMetadata: {
-        // edit below
         title: `Cosmic Division`,
         author: `Andre Clark`,
-        description: `A personal blog with styled components, TinaCMS`,
+        authorBio: {
+            author: `Andre Clark`,
+            location: `Spokane, Washington`,
+        },
+        description: `A personal blog with tailwindcss`,
         siteUrl: `https://cosmicdivision.dev`,
         social: {
             github: `AndreBClark`,
         },
     },
-    plugins: [{
-            resolve: `gatsby-plugin-sass`,
-            options: {
-                postCssPlugins: [
-                    require("tailwindcss"),
-                    require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
-                ],
-            }
-        },
-        {
-            resolve: `gatsby-plugin-styled-components`,
-            options: {
-                displayName: true,
-            },
-        },
+    plugins: [
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
-        `gatsby-background-image`,
+        'gatsby-plugin-postcss',
         `gatsby-plugin-emotion`,
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
@@ -85,7 +74,22 @@ module.exports = {
         //         defaultDataLayer: { platform: "gatsby" },
         //     }
         // },
-
+        {
+            resolve: 'gatsby-plugin-module-resolver',
+            options: {
+                root: './src', // <- will be used as a root dir
+                aliases: {
+                    hooks: './hooks',
+                    components: './components',
+                    images: './images',
+                    pages: './pages',
+                    static: {
+                        root: './public', // <- will used as this alias' root dir
+                        alias: './static' // <- will become ./public/static
+                    }
+                }
+            }
+        },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
