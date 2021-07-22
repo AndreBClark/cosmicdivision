@@ -76,7 +76,7 @@
         "build": "gatsby build",
         "format": "npm run format-css && npm run format-js",
         "clean": "gatsby clean && rm -rf node_modules && npm i",
-        "preflight": "postcss ./src/styles/entry.css -o ./static/preflight.min.css",
+        "preflight": "postcss ./src/styles/entry.css -o ../static/preflight.min.css",
         "format-css": "prettier --write src/styles/**/*.{css,scss}",
         "format-js": "prettier --write src/**/*.{js,jsx}",
         "serve": "gatsby serve"
