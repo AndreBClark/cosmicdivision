@@ -1,10 +1,25 @@
 import React from 'react'
-import { BtnOutline, Btn } from '../components/button'
-import Hero from '../components/Hero'
-import Seo from '../components/Seo'
-import { HeroInner, HeadingOne, Subtitle } from '../components/Hero'
-import { DualWrapper } from '../components/TextInput'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { BtnOutline, Btn } from 'components/button'
+import Hero from 'components/Hero'
+import { HeadingOne, Subtitle } from 'components/Hero'
+import { DualWrapper } from 'components/TextInput'
+import AniLinkDefault from 'components/AniLinkDefault'
+import { PageFullWidth } from 'components/PageBase'
+
+const indexContent = {
+  heading: "Cosmic Division",
+  subtitle: "Chronicling my Journey developing with jamstack",
+  buttons: {
+    primary: {
+      link: "/blog/",
+      text: "Begin Reading",
+    },
+    secondary: {
+      link: "/contact/",
+      text: "Get in Touch",
+    },
+  }
+}
 
 
 const IndexPage = ({ location }) => {

@@ -1,5 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
+import { StaticImage } from "gatsby-plugin-image"
 
 const Container = tw.div`
   h-screen-80 relative overflow-y-hidden
@@ -21,41 +22,27 @@ export const Subtitle = tw.h2`
 `
 
 const Hero = ({ children }) => {
-  const { mobileImage, desktopImage } = useStaticQuery(
-    graphql`
-      query {
-        mobileImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 412) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-        desktopImage: file(relativePath: { eq: "orbital-bw.jpg" }) {
-          childImageSharp {
-            fluid(quality: 75, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
-  const sources = [
-    mobileImage.childImageSharp.fluid,
-    {
-      ...desktopImage.childImageSharp.fluid,
-      media: `(min-width: 491px)`,
-    },
-  ]
-
+  const backgroundImage = "../images/orbital-bw.jpg";
   return (
     <Container css={{
       maxHeight: 'calc(80vh - 50px)'
     }}>
+      <StaticImage
+        layout="fullWidth"
+        objectFit="cover"
+        loading="eager"
+        alt=""
+        src={backgroundImage}
+        formats={["auto", "webp", "avif"]}
+        placeholder="blurred"
+      />
+      <Content>
+        {children}
+      </Content>
     </Container>
   )
 }
+
 
 
 export default Hero
