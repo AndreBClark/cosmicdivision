@@ -2,6 +2,8 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
 
+import AniLinkDefault from 'components/AniLinkDefault'
+import Panel from 'components/Panel'
 import { PageContained } from 'components/PageBase'
 
 

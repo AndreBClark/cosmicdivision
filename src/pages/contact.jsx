@@ -2,6 +2,7 @@ import React from 'react'
 import 'twin.macro'
 
 import { PageContained } from 'components/PageBase'
+import { BtnOutline, Btn } from 'components/button'
 
 const page = {
   title: "Contact",
@@ -18,8 +19,9 @@ const Contact = () => {
       pageSubtitle={subtitle}
       pageKeywords={keywords}
     >
-        <BioCard />
+      <BioCard />
       <NetlifyForm>
+        <TextFieldGroup />
       </NetlifyForm>
     </PageContained>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import usePageList from 'hooks/usePageList'
+import useDesluggify from 'hooks/useDesluggify'
 
 import AniLinkDefault from 'components/AniLinkDefault'
 import { BtnSimple } from 'components/button'
