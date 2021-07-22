@@ -8,11 +8,46 @@ import AniLinkDefault from 'components/AniLinkDefault'
 import { BtnSimple } from 'components/button'
 import Logo from 'images/logo.svg'
 
-    }
-  }
 
+function Navbar () {
+  return (
+    <Header>
+      <AniLinkDefault
+        id="logo"
+        to="/"
+        as={NavButton}
+        aria-label="Cosmic division Website Logo Home Button">
+        <LogoBlock />
+      </AniLinkDefault>
+      <PageList />
+    </Header>
   )
-    }
+}
+
+const Header = ({ children }) => {
+  return (
+    <HeaderStyle>
+      <Nav>
+        {children}
+      </Nav>
+    </HeaderStyle>
+  )
+}
+
+const LogoBlock = () => {
+  return (
+    <div tw="flex">
+      <Logo
+        width="48"
+        tw="inline"
+      />
+      <span
+        tw="hidden md:(px-6 py-4 uppercase inline)">
+        Cosmic Division
+      </span>
+    </div>
+  )
+}
 
 
 function PageList() {
@@ -20,18 +55,18 @@ function PageList() {
   const deSlug = useDesluggify();
 
   return (
-        <List>
+    <List>
       {Pages.map(({ node }) => (
-          <li>
+      <li>
           <NavButton
             to={node.path}
             as={AniLinkDefault}
           >
           {deSlug(node.path)}
         </NavButton>
-          </li>
+      </li>
       ))}
-        </List>
+    </List>
   )
 }
 
