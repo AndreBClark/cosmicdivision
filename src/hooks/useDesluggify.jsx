@@ -1,5 +1,5 @@
-const useDesluggify = () => {
-  const deSluggify = slug => slug.split('/').join('').toUpperCase();
-  return deSluggify;
+function useDeslugify(str) {
+  return str.replace(/[-\s]+/g, '-').toLowerCase();
 }
-export default useDesluggify;
+
+export default useDeslugify;
