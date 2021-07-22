@@ -7,15 +7,12 @@ import { PageContained } from 'components/PageBase'
 const BlogPostTemplate = ({ location, data }) => {
   const post = data.markdownRemark;
   return (
-    <>
-      <Seo
+    <PageContained
         location={location}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <ContentContainer>
-        <PageHeading>{post.frontmatter.title}</PageHeading>
-        <Date>{post.frontmatter.date}</Date>
+      pageHeading={post.frontmatter.title}
+      pageSubtitle={post.frontmatter.description || post.excerpt}
+      date={post.frontmatter.date}
+    >
         <Panel>
           {/* <TinaField name="rawMarkdownBody" Component={Wysiwyg}> */}
           <Article dangerouslySetInnerHTML={{ __html: post.html }} />
