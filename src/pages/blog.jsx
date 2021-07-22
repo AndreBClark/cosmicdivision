@@ -1,19 +1,26 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
-  }
-`
-class Blog extends React.Component {
-  render() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+import { PageContained } from 'components/PageBase'
 
+
+const page = {
+  title: "All Posts",
+  }
+
+const Blog = ({ location }) => {
     return (
-      <>
-        <Seo location={this.props.location} title={`All Posts`} />
-        <ContentContainer>
-          <PageHeading>All Posts</PageHeading>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
+    <PageContained
+      location={location}
+      title={page.title}
+      pageHeading={page.title}
+    >
+      <PostList />
+    </PageContained>
+  )
+}
+
+const PostList = () => {
             return (
               <PanelHover>
                 <PostCard key={node.fields.slug}>
@@ -33,12 +40,7 @@ class Blog extends React.Component {
                 </PostCard>
               </PanelHover>
             )
-          })}
-        </ContentContainer>
-      </>
-    )
-  }
-}
+
 
 export const pageQuery = graphql`
   query {

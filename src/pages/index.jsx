@@ -7,19 +7,16 @@ import { DualWrapper } from '../components/TextInput'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 
-class IndexPage extends React.Component {
-  render() {
-    return (
-      <>
-        <Seo
-          location={this.props.location}
+const IndexPage = ({ location }) => {
+  const { heading, subtitle, buttons } = indexContent;
+  return(
+    <PageFullWidth
+      location={location}
           title={'Home'}
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
+    >
         <Hero>
-          <HeroInner>
-            <HeadingOne>Cosmic Division Blog</HeadingOne>
-            <Subtitle>Chronicling my Journey developing with jamstack</Subtitle>
+        <HeadingOne>{heading}</HeadingOne>
+        <Subtitle>{subtitle}</Subtitle>
             <DualWrapper>
               <Btn
                 swipe
@@ -38,11 +35,8 @@ class IndexPage extends React.Component {
                 Get in Touch
               </BtnOutline>
             </DualWrapper>
-          </HeroInner>
         </Hero>
-      </>
-    )
-  }
-}
+    </PageFullWidth>
+)}
 
 export default IndexPage

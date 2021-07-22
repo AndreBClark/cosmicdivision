@@ -1,17 +1,32 @@
 import React from 'react'
 import 'twin.macro'
 
+import { PageContained } from 'components/PageBase'
+
+const page = {
+  title: "Contact",
+  heading: "Contact",
+  subtitle: "Get In Touch With Me",
+}
+
 const Contact = () => {
+  const { title, heading, subtitle, keywords } = page;
   return (
-    <>
-      <Seo
-        title={'Contact'}
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
-      <ContentContainer>
-        <PageHeading>Contact Me</PageHeading>
-        <Subtitle>Get in touch with me</Subtitle>
+    <PageContained
+      pageTitle={title}
+      pageHeading={heading}
+      pageSubtitle={subtitle}
+      pageKeywords={keywords}
+    >
         <BioCard />
+      <NetlifyForm>
+      </NetlifyForm>
+    </PageContained>
+  )
+}
+
+
+
         <Panel>
           <form method="post" netlify-honeypot="bot-field" data-netlify="true">
             <input type="hidden" name="bot-field" />
