@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
+
 import { PageContained } from 'components/PageBase'
 
 

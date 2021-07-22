@@ -19,20 +19,14 @@ const IndexPage = ({ location }) => {
         <Subtitle>{subtitle}</Subtitle>
             <DualWrapper>
               <Btn
-                swipe
-                direction="left"
-                entryOffset={100}
-                as={AniLink}
-                to="/blog/">
-                Begin Reading
+            as={AniLinkDefault}
+            to={buttons.primary.link}>
+            {buttons.primary.text}
               </Btn>
               <BtnOutline
-                swipe
-                direction="left"
-                entryOffset={100}
-                as={AniLink}
-                to="/contact/">
-                Get in Touch
+            as={AniLinkDefault}
+            to={buttons.secondary.link}>
+            {buttons.secondary.text}
               </BtnOutline>
             </DualWrapper>
         </Hero>

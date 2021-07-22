@@ -14,42 +14,26 @@ import Logo from 'images/logo.svg'
     }
 
 
+function PageList() {
+  const Pages = usePageList();
+  const deSlug = useDesluggify();
 
-const Navbar = () => {
   return (
-    <Header>
-      <Nav>
-        <AniLink
-          swipe
-          direction="left"
-          entryOffset={100}
-          to="/"
-          id="logo"
-          aria-label="Cosmic division Website Logo Home Button">
-          <Logo width="48" />
-          <span>Cosmic Division</span>
-        </AniLink>
         <List>
+      {Pages.map(({ node }) => (
           <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/blog">
-              Blog
-            </AniLink>
+          <NavButton
+            to={node.path}
+            as={AniLinkDefault}
+          >
+          {deSlug(node.path)}
+        </NavButton>
           </li>
-          <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/projects">
-              Projects
-            </AniLink>
-          </li>
-          <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/contact">
-              Contact
-            </AniLink>
-          </li>
+      ))}
         </List>
-      </Nav>
-    </Header>
   )
 }
+
 
 const NavButton = tw(BtnSimple)`
   md:(mx-2 px-8)

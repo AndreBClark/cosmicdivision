@@ -71,11 +71,7 @@ const Contact = () => {
               <BtnOutline type="reset" value="Clear">
                 Reset
               </BtnOutline>
-            </DualWrapper>
-          </form>
-        </Panel>
-      </ContentContainer>
-    </>
+  </div>
   )
 }
 export default Contact
