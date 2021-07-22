@@ -9,10 +9,10 @@ import { PageContained } from 'components/PageBase'
 
 const page = {
   title: "All Posts",
-  }
+}
 
 const Blog = ({ location }) => {
-    return (
+  return (
     <PageContained
       location={location}
       title={page.title}
@@ -24,52 +24,66 @@ const Blog = ({ location }) => {
 }
 
 const PostList = () => {
-            return (
-              <PanelHover>
-                <PostCard key={node.fields.slug}>
-                  <AniLink
-                    swipe
-                    direction="left"
-                    entryOffset={100}
-                    to={node.fields.slug}>
-                    <h3>{title}</h3>
-                    <small>{node.frontmatter.date}</small>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </AniLink>
-                </PostCard>
-              </PanelHover>
-            )
+  const data = useStaticQuery(PostsQuery);
+  const posts = data.allMarkdownRemark.edges;
+  
+  return posts.map(({ node }) => {
+    const title = node.frontmatter.title || node.fields.slug;
+    return (
+      <PostCard
+        slug={node.fields.slug}
+        key={node.fields.slug}
+        date={node.frontmatter.date}
+        description={node.frontmatter.description || node.excerpt}
+        title={title}
+      />
+  )})
+}
+
+const PostCard = ({
+  key,
+  slug,
+  date,
+  description,
+  title
+}) => (
+    <Panel
+      as="article"
+      key={key}
+    >
+      <AniLinkDefault
+        to={slug}>
+        <h3>{title}</h3>
+        <small tw="text-gray-50">{date}</small>
+      <p tw="text-gray-50"
+        dangerouslySetInnerHTML={{
+          __html: description
+      }} />
+      </AniLinkDefault>
+    </Panel>
+)
 
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { title: { ne: "" } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+export const PostsQuery = graphql`
+{
+  allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {title: {ne: ""}}}
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
         }
       }
     }
   }
+}
 `
 export default Blog
