@@ -1,6 +1,6 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const tint = require('polished/lib/color/tint');
-const shade = require('polished/lib/color/shade');
+const { fontFamily } = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     theme: {
         extend: {
