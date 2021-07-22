@@ -27,24 +27,24 @@ const IndexPage = ({ location }) => {
   return(
     <PageFullWidth
       location={location}
-          title={'Home'}
+      title={'Home'}
     >
-        <Hero>
+      <Hero>
         <HeadingOne>{heading}</HeadingOne>
         <Subtitle>{subtitle}</Subtitle>
-            <DualWrapper>
-              <Btn
+        <DualWrapper>
+          <Btn
             as={AniLinkDefault}
             to={buttons.primary.link}>
             {buttons.primary.text}
-              </Btn>
-              <BtnOutline
+          </Btn>
+          <BtnOutline
             as={AniLinkDefault}
             to={buttons.secondary.link}>
             {buttons.secondary.text}
-              </BtnOutline>
-            </DualWrapper>
-        </Hero>
+          </BtnOutline>
+        </DualWrapper>
+      </Hero>
     </PageFullWidth>
 )}
 
