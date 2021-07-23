@@ -1,18 +1,8 @@
-import styled from 'styled-components'
+import tw from 'twin.macro'
 
-const Panel = styled.section`
-  background-color: ${props => props.theme.colors.overlay.middle};
-  padding: 4vmin;
-  margin: ${props => props.theme.spacer};
-  border-left: solid
-    ${props => [props.theme.stroke, props.theme.colors.primary]};
-  ul {
-    margin-left: 1.5rem;
-  }
-  @media screen and (min-width: 760px) {
-    border-radius: ${props => props.theme.radius};
-    padding: 4vmin 6vmin;
-  }
+const Panel = tw.section`
+  bg-overlay-middle p-8  m-4 rounded-tr-xl rounded-br-xl border-primary border-l-4
+  lg:( py-4 px-6)
 `
 
 export default Panel

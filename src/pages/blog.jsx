@@ -1,79 +1,89 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import SEO from '../components/SEO'
-import PageHeading from '../components/PageHeading'
-import ContentContainer from '../components/ContentContainer'
-import PanelHover from '../components/PanelHover'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-const PostCard = styled.article`
-  p {
-    color: ${props => props.theme.colors.white};
-  }
-`
-class Blog extends React.Component {
-  render() {
-    const { data } = this.props
-    const posts = data.allMarkdownRemark.edges
+import { graphql, useStaticQuery } from 'gatsby'
+import 'twin.macro'
 
-    return (
-      <>
-        <SEO location={this.props.location} title={`All Posts`} />
-        <ContentContainer>
-          <PageHeading>All Posts</PageHeading>
-          {posts.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug
-            return (
-              <PanelHover>
-                <PostCard key={node.fields.slug}>
-                  <AniLink
-                    swipe
-                    direction="left"
-                    entryOffset={100}
-                    to={node.fields.slug}>
-                    <h3>{title}</h3>
-                    <small>{node.frontmatter.date}</small>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
-                  </AniLink>
-                </PostCard>
-              </PanelHover>
-            )
-          })}
-        </ContentContainer>
-      </>
-    )
-  }
+import AniLinkDefault from 'components/AniLinkDefault'
+import Panel from 'components/Panel'
+import { PageContained } from 'components/PageBase'
+
+
+const page = {
+  title: "All Posts",
 }
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { title: { ne: "" } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
+const Blog = ({ location }) => {
+  return (
+    <PageContained
+      location={location}
+      title={page.title}
+      pageHeading={page.title}
+    >
+      <PostList />
+    </PageContained>
+  )
+}
+
+const PostList = () => {
+  const data = useStaticQuery(PostsQuery);
+  const posts = data.allMarkdownRemark.edges;
+  
+  return posts.map(({ node }) => {
+    const title = node.frontmatter.title || node.fields.slug;
+    return (
+      <PostCard
+        slug={node.fields.slug}
+        key={node.fields.slug}
+        date={node.frontmatter.date}
+        description={node.frontmatter.description || node.excerpt}
+        title={title}
+      />
+  )})
+}
+
+const PostCard = ({
+  key,
+  slug,
+  date,
+  description,
+  title
+}) => (
+    <Panel
+      as="article"
+      key={key}
+    >
+      <AniLinkDefault
+        to={slug}>
+        <h3>{title}</h3>
+        <small tw="text-gray-50">{date}</small>
+      <p tw="text-gray-50"
+        dangerouslySetInnerHTML={{
+          __html: description
+      }} />
+      </AniLinkDefault>
+    </Panel>
+)
+
+
+export const PostsQuery = graphql`
+{
+  allMarkdownRemark(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {frontmatter: {title: {ne: ""}}}
+  ) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
         }
       }
     }
   }
+}
 `
 export default Blog

@@ -1,7 +1,7 @@
 ---
 path: colorable-colorcontrast-tool
 featuredimage: /images/orbital-bw.jpg
-date: 2019-09-21T06:15:19.345Z
+date: 2021-05-21T06:15:19.345Z
 title: Quickly Test Color Combinations for Better Contrast
 description: Colorable is quick and easy to use for testing colors combinations.
 ---
@@ -25,6 +25,7 @@ Text with bad color contrast is hard to read, and people won't want to read it. 
 
 The AA and AAA you see next to the contrast score are part of a contrast scale outlined by the [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 A simplified overview of the guidelines:
+
 - **Fail: score of 3.0 or lower** unreadable
 - **AA Large: 3.01-4.4** readable with larger font sizes
 - **AA: 4.5+**  acceptable for the majority of the population
@@ -33,9 +34,9 @@ A simplified overview of the guidelines:
 ## How do I use it?
 
 First thing you are likely to notice are two hexadecimal color codes. One for text, one for the background. You could manually change the hexadecimal values, but I don't recommend that approach. Below that, you have three sliders:
+
 - **Hue** uses the 360-degree color wheel to determine the color.
 - **Saturation** determines the intensity of your color, on a scale of 0 to 100
 - **Lightness** determines how bright you're color will be. Zero is black, and 100 is pure white.
-
 
 _Now that you know how to use this tool. What surprisingly awesome color combinations have you discovered? let me know in the comments for this [post on dev.to](https://dev.to/andrebclark/quickly-test-color-combinations-for-better-contrast-1h1n)_

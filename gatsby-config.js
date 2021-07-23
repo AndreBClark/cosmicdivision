@@ -1,36 +1,27 @@
 module.exports = {
     siteMetadata: {
-        // edit below
         title: `Cosmic Division`,
         author: `Andre Clark`,
-        description: `A personal blog with styled components, TinaCMS`,
+        authorBio: {
+            author: `Andre Clark`,
+            location: `Spokane, Washington`,
+        },
+        description: `A personal blog with tailwindcss`,
         siteUrl: `https://cosmicdivision.dev`,
         social: {
             github: `AndreBClark`,
         },
     },
     plugins: [
-        `gatsby-plugin-netlify`,
-        // {
-        //     resolve: "gatsby-plugin-tinacms",
-        //     options: {
-        //         plugins: ["gatsby-tinacms-git", "gatsby-tinacms-remark"],
-        //         sidebar: {
-        //             hidden: process.env.NODE_ENV === "production",
-        //         },
-        //     },
-        // },
-        {
-            resolve: `gatsby-plugin-styled-components`,
-            options: {
-                displayName: true,
-            },
-        },
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
-        `gatsby-background-image`,
-
+        'gatsby-plugin-postcss',
+        `gatsby-plugin-emotion`,
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
+        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -62,23 +53,7 @@ module.exports = {
                             maxWidth: 590,
                         },
                     },
-                    {
-                        resolve: `gatsby-remark-responsive-iframe`,
-                        options: {
-                            wrapperStyle: `margin-bottom: 1.0725rem`,
-                        },
-                    },
-                    {
-                        resolve: `gatsby-remark-vscode`,
-                        options: {
-                            colorTheme: "Firefox Quantum Dark",
-                            injectStyles: true,
-                            extensions: [{
-                                identifier: "beastdestroyer.firefox-quantum-themes",
-                                version: "1.1.6",
-                            }, ],
-                        },
-                    },
+                    `gatsby-remark-responsive-iframe`,
                     {
                         resolve: "gatsby-plugin-react-svg",
                         options: {
@@ -99,7 +74,22 @@ module.exports = {
         //         defaultDataLayer: { platform: "gatsby" },
         //     }
         // },
-
+        {
+            resolve: 'gatsby-plugin-module-resolver',
+            options: {
+                root: './src', // <- will be used as a root dir
+                aliases: {
+                    hooks: './hooks',
+                    components: './components',
+                    images: './images',
+                    pages: './pages',
+                    static: {
+                        root: './public', // <- will used as this alias' root dir
+                        alias: './static' // <- will become ./public/static
+                    }
+                }
+            }
+        },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -110,12 +100,6 @@ module.exports = {
                 theme_color: `#26ffba`,
                 display: `standalone`,
                 icon: `src/images/logo.svg`,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-                pathToConfigModule: `config/typography`,
             },
         },
     ],
