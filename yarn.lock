@@ -6394,9 +6394,9 @@ gatsby-plugin-module-resolver@^1.0.3:
   resolved "https://registry.npmjs.org/gatsby-plugin-module-resolver/-/gatsby-plugin-module-resolver-1.0.3.tgz"
   integrity sha512-MrE2JhDEiiZB6uLVJ0zpoZmHi36zkgGoNgBr9YQ4r6TUqayiNXU97NBhO87CRJQz8I4MaL6ZrOWjUdoHEXvndg==
 
-gatsby-plugin-netlify@^3.9.0:
+gatsby-plugin-netlify@^3.10.0:
   version "3.10.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.10.0.tgz"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.10.0.tgz#923aa1814245bf595b4ed65fe7255662486ce8cc"
   integrity sha512-7SEBCfjglHImn9xqTyRZRme60lhbwY7SWioLMqhExxzHF1/UxT9fD/qg0kAqs6nEoJ3YZZAEAnHzUf157nTLCA==
   dependencies:
     "@babel/runtime" "^7.14.6"
@@ -6517,13 +6517,6 @@ gatsby-plugin-typescript@^3.10.0:
     "@babel/preset-typescript" "^7.14.0"
     "@babel/runtime" "^7.14.6"
     babel-plugin-remove-graphql-queries "^3.10.0"
-
-gatsby-plugin-typography@^3.9.0:
-  version "3.10.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-typography/-/gatsby-plugin-typography-3.10.0.tgz"
-  integrity sha512-RdGuMQ/9QTnIkJS9SmgmcHc5YPVxf6hXOmgW8RkHw7m7hpjmCjV5oLMZDKfTn9Vb3iFWJg9mYmIob0bru98BRQ==
-  dependencies:
-    "@babel/runtime" "^7.14.6"
 
 gatsby-plugin-utils@^1.10.0:
   version "1.10.0"
