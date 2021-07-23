@@ -1,0 +1,33 @@
+@tailwind base;
+
+@layer base {
+    html, body {
+        @apply min-h-full overflow-y-auto text-gray-50;
+    }
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3 {
+        @apply text-primary font-heading;
+    }
+    h1, .h1 {
+        @apply text-3xl lg:text-4xl;
+    }
+    h2, .h2 {
+        @apply text-2xl lg:text-3xl;
+    }
+    h3, .h3 {
+        @apply text-xl lg:text-2xl;
+    }
+    h4, .h4 {
+        @apply text-lg lg:text-xl;
+    }
+    h5, .h5 {
+        @apply text-base lg:text-lg;
+    }
+    svg path {
+        @apply fill-current text-primary;
+    }
+    
+    a, button {
+        @apply text-primary transition-all;
+    }
+}

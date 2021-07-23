@@ -1,23 +1,16 @@
-import tw, { styled } from 'twin.macro'
-import { rhythm } from '../../config/typography'
-import { breakpoints } from '../../config/theme'
+import tw from 'twin.macro'
 
-export const TextInput = styled.input`
-  ${tw`block p-2 text-white bg-gray-300 border-2 border-gray-300 rounded-lg w-72`};
-  :hover,
-  :focus {
-    ${tw`bg-gray-600 border-primary`}
-  }
+export const TextInput = tw.input`
+  w-full block p-2 text-gray-50 bg-gray border-2 border-gray-600 rounded-lg
+  hocus:(bg-gray-400 text-gray-700 border-primary)
 `
-export const Label = styled.label`
-  ${tw`block my-2`}
+
+
+export const Label = tw.label`
+  block my-2
 `
-export const DualWrapper = styled.div`
-  margin-top: ${rhythm(1)};
-  margin-bottom: ${rhythm(1)};
-  @media screen and (min-width: ${breakpoints.tablet}) {
-    * + * {
-      margin: ${rhythm(2 / 3)};
-    }
-  }
+
+
+export const DualWrapper = tw.div`
+  flex md:(justify-center)
 `

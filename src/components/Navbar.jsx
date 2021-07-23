@@ -1,96 +1,94 @@
 import React from 'react'
-import styled from 'styled-components'
-import Logo from '../images/logo.svg'
 import tw from 'twin.macro'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
-const Header = styled.header`
-  font-family: ${props => props.theme.fontFamily.heading};
-  font-weight: ${props => props.theme.fontFamily.headingWeight};
-  letter-spacing: ${props => props.theme.tracking};
-  border-bottom: solid
-    ${props => [props.theme.stroke, props.theme.colors.primary]};
-  background-color: ${props => props.theme.colors.grey.dark};
-`
+import usePageList from 'hooks/usePageList'
+import useDesluggify from 'hooks/useDesluggify'
 
-const Nav = styled.nav`
-  max-width: ${props => props.theme.maxWidth};
-  ${tw`mx-1 my-2 leading-tight`}
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  a {
-    ${tw`mx-auto`}
-    display: flex;
-    align-items: center;
-    span {
-      display: none;
-      padding: 0 1.5rem;
-      text-transform: ${props => props.theme.fontFamily.logoCase};
-    }
-  }
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    ${tw`mx-auto`}
-    justify-content: space-between;
-    & > * {
-      flex: 1 1 auto;
-    }
-    a span {
-      display: inline;
-    }
-  }
-`
-const List = styled.ul`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex: 1 2 auto;
-  li {
-    margin-block-end: 0;
-    a {
-      color: ${props => props.theme.colors.white};
-    }
-  }
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    justify-content: space-between;
-    flex: 1 0;
-  }
-`
+import AniLinkDefault from 'components/AniLinkDefault'
+import { BtnSimple } from 'components/button'
+import Logo from 'images/logo.svg'
 
-const Navbar = () => {
+
+function Navbar () {
   return (
     <Header>
-      <Nav>
-        <AniLink
-          swipe
-          direction="left"
-          entryOffset={100}
-          to="/"
-          id="logo"
-          aria-label="Cosmic division Website Logo Home Button">
-          <Logo width="48" />
-          <span>Cosmic Division</span>
-        </AniLink>
-        <List>
-          <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/blog">
-              Blog
-            </AniLink>
-          </li>
-          <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/projects">
-              Projects
-            </AniLink>
-          </li>
-          <li>
-            <AniLink swipe direction="left" entryOffset={100} to="/contact">
-              Contact
-            </AniLink>
-          </li>
-        </List>
-      </Nav>
+      <AniLinkDefault
+        id="logo"
+        to="/"
+        as={NavButton}
+        aria-label="Cosmic division Website Logo Home Button">
+        <LogoBlock />
+      </AniLinkDefault>
+      <PageList />
     </Header>
   )
 }
+
+const Header = ({ children }) => {
+  return (
+    <HeaderStyle>
+      <Nav>
+        {children}
+      </Nav>
+    </HeaderStyle>
+  )
+}
+
+const LogoBlock = () => {
+  return (
+    <div tw="flex">
+      <Logo
+        width="48"
+        tw="inline"
+      />
+      <span
+        tw="hidden md:(px-6 py-4 uppercase inline)">
+        Cosmic Division
+      </span>
+    </div>
+  )
+}
+
+
+function PageList() {
+  const Pages = usePageList();
+  const deSlug = useDesluggify();
+
+  return (
+    <List>
+      {Pages.map(({ node }) => (
+      <li>
+          <NavButton
+            to={node.path}
+            as={AniLinkDefault}
+          >
+          {deSlug(node.path)}
+        </NavButton>
+      </li>
+      ))}
+    </List>
+  )
+}
+
+
+const NavButton = tw(BtnSimple)`
+  md:(mx-2 px-8)
+`
+
+const HeaderStyle = tw.header`
+  font-heading font-black text-primary tracking-widest border-primary bg-gray-700 border-b-4 px-4 xl:px-0
+`
+
+const Nav = tw.nav`
+  leading-tight flex justify-around items-center md:(mx-auto justify-between max-w-screen-xl)
+`
+
+
+const List = tw.ul`
+  text-xs flex justify-around items-center text-gray-50
+  md:(justify-between text-base)
+`
+
+
 
 export default Navbar

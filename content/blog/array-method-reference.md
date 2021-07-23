@@ -4,23 +4,26 @@ author: Andre Clark
 featuredimage: /images/orbital-bw.jpg
 date: 2021-07-12T06:15:19.345Z
 title: Array Methods Reference
-description: 
+description: here are my notes for array methods
 ---
 
 
 ## `Array.prototype.forEach()`
 
-- called on the array
-- takes a function as an argument
-- simpler way to iterate over an array
-- often uses arrow functions `() => {...}`
-- Callbacks
-  - callback is a function/method as an argument for another function
-  - code within the callback is used for each iteration
-  - for each iteration, `forEach` sends the value of the current element to the callback
-- Second Argument
-  - index position of the element in the array
-  - optional
+Called on the array.\
+Takes a function as an argument.\
+Simpler way to iterate over an array\
+Often uses arrow functions `() => {...}`\
+
+### Callbacks
+
+callback is a function/method as an argument for another function\
+code within the callback is used for each iteration\
+for each iteration, `forEach` sends the value of the current element to the callback\
+**Second Argument**
+
+index position of the element in the array\
+is optional\
   
 ### `forEach()` Example
 

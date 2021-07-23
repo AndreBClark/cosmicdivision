@@ -1,175 +1,144 @@
 import React from 'react'
-import ContentContainer from '../components/ContentContainer'
-import Panel from '../components/Panel'
-import { SmBtnOutline, SmBtn } from '../components/button'
 import tw from 'twin.macro'
-import Seo from '../components/Seo'
-import PageHeading from '../components/PageHeading'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby'
-const Flex = styled.div`
-@media screen and (min-width: ${props => props.theme.breakpoints.desktop}){
-  ${tw`flex max-w-full`}
-}
-`
-const ButtonContainer = styled(Flex)`
-  a {
-  ${tw`mb-2`}
-  }
-@media screen and (min-width: ${props => props.theme.breakpoints.desktop}){ 
-  ${tw`justify-between w-56`}
-}
-`
-const Item = styled(Flex)`
-  border-bottom-width: 4px;
-  ${tw`justify-between w-full pb-6 mb-8 border-primary`}
+import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-`
+import Panel from 'components/Panel'
+import { SmBtnOutline, SmBtn } from 'components/button'
+import { PageContained } from 'components/PageBase'
 
-const Thumbnail = styled(Img)`
-  ${tw`w-full p-4 mb-4 rounded-lg`}
-  flex: 1 0 15%;
-  img {
-    object-position: 0 center !important;
-  }
-`
-const Description = styled(Flex)`
-  flex: 0 5 85%;
-  ${tw`flex-col content-start justify-between w-full xl:px-4`}
-  h2 {
-    ${tw`-mt-1`}
-  }
-  p {
-    ${tw`py-3`}
-  }
-`
-const Projects = ({ props }) => {
-  const { dscvr, companiondice, dribbble01 } = useStaticQuery(graphql`
-    query {
-      dscvr: file(relativePath: { eq: "dscvr.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 312) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      companiondice: file(relativePath: { eq: "companiondice.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 312) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      dribbble01: file(relativePath: { eq: "dribbble01.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 312) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
+const page = {
+  title: "Projects",
+  heading: "Projects",
+  subtitle: "Projects",
+  keywords: [`blog`, `gatsby`, `javascript`, `react`]
+}
+
+
+const Projects = () => {
+  const { title, heading, subtitle, keywords } = page;
   return (
-    <>
-      <Seo
-        title={'Projects'}
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
-      <ContentContainer>
-      <PageHeading>Projects</PageHeading>
-        <Panel>
-          <Item>
-            <Thumbnail
-              fluid={companiondice.childImageSharp.fluid}
-              alt="dscvr project"
-            />
-            <Description>
-              <h2>Companion Dice</h2>
-              <p>Dice Rolling app for Playing Table Top Games</p>
-              <ButtonContainer>
-                <SmBtn
-                  as="a"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://companiondice.netlify.com/">
-                  Live Demo
-                </SmBtn>
-                <SmBtnOutline
-                  as="a"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://github.com/AndreBClark/companiondice">
-                  Github Repo
-                </SmBtnOutline>
-              </ButtonContainer>
-              <hr />
-            </Description>
-          </Item>
-          <Item>
-            <Thumbnail
-              fluid={dribbble01.childImageSharp.fluid}
-              alt="dribbble Challenge"
-            />
-            <Description>
-              <h2>Real Estate Dribbble sprint</h2>
-              <p>
-                One Day project to recreate a website mockup from a Dribbble
-                Shot
-              </p>
-              <ButtonContainer>
-                <SmBtn
-                  rel="noopener"
-                  target="_blank"
-                  href="https://dribbblechallenge-realestate.netlify.com/"
-                  as="a">
-                  Live Demo
-                </SmBtn>
-                <SmBtnOutline
-                  as="a"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://github.com/AndreBClark/dribbble-realestate">
-                  Github Repo
-                </SmBtnOutline>
-              </ButtonContainer>
-              <hr />
-            </Description>
-          </Item>
-          <Item>
-            <Thumbnail
-              fluid={dscvr.childImageSharp.fluid}
-              alt="dscvr project"
-              className="w-full"
-            />
-            <Description>
-              <h2>DSCVR Portfolio Project</h2>
-              <p>
-                project to create College Portfolio Site for North Idaho College
-                Graphic Design Program
-              </p>
-              <ButtonContainer>
-                <SmBtn
-                  as="a"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://dscvr2019.netlify.com/">
-                  Live Demo
-                </SmBtn>
-                <SmBtnOutline
-                  as="a"
-                  target="_blank"
-                  rel="noopener"
-                  href="https://github.com/AndreBClark/dscvr">
-                  Github Repo
-                </SmBtnOutline>
-              </ButtonContainer>
-              <hr />
-            </Description>
-          </Item>
-        </Panel>
-      </ContentContainer>
-    </>
+    <PageContained
+      pagetitle={title}
+      pageKeywords={keywords}
+      pageHeading={heading}
+      pageSubtitle={subtitle}
+    >
+      <ProjectList />
+    </PageContained>
+)}
+
+const ProjectList = () => {
+  const data = useStaticQuery(projectImages);
+  const imageArray = data.allFile.nodes;
+  return projectsListArray.map((project, index) => {
+    const image = getImage(imageArray[index])
+    return (
+      <Panel>
+        <h2 tw="block text-2xl md:hidden">{project.name}</h2>
+        <Item>
+          <GatsbyImage
+            image={image}
+            alt={`Screenshot of ${project.name} ${project.type}`}
+            tw="rounded-lg md:(w-1/3 object-center p-4 flex-grow-1 flex-shrink-0)"          
+          />
+          <ProjectDetail projectProps={project} />
+        </Item>
+      </Panel>
+    )
+  })
+}
+
+const ProjectDetail = ({ projectProps }) => {
+  const { name, description, demoUrl, repo, creationDate, status } = projectProps
+  return (
+    <Detail>
+        <div>
+        <h2 tw="hidden md:(block) xl:(text-5xl)">{name}</h2>
+        <h3 tw="inline-block">{creationDate}</h3> {' '}
+        <span tw="text-gray-900 bg-primary px-2 pt-1 rounded m-4">{status}</span>
+        <p tw="py-3 xl:text-2xl">{description}</p>
+        </div>
+      <div tw="-ml-4 flex">
+        <SmBtn
+          as={ExternalLink}
+          tw="mb-2 md:(mb-0 px-12)"
+          href={demoUrl}>
+          Live Demo
+        </SmBtn>
+        <SmBtnOutline
+          as={ExternalLink}
+          tw="mb-2 md:(mb-0 px-12)"
+          href={repo}>
+          Github Repo
+        </SmBtnOutline>
+      </div>
+    </Detail>
   )
 }
+
+const ExternalLink = ({ children, ...props }) => (
+  <a target="_blank" rel="noopener" {...props}>
+    {children}
+  </a>
+)
+
+const Detail = tw.div`
+  flex flex-col justify-between
+  md:(w-2/3 ml-8)
+`
+
+const Flex = tw.div`flex flex-col md:(max-w-full flex-row)`
+
+
+const Item = tw(Flex)`
+  justify-between w-full
+`
+
+
+const projectsListArray = [
+  {
+    name: "Companion Dice",
+    description: "Dice Rolling app for Playing Table Top Games",
+    creationDate: "2020",
+    status: "On Hold",
+    type: "Mobile Application",
+    demoUrl: "https://companiondice.netlify.com/",
+    repo: "https://github.com/AndreBClark/companiondice",
+  },
+  {
+    name: "DSCVR Portfolio Project",
+    description: "project to create College Portfolio Site for North Idaho College Graphic Design Program",
+    creationDate: "Spring 2019",
+    status: "Completed",
+    type: "Website",
+    demoUrl: "https://dscvr2019.netlify.com/",
+    repo: "https://github.com/AndreBClark/dscvr",
+  },
+  {
+    name: "Real Estate Dribbble sprint",
+    description: "One Day project to recreate a website mockup from a Dribbble Shot",
+    type: "Website",
+    creationDate: "2020",
+    status: "Completed",
+    demoUrl: "https://dribbblechallenge-realestate.netlify.com/",
+    repo: "https://github.com/AndreBClark/dribbble-rea../dscvr.pnglestate",
+  }
+]
+
+
+
+export const projectImages = graphql`
+{
+  allFile(filter: {relativeDirectory: {eq: "projects"}}) {
+    nodes {
+      childImageSharp {
+        gatsbyImageData(formats: AUTO, layout: CONSTRAINED, width: 512, height: 512)
+      }
+    }
+  }
+}
+`
+
+
 export default Projects

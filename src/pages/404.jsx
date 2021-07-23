@@ -1,31 +1,30 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Seo from '../components/Seo'
-import ContentContainer from '../components/ContentContainer'
-import Panel from '../components/Panel'
-import { Btn } from '../components/button'
+import { graphql } from 'gatsby'
+import AniLinkDefault from 'components/AniLinkDefault'
+import Panel from 'components/Panel'
+import { Btn } from 'components/button'
+import { PageContained } from 'components/PageBase'
 
-class NotFoundPage extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+import useSiteMetadata from 'hooks/useSiteMetaData'
 
-    return (
-      <ContentContainer>
-        <Seo
-          location={this.props.location}
-          title={`404: Not Found | ${siteTitle}`}
-        />
-        <h1>Not Found</h1>
-        <Panel>
-          <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-          <Btn as={Link} to="/">
-            GO HOME
-          </Btn>
-        </Panel>
-      </ContentContainer>
-    )
-  }
+
+const NotFoundPage = ({location}) => {
+  const { title } = useSiteMetadata();
+
+  return (
+    <PageContained
+      location={location}
+      pageTitle={`404: Not Found | ${title}`}
+      pageHeading="Error 404: Path Not Found"
+      pageSubtitle="You just hit a route that doesn&#39;t exist... the sadness."
+    >
+      <Panel>
+        <AniLinkDefault as={Btn} to="/">
+          GO HOME
+        </AniLinkDefault>
+      </Panel>
+    </PageContained>
+  )
 }
 
 export default NotFoundPage

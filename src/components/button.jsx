@@ -1,56 +1,24 @@
-import styled from 'styled-components'
-import { rhythm } from '../../config/typography'
-import tw from 'twin.macro'
+import tw from 'twin.macro';
 
-export const Btn = styled.button`
-  display: block;
-  padding: ${[rhythm(1 / 3), ' ', rhythm(1)]};
-  text-transform: ${props => props.theme.fontFamily.logoCase};
-  letter-spacing: ${props => props.theme.letterSpacing};
-  background-color: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.grey.default};
-  border-color: ${props => props.theme.colors.primary};
-  font-weight: ${props => props.theme.fontFamily.headingWeight};
-  border-radius: ${props => props.theme.radius};
-  font-family: ${props => props.theme.fontFamily.heading};
-  border-color: ${props => props.theme.primary};
-  border-width: ${props => props.theme.border};
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-    display: inline;
-  }
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-    background-color: transparent;
-  }
+export const Btn = tw.button`
+  block p-2 m-2 mb-4
+  md:(px-20 m-4)
+  font-heading font-bold tracking-widest uppercase
+  text-gray bg-primary border-primary
+  border-2 rounded-lg
+  hover:(text-primary bg-transparent cursor-pointer)
 `
-export const BtnOutline = styled(Btn)`
-  background: none;
-  color: ${props => props.theme.colors.primary};
-  &:hover {
-    color: ${props => props.theme.colors.bg};
-    background-color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary};
-    cursor: pointer !important;
-  }
+export const BtnOutline = tw(Btn)`
+  bg-transparent text-primary border-primary
+  hover:(text-gray-700 bg-primary) 
+  active:(text-gray-700 bg-primary) 
 `
 
-export const BtnSimple = styled(Btn)`
-  background: none;
-  color: ${props => props.theme.colors.primary};
-  ${tw`border-0`}
-  &:hover {
-    color: ${props => props.theme.colors.bg};
-    background-color: ${props => props.theme.colors.primary};
-    border-color: ${props => props.theme.colors.primary};
-    cursor: pointer !important;
-  }
+export const BtnSimple = tw(Btn)`
+  bg-transparent text-primary border-transparent
+  hover:(border-primary)
 `
 
-export const SmBtn = styled(Btn)`
-${tw`text-xs`}
-  padding: ${[rhythm(1 / 6), ' ', rhythm(1 / 3)]};
-`
-export const SmBtnOutline = styled(BtnOutline)`
-  ${tw`text-xs`}
-  padding: ${[rhythm(1 / 6), ' ', rhythm(1 / 3)]};
-`
+export const SmBtn = tw(Btn)`text-xs`
+
+export const SmBtnOutline = tw(BtnOutline)`text-xs`
