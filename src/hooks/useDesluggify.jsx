@@ -1,10 +1,13 @@
 // create function that will be used as a hook
-// replace hyphens and slashes with spaces and capitalize the first letter
+// replace hyphens and slashes with spaces and capitalize 
 const useDesluggify = () => {
-  function deSluggify(str) {
+  function deSluggify(slug) {
     // convert to string
-    str = String(str);
-    str.replace(/-|\//g, ' ').charAt(0).toUpperCase() + str.slice(1);
+    const string = String(slug);
+    // remove hyphens and remove slashes
+    const clean = string.replace(/-|\//g, ' ');
+    // convert to title case
+    return clean.charAt(0).toUpperCase() + clean.slice(1);
   }
   return deSluggify;
 }
