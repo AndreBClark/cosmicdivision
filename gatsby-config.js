@@ -42,8 +42,6 @@ module.exports = {
                 layout: require.resolve(`./src/components/Base.jsx`)
             }
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
