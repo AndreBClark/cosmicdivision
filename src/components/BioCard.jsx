@@ -4,7 +4,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 import Panel from 'components/Panel'
-import { theme } from 'twin.macro'
 
 
 function BioCard() {
