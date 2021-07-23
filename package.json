@@ -74,11 +74,11 @@
         "url": "git+https://github.com/AndreBClark/cosmicdivision.git"
     },
     "scripts": {
-        "start": "npm i && npm run develop",
+        "start": "yarn && yarn run develop",
         "develop": "gatsby develop --host=0.0.0.0",
         "build": "gatsby build",
-        "format": "npm run format-css && npm run format-js",
-        "clean": "gatsby clean && rm -rf node_modules && npm i",
+        "format": "yarn run format-css && yarn run format-js",
+        "clean": "gatsby clean && rm -rf node_modules && yarn",
         "preflight": "postcss ./src/styles/entry.css -o ../static/preflight.min.css",
         "format-css": "prettier --write src/styles/**/*.{css,scss}",
         "format-js": "prettier --write src/**/*.{js,jsx}",
