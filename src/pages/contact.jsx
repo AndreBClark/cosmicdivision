@@ -45,7 +45,6 @@ const NetlifyForm = ({children}) => (
         <input tw="hidden" name="bot-field2" netlify-honeypot="bot-field2" />
         <input tw="hidden" name="bot-field23" netlify-honeypot="bot-field3" />
         {children}
-      <div data-netlify-recaptcha="true"></div>
       </div>
       <div data-netlify-recaptcha="true"></div>
       <ButtonGroup />
