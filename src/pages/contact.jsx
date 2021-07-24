@@ -41,9 +41,9 @@ const NetlifyForm = ({children}) => (
       data-netlify="true"
     >
       <div tw="flex flex-col md:(flex-wrap h-64)">
-        <input type="hidden" name="bot-field" netlify-honeypot="bot-field" />
-        <input type="hidden" name="bot-field" netlify-honeypot="bot-field" />
-        <input type="hidden" name="bot-field" netlify-honeypot="bot-field" />
+        <input tw="hidden" name="bot-field" netlify-honeypot="bot-field" />
+        <input tw="hidden" name="bot-field2" netlify-honeypot="bot-field2" />
+        <input tw="hidden" name="bot-field23" netlify-honeypot="bot-field3" />
         {children}
       </div>
       <ButtonGroup />
