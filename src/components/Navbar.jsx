@@ -8,8 +8,7 @@ import AniLinkDefault from 'components/AniLinkDefault'
 import { BtnSimple } from 'components/button'
 import Logo from 'images/logo.svg'
 
-
-function Navbar () {
+function Navbar() {
   return (
     <Header>
       <AniLinkDefault
@@ -27,9 +26,7 @@ function Navbar () {
 const Header = ({ children }) => {
   return (
     <HeaderStyle>
-      <Nav>
-        {children}
-      </Nav>
+      <Nav>{children}</Nav>
     </HeaderStyle>
   )
 }
@@ -37,39 +34,28 @@ const Header = ({ children }) => {
 const LogoBlock = () => {
   return (
     <div tw="flex">
-      <Logo
-        width="48"
-        tw="inline"
-      />
-      <span
-        tw="hidden md:(px-6 py-4 uppercase inline)">
-        Cosmic Division
-      </span>
+      <Logo width="48" tw="inline" />
+      <span tw="hidden md:(px-6 py-4 uppercase inline)">Cosmic Division</span>
     </div>
   )
 }
 
-
 function PageList() {
-  const Pages = usePageList();
-  const deSlug = useDesluggify();
+  const Pages = usePageList()
+  const deSlug = useDesluggify()
 
   return (
     <List>
       {Pages.map(({ node }) => (
-      <li>
-          <NavButton
-            to={node.path}
-            as={AniLinkDefault}
-          >
-          {deSlug(node.path)}
-        </NavButton>
-      </li>
+        <li>
+          <NavButton to={node.path} as={AniLinkDefault}>
+            {deSlug(node.path)}
+          </NavButton>
+        </li>
       ))}
     </List>
   )
 }
-
 
 const NavButton = tw(BtnSimple)`
   md:(mx-2 px-8)
@@ -83,12 +69,9 @@ const Nav = tw.nav`
   leading-tight flex justify-around items-center md:(mx-auto justify-between max-w-screen-xl)
 `
 
-
 const List = tw.ul`
   text-xs flex justify-around items-center text-gray-50
   md:(justify-between text-base)
 `
-
-
 
 export default Navbar

@@ -5,9 +5,14 @@ const usePageList = () => {
     graphql`
       query PageList {
         allSitePage(
-          filter: {componentChunkName: {glob: "component---src-pages-*-jsx", ne: "component---src-pages-404-jsx"}}
+          filter: {
+            componentChunkName: {
+              glob: "component---src-pages-*-jsx"
+              ne: "component---src-pages-404-jsx"
+            }
+          }
           limit: 3
-          sort: {order: ASC, fields: id}
+          sort: { order: ASC, fields: id }
           skip: 1
         ) {
           edges {
@@ -19,7 +24,7 @@ const usePageList = () => {
       }
     `
   )
-  return data.allSitePage.edges;
+  return data.allSitePage.edges
 }
 
 export default usePageList

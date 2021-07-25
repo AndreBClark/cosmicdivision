@@ -1,13 +1,11 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Container = tw.div`
   h-screen-80 relative overflow-y-hidden
   before:(content absolute  z-20 h-120 bottom-0 w-full bg-gradient-to-t from-gray-800 to-transparent)
 `
-
-
 
 export const Content = tw.div`
   text-center z-20 h-full absolute top-0 flex flex-col justify-around md:justify-center items-center w-full
@@ -22,27 +20,24 @@ export const Subtitle = tw.h2`
 `
 
 const Hero = ({ children }) => {
-  const backgroundImage = "../images/orbital-bw.jpg";
+  const backgroundImage = '../images/orbital-bw.jpg'
   return (
-    <Container css={{
-      maxHeight: 'calc(80vh - 50px)'
-    }}>
+    <Container
+      css={{
+        maxHeight: 'calc(80vh - 50px)',
+      }}>
       <StaticImage
         layout="fullWidth"
         objectFit="cover"
         loading="eager"
         alt=""
         src={backgroundImage}
-        formats={["auto", "webp", "avif"]}
+        formats={['auto', 'webp', 'avif']}
         placeholder="blurred"
       />
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Container>
   )
 }
-
-
 
 export default Hero

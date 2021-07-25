@@ -7,17 +7,15 @@ import { PageContained } from 'components/PageBase'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 
-
-const NotFoundPage = ({location}) => {
-  const { title } = useSiteMetadata();
+const NotFoundPage = ({ location }) => {
+  const { title } = useSiteMetadata()
 
   return (
     <PageContained
       location={location}
       pageTitle={`404: Not Found | ${title}`}
       pageHeading="Error 404: Path Not Found"
-      pageSubtitle="You just hit a route that doesn&#39;t exist... the sadness."
-    >
+      pageSubtitle="You just hit a route that doesn&#39;t exist... the sadness.">
       <Panel>
         <AniLinkDefault as={Btn} to="/">
           GO HOME

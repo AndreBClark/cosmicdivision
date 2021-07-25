@@ -5,11 +5,9 @@ export const TextInput = tw.input`
   hocus:(bg-gray-400 text-gray-700 border-primary)
 `
 
-
 export const Label = tw.label`
   block my-2
 `
-
 
 export const DualWrapper = tw.div`
   flex md:(justify-center)

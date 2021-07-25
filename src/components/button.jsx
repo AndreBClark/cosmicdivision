@@ -1,4 +1,4 @@
-import tw from 'twin.macro';
+import tw from 'twin.macro'
 
 export const Btn = tw.button`
   block p-2 m-2 mb-4

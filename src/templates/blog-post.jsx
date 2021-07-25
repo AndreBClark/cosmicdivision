@@ -5,23 +5,22 @@ import 'twin.macro'
 import Panel from 'components/Panel'
 import { PageContained } from 'components/PageBase'
 const BlogPostTemplate = ({ location, data }) => {
-  const post = data.markdownRemark;
+  const post = data.markdownRemark
   return (
     <PageContained
       location={location}
       pageHeading={post.frontmatter.title}
       pageSubtitle={post.frontmatter.description || post.excerpt}
-      date={post.frontmatter.date}
-    >
+      date={post.frontmatter.date}>
       <Panel>
         <article
           tw="prose xl:prose-2xl"
-          dangerouslySetInnerHTML={{ __html: post.html }} />
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </Panel>
     </PageContained>
   )
 }
-
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -37,6 +36,5 @@ export const pageQuery = graphql`
     }
   }
 `
-
 
 export default BlogPostTemplate

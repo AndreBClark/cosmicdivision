@@ -2,26 +2,19 @@ import tw from 'twin.macro'
 import React from 'react'
 import Seo from 'components/Seo'
 
-
 const MastHead = ({
   pagetitle,
   pageKeywords = [`blog`, `gatsby`, `javascript`, `react`],
   pageHeading,
   pageSubtitle,
   pageDate,
-  location
+  location,
 }) => {
   return (
     <>
-      <Seo
-        location={location}
-        title={pagetitle}
-        keywords={pageKeywords}
-      />
+      <Seo location={location} title={pagetitle} keywords={pageKeywords} />
       {pageHeading && <PageHeading>{pageHeading}</PageHeading>}
-      <div
-        tw="bg-primary w-full"
-      >
+      <div tw="bg-primary w-full">
         {pageSubtitle && <Subtitle>{pageSubtitle}</Subtitle>}
         {pageDate && <Date>{pageDate}</Date>}
       </div>
@@ -29,11 +22,9 @@ const MastHead = ({
   )
 }
 
-
 const PageHeading = tw.h1`mx-auto px-4 my-8 max-w-screen-xl`
 
 const Date = tw.p`m-8 max-w-screen-xl`
-
 
 const Subtitle = tw.h2`
   mx-auto block max-w-7xl px-8 text-lg font-heading capitalize font-semibold text-gray-800
@@ -41,5 +32,4 @@ const Subtitle = tw.h2`
 
 `
 
-
-export default MastHead;
+export default MastHead

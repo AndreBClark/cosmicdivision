@@ -1,7 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-
 const Row = tw.footer`bg-gray-800 md:p-8 mt-auto`
 
 const Inner = tw.div`mx-auto flex justify-between text-sm max-w-screen-xl`
