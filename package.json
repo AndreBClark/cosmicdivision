@@ -41,6 +41,10 @@
         "typeface-orbitron": "^1.1.3"
     },
     "devDependencies": {
+        "typescript": "4.3.5",
+        "@babel/core": "^7.2.2",
+        "babel-eslint": "^10.0.1",
+        "eslint":"7.31.0",
         "@emotion/react": "^11.4.0",
         "autoprefixer": "^10.3.1",
         "babel-plugin-module-resolver": "^4.1.0",
@@ -58,7 +62,7 @@
     },
     "resolutions": {
         "graphql": "^15.4.0",
-        "graphql-compose": "^9.0.1",
+        "graphql-compose": "^9.0.2",
         "webpack": "^5.24.2"
     },
     "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
