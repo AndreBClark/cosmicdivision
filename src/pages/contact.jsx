@@ -41,9 +41,9 @@ const NetlifyForm = ({children}) => (
       data-netlify="true"
     >
       <div tw="flex flex-col md:(flex-wrap h-64)">
-        <input tw="hidden" name="bot-field" netlify-honeypot="bot-field" />
-        <input tw="hidden" name="bot-field2" netlify-honeypot="bot-field2" />
-        <input tw="hidden" name="bot-field23" netlify-honeypot="bot-field3" />
+        <input tw="hidden" name="name" netlify-honeypot="bot-field" />
+        <input tw="hidden" name="email" netlify-honeypot="bot-field2" />
+        <input tw="hidden" name="message" netlify-honeypot="bot-field3" />
         {children}
       </div>
       <div data-netlify-recaptcha="true"></div>
@@ -98,28 +98,28 @@ const contactFields = [
   {
     label: "Full Name",
     type: "text",
-    id: "name",
+    id: "fullName",
     placeholder: "First Last",
     rows: "1"
   },
   {
     label: "Email",
     type: "email",
-    id: "email",
+    id: "emailAddress",
     placeholder: "name@domain.org",
     rows: "1"
   },
   {
     label: "Subject",
     type: "text",
-    id: "subject",
+    id: "messageSubject",
     placeholder: "Your Subject",
     rows: "1"
   },
   {
     label: "Message",
     type: "textarea",
-    id: "message",
+    id: "messageText",
     placeholder: "Your Message",
     rows: "5"
   }
