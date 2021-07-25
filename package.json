@@ -73,7 +73,8 @@
     "scripts": {
         "start": "yarn && yarn run develop",
         "develop": "gatsby develop --host=0.0.0.0",
-        "build": "netlify build",
+        "build": "gatsby build",
+        "build:local": "netlify build",
         "format": "yarn run format-css && npm run format-js",
         "clean": "gatsby clean && rm -rf node_modules && yarn",
         "preflight": "postcss ./src/styles/entry.css -o ../static/preflight.min.css",
