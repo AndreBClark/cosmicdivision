@@ -1,52 +1,59 @@
-# Cosmic Division Development Blog ![Test Lighthouse Check](https://github.com/AndreBClark/cosmicdivision/workflows/Test%20Lighthouse%20Check/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/a982740a-b81c-48b1-bc72-cf2353550b30/deploy-status)](https://app.netlify.com/sites/cosmicdivision/deploys)
-</h1>
-originally forked from:
-https://github.com/thomaswangio/gatsby-personal-starter-blog
+# Cosmic Division Personal Site
 
+Site [https://cosmicdivision.dev](URL)
 
+## Built With
 
-## 🚀 Quick start
+- [Gatsby](https://gatsbyjs.com) The dynamic site generator for dynamic web developers
+- [Preact](https://preactjs.com/) Fast 3kB alternative to React with the same modern API
+- [Tailwind CSS](https://tailwindcss.com/) utility-first CSS framework that can be composed to build any design, directly in your markup.
+- [twin.macro](https://github.com/ben-rogerson/twin.macro)
 
-1.  **Create a Gatsby site.**
+## Contributing
 
-    Use the Gatsby CLI to create a new site, specifying the blog starter.
+### Methods To Clone the project
 
-    ```sh
-    # create a new Gatsby site using the blog starter
-    gatsby new my-blog-starter https://github.com/thomaswangio/gatsby-personal-starter-blog
-    ```
+- use [gh-cli](https://cli.github.com/) `gh repo clone AndreBClark/companiondice`
+- use [git](https://git-scm.com/) `git clone https://github.com/AndreBClark/companiondice.git`
 
-1.  **Start developing.**
+### Local Development Setup
 
-    Navigate into your new site’s directory and start it up.
+- **Fork** The Project
+- **Clone** project
+- **Navigate** to project directory example:
+  - example: `cd ./cosmicdivision`
+- **Node** check that nodejs and npm is installed with `node -v` `npm -v`
+- **Open** terminal in project directory and run `npm install`
+- **Run** `npm start` a dev server will open at `localhost:1234`
+- **Edit** && **Save** will live update and refresh the page on the dev server
+- **Push to Remote** after verifying functionality locally
+- **Pull Request** create a pull request and describe the changes
 
-    ```sh
-    cd my-blog-starter/
-    gatsby develop
-    ```
+### Commit Guidelines
 
-1.  **Open the source code and start editing!**
+- commit subject lines should be 50 characters or less
+- summarize the changes with a subject/heading followed by a bullet list of changes
+- begin with an emoji write them with a keyword wrapped in colons :book: book
+- followed by a verb in the imperative ie: add, remove, compile
+- ending with a reference to the relevant issue number with a hashtag and in parentheses ie: (#24)
+Example:
 
-    Your site is now running at `http://localhost:8000`!
+```git
+# emoji 50-character subject line (#25)
+#
+# Why:
+# 
+```
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+### Emojis to be used
 
-    Open the `cosmicdiviison` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 📔 Learning Netlify CMS with Gatsby
-
-Start from [this point](https://www.gatsbyjs.org/docs/sourcing-from-netlify-cms/#authenticating-with-github) in the Gatsby documentation to finish the set up for your personal Netlify CMS with authentication.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thomaswangio/gatsby-personal-starter-blog)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+- :bug: `:bug:` fix a bug
+- :wrench: `:wrench:` modify config files
+- :fire: `:fire:` remove file or code
+- :package: `:package:` bundle, compile build process code/files
+- :sparkles: `:sparkles:` add feature
+- :sunglasses: `:sunglasses:` improve styles
+- :construction: `:construction:` Work in progress
+- :recycle: `:recycle:` reformat or refactor code
+- :book: `:book:` documentation
+- :truck: `:truck:` move files/change folders
