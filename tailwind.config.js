@@ -13,7 +13,7 @@ module.exports = {
         },
         fontFamily: {
             'mono': [
-                `Fira Mono`,
+                `Fira Code`,
                 ...fontFamily.mono
             ],
             'sans': [
@@ -25,7 +25,6 @@ module.exports = {
                 'Orbitron',
             ]
         },
-
         extend: {
             spacing: {
                 '72': '18rem',
@@ -45,19 +44,44 @@ module.exports = {
                 '-1': '-1'
             },
             colors: {
-                primary: '#26ffba',
-                gray: {
-                    50: colors.gray[50],
-                    400: "#4D4D4D",
-                    500: "#343434",
-                    DEFAULT: "#282828",
-                    700: "#1D1D1D",
-                    800: "#121212"
+                sea: {
+                    uno: {
+                        100: "#d6e9ff",
+                        200: "#88b4e7",
+                        300: "#5d8cc0",
+                        400: "#586f89",
+                        500: "#444c55",
+                    },
+                    duo: {
+                        DEFAULT: "#52FFC5",
+                        100: "#34febb",
+                        200: "#32ae85",
+                        300: "#42675a",
+                    },
+                    deep: {
+                        500: "#344455",
+                        600: "#303f4f",
+                        700: "#232d39",
+                        DEFAULT: "#1d262f"
+                    },
                 },
-                overlay: {
-                    low: "rgba(255,255,255,.05)",
-                    middle: "rgba(255,255,255,.1)",
-                    high: "rgba(255,255,255,.2)",
+                old: {
+                    primary: '#26ffba',
+                    gray: {
+                        50: colors.gray[50],
+                        100: colors.gray[100],
+                        200: colors.gray[200],
+                        400: "#4D4D4D",
+                        500: "#343434",
+                        DEFAULT: "#282828",
+                        700: "#1D1D1D",
+                        800: "#121212"
+                    },
+                    overlay: {
+                        low: "rgba(255,255,255,.05)",
+                        middle: "rgba(255,255,255,.1)",
+                        high: "rgba(255,255,255,.2)",
+                    },
                 },
             },
             flexGrow: {
@@ -72,19 +96,19 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        color: theme('colors.gray[50]'),
+                        color: theme('colors.gray[200]'),
                         h1: {
-                            color: theme('colors.primary'),
+                            color: theme('colors.gray[200]'),
                             fontFamily: theme('fontFamily.heading'),
-                            fontWeight: 'bold'
+                            fontWeight: 'bolder',
                         },
                         h2: {
-                            color: theme('colors.primary'),
+                            color: theme('colors.gray[200]'),
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold'
                         },
                         h3: {
-                            color: theme('colors.primary'),
+                            color: theme('colors.gray[200]'),
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold'
                         },

@@ -18,5 +18,5 @@ export const PageFullWidth = ({ ...props }) => (
 )
 
 const PageContainer = ({ children }) => (
-  <div tw="max-w-7xl mx-auto h-full">{children}</div>
+  <div tw="max-w-5xl mx-auto h-full">{children}</div>
 )
