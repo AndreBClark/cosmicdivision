@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ location, data }) => {
       date={post.frontmatter.date}>
       <Panel>
         <article
-          tw="prose xl:prose-2xl"
+          tw="prose xl:prose-xl max-w-none"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Panel>
