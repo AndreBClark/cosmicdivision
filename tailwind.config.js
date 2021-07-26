@@ -88,9 +88,18 @@ module.exports = {
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold'
                         },
-
                         code: {
-                            color: theme('colors.primary')
+                            color: '',
+                        },
+                        'code::before': {
+                            content: 'initial',
+                        },
+                        'code::after': {
+                            content: 'initial',
+                        },
+                        pre: {
+                            color: '',
+                            backgroundColor: '',
                         },
                         a: {
                             color: theme('colors.primary'),

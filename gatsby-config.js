@@ -46,13 +46,19 @@ module.exports = {
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-                plugins: [{
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            inlineCodeMarker: '~',
+                        }
+                    },
+                    {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590,
+                            maxWidth: 768,
                         },
                     },
-                    `gatsby-remark-responsive-iframe`,
                     {
                         resolve: "gatsby-plugin-react-svg",
                         options: {
@@ -61,8 +67,7 @@ module.exports = {
                             },
                         },
                     },
-                    `gatsby-remark-smartypants`,
-                ],
+                ]
             },
         },
         // {
