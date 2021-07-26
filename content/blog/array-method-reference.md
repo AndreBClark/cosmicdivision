@@ -4,26 +4,26 @@ author: Andre Clark
 featuredimage: /images/orbital-bw.jpg
 date: 2021-07-12T06:15:19.345Z
 title: Array Methods Reference
-description: here are my notes for array methods
+description: Personal Reference for Javascript Array Methods
 ---
 
-
-## `Array.prototype.forEach()`
+## `js~Array.prototype.forEach()`
 
 Called on the array.\
 Takes a function as an argument.\
 Simpler way to iterate over an array\
-Often uses arrow functions `() => {...}`\
+Often uses arrow functions `js~() => {...}`
 
 ### Callbacks
 
 callback is a function/method as an argument for another function\
 code within the callback is used for each iteration\
-for each iteration, `forEach` sends the value of the current element to the callback\
+for each iteration, `js~forEach` sends the value of the current element to the callback
+
 **Second Argument**
 
 index position of the element in the array\
-is optional\
+is optional
   
 ### `forEach()` Example
 
@@ -33,54 +33,57 @@ is optional\
   });
   ```
 
-- Strings
-  - use `split()` to process every character in a string with `forEach()`
+### Strings
 
-  ```js
-  'abcd'.split('').forEach(char => {
-    console.log(char);
-  });
-  ```
+use `split()` to process every character in a string with `forEach()`
 
-- Objects
-  - to use with `forEach` convert to array with `Object.keys`, `Object.values` and `Object.entries`
+```js
+'abcd'.split('').forEach(char => {
+  console.log(char);
+});
+```
 
-  - values
-  
-  ```js
-  let produceValues = Object.values(produce);
+### Objects
 
-  produceValues.forEach(value => {
-    console.log(value);
-  });
-  ```
+to use with `forEach` convert to array with `Object.keys`, `Object.values` and `Object.entries`
 
-  - keys
+**Values**
 
-  ```js
-  let produceKeys = Object.keys(produce);
-  produceKeys.forEach(key => {
-    console.log(key);
-  });
-  ```
+```js
+let produceValues = Object.values(produce);
 
-  - Entries / Key value pairs
+produceValues.forEach(value => {
+  console.log(value);
+});
+```
 
-  ```js
-  let produceKeys = Object.keys(produce);
-  produceKeys.forEach(key => {
-    console.log(key);
-  });
-  ```
+**keys**
 
-### Array Destructuring Assignment
+```js
+let produceKeys = Object.keys(produce);
+produceKeys.forEach(key => {
+  console.log(key);
+});
+```
 
-- assign elements of the array to multiple variables
-  - wrap the variable names in brackets
+**Entries / Key value pairs**
 
-  ```js
-  let [key, value] = keyValue`
-  ```
+```js
+let produceKeys = Object.keys(produce);
+produceKeys.forEach(key => {
+  console.log(key);
+});
+```
+
+### `Array Destructuring Assignment`
+
+Assign elements of the array to multiple variables
+
+wrap the variable names in brackets
+
+```js
+let [key, value] = keyValue`
+```
 
 ## `Array.prototype.filter()`
 
@@ -267,11 +270,11 @@ false
 - from a strart index
   - default: `0`
 - to an end index
-  - default: `array.length`
+  - default: Array.length`
 - returns modified array
 - is a mutator method
-- If start is negative, it is treated as `array.length + start`.
-- If end is negative, it is treated as `array.length + end`.
+- If start is negative, it is treated as Array.length + start`.
+- If end is negative, it is treated as Array.length + end`.
 - If the first parameter is an object, each slot in the array will reference that object
 
 ### Syntax
@@ -282,9 +285,3 @@ fill(value, start)
 fill(value, start, end)
 
 ```
-
-|  Method     | Action              | Considers return value of callback? | Returns new array from the method? | Length of returned array   |
-| ----------- | ------------------- | ----------------------------------- | ---------------------------------- | -------------------------- |
-| **forEach** | Iteration           | No                                  | No, returns undefined              | N/A                        |
-| **filter**  | Selection/Filtering | Yes, truthiness                     | Yes                                | Length of original or less |
-| **map**     | Transformation      | Yes                                 | Yes                                | Length of original         |
