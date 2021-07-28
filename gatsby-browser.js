@@ -1,5 +1,7 @@
-import "./static/preflight.min.css"
+import '@fontsource/orbitron'
+import '@fontsource/orbitron/700.css'
+import '@fontsource/fira-code'
+import '@fontsource/fira-sans'
+import '@fontsource/fira-sans/700.css'
 import './static/prism-duotone-sea.min.css'
-import 'typeface-fira-sans'
-import '@openfonts/fira-code_latin'
-import 'typeface-orbitron'
+import "./static/preflight.min.css"
