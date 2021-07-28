@@ -96,24 +96,28 @@ module.exports = {
             typography: (theme) => ({
                 DEFAULT: {
                     css: {
-                        color: theme('colors.gray[200]'),
+                        color: theme('colors.sea.uno.100'),
                         h1: {
-                            color: theme('colors.gray[200]'),
                             fontFamily: theme('fontFamily.heading'),
-                            fontWeight: 'bolder',
+                            fontWeight: 'black',
                         },
                         h2: {
-                            color: theme('colors.gray[200]'),
+                            color: theme('colors.sea.uno[300]'),
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold'
                         },
                         h3: {
-                            color: theme('colors.gray[200]'),
+                            color: theme('colors.sea.uno[300]'),
+                            fontFamily: theme('fontFamily.heading'),
+                            fontWeight: 'bold'
+                        },
+                        h4: {
+                            color: theme('colors.sea.uno[300]'),
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold'
                         },
                         code: {
-                            color: '',
+                            color: null,
                         },
                         'code::before': {
                             content: 'initial',
@@ -126,11 +130,9 @@ module.exports = {
                             backgroundColor: '',
                         },
                         a: {
-                            color: theme('colors.primary'),
                             textDecoration: 'underline'
                         },
                         strong: {
-                            color: theme('colors.primary'),
                             fontWeight: 'bold'
                         }
 
