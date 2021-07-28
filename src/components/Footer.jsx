@@ -1,11 +1,11 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-const Row = tw.footer`bg-sea-deep md:p-8 mt-auto`
+const Row = tw.footer`bg-neutral-100 md:p-8 mt-auto`
 
 const Inner = tw.div`mx-auto flex justify-between text-sm max-w-5xl`
 
-const Item = tw.p`my-4 mx-3 text-sea-uno-100`
+const Item = tw.p`my-4 mx-3 text-primary-100 `
 
 const Footer = () => {
   return (

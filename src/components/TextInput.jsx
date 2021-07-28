@@ -1,8 +1,8 @@
 import tw from 'twin.macro'
 
 export const TextInput = tw.input`
-  w-full block p-2 text-sea-uno-100 bg-sea-deep border-2 border-sea-deep-700 rounded-lg
-  hocus:(bg-sea-deep-700 text-sea-deep border-sea-duo)
+  w-full block p-2 text-primary-100  bg-neutral-100 border-2 border-neutral-400 rounded-lg
+  hocus:(bg-neutral-400 text-neutral-100 border-secondary-100)
 `
 
 export const Label = tw.label`

@@ -62,7 +62,7 @@ const NavButton = tw(BtnSimple)`
 `
 
 const HeaderStyle = tw.header`
-  font-heading font-black text-sea-uno-200 tracking-widest bg-sea-deep-700 px-4 xl:px-0
+  font-heading font-black text-primary-200 tracking-widest bg-neutral-400 px-4 xl:px-0
 `
 
 const Nav = tw.nav`
@@ -70,7 +70,7 @@ const Nav = tw.nav`
 `
 
 const List = tw.ul`
-  text-xs flex justify-around items-center text-sea-uno-100
+  text-xs flex justify-around items-center text-primary-100 
   md:(justify-between text-base)
 `
 

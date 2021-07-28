@@ -5,7 +5,7 @@ export default function AniLinkDefault(props) {
   return (
     <AniLink
       paintDrip
-      hex={theme`colors.sea.deep`}
+      hex={theme`colors.neutral.100`}
       direction="top"
       entryOffset={100}
       {...props}>

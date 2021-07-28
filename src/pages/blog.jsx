@@ -43,9 +43,9 @@ const PostCard = ({ key, slug, date, description, title }) => (
   <Panel as="article" key={key}>
     <AniLinkDefault to={slug}>
       <h3>{title}</h3>
-      <small tw="text-sea-uno-100">{date}</small>
+      <small tw="text-primary-100 ">{date}</small>
       <p
-        tw="text-sea-uno-100"
+        tw="text-primary-100 "
         dangerouslySetInnerHTML={{
           __html: description,
         }}

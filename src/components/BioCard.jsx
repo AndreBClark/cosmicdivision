@@ -17,7 +17,7 @@ function BioCard() {
         aspectRatio={1}
         formats={['AUTO', 'WEBP', 'AVIF']}
         transformOptions={{
-          grayscale: true
+          grayscale: true,
         }}
         alt={`headshot of ${author}, the creator of this site`}
         tw="rounded-xl mix-blend-luminosity md:(w-24  mr-4 mb-4 md:mb-0 flex-shrink-0)"

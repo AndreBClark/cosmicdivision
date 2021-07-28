@@ -14,7 +14,7 @@ const MastHead = ({
     <>
       <Seo location={location} title={pagetitle} keywords={pageKeywords} />
       {pageHeading && <PageHeading>{pageHeading}</PageHeading>}
-      <div tw="bg-sea-duo-100 w-full">
+      <div tw="bg-secondary-100  w-full">
         {pageSubtitle && <Subtitle>{pageSubtitle}</Subtitle>}
         {pageDate && <Date>{pageDate}</Date>}
       </div>

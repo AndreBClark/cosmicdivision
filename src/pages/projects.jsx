@@ -56,7 +56,7 @@ const ProjectDetail = ({ projectProps }) => {
       <div>
         <h2 tw="hidden md:(block) xl:(text-5xl)">{name}</h2>
         <h3 tw="inline-block">{creationDate}</h3>{' '}
-        <span tw="text-gray-900 bg-sea-duo-100 px-2 pt-1 rounded m-4">
+        <span tw="text-gray-900 bg-secondary-100  px-2 pt-1 rounded m-4">
           {status}
         </span>
         <p tw="py-3 xl:text-2xl">{description}</p>

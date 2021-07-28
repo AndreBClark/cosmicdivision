@@ -4,19 +4,19 @@ export const Btn = tw.button`
   block p-2 m-2 mb-4
   md:(px-20 m-4)
   font-heading font-bold tracking-widest uppercase
-  text-sea-deep bg-sea-duo-100 border-sea-duo
+  text-neutral-100 bg-secondary-100  border-secondary-100
   border-2 rounded-lg
-  hover:(text-sea-duo-100 bg-transparent cursor-pointer)
+  hover:(text-secondary-100  bg-transparent cursor-pointer)
 `
 export const BtnOutline = tw(Btn)`
-  bg-transparent text-sea-duo-100 border-sea-duo
-  hover:(text-sea-deep bg-sea-duo-100) 
-  active:(text-sea-deep bg-sea-duo-100) 
+  bg-transparent text-secondary-100  border-secondary-100
+  hover:(text-neutral-100 bg-secondary-100 ) 
+  active:(text-neutral-100 bg-secondary-100 ) 
 `
 
 export const BtnSimple = tw(Btn)`
-  bg-transparent text-sea-duo-100 border-transparent
-  hover:(border-sea-duo)
+  bg-transparent text-secondary-100  border-transparent
+  hover:(border-secondary-100)
 `
 
 export const SmBtn = tw(Btn)`text-xs`
