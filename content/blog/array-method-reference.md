@@ -14,18 +14,12 @@ Takes a function as an argument.\
 Simpler way to iterate over an array\
 Often uses arrow functions `js~() => {...}`
 
-### Callbacks
-
-callback is a function/method as an argument for another function\
-code within the callback is used for each iteration\
-for each iteration, `js~forEach` sends the value of the current element to the callback
-
-**Second Argument**
+### Second Argument
 
 index position of the element in the array\
 is optional
   
-### `forEach()` Example
+### `js~forEach()` Example
 
   ```js
   [1, 2, 3].forEach((number, idx) => {
@@ -35,7 +29,7 @@ is optional
 
 ### Strings
 
-use `split()` to process every character in a string with `forEach()`
+use `js~.split()` to process every character in a string with `js~.forEach()`
 
 ```js
 'abcd'.split('').forEach(char => {
@@ -45,9 +39,9 @@ use `split()` to process every character in a string with `forEach()`
 
 ### Objects
 
-to use with `forEach` convert to array with `Object.keys`, `Object.values` and `Object.entries`
+to use with `js~forEach` convert to array with `js~Object.keys`, `js~Object.values` and `js~Object.entries`
 
-**Values**
+#### Values
 
 ```js
 let produceValues = Object.values(produce);
@@ -57,7 +51,7 @@ produceValues.forEach(value => {
 });
 ```
 
-**keys**
+#### Keys
 
 ```js
 let produceKeys = Object.keys(produce);
@@ -66,7 +60,7 @@ produceKeys.forEach(key => {
 });
 ```
 
-**Entries / Key value pairs**
+#### Entries / Key value pairs
 
 ```js
 let produceKeys = Object.keys(produce);
@@ -75,7 +69,7 @@ produceKeys.forEach(key => {
 });
 ```
 
-### `Array Destructuring Assignment`
+### Array Destructuring Assignment
 
 Assign elements of the array to multiple variables
 
@@ -88,15 +82,15 @@ let [key, value] = keyValue`
 ## `Array.prototype.filter()`
 
 - for selecting or filter elements
-- `filter()` examines the return value of the callback on each Iteration.
+- `js~filter()` examines the return value of the callback on each Iteration.
 - determines the **truthiness** of the return value
   - selects element if return value of the callback is **truthy**
   - does not select the element if return value is **falsy**
-- `filter()` returns new array containing selected elements
+- `js~filter()` returns new array containing selected elements
 - callback must return an explicit value or else it will return an empty array
-- use `forEach` for filtering objects
+- use `js~forEach()` for filtering objects
 
-### `filter()` Example
+### `js~filter()` Example
 
   ```js
   [1, 2, 3].filter(num => num % 2 === 1); // => [ 1, 3 ]
@@ -104,7 +98,7 @@ let [key, value] = keyValue`
   oddNumbers; // => [1, 3]
   ```
 
-### Filtering objects with `forEach`
+### Filtering objects with `js~forEach()`
 
 ```js
 let produce = {
@@ -127,7 +121,7 @@ produceKeyValues.forEach(keyValue => {
 onlyVegetables; // => {carrot: 'Vegetable', broccoli: 'Vegetable'}
 ```
 
-## `Array.prototype.map()`
+## `js~Array.prototype.map()`
 
 - considers the return value of the callback
 - performs transformation using return value of the callback
@@ -163,7 +157,7 @@ str.split('')
 // => 'auo'
 ```
 
-## `Array.prototype.some()`
+## `js~Array.prototype.some()`
 
 - tests whether at least one element in the array passes the test
 - the test is provided by the callback function from the first argument
@@ -183,7 +177,7 @@ true
 false
 ```
 
-### `some()` for objects
+### `js~some()` for objects
 
 ```js
 let animals = { a: 'ant', b: 'bear', c: 'cat' };
@@ -194,11 +188,11 @@ Object.values(animals).some(animalName => animalName.length > 3);
 // => true
 ```
 
-## `Array.prototype.every()`
+## `js~Array.prototype.every()`
 
 - returns true if the callback's return value in every iteration is truthy
 
-### `every()` example
+### `js~every()` example
 
 ```js
 > [1, 2, 3].every(num => num > 2)
@@ -216,7 +210,7 @@ Object.values(animals).every(animalName => animalName.length > 2);
 //  => true
 ```
 
-## `Array.prototype.find()`
+## `js~Array.prototype.find()`
 
 - takes a callback function as argument
 - returns first element which the callback returns a truthy value
@@ -227,7 +221,7 @@ Object.values(animals).every(animalName => animalName.length > 2);
 4
 ```
 
-## `Array.prototype.findIndex()`
+## `js~Array.prototype.findIndex()`
 
 - similar to `find()`
 - returns index of truthy elements
@@ -238,7 +232,7 @@ Object.values(animals).every(animalName => animalName.length > 2);
 -1
 ```
 
-## `Array.prototype.reverse()`
+## `js~Array.prototype.reverse()`
 
 - reverses the elements of the array
 - mutates the original array
@@ -249,10 +243,10 @@ Object.values(animals).every(animalName => animalName.length > 2);
 [ 3, 7, 5, 2, 1 ]
 ```
 
-## `Array.prototype.includes()`
+## `js~Array.prototype.includes()`
 
 - searches for element strictly equal to the argument
-- doesn't work for finding objects
+- doesn't work for finding objectsValu
 - can use it to determine existence of specific key in objects
 - `Object.prototype.hasOWnProperty()` another method to check if a key exists
 
@@ -264,7 +258,7 @@ true
 false
 ```
 
-## `Array.prototype.fill()`
+## `js~Array.prototype.fill()`
 
 - changes all elements to a static value
 - from a strart index
@@ -285,3 +279,9 @@ fill(value, start)
 fill(value, start, end)
 
 ```
+
+## Callbacks
+
+callback is a function/method as an argument for another function\
+code within the callback is used for each iteration\
+for each iteration, `js~forEach` sends the value of the current element to the callback
