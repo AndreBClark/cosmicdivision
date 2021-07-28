@@ -1,6 +1,6 @@
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-.cache*
+.cache
 node_modules
 integration-tests/gatsby-cli/execution-folder/*
 *.un~
@@ -38,3 +38,6 @@ logs
 !themes/gatsby-starter-notes-theme/package-lock.json
 !themes/gatsby-starter-theme/package-lock.json
 *.log
+# @netlify/plugin-gatsby ignores start
+netlify/functions/gatsby
+# @netlify/plugin-gatsby ignores end
