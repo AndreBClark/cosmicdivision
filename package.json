@@ -10,6 +10,7 @@
     "dependencies": {
         "@emotion/styled": "^11.3.0",
         "@openfonts/fira-code_latin": "^1.44.8",
+        "@tailwindcss/forms": "^0.3.3",
         "@tailwindcss/typography": "^0.4.1",
         "gatsby": "^3.10.1",
         "gatsby-plugin-emotion": "^6.9.0",
