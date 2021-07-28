@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = { 
     siteMetadata: {
         title: `Cosmic Division`,
         author: `Andre Clark`,
@@ -11,7 +11,7 @@ module.exports = {
         social: {
             github: `AndreBClark`,
         },
-    },
+    }, 
     plugins: [
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
@@ -22,7 +22,6 @@ module.exports = {
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
-        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
