@@ -9,18 +9,18 @@ exports.createPages = ({ actions, graphql }) => {
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
     ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-              }
-            }
-          }
+    edges {
+      node {
+        frontmatter {
+          title
+          date
+          path
+        }
+        fields {slug}
+      }
     }
   }
+}
 `
 
     ).then(result => {
