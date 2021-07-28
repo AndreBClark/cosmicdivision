@@ -62,7 +62,7 @@ const NavButton = tw(BtnSimple)`
 `
 
 const HeaderStyle = tw.header`
-  font-heading font-black text-sea-uno-200 tracking-widest border-sea-uno-200 bg-sea-deep-700 border-b-4 px-4 xl:px-0
+  font-heading font-black text-sea-uno-200 tracking-widest bg-sea-deep-700 px-4 xl:px-0
 `
 
 const Nav = tw.nav`
