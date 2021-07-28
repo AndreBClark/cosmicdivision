@@ -5,13 +5,38 @@ Author: by Simurai, adapted from DuoTone themes by Simurai for Atom (http://simu
 Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-sea-dark.css)
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
+:root {
+  --primary-100 : #d6e9ff;
+  --sea-uno-200: #88b4e7;
+  --sea-uno-300: #5d8cc0;
+  --sea-uno-400: #586f89;
+  --sea-uno-500: #444c55;
+
+  --sea-duo-50: #52ffc5;
+  --secondary-100 : #34febb;
+  --sea-duo-200: #32ae85;
+  --sea-duo-300: #42675a;
+
+  --sea-deep: #1d262f;
+  --sea-deep-100: #303f4f;
+  --sea-deep-200: #3e4c5a;
+  --sea-deep-300: #232d39;
+  --sea-deep-400: #2c3b3e;
+
+  --sea-lagoon: #004a9e;
+  --sea-lagoon-100: #34659d;
+  --sea-lagoon-200: #0aa370;
+  --sea-lagoon-300: #47ebb4;
+  --sea-lagoon-400: #7eb6f6;
+  --sea-lagoon-500: #ebf4ff;
+}
 
 code[class*='language-'],
 pre[class*='language-'] {
-  font-family: 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
-    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
-    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
-    'Courier New', Courier, monospace;
+  font-family: 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono WT',
+    'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+    'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono',
+    'Nimbus Mono L', 'Courier New', Courier, monospace;
   font-size: 14px;
   line-height: 1.375;
   direction: ltr;
@@ -28,8 +53,8 @@ pre[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background: #1d262f;
-  color: #57718e;
+  background: var(--sea-deep);
+  color: var(--primary-100 );
 }
 
 pre > code[class*='language-'] {
@@ -41,7 +66,7 @@ pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
   text-shadow: none;
-  background: #004a9e;
+  background: var(--sea-lagoon);
 }
 
 pre[class*='language-']::selection,
@@ -49,7 +74,7 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
   text-shadow: none;
-  background: #004a9e;
+  background: var(--sea-lagoon);
 }
 
 /* Code blocks */
@@ -69,12 +94,12 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #4a5f78;
+  color: var(--sea-lagoon-200);
 }
-
+/* 
 .token.punctuation {
-  color: #4a5f78;
-}
+  color: var(--primary-100 );
+} */
 
 .token.namespace {
   opacity: 0.7;
@@ -83,23 +108,23 @@ pre[class*='language-'] {
 .token.tag,
 .token.operator,
 .token.number {
-  color: #0aa370;
+  color: var(--sea-lagoon-200);
 }
 
 .token.property,
 .token.function {
-  color: #57718e;
+  color: var(--sea-uno-200);
 }
 
 .token.tag-id,
 .token.selector,
 .token.atrule-id {
-  color: #ebf4ff;
+  color: var(--sea-lagoon-500);
 }
 
 code.language-javascript,
 .token.attr-name {
-  color: #7eb6f6;
+  color: var(--sea-lagoon-400);
 }
 
 code.language-css,
@@ -119,12 +144,12 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #47ebb4;
+  color: var(--sea-lagoon-300);
 }
 
 .token.placeholder,
 .token.variable {
-  color: #47ebb4;
+  color: var(--sea-lagoon-300);
 }
 
 .token.deleted {
@@ -132,7 +157,7 @@ code.language-scss,
 }
 
 .token.inserted {
-  border-bottom: 1px dotted #ebf4ff;
+  border-bottom: 1px dotted var(--sea-lagoon-500);
   text-decoration: none;
 }
 
@@ -146,7 +171,7 @@ code.language-scss,
 }
 
 .token.important {
-  color: #7eb6f6;
+  color: var(--sea-lagoon-400);
 }
 
 .token.entity {
@@ -154,7 +179,7 @@ code.language-scss,
 }
 
 pre > code.highlight {
-  outline: 0.4em solid #34659d;
+  outline: 0.4em solid var(--sea-lagoon-100);
   outline-offset: 0.4em;
 }
 

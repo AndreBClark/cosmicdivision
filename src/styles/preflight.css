@@ -3,7 +3,7 @@
 @layer base {
   html,
   body {
-    @apply min-h-full overflow-y-auto text-sea-uno-100;
+    @apply min-h-full overflow-y-auto text-primary-100;
   }
   h1,
   h2,
@@ -14,7 +14,7 @@
   .h1,
   .h2,
   .h3 {
-    @apply text-sea-uno-100 font-heading;
+    @apply font-heading;
   }
   h1,
   .h1 {
@@ -37,11 +37,13 @@
     @apply text-base lg:text-lg;
   }
   svg path {
-    @apply fill-current text-sea-duo-100;
+    @apply fill-current text-secondary-100 ;
   }
 
-  a,
-  button {
-    @apply text-sea-duo-100 transition-all;
+  a {
+    @apply transition-all bg-transparent text-primary-100;
+    &:hover {
+      @apply bg-secondary-100 text-neutral-100;
+    }
   }
 }
