@@ -13,6 +13,13 @@ module.exports = {
         },
     }, 
     plugins: [
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/blog`,
+                name: `blog`,
+            },
+        },
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
@@ -22,13 +29,6 @@ module.exports = {
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/content/blog`,
-                name: `blog`,
-            },
-        },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -99,8 +99,8 @@ module.exports = {
                 name: `Cosmic Division Jamstack Blog`,
                 short_name: `CosmicDiv`,
                 start_url: `/`,
-                background_color: `#121212`,
-                theme_color: `#26ffba`,
+                background_color: `#444c55`,
+                theme_color: `#34f3bb`,
                 display: `standalone`,
                 icon: `src/images/logo.svg`,
             },
