@@ -17,10 +17,10 @@ function BioCard() {
         aspectRatio={1}
         formats={['AUTO', 'WEBP', 'AVIF']}
         transformOptions={{
-          grayscale: true,
+          grayscale: true
         }}
         alt={`headshot of ${author}, the creator of this site`}
-        tw="rounded-xl md:(w-24  mr-4 mb-4 md:mb-0 flex-shrink-0)"
+        tw="rounded-xl mix-blend-luminosity md:(w-24  mr-4 mb-4 md:mb-0 flex-shrink-0)"
       />
       <p tw="text-sm md:text-xl">
         Written by <strong>{author}</strong> who lives and works in {location}{' '}
