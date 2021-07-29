@@ -39,7 +39,7 @@ use `js~.split()` to process every character in a string with `js~.forEach()`
 
 ### Objects
 
-to use with `js~forEach` convert to array with `js~Object.keys`, `js~Object.values` and `js~Object.entries`
+to use with `js~forEach()` convert to array with `js~Object.keys()`, `js~Object.values()` and `js~Object.entries()`
 
 #### Values
 
@@ -196,6 +196,8 @@ Object.values(animals).some(animalName => animalName.length > 3);
 
 ```js
 > [1, 2, 3].every(num => num > 2)
+  const backgroundColor = theme('colors.neutral.100');
+  return (
 false
 
 > [3, 4, 5].every(num => num > 2)

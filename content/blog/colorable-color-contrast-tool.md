@@ -3,7 +3,7 @@ path: colorable-colorcontrast-tool
 featuredimage: /images/orbital-bw.jpg
 date: 2021-05-21T06:15:19.345Z
 title: Quickly Test Color Combinations for Better Contrast
-description: Colorable is quick and easy to use for testing colors combinations.
+description:  test color combinations for  with Colorable
 ---
 ## Introduction
 
