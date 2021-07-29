@@ -14,7 +14,7 @@
   .h1,
   .h2,
   .h3 {
-    @apply font-heading;
+    @apply font-heading text-primary-100;
   }
   h1,
   .h1 {
@@ -39,11 +39,7 @@
   svg path {
     @apply fill-current text-secondary-100 ;
   }
-
   a {
-    @apply transition-all bg-transparent text-secondary-100;
-    &:hover {
-      @apply bg-secondary-100 text-neutral-100;
-    }
+    @apply text-secondary-100;
   }
 }

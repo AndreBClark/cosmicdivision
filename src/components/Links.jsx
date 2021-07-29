@@ -1,7 +1,7 @@
 import React from 'react'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { theme } from 'twin.macro'
-export default function AniLinkDefault(props) {
+import tw, { theme } from 'twin.macro'
+export default function TransitionLink(props) {
   return (
     <AniLink
       paintDrip
@@ -13,3 +13,8 @@ export default function AniLinkDefault(props) {
     </AniLink>
   )
 }
+
+export const LinkExternal = tw.a`
+  transition-all bg-transparent text-secondary-100
+  hover:(bg-secondary-100 text-neutral-100)
+`

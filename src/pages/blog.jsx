@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
 
-import AniLinkDefault from 'components/AniLinkDefault'
+import TransitionLink from 'components/Links'
 import Panel from 'components/Panel'
 import { PageContained } from 'components/PageBase'
 
@@ -41,16 +41,15 @@ const PostList = () => {
 
 const PostCard = ({ key, slug, date, description, title }) => (
   <Panel as="article" key={key}>
-    <AniLinkDefault to={slug}>
-      <h3>{title}</h3>
-      <small tw="text-primary-100 ">{date}</small>
-      <p
-        tw="text-primary-100 "
+    <TransitionLink to={slug}>
+      <h3 tw="text-primary-100">{title}</h3>
+      <small tw="text-primary-100">{date}</small>
+      <p tw="text-primary-100"
         dangerouslySetInnerHTML={{
           __html: description,
         }}
       />
-    </AniLinkDefault>
+    </TransitionLink>
   </Panel>
 )
 

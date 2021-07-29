@@ -3,7 +3,7 @@ import { BtnOutline, Btn } from 'components/button'
 import Hero from 'components/Hero'
 import { HeadingOne, Subtitle } from 'components/Hero'
 import { DualWrapper } from 'components/TextInput'
-import AniLinkDefault from 'components/AniLinkDefault'
+import TransitionLink from 'components/Links'
 import { PageFullWidth } from 'components/PageBase'
 
 const indexContent = {
@@ -29,10 +29,10 @@ const IndexPage = ({ location }) => {
         <HeadingOne>{heading}</HeadingOne>
         <Subtitle>{subtitle}</Subtitle>
         <DualWrapper>
-          <Btn as={AniLinkDefault} to={buttons.primary.link}>
+          <Btn as={TransitionLink} to={buttons.primary.link}>
             {buttons.primary.text}
           </Btn>
-          <BtnOutline as={AniLinkDefault} to={buttons.secondary.link}>
+          <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
             {buttons.secondary.text}
           </BtnOutline>
         </DualWrapper>

@@ -4,20 +4,20 @@ import tw from 'twin.macro'
 import usePageList from 'hooks/usePageList'
 import useDesluggify from 'hooks/useDesluggify'
 
-import AniLinkDefault from 'components/AniLinkDefault'
+import TransitionLink from 'components/Links'
 import { BtnSimple } from 'components/button'
 import Logo from 'images/logo.svg'
 
 function Navbar() {
   return (
     <Header>
-      <AniLinkDefault
+      <TransitionLink
         id="logo"
         to="/"
         as={NavButton}
         aria-label="Cosmic division Website Logo Home Button">
         <LogoBlock />
-      </AniLinkDefault>
+      </TransitionLink>
       <PageList />
     </Header>
   )
@@ -48,7 +48,7 @@ function PageList() {
     <List>
       {Pages.map(({ node }) => (
         <li>
-          <NavButton to={node.path} as={AniLinkDefault}>
+          <NavButton to={node.path} as={TransitionLink}>
             {deSlug(node.path)}
           </NavButton>
         </li>

@@ -1,5 +1,5 @@
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { theme } from 'twin.macro'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Container = tw.div`
@@ -21,6 +21,7 @@ export const Subtitle = tw.h2`
 
 const Hero = ({ children }) => {
   const backgroundImage = '../images/orbital-bw.jpg'
+  const backgroundColor = theme('colors.neutral.100');
   return (
     <Container>
       <StaticImage
@@ -31,7 +32,7 @@ const Hero = ({ children }) => {
         tw="mix-blend-screen bg-neutral-100 static"
         src={backgroundImage}
         formats={['auto', 'webp', 'avif']}
-        placeholder="blurred"
+        placeholder="dominantColor"
       />
       <Content>{children}</Content>
     </Container>

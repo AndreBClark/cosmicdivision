@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import AniLinkDefault from 'components/AniLinkDefault'
+import TransitionLink from 'components/Links'
 import Panel from 'components/Panel'
 import { Btn } from 'components/button'
 import { PageContained } from 'components/PageBase'
@@ -17,9 +17,9 @@ const NotFoundPage = ({ location }) => {
       pageHeading="Error 404: Path Not Found"
       pageSubtitle="You just hit a route that doesn&#39;t exist... the sadness.">
       <Panel>
-        <AniLinkDefault as={Btn} to="/">
+        <TransitionLink as={Btn} to="/">
           GO HOME
-        </AniLinkDefault>
+        </TransitionLink>
       </Panel>
     </PageContained>
   )
