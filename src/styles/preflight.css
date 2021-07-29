@@ -41,7 +41,7 @@
   }
 
   a {
-    @apply transition-all bg-transparent text-primary-100;
+    @apply transition-all bg-transparent text-secondary-100;
     &:hover {
       @apply bg-secondary-100 text-neutral-100;
     }

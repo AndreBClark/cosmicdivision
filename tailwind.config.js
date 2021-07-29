@@ -153,11 +153,16 @@ module.exports = {
                             content: 'initial',
                         },
                         pre: {
-                            color: '',
-                            backgroundColor: '',
+                            color: null,
+                            backgroundColor: null,
                         },
                         a: {
+                            color: theme('colors.secondary.100'),
                             textDecoration: 'underline',
+                            hover: {
+                                backgroundColor: theme('colors.secondary.100'),
+                                color: theme('colors.primary.100'),
+                            },
                         },
                         strong: {
                             fontWeight: 'bold',
@@ -169,7 +174,6 @@ module.exports = {
         },
     },
     plugins: [
-        require('tailwindcss/nesting'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
         require('@mertasan/tailwindcss-variables')
