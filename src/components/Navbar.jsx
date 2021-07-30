@@ -6,7 +6,7 @@ import useDesluggify from 'hooks/useDesluggify'
 
 import TransitionLink from 'components/Links'
 import { BtnSimple } from 'components/button'
-import Logo from 'images/logo.svg'
+import Logo from 'images/icons/logo.svg'
 
 function Navbar() {
   return (
@@ -58,7 +58,7 @@ function PageList() {
 }
 
 const NavButton = tw(BtnSimple)`
-  md:(mx-2 px-8)
+  md:(mx-2 px-8 bg-neutral-200)
 `
 
 const HeaderStyle = tw.header`

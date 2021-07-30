@@ -47,10 +47,6 @@ module.exports = {
                     blurredOptions: {
                         backgroundColor: 'transparent'
                     },
-                    jpgOptions: {},
-                    pngOptions: {},
-                    webpOptions: {},
-                    avifOptions: {},
                 },
             },
         },
@@ -128,7 +124,7 @@ module.exports = {
                 background_color: palette.deep[100],
                 theme_color: palette.duo[100],
                 display: `standalone`,
-                icon: `src/images/logo.svg`,
+                icon: `src/images/icons/logo.svg`,
             },
         },
     ],
