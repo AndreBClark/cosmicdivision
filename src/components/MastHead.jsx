@@ -12,12 +12,13 @@ const MastHead = ({
 }) => {
   return (
     <>
-      <Seo location={location} title={pagetitle} keywords={pageKeywords} />
+      {pagetitle && <Seo location={location} title={pagetitle} keywords={pageKeywords} />}
       {pageHeading && <PageHeading>{pageHeading}</PageHeading>}
-      <div tw="bg-secondary-100  w-full">
+      {(pageSubtitle || pageDate) && <div tw="bg-secondary-100  w-full">
         {pageSubtitle && <Subtitle>{pageSubtitle}</Subtitle>}
         {pageDate && <Date>{pageDate}</Date>}
       </div>
+      }
     </>
   )
 }
