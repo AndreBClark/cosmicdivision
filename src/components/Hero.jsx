@@ -1,13 +1,37 @@
 import React from 'react'
-import tw, { theme } from 'twin.macro'
-import { StaticImage } from 'gatsby-plugin-image'
+import { useStaticQuery, graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import tw from 'twin.macro'
+
+
+
+const Hero = ({ children }) => {
+  const data = useStaticQuery(HeroImageData)
+  const image = getImage(data.file.childImageSharp)
+  return (
+    <Container>
+      <GatsbyImage
+        layout="fullWidth"
+        objectFit="cover"
+        loading="eager"
+        aspectRatio={16 / 9}
+        imgStyle={{ mixBlendMode: 'screen' }}
+        image={image}
+        alt='orbital photo overlooking Earth at night taken from the International Space Station'
+        tw="static"
+      />
+      <Content>{children}</Content>
+    </Container>
+  )
+}
+
 
 const Container = tw.div`
-  max-h-screen-80 relative overflow-y-hidden
-  before:(content absolute  z-10 h-120 bottom-0 w-full bg-gradient-to-t from-neutral-100 to-transparent)
+  h-screen-80 relative overflow-y-hidden
+  before:(content absolute  z-10 h-108 bottom-0 w-full bg-gradient-to-t from-neutral-100 to-transparent)
 `
 
-export const Content = tw.div`
+const Content = tw.div`
   text-center z-20 h-full absolute top-0 flex flex-col justify-around md:justify-center items-center w-full
 `
 
@@ -19,24 +43,15 @@ export const Subtitle = tw.h2`
   lg:(tracking-widest text-2xl mx-1 px-4)
 `
 
-const Hero = ({ children }) => {
-  const backgroundImage = '../images/orbital-bw.jpg'
-  const backgroundColor = theme('colors.neutral.100');
-  return (
-    <Container>
-      <StaticImage
-        layout="fullWidth"
-        objectFit="cover"
-        loading="eager"
-        alt="orbital photo overlooking Earth at night taken from the International Space Station"
-        tw="mix-blend-screen bg-neutral-100 static"
-        src={backgroundImage}
-        formats={['auto', 'webp', 'avif']}
-        placeholder="dominantColor"
-      />
-      <Content>{children}</Content>
-    </Container>
-  )
+const HeroImageData = graphql`
+{
+  file(relativePath: {eq: "orbital-deep.webp"}) {
+    childImageSharp {
+      gatsbyImageData
+    }
+  }
 }
+`
+
 
 export default Hero
