@@ -1,3 +1,7 @@
+const tailwind = require('./tailwind.config.js');
+
+const { palette } = tailwind.theme;
+
 module.exports = {
     siteMetadata: {
         title: `Cosmic Division`,
@@ -13,15 +17,6 @@ module.exports = {
         },
     },
     plugins: [
-        `gatsby-plugin-preact`,
-        `gatsby-plugin-offline`,
-        `gatsby-plugin-react-helmet`,
-        'gatsby-plugin-postcss',
-        `gatsby-plugin-emotion`,
-        `gatsby-plugin-image`,
-        `gatsby-plugin-sharp`,
-        `gatsby-transformer-sharp`,
-        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -29,6 +24,38 @@ module.exports = {
                 name: `blog`,
             },
         },
+        `gatsby-plugin-preact`,
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-react-helmet`,
+        'gatsby-plugin-postcss',
+        `gatsby-plugin-emotion`,
+        `gatsby-plugin-netlify`,
+        `gatsby-plugin-image`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                formats: [`auto`, 'avif', 'webp',`png`],
+                    placeholder: `blurred`,
+                    quality: 75,
+                    breakpoints: [300, 750, 1080, 1366, 1920],
+                    backgroundColor: 'transparent',
+                    tracedSVGOptions: {
+                        blackOnWhite: false,
+                        backgroundColor: 'transparent'
+                    },
+                    blurredOptions: {
+                        backgroundColor: 'transparent'
+                    },
+                    jpgOptions: {},
+                    pngOptions: {},
+                    webpOptions: {},
+                    avifOptions: {},
+                },
+            },
+        },
+        `gatsby-transformer-sharp`,
+        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -42,18 +69,22 @@ module.exports = {
                 layout: require.resolve(`./src/components/Base.jsx`)
             }
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
-                plugins: [{
+                plugins: [
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            inlineCodeMarker: '~',
+                        }
+                    },
+                    {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 590,
+                            maxWidth: 768,
                         },
                     },
-                    `gatsby-remark-responsive-iframe`,
                     {
                         resolve: "gatsby-plugin-react-svg",
                         options: {
@@ -62,8 +93,7 @@ module.exports = {
                             },
                         },
                     },
-                    `gatsby-remark-smartypants`,
-                ],
+                ]
             },
         },
         // {
@@ -96,8 +126,8 @@ module.exports = {
                 name: `Cosmic Division Jamstack Blog`,
                 short_name: `CosmicDiv`,
                 start_url: `/`,
-                background_color: `#121212`,
-                theme_color: `#26ffba`,
+                background_color: palette.deep[100],
+                theme_color: palette.duo[100],
                 display: `standalone`,
                 icon: `src/images/logo.svg`,
             },
