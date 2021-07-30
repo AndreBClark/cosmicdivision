@@ -1,3 +1,7 @@
+const tailwind = require('./tailwind.config.js');
+
+const { palette } = tailwind.theme;
+
 module.exports = {
     siteMetadata: {
         title: `Cosmic Division`,
@@ -27,7 +31,29 @@ module.exports = {
         `gatsby-plugin-emotion`,
         `gatsby-plugin-netlify`,
         `gatsby-plugin-image`,
-        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                defaults: {
+                formats: [`auto`, 'avif', 'webp',`png`],
+                    placeholder: `blurred`,
+                    quality: 75,
+                    breakpoints: [300, 750, 1080, 1366, 1920],
+                    backgroundColor: 'transparent',
+                    tracedSVGOptions: {
+                        blackOnWhite: false,
+                        backgroundColor: 'transparent'
+                    },
+                    blurredOptions: {
+                        backgroundColor: 'transparent'
+                    },
+                    jpgOptions: {},
+                    pngOptions: {},
+                    webpOptions: {},
+                    avifOptions: {},
+                },
+            },
+        },
         `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -99,8 +125,8 @@ module.exports = {
                 name: `Cosmic Division Jamstack Blog`,
                 short_name: `CosmicDiv`,
                 start_url: `/`,
-                background_color: `#444c55`,
-                theme_color: `#34f3bb`,
+                background_color: palette.deep[100],
+                theme_color: palette.duo[100],
                 display: `standalone`,
                 icon: `src/images/logo.svg`,
             },
