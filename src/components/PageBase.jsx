@@ -13,7 +13,9 @@ export const PageContained = ({ ...props }) => (
 export const PageFullWidth = ({ ...props }) => (
   <>
     <MastHead {...props} />
-    {props.children}
+    <div tw="h-full">
+      {props.children}
+    </div>
   </>
 )
 
