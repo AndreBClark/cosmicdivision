@@ -1,21 +1,23 @@
 import React from 'react'
 import 'twin.macro'
-import { StaticImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
-import Panel from 'components/Panel'
 
+import Panel from 'components/Panel'
+import { LinkExternal } from 'components/Links'
+import { useStaticQuery, graphql } from 'gatsby'
 function BioCard() {
   const { social, authorBio } = useSiteMetadata()
-
+  const data = useStaticQuery(BioImagedata);
+  const image = getImage(data.file);
   const { author, location } = authorBio
 
   return (
     <Panel tw="md:flex">
-      <StaticImage
-        src="../images/profile-pic.jpg"
+      <GatsbyImage
+        image={image}
         aspectRatio={1}
-        formats={['AUTO', 'WEBP', 'AVIF']}
         transformOptions={{
           grayscale: true,
         }}
@@ -25,10 +27,22 @@ function BioCard() {
       <p tw="text-sm md:text-xl">
         Written by <strong>{author}</strong> who lives and works in {location}{' '}
         building useful things. You should follow him on{' '}
-        <a href={`https://github.com/${social.github}`}>Github</a>
+        <LinkExternal href={`https://github.com/${social.github}`}>
+          Github
+        </LinkExternal>
       </p>
     </Panel>
   )
 }
+
+const BioImagedata = graphql`
+{
+  file(relativePath: {eq: "profile-pic.jpg"}) {
+    childImageSharp {
+      gatsbyImageData
+    }
+  }
+}
+`
 
 export default BioCard
