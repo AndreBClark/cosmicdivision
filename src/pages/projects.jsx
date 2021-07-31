@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Panel from 'components/Panel'
 import { SmBtnOutline, SmBtn } from 'components/button'
-import { PageContained } from 'components/PageBase'
+import { ViewContent } from 'components/Views'
 
 const page = {
   title: 'Projects',
@@ -17,7 +17,7 @@ const page = {
 const Projects = () => {
   const { title, heading, subtitle, keywords } = page
   return (
-    <PageContained
+    <ViewContent
       pagetitle={title}
       pageKeywords={keywords}
       pageHeading={heading}
@@ -54,7 +54,7 @@ const ProjectDetail = ({ projectProps }) => {
   return (
     <Detail>
       <div>
-        <h2 tw="hidden md:(block) xl:(text-5xl)">{name}</h2>
+        <h2 tw="hidden md:(block)">{name}</h2>
         <h3 tw="inline-block">{creationDate}</h3>{' '}
         <span tw="text-neutral-400 bg-secondary-100  px-2 pt-1 rounded m-4">
           {status}
@@ -101,7 +101,7 @@ const projectsListArray = [
     repo: 'https://github.com/AndreBClark/companiondice',
   },
   {
-    name: 'DSCVR Portfolio Project',
+    name: 'DSCVR Portfolio',
     description:
       'project to create College Portfolio Site for North Idaho College Graphic Design Program',
     creationDate: 'Spring 2019',

@@ -59,7 +59,8 @@ function PageList() {
 }
 
 const NavButton = tw(BtnSimple)`
-  md:(mx-2 px-8 bg-neutral-200)
+  bg-neutral-200 py-2
+  md:(mx-2 px-8)
 `
 
 const HeaderStyle = tw.header`
@@ -67,12 +68,14 @@ const HeaderStyle = tw.header`
 `
 
 const Nav = tw.nav`
-  leading-tight flex justify-around items-center md:(mx-auto justify-between max-w-screen-xl)
+  leading-tight flex justify-around items-center
+  md:(mx-auto justify-between max-w-screen-lg)
 `
 
 const List = tw.ul`
-  text-xs flex justify-around items-center text-primary-100 
+  text-xs flex justify-around items-center text-primary-100
   md:(justify-between text-base)
 `
+
 
 export default Navbar
