@@ -4,8 +4,8 @@ import tw, { theme } from 'twin.macro'
 export default function TransitionLink(props) {
   return (
     <AniLink
-      paintDrip
-      hex={theme`colors.neutral.100`}
+      swipe
+      bg={theme`colors.neutral.100`}
       direction="top"
       entryOffset={100}
       {...props}>
