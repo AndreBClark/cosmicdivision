@@ -4,7 +4,7 @@ import 'twin.macro'
 
 import TransitionLink from 'components/Links'
 import Panel from 'components/Panel'
-import { PageContained } from 'components/PageBase'
+import { ViewContent } from 'components/Views'
 
 const page = {
   title: 'All Posts',
@@ -12,12 +12,12 @@ const page = {
 
 const Blog = ({ location }) => {
   return (
-    <PageContained
+    <ViewContent
       location={location}
       title={page.title}
       pageHeading={page.title}>
       <PostList />
-    </PageContained>
+    </ViewContent>
   )
 }
 

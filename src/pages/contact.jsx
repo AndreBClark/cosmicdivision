@@ -1,7 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 
-import { PageContained } from 'components/PageBase'
+import { ViewContent } from 'components/Views'
 import Panel from 'components/Panel'
 import BioCard from 'components/BioCard'
 import { BtnOutline, Btn } from 'components/button'
@@ -16,7 +16,7 @@ const page = {
 const Contact = () => {
   const { title, heading, subtitle, keywords } = page
   return (
-    <PageContained
+    <ViewContent
       pageTitle={title}
       pageHeading={heading}
       pageSubtitle={subtitle}
@@ -25,7 +25,7 @@ const Contact = () => {
       <NetlifyForm>
         <TextFieldGroup />
       </NetlifyForm>
-    </PageContained>
+    </ViewContent>
   )
 }
 

@@ -1,10 +1,11 @@
 import React from 'react'
+import 'twin.macro'
+
 import { BtnOutline, Btn } from 'components/button'
 import Hero from 'components/Hero'
 import { HeadingOne, Subtitle } from 'components/Hero'
-import { DualWrapper } from 'components/TextInput'
 import TransitionLink from 'components/Links'
-import { PageFullWidth } from 'components/PageBase'
+import { ViewFull, View } from 'components/Views'
 
 const indexContent = {
   heading: 'Cosmic Division',
@@ -24,20 +25,20 @@ const indexContent = {
 const IndexPage = ({ location }) => {
   const { heading, subtitle, buttons } = indexContent
   return (
-    <PageFullWidth location={location} title={'Home'}>
+    <ViewFull location={location} title={'Home'}>
       <Hero>
         <HeadingOne>{heading}</HeadingOne>
-        <Subtitle>{subtitle}</Subtitle>
-        <DualWrapper>
-          <Btn as={TransitionLink} to={buttons.primary.link}>
-            {buttons.primary.text}
-          </Btn>
-          <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
-            {buttons.secondary.text}
-          </BtnOutline>
-        </DualWrapper>
+          <Subtitle>{subtitle}</Subtitle>
+          <View tw="md:(flex-row justify-around)">
+            <Btn as={TransitionLink} to={buttons.primary.link}>
+              {buttons.primary.text}
+            </Btn>
+            <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
+              {buttons.secondary.text}
+            </BtnOutline>
+          </View>
       </Hero>
-    </PageFullWidth>
+    </ViewFull>
   )
 }
 

@@ -23,7 +23,7 @@ const Projects = () => {
       pageHeading={heading}
       pageSubtitle={subtitle}>
       <ProjectList />
-    </PageContained>
+    </ViewContent>
   )
 }
 

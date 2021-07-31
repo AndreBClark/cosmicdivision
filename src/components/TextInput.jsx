@@ -8,7 +8,3 @@ export const TextInput = tw.input`
 export const Label = tw.label`
   block my-2
 `
-
-export const DualWrapper = tw.div`
-  flex md:(justify-center)
-`
