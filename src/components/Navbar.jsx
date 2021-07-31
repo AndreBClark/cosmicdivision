@@ -11,13 +11,14 @@ import Logo from 'images/icons/logo.svg'
 function Navbar() {
   return (
     <Header>
-      <TransitionLink
+      <NavButton
         id="logo"
         to="/"
-        as={NavButton}
+        as={TransitionLink}
+        tw="py-0"
         aria-label="Cosmic division Website Logo Home Button">
         <LogoBlock />
-      </TransitionLink>
+      </NavButton>
       <PageList />
     </Header>
   )
