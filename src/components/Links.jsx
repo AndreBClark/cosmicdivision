@@ -4,10 +4,9 @@ import tw, { theme } from 'twin.macro'
 export default function TransitionLink(props) {
   return (
     <AniLink
-      swipe
+      cover
       bg={theme`colors.neutral.100`}
-      direction="top"
-      entryOffset={100}
+      direction="up"
       {...props}>
       {props.children}
     </AniLink>
