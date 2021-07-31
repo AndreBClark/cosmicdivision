@@ -7,7 +7,7 @@ import tw from 'twin.macro'
 
 const Hero = ({ children }) => {
   const data = useStaticQuery(HeroImageData)
-  const image = getImage(data.file.childImageSharp)
+  const image = getImage(data.file)
   return (
     <Container>
       <GatsbyImage
