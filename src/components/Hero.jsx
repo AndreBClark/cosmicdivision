@@ -27,16 +27,17 @@ const Hero = ({ children }) => {
 
 
 const Container = tw.div`
-  h-screen-80 relative overflow-y-hidden
+  h-screen-75 relative overflow-y-hidden
   before:(content absolute  z-10 h-108 bottom-0 w-full bg-gradient-to-t from-neutral-100 to-transparent)
 `
 
 const Content = tw.div`
-  text-center z-20 h-full absolute top-0 flex flex-col justify-around md:justify-center items-center w-full
+  text-center z-20 h-full absolute top-0 flex flex-col justify-between md:justify-center items-center w-full
 `
 
 export const HeadingOne = tw.h1`
-  font-heading text-secondary-100  font-bold text-6xl xl:text-8xl leading-tight tracking-widest uppercase
+  my-12 font-heading text-secondary-100  font-bold text-6xl leading-tight tracking-widest uppercase
+  xl:text-8xl
 `
 export const Subtitle = tw.h2`
   block max-w-full w-full px-8 bg-secondary-100   text-lg font-heading capitalize font-semibold text-gray-800 pb-2 pt-1
