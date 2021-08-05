@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Panel from 'components/Panel'
 import { SmBtnOutline, SmBtn } from 'components/button'
-import { ViewContent } from 'components/Views'
+import { PageView } from 'components/Views'
 
 const page = {
   title: 'Projects',
@@ -17,13 +17,13 @@ const page = {
 const Projects = () => {
   const { title, heading, subtitle, keywords } = page
   return (
-    <ViewContent
+    <PageView
       pagetitle={title}
       pageKeywords={keywords}
       pageHeading={heading}
       pageSubtitle={subtitle}>
       <ProjectList />
-    </ViewContent>
+    </PageView>
   )
 }
 

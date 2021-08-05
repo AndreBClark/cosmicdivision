@@ -5,7 +5,7 @@ import { BtnOutline, Btn } from 'components/button'
 import Hero from 'components/Hero'
 import { HeadingOne, Subtitle } from 'components/Hero'
 import TransitionLink from 'components/Links'
-import { ViewFull, View } from 'components/Views'
+import { PageView, View } from 'components/Views'
 
 const indexContent = {
   heading: 'Cosmic Division',
@@ -25,7 +25,7 @@ const indexContent = {
 const IndexPage = ({ location }) => {
   const { heading, subtitle, buttons } = indexContent
   return (
-    <ViewFull location={location} title={'Home'}>
+    <PageView fullScreen location={location} title={'Home'}>
       <Hero>
         <HeadingOne>{heading}</HeadingOne>
           <Subtitle>{subtitle}</Subtitle>
@@ -38,7 +38,7 @@ const IndexPage = ({ location }) => {
             </BtnOutline>
           </View>
       </Hero>
-    </ViewFull>
+    </PageView>
   )
 }
 

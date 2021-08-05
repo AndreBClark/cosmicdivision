@@ -3,20 +3,16 @@ import tw from 'twin.macro'
 
 import MastHead from 'components/MastHead'
 
-export const ViewContent = ({children,  ...props }) => (
+
+export const PageView = ({ children, fullScreen, ...props }) => (
   <>
     <MastHead {...props} />
-    <PageContainer>{children}</PageContainer>
+    <View css={fullScreen ? fullScreenStyle : constrainedStyle}>
+      {children}
+    </View>
   </>
 )
-
-export const ViewFull = ({ children, ...props }) => (
-  <>
-    <MastHead {...props} />
-    <View tw="h-full">{children}</View>
-  </>
-)
-
 export const View = tw.div`flex flex-col`
+const fullScreenStyle = tw`h-full overflow-hidden`;
 
-const PageContainer = tw(View)`max-w-5xl mx-auto h-full`
+const constrainedStyle = tw`max-w-5xl mx-auto h-full`

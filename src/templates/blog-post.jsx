@@ -3,13 +3,13 @@ import { graphql } from 'gatsby'
 import 'twin.macro'
 
 import Panel from 'components/Panel'
-import { ViewContent } from 'components/Views'
+import { PageView } from 'components/Views'
 
 
 const BlogPostTemplate = ({ location, data }) => {
   const post = data.markdownRemark
   return (
-    <ViewContent
+    <PageView
       location={location}
       pageHeading={post.frontmatter.title}
       pageSubtitle={post.frontmatter.description || post.excerpt}
@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ location, data }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </Panel>
-    </ViewContent>
+    </PageView>
   )
 }
 

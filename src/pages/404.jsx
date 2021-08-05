@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import TransitionLink from 'components/Links'
 import Panel from 'components/Panel'
 import { Btn } from 'components/button'
-import { ViewContent } from 'components/Views'
+import { PageView } from 'components/Views'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 
@@ -11,7 +11,7 @@ const NotFoundPage = ({ location }) => {
   const { title } = useSiteMetadata()
 
   return (
-    <ViewContent
+    <PageView
       location={location}
       pageTitle={`404: Not Found | ${title}`}
       pageHeading="Error 404: Path Not Found"
@@ -21,7 +21,7 @@ const NotFoundPage = ({ location }) => {
           GO HOME
         </TransitionLink>
       </Panel>
-    </ViewContent>
+    </PageView>
   )
 }
 
