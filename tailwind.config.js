@@ -105,7 +105,11 @@ module.exports = {
             }),
         },
     },
+    variants: {
+        'scrollbar': ['rounded']
+    },
     plugins: [
+        require('tailwind-scrollbar'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
         require('@mertasan/tailwindcss-variables')

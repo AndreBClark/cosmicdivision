@@ -3,7 +3,7 @@
 @layer base {
   html,
   body {
-    @apply min-h-full overflow-y-auto text-primary-100;
+    @apply min-h-full overflow-y-auto text-primary-100 scrollbar scrollbar-thumb-neutral-200 scrollbar-track-neutral-400 scrollbar-thumb-rounded-xl;
   }
   h1,
   h2,
