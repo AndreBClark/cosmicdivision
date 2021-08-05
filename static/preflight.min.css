@@ -563,6 +563,11 @@ video {
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
 }
 
+* {
+  scrollbar-color: initial;
+  scrollbar-width: initial;
+}
+
 [type='text'],[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -835,6 +840,44 @@ html, body {
   overflow-y: auto;
   --tw-text-opacity: 1;
   color: rgba(214, 233, 255, var(--tw-text-opacity));
+  --scrollbar-track: initial;
+  --scrollbar-thumb: initial;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  overflow: overlay;
+}
+
+html.overflow-x-hidden, body.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+html.overflow-y-hidden, body.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+html, body {
+  scrollbar-width: auto;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  border-radius: 0.75rem;
+}
+
+html, body {
+  --scrollbar-thumb: #303f4f;
+  --scrollbar-track: #232d39;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 {

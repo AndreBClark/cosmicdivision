@@ -6,14 +6,14 @@ Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/pr
 Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 */
 :root {
-  --primary-100 : #d6e9ff;
+  --primary-100: #d6e9ff;
   --sea-uno-200: #88b4e7;
   --sea-uno-300: #5d8cc0;
   --sea-uno-400: #586f89;
   --sea-uno-500: #444c55;
 
   --sea-duo-50: #52ffc5;
-  --secondary-100 : #34febb;
+  --secondary-100: #34febb;
   --sea-duo-200: #32ae85;
   --sea-duo-300: #42675a;
 
@@ -54,7 +54,7 @@ pre[class*='language-'] {
   -ms-hyphens: none;
   hyphens: none;
   background: var(--sea-deep);
-  color: var(--primary-100 );
+  color: var(--primary-100);
 }
 
 pre > code[class*='language-'] {
@@ -210,6 +210,6 @@ pre > code.highlight {
     rgba(10, 163, 112, 0)
   );
 }
- {
+ /* {
   "mode":"full","isactive": false;
-}
+} */

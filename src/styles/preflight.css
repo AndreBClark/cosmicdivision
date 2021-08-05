@@ -37,7 +37,7 @@
     @apply text-base lg:text-lg;
   }
   svg path {
-    @apply fill-current text-secondary-100 ;
+    @apply fill-current text-secondary-100;
   }
   a {
     @apply text-secondary-100;
