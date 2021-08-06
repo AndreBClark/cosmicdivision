@@ -1,59 +1,52 @@
-const path = require('path');
-const { createFilePath } = require(`gatsby-source-filesystem`);
- 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
-  const blogPost = path.resolve(`./src/templates/blog-post.jsx`)
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
-    ) {
-    edges {
-      node {
-        frontmatter {
-          title
-          date
-          path
+
+const { isFuture } = require("date-fns");
+/**
+ * Implement Gatsby's Node APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/node-apis/
+ */
+
+const { format } = require("date-fns");
+
+async function createBlogPostPages(graphql, actions) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityPost(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
         }
-        fields {slug}
       }
     }
-  }
-}
-`
+  `);
 
-    ).then(result => {
-        if (result.errors) {
-            throw result.errors
-        }
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges
-        posts.forEach((post, index) => {
-            const previous = index === posts.length - 1 ? null : posts[index + 1].node
-            const next = index === 0 ? null : posts[index - 1].node
-            createPage({
-                path: post.node.fields.slug,
-                component: blogPost,
-                context: {
-                    slug: post.node.fields.slug,
-                    previous,
-                    next,
-                },
-            })
-        })
-        return null
-    })
- }
+  if (result.errors) throw result.errors;
 
-exports.onCreateNode = ({ actions, node, getNode }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `MarkdownRemark`) {
-        const value = createFilePath({ node, getNode })
-        createNodeField({
-            name: `slug`,
-            node,
-            value,
-        })
-    }
+  const postEdges = (result.data.allSanityPost || {}).edges || [];
+
+  postEdges
+    .filter((edge) => !isFuture(new Date(edge.node.publishedAt)))
+    .forEach((edge) => {
+      const { id, slug = {}, publishedAt } = edge.node;
+      const dateSegment = format(new Date(publishedAt), "yyyy/MM");
+      const path = `/blog/${dateSegment}/${slug.current}/`;
+
+      createPage({
+        path,
+        component: require.resolve("./src/templates/blog-post.jsx"),
+        context: { id },
+      });
+    });
 }
+
+exports.createPages = async ({ graphql, actions }) => {
+  await createBlogPostPages(graphql, actions);
+};

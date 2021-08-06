@@ -1,10 +1,13 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
+import { mapEdgesToNodes } from '../lib/helpers'
 
 import TransitionLink from 'components/Links'
+import PortableText from 'lib/Portable'
 import Panel from 'components/Panel'
 import { PageView } from 'components/Views'
+
 
 const page = {
   title: 'All Posts',
@@ -21,58 +24,55 @@ const Blog = ({ location }) => {
   )
 }
 
+
 const PostList = () => {
   const data = useStaticQuery(PostsQuery)
-  const posts = data.allMarkdownRemark.edges
+  const postNodes = data && data.posts && mapEdgesToNodes(data.posts);
 
-  return posts.map(({ node }) => {
-    const title = node.frontmatter.title || node.fields.slug
-    return (
-      <PostCard
-        slug={node.fields.slug}
-        key={node.fields.slug}
-        date={node.frontmatter.date}
-        description={node.frontmatter.description || node.excerpt}
-        title={title}
-      />
-    )
-  })
+  return postNodes && postNodes.length > 0 && (
+    <PostCard  />
+  )
 }
 
-const PostCard = ({ key, slug, date, description, title }) => (
-  <Panel as="article" key={key}>
-    <TransitionLink to={slug}>
-      <h3 tw="text-primary-100">{title}</h3>
-      <small tw="text-primary-100">{date}</small>
-      <p tw="text-primary-100"
-        dangerouslySetInnerHTML={{
-          __html: description,
-        }}
-      />
-    </TransitionLink>
-  </Panel>
-)
+
+const PostCard = (props) => {
+  const { _rawExcerpt, title, publishedAt, id, slug } = props;
+  return (
+    <Panel as="article" key={id}>
+      <TransitionLink to={slug}>
+        <h3 tw="text-primary-100">{title}</h3>
+        <small tw="text-primary-100">{publishedAt}</small>
+        <PortableText
+          tw="text-primary-100">
+          {_rawExcerpt}
+        </PortableText>
+      </TransitionLink>
+    </Panel>
+  )
+}
 
 export const PostsQuery = graphql`
   {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { title: { ne: "" } } }
+    posts: allSanityPost(
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
       edges {
         node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
+          id
+          publishedAt
+          # mainImage {
+          #   ...SanityImage
+          #   alt
+          # }
+          title
+          _rawExcerpt
+          slug {
+            current
           }
         }
       }
     }
   }
-`
+`;
 export default Blog

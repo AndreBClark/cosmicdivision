@@ -6,35 +6,44 @@ import Panel from 'components/Panel'
 import { PageView } from 'components/Views'
 
 
-const BlogPostTemplate = ({ location, data }) => {
-  const post = data.markdownRemark
+const BlogPostTemplate = ({ props }) => {
+  const { data, errors, location } = props;
+  const post = data && data.post;
   return (
     <PageView
       location={location}
-      pageHeading={post.frontmatter.title}
-      pageSubtitle={post.frontmatter.description || post.excerpt}
-      date={post.frontmatter.date}>
+      pageHeading={post.title || "Untitled"}
+      pageSubtitle={post._rawExcerpt || "No description"}
+      date={post.publishedAt}>
       <Panel>
-        <article
+        {/* {_rawBody && <PortableText
+          blocks={_rawBody}
           tw="prose xl:prose-xl max-w-none"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        />} */}
       </Panel>
     </PageView>
   )
 }
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query BlogPostTemplateQuery($id: String!) {
+    post: sanityPost(id: { eq: $id }) {
       id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
+      publishedAt
+      categories {
+        _id
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
       }
+      # mainImage {
+      #   ...SanityImage
+      #   alt
+      # }
+      title
+      slug {
+        current
+      }
+      _rawExcerpt(resolveReferences: { maxDepth: 5 })
+      # _rawBody(resolveReferences: { maxDepth: 5 })
     }
   }
 `
