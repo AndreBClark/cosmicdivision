@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/code-input",
-    "markdown"
+    "markdown",
+    "dark-theme-blue"
   ],
   "env": {
     "development": {
