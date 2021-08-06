@@ -122,6 +122,7 @@ module.exports = {
                     components: './components',
                     images: './images',
                     pages: './pages',
+                    lib: './lib',
                     static: {
                         root: './public', // <- will used as this alias' root dir
                         alias: './static' // <- will become ./public/static
