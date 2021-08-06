@@ -36,7 +36,7 @@
         "gatsby-transformer-sharp": "^3.10.0",
         "graphql-compose": "^9.0.2",
         "gsap": "^3.7.1",
-        "netlify-cli": "^6.0.3",
+        "netlify-cli": "^6.0.8",
         "postcss-nesting": "^8.0.1",
         "preact": "^10.5.14",
         "preact-render-to-string": "^5.1.19",
