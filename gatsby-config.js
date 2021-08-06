@@ -15,7 +15,7 @@ module.exports = {
         social: {
             github: `AndreBClark`,
         },
-    }, 
+    },
     plugins: [
         {
             resolve: `gatsby-source-filesystem`,
@@ -24,20 +24,6 @@ module.exports = {
                 name: `blog`,
             },
         },
-        {
-            resolve: `gatsby-source-sanity`,
-            options: {
-                projectId: `vij17ctr`,
-                dataset: `production`,
-                // a token with read permissions is required
-                // if you have a private dataset
-                // token: process.env.SANITY_TOKEN,
-                // If the Sanity GraphQL API was deployed using `--tag <name>`,
-                // use `graphqlTag` to specify the tag name. Defaults to `default`.
-                graphqlTag: 'default',
-            },
-        },
-          // ...
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
@@ -61,10 +47,15 @@ module.exports = {
                     blurredOptions: {
                         backgroundColor: 'transparent'
                     },
+                    jpgOptions: {},
+                    pngOptions: {},
+                    webpOptions: {},
+                    avifOptions: {},
                 },
             },
         },
         `gatsby-transformer-sharp`,
+        
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -138,7 +129,7 @@ module.exports = {
                 background_color: palette.deep[100],
                 theme_color: palette.duo[100],
                 display: `standalone`,
-                icon: `src/images/icons/logo.svg`,
+                icon: `src/images/logo.svg`,
             },
         },
     ],

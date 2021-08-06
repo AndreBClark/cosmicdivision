@@ -1,60 +1,54 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
+import { PageContained } from 'components/PageBase'
 
-import TransitionLink from 'components/Links'
-import Panel from 'components/Panel'
-import { PageView } from 'components/Views'
 
 const page = {
-  title: 'All Posts',
-}
+  title: "All Posts",
+  }
 
 const Blog = ({ location }) => {
-  return (
-    <PageView
+    return (
+    <PageContained
       location={location}
       title={page.title}
-      pageHeading={page.title}>
+      pageHeading={page.title}
+    >
       <PostList />
-    </PageView>
+    </PageContained>
   )
 }
 
 const PostList = () => {
-  const data = useStaticQuery(PostsQuery)
-  const posts = data.allMarkdownRemark.edges
+            return (
+              <PanelHover>
+                <PostCard key={node.fields.slug}>
+                  <AniLink
+                    swipe
+                    direction="left"
+                    entryOffset={100}
+                    to={node.fields.slug}>
+                    <h3>{title}</h3>
+                    <small>{node.frontmatter.date}</small>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                  </AniLink>
+                </PostCard>
+              </PanelHover>
+            )
 
-  return posts.map(({ node }) => {
-    const title = node.frontmatter.title || node.fields.slug
-    return (
-      <PostCard
-        slug={node.fields.slug}
-        key={node.fields.slug}
-        date={node.frontmatter.date}
-        description={node.frontmatter.description || node.excerpt}
-        title={title}
-      />
-    )
-  })
-}
 
-const PostCard = ({ key, slug, date, description, title }) => (
-  <Panel as="article" key={key}>
-    <TransitionLink to={slug}>
-      <h3 tw="text-primary-100">{title}</h3>
-      <small tw="text-primary-100">{date}</small>
-      <p tw="text-primary-100"
-        dangerouslySetInnerHTML={{
-          __html: description,
-        }}
-      />
-    </TransitionLink>
-  </Panel>
-)
-
-export const PostsQuery = graphql`
-  {
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { title: { ne: "" } } }

@@ -1,22 +1,22 @@
-import tw from 'twin.macro'
+import tw from 'twin.macro';
 
 export const Btn = tw.button`
-  block p-2 m-2
+  block p-2 m-2 mb-4
   md:(px-20 m-4)
   font-heading font-bold tracking-widest uppercase
-  text-neutral-100 bg-secondary-100  border-secondary-100
+  text-gray bg-primary border-primary
   border-2 rounded-lg
-  hover:(text-secondary-100  bg-transparent cursor-pointer)
+  hover:(text-primary bg-transparent cursor-pointer)
 `
 export const BtnOutline = tw(Btn)`
-  bg-transparent text-secondary-100  border-secondary-100
-  hover:(text-neutral-100 bg-secondary-100 ) 
-  active:(text-neutral-100 bg-secondary-100 ) 
+  bg-transparent text-primary border-primary
+  hover:(text-gray-700 bg-primary) 
+  active:(text-gray-700 bg-primary) 
 `
 
 export const BtnSimple = tw(Btn)`
-  bg-transparent text-secondary-100  border-transparent
-  hover:(border-secondary-100)
+  bg-transparent text-primary border-transparent
+  hover:(border-primary)
 `
 
 export const SmBtn = tw(Btn)`text-xs`

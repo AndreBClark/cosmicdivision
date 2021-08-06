@@ -1,12 +1,12 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { LinkExternal } from 'components/Links';
 
-const Row = tw.footer`bg-neutral-100 md:p-8 mt-auto`
 
-const Inner = tw.div`mx-auto flex justify-between text-sm max-w-5xl`
+const Row = tw.footer`bg-gray-800 md:p-8 mt-auto`
 
-const Item = tw.p`my-4 mx-3 text-primary-100 `
+const Inner = tw.div`mx-auto flex justify-between text-sm max-w-screen-xl`
+
+const Item = tw.p`my-4 mx-3 text-gray-50`
 
 const Footer = () => {
   return (
@@ -14,16 +14,18 @@ const Footer = () => {
       <Inner>
         <Item>
           Submit an &nbsp;
-          <LinkExternal
+          <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose">
+            href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose"
+          >
             Issue on Github
-          </LinkExternal>
+          </a>
         </Item>
+
         <Item>
           © {new Date().getFullYear()}, Built with &nbsp;
-          <LinkExternal href="https://www.gatsbyjs.org">Gatsby</LinkExternal>
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </Item>
       </Inner>
     </Row>
