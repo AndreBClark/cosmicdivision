@@ -1,0 +1,35 @@
+{
+  "name": "cosmicdivision",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site [https://cosmicdivision.dev](URL)",
+  "main": "package.json",
+  "author": "Andre <andre@cosmicdivision.dev>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.13.1",
+    "@sanity/code-input": "^2.13.1",
+    "@sanity/components": "^2.13.0",
+    "@sanity/core": "^2.13.1",
+    "@sanity/default-layout": "^2.13.1",
+    "@sanity/default-login": "^2.13.1",
+    "@sanity/desk-tool": "^2.13.1",
+    "@sanity/vision": "^2.13.1",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "sanity-plugin-markdown": "^2.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreBClark/cosmicdivision.git"
+  }
+}
