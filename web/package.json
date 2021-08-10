@@ -1,7 +1,5 @@
 {
     "name": "cosmicdivision-gatsbyblog",
-    "private": true,
-    "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
     "version": "0.1.0",
     "author": "Andre Clark <andrek@cosmicdivision.dev>",
     "bugs": {
@@ -78,5 +76,9 @@
         "compile-css": "postcss src/styles/*.css  --dir ./static --ext min.css",
         "watch-css": "postcss src/styles/*.css  --dir ./static --ext min.css --watch",
         "serve": "gatsby serve --host=0.0.0.0"
+    },
+    "devDependencies": {
+        "cssnano": "^5.0.7",
+        "cssnano-preset-advanced": "^5.1.3"
     }
 }
