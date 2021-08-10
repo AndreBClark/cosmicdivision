@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
-import { mapEdgesToNodes } from '../lib/helpers'
+import { mapEdgesToNodes, getBlogUrl } from 'lib/helpers'
 
 import TransitionLink from 'components/Links'
-import PortableText from 'lib/Portable'
+import { format } from "date-fns";
 import Panel from 'components/Panel'
 import { PageView } from 'components/Views'
+import PortableBlock from '../lib/Portable'
 
 
 const page = {
@@ -26,11 +27,11 @@ const Blog = ({ location }) => {
 
 
 const PostList = () => {
-  const data = useStaticQuery(PostsQuery)
+  const data = useStaticQuery(PostsQuery);
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts);
 
   return postNodes && postNodes.length > 0 && (
-    <PostCard  />
+    postNodes.map(post => <PostCard {...post} />)
   )
 }
 
@@ -39,13 +40,18 @@ const PostCard = (props) => {
   const { _rawExcerpt, title, publishedAt, id, slug } = props;
   return (
     <Panel as="article" key={id}>
-      <TransitionLink to={slug}>
+      <TransitionLink to={getBlogUrl(publishedAt, slug.current)}>
         <h3 tw="text-primary-100">{title}</h3>
-        <small tw="text-primary-100">{publishedAt}</small>
-        <PortableText
-          tw="text-primary-100">
-          {_rawExcerpt}
-        </PortableText>
+        <small tw="text-primary-100">
+          {format(new Date(publishedAt), "MMMM Mo, yyyy")}
+        </small>
+        {_rawExcerpt ?
+          <PortableBlock
+            content={_rawExcerpt}
+            tw="text-primary-100">
+          </PortableBlock>
+          : <p>no Excerpt</p>
+        }
       </TransitionLink>
     </Panel>
   )

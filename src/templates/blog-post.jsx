@@ -4,22 +4,24 @@ import 'twin.macro'
 
 import Panel from 'components/Panel'
 import { PageView } from 'components/Views'
+import PortableBlock from 'lib/Portable'
+import { toPlainText } from 'lib/helpers'
 
 
-const BlogPostTemplate = ({ props }) => {
+const BlogPostTemplate = (props) => {
   const { data, errors, location } = props;
   const post = data && data.post;
   return (
     <PageView
       location={location}
-      pageHeading={post.title || "Untitled"}
-      pageSubtitle={post._rawExcerpt || "No description"}
+      pageHeading={errors ? "graphql error" : (post.title || "Untitled")}
+      pageSubtitle={toPlainText(post._rawExcerpt) || "No description"}
       date={post.publishedAt}>
       <Panel>
-        {/* {_rawBody && <PortableText
-          blocks={_rawBody}
+        {post._rawBody && <PortableBlock
+          content={post._rawBody}
           tw="prose xl:prose-xl max-w-none"
-        />} */}
+        />}
       </Panel>
     </PageView>
   )
@@ -42,8 +44,7 @@ export const pageQuery = graphql`
       slug {
         current
       }
-      _rawExcerpt(resolveReferences: { maxDepth: 5 })
-      # _rawBody(resolveReferences: { maxDepth: 5 })
+      _rawBody(resolveReferences: { maxDepth: 5 })
     }
   }
 `
