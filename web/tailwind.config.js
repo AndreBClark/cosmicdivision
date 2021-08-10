@@ -75,9 +75,6 @@ module.exports = {
                             fontFamily: theme('fontFamily.heading'),
                             fontWeight: 'bold',
                         },
-                        code: {
-                            color: null,
-                        },
                         'code::before': {
                             content: 'initial',
                         },
@@ -85,6 +82,17 @@ module.exports = {
                             content: 'initial',
                         },
                         pre: {
+                            color: null,
+                            backgroundColor: null,
+                        },
+                        "ul>li": {
+                            paddingLeft: '1em'
+                        },
+                        "ul>li::before": {
+                            borderRadius: 0,
+                            backgroundColor: theme('colors.primary.400'),
+                        },
+                        code: {
                             color: null,
                             backgroundColor: null,
                         },

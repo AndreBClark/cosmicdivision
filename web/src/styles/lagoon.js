@@ -1,4 +1,4 @@
-export default {
+const lagoon = {
   'code[class*="language-"]': {
     fontFamily:
       '"Fira Code", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace',
@@ -217,3 +217,4 @@ export default {
       'linear-gradient(to right, rgba(10, 163, 112, 0.2) 70%, rgba(10, 163, 112, 0))',
   },
 }
+export default lagoon;
