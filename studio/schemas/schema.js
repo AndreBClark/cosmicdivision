@@ -35,6 +35,7 @@ export default createSchema({
     mainImage,
     authorReference,
     bodyPortableText,
+    blockContent,
     bioPortableText,
     excerptPortableText,
   ]),

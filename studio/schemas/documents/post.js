@@ -65,7 +65,7 @@ export default {
     },
     {
       name: "body",
-      type: "bodyPortableText",
+      type: "blockContent",
       title: "Body",
     },
   ],
