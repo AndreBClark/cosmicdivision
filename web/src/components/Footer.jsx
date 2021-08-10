@@ -1,6 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { LinkExternal } from 'components/Links';
+import { LinkExternal } from 'components/Links'
 
 const Row = tw.footer`bg-neutral-100 md:p-8 mt-auto`
 

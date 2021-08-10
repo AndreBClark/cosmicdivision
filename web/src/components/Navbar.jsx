@@ -77,5 +77,4 @@ const List = tw.ul`
   md:(justify-between text-base)
 `
 
-
 export default Navbar

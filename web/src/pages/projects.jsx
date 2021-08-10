@@ -127,11 +127,7 @@ export const projectImages = graphql`
     allFile(filter: { relativeDirectory: { eq: "projects" } }) {
       nodes {
         childImageSharp {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            width: 512
-            height: 512
-          )
+          gatsbyImageData(layout: CONSTRAINED, width: 512, height: 512)
         }
       }
     }

@@ -7,7 +7,7 @@
     "prettier-eslint-cli": "^5.0.1"
   },
   "scripts": {
-    "format-css": "prettier --write src/styles/**/*.{css,scss}",
-    "format-js": "prettier --write src/**/*.{js,jsx}",
+    "format-css": "prettier --write web/src/styles/**/*.{css,scss}",
+    "format-js": "prettier --write web/src/**/*.{js,jsx}"
   }
 }

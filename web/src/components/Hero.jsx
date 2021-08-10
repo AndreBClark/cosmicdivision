@@ -1,8 +1,7 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { useStaticQuery, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import tw from 'twin.macro'
-
 
 const Hero = ({ children }) => {
   const data = useStaticQuery(HeroImageData)
@@ -16,14 +15,13 @@ const Hero = ({ children }) => {
         aspectRatio={16 / 9}
         imgStyle={{ mixBlendMode: 'screen' }}
         image={image}
-        alt='orbital photo overlooking Earth at night taken from the International Space Station'
+        alt="orbital photo overlooking Earth at night taken from the International Space Station"
         tw="static"
       />
       <Content>{children}</Content>
     </Container>
   )
 }
-
 
 const Container = tw.div`
   h-screen-75 relative overflow-y-hidden
@@ -43,16 +41,14 @@ export const Subtitle = tw.h2`
   lg:(tracking-widest text-2xl mx-1 px-4)
 `
 
-
 const HeroImageData = graphql`
-{
-  file(relativePath: {eq: "orbital-deep.webp"}) {
-    childImageSharp {
-      gatsbyImageData
+  {
+    file(relativePath: { eq: "orbital-deep.webp" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
     }
   }
-}
 `
-
 
 export default Hero

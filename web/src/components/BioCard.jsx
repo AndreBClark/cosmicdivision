@@ -9,8 +9,8 @@ import { LinkExternal } from 'components/Links'
 import { useStaticQuery, graphql } from 'gatsby'
 function BioCard() {
   const { social, authorBio } = useSiteMetadata()
-  const data = useStaticQuery(BioImagedata);
-  const image = getImage(data.file);
+  const data = useStaticQuery(BioImagedata)
+  const image = getImage(data.file)
   const { author, location } = authorBio
 
   return (
@@ -36,13 +36,13 @@ function BioCard() {
 }
 
 const BioImagedata = graphql`
-{
-  file(relativePath: {eq: "profile-pic.jpg"}) {
-    childImageSharp {
-      gatsbyImageData
+  {
+    file(relativePath: { eq: "profile-pic.jpg" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
     }
   }
-}
 `
 
 export default BioCard

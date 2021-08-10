@@ -28,15 +28,15 @@ const IndexPage = ({ location }) => {
     <PageView fullScreen location={location} title={'Home'}>
       <Hero>
         <HeadingOne>{heading}</HeadingOne>
-          <Subtitle>{subtitle}</Subtitle>
-          <View tw="md:(flex-row justify-around)">
-            <Btn as={TransitionLink} to={buttons.primary.link}>
-              {buttons.primary.text}
-            </Btn>
-            <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
-              {buttons.secondary.text}
-            </BtnOutline>
-          </View>
+        <Subtitle>{subtitle}</Subtitle>
+        <View tw="md:(flex-row justify-around)">
+          <Btn as={TransitionLink} to={buttons.primary.link}>
+            {buttons.primary.text}
+          </Btn>
+          <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
+            {buttons.secondary.text}
+          </BtnOutline>
+        </View>
       </Hero>
     </PageView>
   )

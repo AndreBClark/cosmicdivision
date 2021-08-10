@@ -1,7 +1,6 @@
-
-import React from "react";
-import { Figure } from "./Figure";
-import Code from "./code";
+import React from 'react'
+import { Figure } from './Figure'
+import Code from './code'
 
 const serializers = {
   types: {
@@ -10,6 +9,6 @@ const serializers = {
     mainImage: Figure,
     code: Code,
   },
-};
+}
 
-export default serializers;
+export default serializers

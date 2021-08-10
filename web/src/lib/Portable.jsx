@@ -1,7 +1,7 @@
-import React from "react"
-import PortableText from "@sanity/block-content-to-react"
-import serializers from "./serializers"
-import clientConfig from "../../client-config"
+import React from 'react'
+import PortableText from '@sanity/block-content-to-react'
+import serializers from './serializers'
+import clientConfig from '../../client-config'
 
 const PortableBlock = ({ content, ...props }) => (
   <div>
