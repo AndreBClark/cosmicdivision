@@ -20,7 +20,6 @@ const BlogPostTemplate = (props) => {
         {post._rawBody && (
           <PortableBlock
             content={post._rawBody}
-            tw="prose xl:prose-xl max-w-none"
           />
         )}
       </Panel>
