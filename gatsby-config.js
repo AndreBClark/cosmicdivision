@@ -79,31 +79,12 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [
-                    {
-                        resolve: `gatsby-remark-prismjs`,
-                        options: {
-                            inlineCodeMarker: '~',
-                        }
+            resolve: "gatsby-plugin-react-svg",
+                options: {
+                    rule: {
+                        include: /\.svg$/
                     },
-                    {
-                        resolve: `gatsby-remark-images`,
-                        options: {
-                            maxWidth: 768,
-                        },
-                    },
-                    {
-                        resolve: "gatsby-plugin-react-svg",
-                        options: {
-                            rule: {
-                                include: /\.svg$/
-                            },
-                        },
-                    },
-                ]
-            },
+                },
         },
         // {
         //     resolve: "gatsby-plugin-google-tagmanager",
@@ -123,6 +104,8 @@ module.exports = {
                     images: './images',
                     pages: './pages',
                     lib: './lib',
+                    styles: './styles',
+                    utils: './utils',
                     static: {
                         root: './public', // <- will used as this alias' root dir
                         alias: './static' // <- will become ./public/static
