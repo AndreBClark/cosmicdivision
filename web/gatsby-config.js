@@ -1,5 +1,9 @@
 const tailwind = require('./tailwind.config.js');
-
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV || "development"}`, // or '.env'
+});
+const clientConfig = require("./client-config");
+const isProd = process.env.NODE_ENV === 'production';
 const { palette } = tailwind.theme;
 
 module.exports = {
@@ -18,23 +22,11 @@ module.exports = {
     }, 
     plugins: [
         {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/content/blog`,
-                name: `blog`,
-            },
-        },
-        {
             resolve: `gatsby-source-sanity`,
             options: {
-                projectId: `vij17ctr`,
-                dataset: `production`,
-                // a token with read permissions is required
-                // if you have a private dataset
-                // token: process.env.SANITY_TOKEN,
-                // If the Sanity GraphQL API was deployed using `--tag <name>`,
-                // use `graphqlTag` to specify the tag name. Defaults to `default`.
-                graphqlTag: 'default',
+                ...clientConfig.sanity,
+                watchMode: !isProd,
+                overlayDrafts: !isProd,
             },
         },
           // ...
