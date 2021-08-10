@@ -2,7 +2,10 @@ const { fontFamily } = require('tailwindcss/defaultTheme');
 const sea = require('./colorThemes/sea.js');
 
 module.exports = {
-    purge: ['./src/**/*.jsx'],
+    purge: {
+        content: ['./web/src/**/*.jsx'],
+        css: ['./web/src/**/*.css']
+    },
     theme: {
         fontFamily: {
             mono: [`Fira Code`, ...fontFamily.mono],
@@ -16,9 +19,6 @@ module.exports = {
                 secondary: theme('palette.duo'),
                 neutral: theme('palette.deep'),
                 accent: theme('palette.lagoon')
-            }),
-            variables: theme => ({
-                colors: theme('colors'),
             }),
             flexGrow: {
                 1: '1',
@@ -112,6 +112,6 @@ module.exports = {
         require('tailwind-scrollbar'),
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
-        require('@mertasan/tailwindcss-variables')
+        // require('@mertasan/tailwindcss-variables')
     ],
 }
