@@ -8,18 +8,17 @@ import { SmBtnOutline, SmBtn } from '@/tokens'
 
 const page = {
   title: 'Projects',
-  heading: 'Projects',
   subtitle: 'Projects',
   keywords: [`blog`, `gatsby`, `javascript`, `react`],
 }
 
 const Projects = () => {
-  const { title, heading, subtitle, keywords } = page
+  const { title, subtitle, keywords } = page
   return (
     <PageView
-      pagetitle={title}
+      pageTitle={title}
       pageKeywords={keywords}
-      pageHeading={heading}
+      pageHeading={title}
       pageSubtitle={subtitle}>
       <ProjectList />
     </PageView>

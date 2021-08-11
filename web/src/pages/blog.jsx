@@ -13,7 +13,7 @@ const page = {
 }
 
 const Blog = ({ location }) => (
-  <PageView location={location} title={page.title} pageHeading={page.title}>
+  <PageView location={location} pageTitle={page.title} pageHeading={page.title}>
     <PostList />
   </PageView>
 )

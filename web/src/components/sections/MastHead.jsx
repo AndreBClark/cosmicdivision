@@ -3,18 +3,22 @@ import tw from 'twin.macro'
 import { Seo } from '@/utils'
 
 const MastHead = ({
-  pagetitle,
   pageKeywords = [`blog`, `gatsby`, `javascript`, `react`],
-  pageHeading,
+  pageTitle,
   pageSubtitle,
   pageDate,
   location,
 }) => (
   <>
-    {pagetitle && (
-      <Seo location={location} title={pageHeading} keywords={pageKeywords} />
+    {pageTitle && (
+      <Seo
+        location={location}
+        title={pageTitle}
+        keywords={pageKeywords}
+        description={pageSubtitle}
+      />
     )}
-    {pageHeading && <PageHeading>{pageHeading}</PageHeading>}
+    {pageTitle && <PageHeading>{pageTitle}</PageHeading>}
     {(pageSubtitle || pageDate) && (
       <div tw="bg-secondary-100  w-full">
         {pageSubtitle && <Subtitle>{pageSubtitle}</Subtitle>}

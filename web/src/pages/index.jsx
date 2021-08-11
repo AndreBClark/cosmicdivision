@@ -23,7 +23,7 @@ const indexContent = {
 const IndexPage = ({ location }) => {
   const { heading, subtitle, buttons } = indexContent
   return (
-    <PageView fullScreen location={location} title={'Home'}>
+    <PageView fullScreen location={location} pageTitle={'Home'}>
       <Hero>
         <HeadingOne>{heading}</HeadingOne>
         <Subtitle>{subtitle}</Subtitle>

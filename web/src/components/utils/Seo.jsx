@@ -3,16 +3,14 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import useSiteMetaData from 'hooks/useSiteMetaData'
 
-const Seo = ({ description, lang, meta, keywords, title }) => {
+const Seo = ({ description, meta, keywords, title }) => {
   const site = useSiteMetaData()
 
   const metaDescription = description || site.description
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      lang={site.lang}
       title={title}
       titleTemplate={`%s | ${site.title}`}
       meta={[

@@ -10,6 +10,7 @@ module.exports = {
     siteMetadata: {
         title: `Cosmic Division`,
         author: `Andre Clark`,
+        lang: `en-US`,
         authorBio: {
             author: `Andre Clark`,
             location: `Spokane, Washington`,
