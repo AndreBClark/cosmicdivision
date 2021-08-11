@@ -6,6 +6,7 @@ import { PageView, View } from '@/containers'
 import { BtnOutline, Btn, TransitionLink,HeadingOne, Subtitle } from '@/tokens'
 
 const indexContent = {
+  title: 'Home',
   heading: 'Cosmic Division',
   subtitle: 'Chronicling my Journey developing with jamstack',
   buttons: {
@@ -21,9 +22,9 @@ const indexContent = {
 }
 
 const IndexPage = ({ location }) => {
-  const { heading, subtitle, buttons } = indexContent
+  const { title, heading, subtitle, buttons } = indexContent
   return (
-    <PageView fullScreen location={location} pageTitle={'Home'}>
+    <PageView fullScreen location={location} pageTitle={title}>
       <Hero>
         <HeadingOne>{heading}</HeadingOne>
         <Subtitle>{subtitle}</Subtitle>

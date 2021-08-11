@@ -3,74 +3,45 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import useSiteMetaData from 'hooks/useSiteMetaData'
 
-const Seo = ({ description, meta, keywords, title }) => {
+const Seo = ({ description, keywords, title, lang }) => {
   const site = useSiteMetaData()
 
   const metaDescription = description || site.description
 
   return (
     <Helmet
-      lang={site.lang}
+      htmlAttributes={{
+        lang: site.lange || lang
+      }}
       title={title}
-      titleTemplate={`%s | ${site.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
-    />
+      titleTemplate={`${site.title} | %s`}>
+      <meta charSet="utf-8" />
+      <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content={site.author} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="og:title" content={title} />
+      <meta name="og:description" content={metaDescription} />
+      <meta name="og:type" content="website" />
+      <meta name="og:url" content={site.url} />
+      <meta name="og:site_name" content={site.title} />
+      <meta name="og:locale" content="en_US" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:site" content={site.title} />
+    </Helmet>
   )
 }
 
 Seo.defaultProps = {
   lang: `en`,
-  meta: [],
-  keywords: [],
+  keywords: [`blog`, `gatsby`, `javascript`, `react`],
   description: ``,
 }
 
 Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
 }
