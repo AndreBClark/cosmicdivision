@@ -1,8 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 
-import Navbar from './Navbar'
-import Footer from './Footer'
+import { Navbar, Footer } from '@/sections'
 
 const Base = ({ children }) => (
   <div tw="min-h-screen m-0 flex flex-col bg-neutral-100">

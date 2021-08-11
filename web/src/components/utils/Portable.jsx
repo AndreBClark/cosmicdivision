@@ -1,12 +1,13 @@
 import React from 'react'
 import PortableText from '@sanity/block-content-to-react'
-import serializers from './serializers'
-import clientConfig from '../../client-config'
+import serializers from 'lib/serializers'
+import clientConfig from '../../../client-config'
 import tw from 'twin.macro'
 
+const Block = tw(PortableText)`prose prose-xl max-w-none`
+
 const PortableBlock = ({ content, ...props }) => (
-  <PortableText
-    tw="prose prose-xl max-w-none"
+  <Block
     {...clientConfig.sanity}
     {...props}
     // Pass in block content straight from Sanity.io

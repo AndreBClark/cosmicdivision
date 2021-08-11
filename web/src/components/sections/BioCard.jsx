@@ -1,12 +1,12 @@
 import React from 'react'
 import 'twin.macro'
+import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 
-import Panel from 'components/Panel'
-import { LinkExternal } from 'components/Links'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Panel } from '@/containers'
+import { ExternalLink } from '@/tokens'
 function BioCard() {
   const { social, authorBio } = useSiteMetadata()
   const data = useStaticQuery(BioImagedata)
@@ -27,9 +27,9 @@ function BioCard() {
       <p tw="text-sm md:text-xl">
         Written by <strong>{author}</strong> who lives and works in {location}{' '}
         building useful things. You should follow him on{' '}
-        <LinkExternal href={`https://github.com/${social.github}`}>
+        <ExternalLink href={`https://github.com/${social.github}`}>
           Github
-        </LinkExternal>
+        </ExternalLink>
       </p>
     </Panel>
   )

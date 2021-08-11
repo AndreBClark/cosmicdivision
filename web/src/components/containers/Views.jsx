@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import MastHead from 'components/MastHead'
+import { MastHead } from '@/sections'
 
 export const PageView = ({ children, fullScreen, ...props }) => (
   <>

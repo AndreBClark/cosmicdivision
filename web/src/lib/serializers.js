@@ -1,6 +1,6 @@
 import React from 'react'
-import { Figure } from './Figure'
-import { Code, InlineCode } from './code'
+import { Figure } from '@/utils/Figure'
+import { Code, InlineCode } from '@/utils/Code'
 
 const serializers = {
   marks: {

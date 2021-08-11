@@ -32,15 +32,6 @@ const Content = tw.div`
   text-center z-20 h-full absolute top-0 flex flex-col justify-between md:justify-center items-center w-full
 `
 
-export const HeadingOne = tw.h1`
-  my-12 font-heading text-secondary-100  font-bold text-6xl leading-tight tracking-widest uppercase
-  xl:text-8xl
-`
-export const Subtitle = tw.h2`
-  block max-w-full w-full px-8 bg-secondary-100   text-lg font-heading capitalize font-semibold text-gray-800 pb-2 pt-1
-  lg:(tracking-widest text-2xl mx-1 px-4)
-`
-
 const HeroImageData = graphql`
   {
     file(relativePath: { eq: "orbital-deep.webp" }) {

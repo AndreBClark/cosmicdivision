@@ -1,9 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import TransitionLink from 'components/Links'
-import Panel from 'components/Panel'
-import { Btn } from 'components/button'
-import { PageView } from 'components/Views'
+import { TransitionLink, Btn } from '@/tokens'
+import { Panel, PageView } from '@/containers'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 

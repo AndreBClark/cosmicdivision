@@ -1,25 +1,22 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import 'twin.macro'
+import { format } from 'date-fns'
+import { graphql, useStaticQuery } from 'gatsby'
 import { mapEdgesToNodes, getBlogUrl } from 'lib/helpers'
 
-import TransitionLink from 'components/Links'
-import { format } from 'date-fns'
-import Panel from 'components/Panel'
-import { PageView } from 'components/Views'
-import PortableBlock from '../lib/Portable'
+import { PortableBlock } from '@/utils'
+import { TransitionLink } from '@/tokens'
+import { Panel, PageView } from '@/containers'
 
 const page = {
   title: 'All Posts',
 }
 
-const Blog = ({ location }) => {
-  return (
-    <PageView location={location} title={page.title} pageHeading={page.title}>
-      <PostList />
-    </PageView>
-  )
-}
+const Blog = ({ location }) => (
+  <PageView location={location} title={page.title} pageHeading={page.title}>
+    <PostList />
+  </PageView>
+)
 
 const PostList = () => {
   const data = useStaticQuery(PostsQuery)

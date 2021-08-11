@@ -4,8 +4,7 @@ import tw from 'twin.macro'
 import usePageList from 'hooks/usePageList'
 import useDesluggify from 'hooks/useDesluggify'
 
-import TransitionLink from 'components/Links'
-import { BtnSimple } from 'components/button'
+import { BtnSimple, TransitionLink } from '@/tokens'
 import Logo from 'images/icons/logo.svg'
 
 function Navbar() {

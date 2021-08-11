@@ -3,9 +3,8 @@ import tw from 'twin.macro'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-import Panel from 'components/Panel'
-import { SmBtnOutline, SmBtn } from 'components/button'
-import { PageView } from 'components/Views'
+import { Panel, PageView } from '@/containers'
+import { SmBtnOutline, SmBtn } from '@/tokens'
 
 const page = {
   title: 'Projects',

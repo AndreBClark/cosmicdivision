@@ -2,9 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import 'twin.macro'
 
-import Panel from 'components/Panel'
-import { PageView } from 'components/Views'
-import PortableBlock from 'lib/Portable'
+import Panel from '@/containers/Panel'
+import { PageView } from '@/containers/Views'
+import PortableBlock from '@/utils/Portable'
 import { toPlainText } from 'lib/helpers'
 
 const BlogPostTemplate = (props) => {

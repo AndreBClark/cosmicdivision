@@ -1,6 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { LinkExternal } from 'components/Links'
+import { ExternalLink } from '@/tokens'
 
 const Row = tw.footer`bg-neutral-100 md:p-8 mt-auto`
 
@@ -14,16 +14,16 @@ const Footer = () => {
       <Inner>
         <Item>
           Submit an &nbsp;
-          <LinkExternal
+          <ExternalLink
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/AndreBClark/CosmicDivision/issues/new/choose">
             Issue on Github
-          </LinkExternal>
+          </ExternalLink>
         </Item>
         <Item>
           © {new Date().getFullYear()}, Built with &nbsp;
-          <LinkExternal href="https://www.gatsbyjs.org">Gatsby</LinkExternal>
+          <ExternalLink href="https://www.gatsbyjs.org">Gatsby</ExternalLink>
         </Item>
       </Inner>
     </Row>

@@ -67,7 +67,7 @@ module.exports = {
         {
             resolve: "gatsby-plugin-transition-link",
             options: {
-                layout: require.resolve(`./src/components/Base.jsx`)
+                layout: require.resolve(`./src/components/containers/Base.jsx`)
             }
         },
         {
@@ -92,7 +92,7 @@ module.exports = {
                 root: './src', // <- will be used as a root dir
                 aliases: {
                     hooks: './hooks',
-                    components: './components',
+                    '@': './components',
                     images: './images',
                     pages: './pages',
                     lib: './lib',

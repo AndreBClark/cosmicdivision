@@ -1,11 +1,9 @@
 import React from 'react'
 import 'twin.macro'
 
-import { BtnOutline, Btn } from 'components/button'
-import Hero from 'components/Hero'
-import { HeadingOne, Subtitle } from 'components/Hero'
-import TransitionLink from 'components/Links'
-import { PageView, View } from 'components/Views'
+import { Hero } from '@/sections'
+import { PageView, View } from '@/containers'
+import { BtnOutline, Btn, TransitionLink,HeadingOne, Subtitle } from '@/tokens'
 
 const indexContent = {
   heading: 'Cosmic Division',
