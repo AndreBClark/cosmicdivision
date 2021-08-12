@@ -29,6 +29,11 @@ export default {
       type: "bioPortableText",
       title: "Biography",
     },
+    {
+      name: "socials",
+      type: "socials",
+      title: "Socials",
+    },
   ],
   preview: {
     select: {

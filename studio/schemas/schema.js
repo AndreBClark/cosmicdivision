@@ -18,6 +18,7 @@ import bioPortableText from "./objects/bioPortableText";
 import excerptPortableText from "./objects/excerptPortableText";
 import mainImage from "./objects/mainImage";
 import authorReference from "./objects/authorReference";
+import socials from './objects/socials';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,5 +39,6 @@ export default createSchema({
     blockContent,
     bioPortableText,
     excerptPortableText,
+    socials,
   ]),
 })
