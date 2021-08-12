@@ -10,24 +10,30 @@
   "plugins": [
     "@sanity/base",
     "@sanity/components",
+    "dark-theme-blue",
+    "@sanity/dashboard",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
+    "dashboard-widget-structure-menu",
+    "dashboard-widget-document-list",
     "@sanity/code-input",
-    "markdown",
-    "dark-theme-blue"
+    "dashboard-widget-gatsby",
+    "dashboard-widget-netlify",
+    "dark-mode"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
   "parts": [
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/structure/deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./src/dashboardConfig.js"
     }
   ]
 }
