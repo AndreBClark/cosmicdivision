@@ -18,7 +18,7 @@
         "babel-plugin-module-resolver": "^4.1.0",
         "date-fns": "^2.23.0",
         "dotenv": "^10.0.0",
-        "gatsby": "^3.11.0",
+        "gatsby": "^3.11.1",
         "gatsby-plugin-emotion": "^6.9.0",
         "gatsby-plugin-image": "^1.10.0",
         "gatsby-plugin-manifest": "^3.10.0",
