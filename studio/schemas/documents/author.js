@@ -34,6 +34,11 @@ export default {
       type: "socials",
       title: "Socials",
     },
+    {
+      name: "location",
+      type: "string",
+      title: "Location",
+    },
   ],
   preview: {
     select: {
