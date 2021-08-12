@@ -67,10 +67,25 @@ export default {
       options: {hotspot: true},
     },
     {
+      title: 'Code Snippet',
       type: 'code',
       options: {
-        language: 'javascript',
-
+        languageAlternatives: [
+          { title: 'JavaScript', value: 'js' },
+          { title: 'JSX', value: 'jsx' },
+          { title: 'CSS', value: 'css' },
+          { title: 'SCSS', value: 'scss' },
+          { title: 'bash', value: 'bash' },
+          { title: 'python', value: 'python' },
+          { title: 'HTML', value: 'html' },
+          { title: 'TypeScript', value: 'ts' },
+          { title: 'Go', value: 'go' },
+          { title: 'rust', value: 'rust' },
+          { title: 'C#', value: 'csharp' },
+          { title: 'c', value: 'c' },
+          { title: 'C++', value: 'cpp' },
+          { title: 'JSON', value: 'json' },
+        ]
       }
     }
   ],
