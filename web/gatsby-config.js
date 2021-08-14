@@ -7,20 +7,6 @@ const isProd = process.env.NODE_ENV === 'production';
 const { palette } = tailwind.theme;
 
 module.exports = {
-    siteMetadata: {
-        title: `Cosmic Division`,
-        author: `Andre Clark`,
-        lang: `en-US`,
-        authorBio: {
-            author: `Andre Clark`,
-            location: `Spokane, Washington`,
-        },
-        description: `A personal blog with tailwindcss`,
-        siteUrl: `https://cosmicdivision.dev`,
-        social: {
-            github: `AndreBClark`,
-        },
-    }, 
     plugins: [
         `gatsby-plugin-gatsby-cloud`,
         {

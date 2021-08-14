@@ -10,5 +10,5 @@
     "format-css": "prettier --write web/src/styles/**/*.{css,scss}",
     "format-js": "prettier --write web/src/**/*.{js,jsx}",
     "format": "yarn run format-css && npm run format-js"
-  }
+  },
 }
