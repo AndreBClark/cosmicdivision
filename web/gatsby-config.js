@@ -22,6 +22,7 @@ module.exports = {
         },
     }, 
     plugins: [
+        `gatsby-plugin-gatsby-cloud`,
         {
             resolve: `gatsby-source-sanity`,
             options: {
@@ -31,7 +32,6 @@ module.exports = {
                 overlayDrafts: !isProd,
             },
         },
-          // ...
         `gatsby-plugin-preact`,
         `gatsby-plugin-offline`,
         `gatsby-plugin-react-helmet`,
