@@ -13,7 +13,7 @@ module.exports = {
             resolve: `gatsby-source-sanity`,
             options: {
                 ...clientConfig.sanity,
-                token: process.env.SANITY_READ_TOKEN,
+                token: process.env.GATSBY_SANITY_READ_TOKEN,
                 watchMode: !isProd,
                 overlayDrafts: !isProd,
             },
@@ -29,11 +29,13 @@ module.exports = {
             resolve: `gatsby-plugin-sharp`,
             options: {
                 defaults: {
-                formats: [`auto`, 'avif', 'webp',`png`],
-                    placeholder: `blurred`,
+                    formats: [`auto`, 'webp'],
+                    placeholder: "dominantColor",
                     quality: 75,
+                    grayscale: true,
                     breakpoints: [300, 750, 1080, 1366, 1920],
-                    backgroundColor: 'transparent',
+                    backgroundColor: palette.deep[100],
+                    aspectRatio: 19/9,
                     tracedSVGOptions: {
                         blackOnWhite: false,
                         backgroundColor: 'transparent'
