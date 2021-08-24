@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { TransitionLink, Btn } from '@/tokens'
+import { Link, Btn } from '@/tokens'
 import { Panel, PageView } from '@/containers'
 
-import useSiteMetadata from 'hooks/useSiteMetaData'
+import { useSiteMetadata } from 'hooks'
 
 const NotFoundPage = ({ location }) => {
   const { title } = useSiteMetadata()
@@ -15,9 +15,9 @@ const NotFoundPage = ({ location }) => {
       pageHeading="Error 404: Path Not Found"
       pageSubtitle="You just hit a route that doesn&#39;t exist... the sadness.">
       <Panel>
-        <TransitionLink as={Btn} to="/">
+        <Link as={Btn} to="/">
           GO HOME
-        </TransitionLink>
+        </Link>
       </Panel>
     </PageView>
   )
