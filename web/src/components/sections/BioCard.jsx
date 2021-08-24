@@ -1,48 +1,60 @@
 import React from 'react'
 import 'twin.macro'
-import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-import useSiteMetadata from 'hooks/useSiteMetaData'
+import { useAuthorData } from 'hooks'
+import { Panel, View } from '@/containers'
+import { Link, Btn } from '@/tokens'
+import { Github, LinkedIn, Devto } from 'images/icons'
 
-import { Panel } from '@/containers'
-import { ExternalLink } from '@/tokens'
+const socialIcons = [
+  {
+    label: 'Github',
+    icon: <Github tw="w-6 h-6 text-neutral-100 fill-current" />,
+  },
+  {
+    label: 'LinkedIn',
+    icon: <LinkedIn />,
+  },
+  {
+    label: 'Devto',
+    icon: <Devto/>,
+  },
+]
+
 function BioCard() {
-  const { social, authorBio } = useSiteMetadata()
-  const data = useStaticQuery(BioImagedata)
-  const image = getImage(data.file)
-  const { author, location } = authorBio
-
+  const { name, image, location, socials, role } = useAuthorData();
   return (
     <Panel tw="md:flex">
       <GatsbyImage
-        image={image}
+        image={image.data}
         aspectRatio={1}
-        transformOptions={{
-          grayscale: true,
-        }}
-        alt={`headshot of ${author}, the creator of this site`}
-        tw="rounded-xl mix-blend-luminosity md:(w-24  mr-4 mb-4 md:mb-0 flex-shrink-0)"
+        alt={image.alt}
+        tw="rounded-xl mix-blend-luminosity
+          md:(w-24  mr-4 mb-4 md:mb-0 flex-shrink-0)"
       />
-      <p tw="text-sm md:text-xl">
-        Written by <strong>{author}</strong> who lives and works in {location}{' '}
-        building useful things. You should follow him on{' '}
-        <ExternalLink href={`https://github.com/${social.github}`}>
-          Github
-        </ExternalLink>
-      </p>
+      <View tw="justify-between">
+        <p>{name} is a {role} and is based in {location}</p>
+        <View tw="flex-row w-full">
+          <Socials socials={socials} />
+        </View>
+      </View>
     </Panel>
   )
 }
 
-const BioImagedata = graphql`
-  {
-    file(relativePath: { eq: "profile-pic.jpg" }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-`
+const Socials = ({ socials }) => {
+  const socialArr = Object.values(socials);
+  return socialArr.map((url, index) => (
+    <Btn
+      as={Link}
+      external
+      href={url}
+      tw="mb-0"
+      arialLabel={socialIcons[index].label}>
+      {socialIcons[index].icon}
+    </Btn>
+  ))
+}
 
 export default BioCard
