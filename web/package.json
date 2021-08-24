@@ -72,7 +72,7 @@
         "develop": "gatsby develop --host=0.0.0.0",
         "build": "gatsby build",
         "build:netlify": "netlify build && yarn run serve",
-        "clean": "gatsby clean && rm -rf node_modules && yarn",
+        "clean": "gatsby clean && yarn",
         "compile-css": "postcss src/styles/*.css  --dir ./static --ext min.css",
         "watch-css": "postcss src/styles/*.css  --dir ./static --ext min.css --watch",
         "serve": "gatsby serve --host=0.0.0.0"
