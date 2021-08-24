@@ -1,10 +1,10 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import usePageList from 'hooks/usePageList'
-import useDesluggify from 'hooks/useDesluggify'
+import { usePageList, useDesluggify } from 'hooks'
 
 import { BtnSimple, Link } from '@/tokens'
+import { Logo } from 'images/icons'
 
 function Navbar() {
   return (

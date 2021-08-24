@@ -1,8 +1,8 @@
 import React from 'react'
 import 'twin.macro'
 
-import { BioCard } from '@/sections'
 import { PageView, Panel } from '@/containers'
+import { BioCard } from '@/sections'
 import { BtnOutline, Btn, Label, TextInput } from '@/tokens'
 
 const page = {

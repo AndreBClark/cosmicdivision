@@ -2,10 +2,10 @@ import React from 'react'
 import 'twin.macro'
 import { format } from 'date-fns'
 import { graphql, useStaticQuery } from 'gatsby'
-import { mapEdgesToNodes, getBlogUrl } from 'lib/helpers'
 
 import { mapEdgesToNodes, getBlogUrl } from 'lib'
 import { Panel, PageView } from '@/containers'
+import { PortableBlock } from '@/utils'
 import { Link } from '@/tokens'
 
 const page = {

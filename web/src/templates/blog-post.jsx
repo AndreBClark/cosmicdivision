@@ -2,14 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import 'twin.macro'
 
-import Panel from '@/containers/Panel'
-import { PageView } from '@/containers/Views'
-import PortableBlock from '@/utils/Portable'
-import { toPlainText } from 'lib/helpers'
+import { PageView, Panel } from '@/containers'
+import { PortableBlock } from '@/utils'
+import { toPlainText } from 'lib'
 
 const BlogPostTemplate = (props) => {
   const { data, errors, location } = props
-  const post = data && data.post
+  const post = data.post
   return (
     <PageView
       location={location}
@@ -18,9 +17,9 @@ const BlogPostTemplate = (props) => {
       date={post.publishedAt}>
       <Panel>
         {post._rawBody && (
-          <PortableBlock
-            content={post._rawBody}
-          />
+        <PortableBlock
+          content={post._rawBody}
+        />
         )}
       </Panel>
     </PageView>
