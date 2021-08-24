@@ -3,7 +3,7 @@ import 'twin.macro'
 
 import { Hero } from '@/sections'
 import { PageView, View } from '@/containers'
-import { BtnOutline, Btn, TransitionLink,HeadingOne, Subtitle } from '@/tokens'
+import { BtnOutline, Btn, Link, HeadingOne, Subtitle } from '@/tokens'
 
 const indexContent = {
   title: 'Home',
@@ -29,10 +29,10 @@ const IndexPage = ({ location }) => {
         <HeadingOne>{heading}</HeadingOne>
         <Subtitle>{subtitle}</Subtitle>
         <View tw="md:(flex-row justify-around)">
-          <Btn as={TransitionLink} to={buttons.primary.link}>
+          <Btn as={Link} to={buttons.primary.link}>
             {buttons.primary.text}
           </Btn>
-          <BtnOutline as={TransitionLink} to={buttons.secondary.link}>
+          <BtnOutline as={Link} to={buttons.secondary.link}>
             {buttons.secondary.text}
           </BtnOutline>
         </View>

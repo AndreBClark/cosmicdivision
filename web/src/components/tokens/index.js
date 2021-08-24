@@ -7,7 +7,7 @@ import {
 } from "@/tokens/button";
 import Subtitle from "@/tokens/Subtitle";
 import HeadingOne from "@/tokens/HeadingOne";
-import TransitionLink, { ExternalLink } from "@/tokens/Links";
+import Link from "@/tokens/Links";
 import { TextInput, Label } from "@/tokens/TextInput";
 
-export { Btn, BtnSimple, BtnOutline, SmBtn, SmBtnOutline, HeadingOne, TransitionLink, ExternalLink, Subtitle, TextInput, Label };
+export { Btn, BtnSimple, BtnOutline, SmBtn, SmBtnOutline, HeadingOne, Link, Subtitle, TextInput, Label };

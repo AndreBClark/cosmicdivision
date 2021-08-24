@@ -4,8 +4,7 @@ import tw from 'twin.macro'
 import usePageList from 'hooks/usePageList'
 import useDesluggify from 'hooks/useDesluggify'
 
-import { BtnSimple, TransitionLink } from '@/tokens'
-import Logo from 'images/icons/logo.svg'
+import { BtnSimple, Link } from '@/tokens'
 
 function Navbar() {
   return (
@@ -13,7 +12,7 @@ function Navbar() {
       <NavButton
         id="logo"
         to="/"
-        as={TransitionLink}
+        as={Link}
         tw="py-0"
         aria-label="Cosmic division Website Logo Home Button">
         <LogoBlock />
@@ -48,7 +47,7 @@ function PageList() {
     <List>
       {Pages.map(({ node }) => (
         <li>
-          <NavButton to={node.path} as={TransitionLink}>
+          <NavButton to={node.path} as={Link}>
             {deSlug(node.path)}
           </NavButton>
         </li>

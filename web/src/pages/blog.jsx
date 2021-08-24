@@ -4,9 +4,9 @@ import { format } from 'date-fns'
 import { graphql, useStaticQuery } from 'gatsby'
 import { mapEdgesToNodes, getBlogUrl } from 'lib/helpers'
 
-import { PortableBlock } from '@/utils'
-import { TransitionLink } from '@/tokens'
+import { mapEdgesToNodes, getBlogUrl } from 'lib'
 import { Panel, PageView } from '@/containers'
+import { Link } from '@/tokens'
 
 const page = {
   title: 'All Posts',
@@ -33,7 +33,7 @@ const PostCard = (props) => {
   const { _rawExcerpt, title, publishedAt, id, slug } = props
   return (
     <Panel as="article" key={id}>
-      <TransitionLink to={getBlogUrl(publishedAt, slug.current)}>
+      <Link to={getBlogUrl(publishedAt, slug.current)}>
         <h3 tw="text-primary-100">{title}</h3>
         <small tw="text-primary-100">
           {format(new Date(publishedAt), 'MMMM Mo, yyyy')}
@@ -45,7 +45,7 @@ const PostCard = (props) => {
         ) : (
           <p>no Excerpt</p>
         )}
-      </TransitionLink>
+      </Link>
     </Panel>
   )
 }

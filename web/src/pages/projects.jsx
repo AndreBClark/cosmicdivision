@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import { Panel, PageView } from '@/containers'
-import { SmBtnOutline, SmBtn } from '@/tokens'
+import { SmBtnOutline, SmBtn, Link } from '@/tokens'
 
 const page = {
   title: 'Projects',
@@ -60,10 +60,10 @@ const ProjectDetail = ({ projectProps }) => {
         <p tw="py-3 xl:text-2xl">{description}</p>
       </div>
       <div tw="-ml-4 flex">
-        <SmBtn as={ExternalLink} tw="mb-2 md:(mb-0 px-12)" href={demoUrl}>
+        <SmBtn as={Link} tw="mb-2 md:(mb-0 px-12)" href={demoUrl}>
           Live Demo
         </SmBtn>
-        <SmBtnOutline as={ExternalLink} tw="mb-2 md:(mb-0 px-12)" href={repo}>
+        <SmBtnOutline as={Link} tw="mb-2 md:(mb-0 px-12)" href={repo}>
           Github Repo
         </SmBtnOutline>
       </div>
@@ -71,11 +71,6 @@ const ProjectDetail = ({ projectProps }) => {
   )
 }
 
-const ExternalLink = ({ children, ...props }) => (
-  <a target="_blank" rel="noopener" {...props}>
-    {children}
-  </a>
-)
 
 const Detail = tw.div`
   flex flex-col justify-between
